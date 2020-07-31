@@ -34,6 +34,15 @@
     [super pushViewController:viewController animated:animated];
 }
 
+#pragma mark - getter
+
+- (NSArray<Class> *)filterViewControllers {
+    if (!_filterViewControllers) {
+        _filterViewControllers = @[AboutScrollViewLayoutViewController.class];
+    }
+    return _filterViewControllers;
+}
+
 #pragma mark - Orientation
 
 // MARK: UINavigationController
@@ -62,14 +71,5 @@
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return [self.rt_topViewController preferredInterfaceOrientationForPresentation];
-}
-
-#pragma mark - getter
-
-- (NSArray<Class> *)filterViewControllers {
-    if (!_filterViewControllers) {
-        _filterViewControllers = @[AboutScrollViewLayoutViewController.class];
-    }
-    return _filterViewControllers;
 }
 @end

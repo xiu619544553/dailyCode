@@ -30,8 +30,8 @@
             filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "-sd_internalSetImageWithURL:placeholderImage:options:context:setImageBlock:progress:completed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "75"
+            endingLineNumber = "75"
             landmarkName = "-sd_internalSetImageWithURL:placeholderImage:options:context:setImageBlock:progress:completed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "213"
-            endingLineNumber = "213"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
             landmarkName = "-sd_setImage:imageData:basedOnClassOrViaCustomSetImageBlock:cacheType:imageURL:"
             landmarkType = "7">
          </BreakpointContent>
@@ -142,8 +142,8 @@
             filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "-sd_setImage:imageData:basedOnClassOrViaCustomSetImageBlock:cacheType:imageURL:"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "-sd_setImage:imageData:basedOnClassOrViaCustomSetImageBlock:transition:cacheType:imageURL:"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "-sd_internalSetImageWithURL:placeholderImage:options:context:setImageBlock:progress:completed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,8 +190,8 @@
             filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
             landmarkName = "-sd_internalSetImageWithURL:placeholderImage:options:context:setImageBlock:progress:completed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -206,9 +206,57 @@
             filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
             landmarkName = "-sd_internalSetImageWithURL:placeholderImage:options:context:setImageBlock:progress:completed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E6D01722-F0B3-4E2E-B968-73146D9DEB00"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/SDWebImageManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "+setDefaultImageCache:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9262E034-7CC8-452B-8380-9D2A45A430B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/UIView+WebCache.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-sd_internalSetImageWithURL:placeholderImage:options:context:setImageBlock:progress:completed:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "61F66B03-F72C-4C72-B28D-96F94E0A95FC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dailyCode/Usage/SDWebImageUsage/SDWebImage/SDWebImage/Core/SDWebImageManager.m"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "-loadImageWithURL:options:context:progress:completed:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

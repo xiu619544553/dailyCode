@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		B290951F19ADCA6473695073 /* Pods_dailyCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */; };
+		CE81E90424D4097B0055C582 /* TKHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */; };
+		CE81E90524D4099C0055C582 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D70DD24D27A7000AA0260 /* TKHomePageViewController.m */; };
 		CE9D6F9024D26FC800AA0260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9D6F8E24D26FC800AA0260 /* LaunchScreen.storyboard */; };
 		CE9D70EF24D27A7100AA0260 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf in Resources */ = {isa = PBXBuildFile; fileRef = CE9D6FA224D27A6900AA0260 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf */; };
 		CE9D714824D27A7100AA0260 /* TKMacroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9D706124D27A6A00AA0260 /* TKMacroViewController.xib */; };
@@ -26,7 +28,6 @@
 		CE9D719324D2944400AA0260 /* TKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D709F24D27A6E00AA0260 /* TKBaseViewController.m */; };
 		CE9D719424D2944400AA0260 /* TKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D70C524D27A6F00AA0260 /* TKNavigationController.m */; };
 		CE9D719524D2944400AA0260 /* TKTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D70DC24D27A7000AA0260 /* TKTabBarController.m */; };
-		CE9D719624D2944400AA0260 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D70DD24D27A7000AA0260 /* TKHomePageViewController.m */; };
 		CE9D719724D2944400AA0260 /* TKTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FAD24D27A6900AA0260 /* TKTableView.m */; };
 		CE9D719824D2944400AA0260 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FAC24D27A6900AA0260 /* CustomTableViewCell.m */; };
 		CE9D719924D2944400AA0260 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D70E324D27A7000AA0260 /* SecondViewController.m */; };
@@ -167,6 +168,8 @@
 		1F51771FEBF702CE9B2697B6 /* Pods-dailyCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.release.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.release.xcconfig"; sourceTree = "<group>"; };
 		6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dailyCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA74F442AADB92665F20E /* Pods-dailyCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.debug.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.debug.xcconfig"; sourceTree = "<group>"; };
+		CE81E90224D4097B0055C582 /* TKHomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKHomeCollectionViewCell.h; sourceTree = "<group>"; };
+		CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKHomeCollectionViewCell.m; sourceTree = "<group>"; };
 		CE9D6F7D24D26FC300AA0260 /* dailyCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9D6F8F24D26FC800AA0260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE9D6F9124D26FC800AA0260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -503,6 +506,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE81E90024D409580055C582 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE9D70CC24D27A6F00AA0260 /* TKHomePageViewController.h */,
+				CE9D70DD24D27A7000AA0260 /* TKHomePageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE81E90124D4095E0055C582 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE81E90224D4097B0055C582 /* TKHomeCollectionViewCell.h */,
+				CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CE9D6F7424D26FC300AA0260 = {
 			isa = PBXGroup;
 			children = (
@@ -611,16 +632,16 @@
 		CE9D6FC124D27A6900AA0260 /* MasonryUsage */ = {
 			isa = PBXGroup;
 			children = (
-				CE9D6FC224D27A6900AA0260 /* TKMasonryAnimateVC.h */,
-				CE9D6FC324D27A6900AA0260 /* TKAverageVC.m */,
-				CE9D6FC424D27A6900AA0260 /* TKAutolayoutViewController.h */,
-				CE9D6FC524D27A6900AA0260 /* TKAutolayoutCell.h */,
+				CE9D6FCB24D27A6900AA0260 /* MasonryUsageViewController.h */,
 				CE9D6FC624D27A6900AA0260 /* MasonryUsageViewController.m */,
+				CE9D6FC524D27A6900AA0260 /* TKAutolayoutCell.h */,
+				CE9D6FCA24D27A6900AA0260 /* TKAutolayoutCell.m */,
+				CE9D6FC424D27A6900AA0260 /* TKAutolayoutViewController.h */,
 				CE9D6FC724D27A6900AA0260 /* TKAutolayoutViewController.m */,
 				CE9D6FC824D27A6900AA0260 /* TKAverageVC.h */,
+				CE9D6FC324D27A6900AA0260 /* TKAverageVC.m */,
+				CE9D6FC224D27A6900AA0260 /* TKMasonryAnimateVC.h */,
 				CE9D6FC924D27A6900AA0260 /* TKMasonryAnimateVC.m */,
-				CE9D6FCA24D27A6900AA0260 /* TKAutolayoutCell.m */,
-				CE9D6FCB24D27A6900AA0260 /* MasonryUsageViewController.h */,
 			);
 			path = MasonryUsage;
 			sourceTree = "<group>";
@@ -863,9 +884,9 @@
 		CE9D707B24D27A6C00AA0260 /* AsyncDecoder */ = {
 			isa = PBXGroup;
 			children = (
+				CE9D707E24D27A6D00AA0260 /* AsyncDecoderCell.h */,
 				CE9D707C24D27A6D00AA0260 /* AsyncDecoderCell.m */,
 				CE9D707D24D27A6D00AA0260 /* AsyncDecoderImageViewController.h */,
-				CE9D707E24D27A6D00AA0260 /* AsyncDecoderCell.h */,
 				CE9D707F24D27A6D00AA0260 /* AsyncDecoderImageViewController.m */,
 			);
 			path = AsyncDecoder;
@@ -1102,8 +1123,8 @@
 		CE9D718A24D27CB000AA0260 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CE9D70CC24D27A6F00AA0260 /* TKHomePageViewController.h */,
-				CE9D70DD24D27A7000AA0260 /* TKHomePageViewController.m */,
+				CE81E90124D4095E0055C582 /* View */,
+				CE81E90024D409580055C582 /* Controller */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1275,13 +1296,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE81E90524D4099C0055C582 /* TKHomePageViewController.m in Sources */,
 				CE9D719024D2944400AA0260 /* main.m in Sources */,
 				CE9D719124D2944400AA0260 /* AppDelegate.m in Sources */,
 				CE9D719224D2944400AA0260 /* CustomWindow.m in Sources */,
 				CE9D719324D2944400AA0260 /* TKBaseViewController.m in Sources */,
 				CE9D719424D2944400AA0260 /* TKNavigationController.m in Sources */,
 				CE9D719524D2944400AA0260 /* TKTabBarController.m in Sources */,
-				CE9D719624D2944400AA0260 /* TKHomePageViewController.m in Sources */,
 				CE9D719724D2944400AA0260 /* TKTableView.m in Sources */,
 				CE9D719824D2944400AA0260 /* CustomTableViewCell.m in Sources */,
 				CE9D719924D2944400AA0260 /* SecondViewController.m in Sources */,
@@ -1373,6 +1394,7 @@
 				CE9D71EF24D2944500AA0260 /* SDDisplayLink.m in Sources */,
 				CE9D71F024D2944500AA0260 /* SDFileAttributeHelper.m in Sources */,
 				CE9D71F124D2944500AA0260 /* SDImageAssetManager.m in Sources */,
+				CE81E90424D4097B0055C582 /* TKHomeCollectionViewCell.m in Sources */,
 				CE9D71F224D2944500AA0260 /* SDImageCachesManagerOperation.m in Sources */,
 				CE9D71F324D2944500AA0260 /* SDInternalMacros.m in Sources */,
 				CE9D71F424D2944500AA0260 /* SDWeakProxy.m in Sources */,

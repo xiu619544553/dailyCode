@@ -30,7 +30,7 @@ static NSString *imageUrlString = @"https://s.eoffcn.com/tiku/banner/ipad/3/e1f5
     NSURL *url = [NSURL URLWithString:imageUrlString];
     [self.imageView sd_setImageWithURL:url
                              completed:^(UIImage * _Nullable image, NSError * _Nullable error, SDImageCacheType cacheType, NSURL * _Nullable imageURL) {
-        DLog(@"\nimage: %@  \ncacheType: %ld   \nurl: %@", image, cacheType, imageURL.absoluteString);
+        DLog(@"\nimage: %@  \nCacheType: %ld   \nurl: %@", image, (long)cacheType, imageURL.absoluteString);
     }];
 }
 @end

@@ -33,9 +33,11 @@
 #endif
 
 
-#pragma mark - Color
+#pragma mark - Color & Font
 #define kRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0f]
 
+#define kFontForPFMedium(x) [UIFont fontWithName:@"PingFangSC-Medium" size:x]
+#define kFontForPFRegular(x) [UIFont fontWithName:@"PingFangSC-Regular" size:x]
 
 #pragma mark - Device
 /*
