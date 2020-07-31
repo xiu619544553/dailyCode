@@ -236,4 +236,25 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationPortraitUpsideDown;
 }
+
+//-(UIImage *)getScrollImg{
+//
+//    CGPoint savedContentOffset = self.contentOffset;
+//    CGRect savedFrame = self.frame;
+//
+//    UIGraphicsBeginImageContextWithOptions(self.contentSize, NO, [UIScreen mainScreen].scale);
+//
+//    self.contentOffset = CGPointZero;
+//    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
+//
+//    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
+//    self.captureScrollView = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//
+//    self.contentOffset = savedContentOffset;
+//    self.frame = savedFrame;
+//
+//    return self.captureScrollView;
+//
+//}
 @end
