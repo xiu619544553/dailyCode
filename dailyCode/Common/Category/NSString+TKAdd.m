@@ -9,18 +9,24 @@
 #import "NSString+TKAdd.h"
 
 @implementation NSString (TKAdd)
-+ (NSString *)handlerPriceNumber:(NSString *)priceNumberStr {
-    if (priceNumberStr == nil || priceNumberStr.length == 0) {
-        return nil;
+
+@end
+
+
+@implementation NSString (TKMoney)
+
++ (NSString *)dealWithCurrencyDecimalPoint:(nullable NSString *)numberStr {
+    if (numberStr == nil || numberStr.length == 0) {
+        return @"";
     }
     NSDecimalNumberHandler *handler = [NSString defaultDecimalNumberHandler];
-    NSDecimalNumber *priceDecimal = [NSDecimalNumber decimalNumberWithString:priceNumberStr];
+    NSDecimalNumber *priceDecimal = [NSDecimalNumber decimalNumberWithString:numberStr];
     return [[priceDecimal decimalNumberByRoundingAccordingToBehavior:handler] stringValue];
 }
 
-+ (NSString *)handlerCentNumber:(NSString *)centNumberStr {
++ (NSString *)convertCentToYuan:(nullable NSString *)centNumberStr {
     if (centNumberStr == nil || centNumberStr.length == 0) {
-        return nil;
+        return @"";
     }
     
     NSDecimalNumberHandler *handler = [NSString defaultDecimalNumberHandler];
@@ -33,7 +39,7 @@
     return [[centDecimal decimalNumberByDividingBy:ratioDecimal withBehavior:handler] stringValue];
 }
 
-+ (NSString *)subtractingWithPrice:(NSString *)price1 price2:(NSString *)price2 {
++ (nullable NSString *)subtractingWithPrice:(nullable NSString *)price1 price2:(nullable NSString *)price2 {
     
     NSDecimalNumberHandler *handler = [NSString defaultDecimalNumberHandler];
     
@@ -43,7 +49,7 @@
     return [[priceDecimal1 decimalNumberBySubtracting:priceDecimal2 withBehavior:handler] stringValue];
 }
 
-+ (NSComparisonResult)comparePrice:(NSString *)price1 price2:(NSString *)price2 {
++ (NSComparisonResult)comparePrice:(nullable NSString *)price1 price2:(nullable NSString *)price2 {
     
     NSDecimalNumberHandler *handler = [NSString defaultDecimalNumberHandler];
     
@@ -67,4 +73,5 @@
                                                 raiseOnUnderflow:NO
                                              raiseOnDivideByZero:YES];
 }
+
 @end

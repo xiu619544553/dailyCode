@@ -48,10 +48,18 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
         }
     }];
     [_collectionView reloadData];
+    
+    [self setupNav];
+    
+    [self addNotifications];
 }
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -90,7 +98,7 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     UIEdgeInsets inset = [self insetForSection];
     CGFloat itemWidth = (CGRectGetWidth(self.view.frame) - inset.left - inset.right - minimumInteritemSpacing) / 2.f;
-    return CGSizeMake(itemWidth, itemWidth * 0.8);
+    return CGSizeMake(itemWidth, itemWidth * ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 0.4 : 0.8));
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
@@ -99,6 +107,37 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
 
 - (UIEdgeInsets)insetForSection {
     return UIEdgeInsetsMake(5.f, 10.f, 5.f, 10.f);
+}
+
+#pragma mark - Event Methods
+
+- (void)screenShotAction:(UIBarButtonItem *)sender {
+    UIImage *image = [self getScrollImg];
+
+    //  - (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo;
+    UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
+}
+
+- (void)image:(UIImage *)image didFinishSavingWithError:(NSError *)error contextInfo:(void *)contextInfo {
+    if (error) {
+        DLog(@"error: %@", error);
+    }
+    DLog(@"image: %@", image);
+}
+
+#pragma mark - Private Methods
+
+- (void)setupNav {
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:(UIBarButtonSystemItemSave) target:self action:@selector(screenShotAction:)];
+}
+
+- (void)addNotifications {
+    __weak typeof(self) wself = self;
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidChangeStatusBarOrientationNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        __strong typeof(wself) sself = wself;
+        if (!sself) return;
+        [self.collectionView reloadData];
+    }];
 }
 
 #pragma mark - getter
@@ -217,6 +256,14 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
             @{
                 KeyForVC   : @"TKSDWebImageUsageViewController",
                 KeyForDesc : @"SDWebImage"
+            },
+            @{
+                KeyForVC   : @"TKImagePickerController",
+                KeyForDesc : @"UIImagePickerController 使用、旋转等等"
+            },
+            @{
+                KeyForVC   : @"TKTextViewController",
+                KeyForDesc : @"UITextView 使用"
             }
         ];
     }
@@ -237,24 +284,25 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
     return UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationPortraitUpsideDown;
 }
 
-//-(UIImage *)getScrollImg{
-//
-//    CGPoint savedContentOffset = self.contentOffset;
-//    CGRect savedFrame = self.frame;
-//
-//    UIGraphicsBeginImageContextWithOptions(self.contentSize, NO, [UIScreen mainScreen].scale);
-//
+- (UIImage *)getScrollImg {
+
+//    CGPoint savedContentOffset = self.collectionView.contentOffset;
+//    CGRect savedFrame = self.collectionView.frame;
+    
+    UIGraphicsBeginImageContextWithOptions(self.collectionView.contentSize, NO, [UIScreen mainScreen].scale);
+    
 //    self.contentOffset = CGPointZero;
 //    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);
-//
-//    [self.layer renderInContext:UIGraphicsGetCurrentContext()];
-//    self.captureScrollView = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//
+
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage *scrollImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
 //    self.contentOffset = savedContentOffset;
 //    self.frame = savedFrame;
-//
-//    return self.captureScrollView;
-//
-//}
+
+    return scrollImage;
+}
+
 @end

@@ -12,15 +12,9 @@
 
 #pragma mark - Log
 
+#ifndef DLog
 #define DLog(format, ...) printf("[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
-
-
-//#if defined(_AIX) || defined(__NOVELL_LIBC__) || defined(__NetBSD__) || \
-//    defined(__minix) || defined(__SYMBIAN32__) || defined(__INTEGRITY) || \
-//    defined(ANDROID) || defined(__ANDROID__) || defined(__OpenBSD__) || \
-//   (defined(__FreeBSD_version) && (__FreeBSD_version < 800000))
-//#include <sys/select.h>
-//#endif
+#endif
 
 
 /// 计算方法耗时
@@ -33,11 +27,30 @@
 #endif
 
 
-#pragma mark - Color & Font
-#define kRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0f]
+#pragma mark - Color
 
+#ifndef kRGB
+#define kRGB(r, g, b)       [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f]
+#endif
+
+#ifndef kRGBA
+#define kRGBA(r, g, b, a)   [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#endif
+
+#ifndef kRandomColor
+#define kRandomColor [UIColor colorWithRed:arc4random_uniform(256)/255.0 green:arc4random_uniform(256)/255.0 blue:arc4random_uniform(256)/255.0 alpha:1.0f]
+#endif
+
+#pragma mark - Font
+
+#ifndef kFontForPFMedium
 #define kFontForPFMedium(x) [UIFont fontWithName:@"PingFangSC-Medium" size:x]
+#endif
+
+#ifndef kFontForPFRegular
 #define kFontForPFRegular(x) [UIFont fontWithName:@"PingFangSC-Regular" size:x]
+#endif
+
 
 #pragma mark - Device
 /*

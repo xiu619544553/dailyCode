@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B290951F19ADCA6473695073 /* Pods_dailyCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */; };
+		CE3A5D8C24D7B221001B9409 /* TKImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A5D8B24D7B221001B9409 /* TKImagePickerController.m */; };
 		CE81E90424D4097B0055C582 /* TKHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */; };
 		CE81E90524D4099C0055C582 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D70DD24D27A7000AA0260 /* TKHomePageViewController.m */; };
 		CE9D6F9024D26FC800AA0260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9D6F8E24D26FC800AA0260 /* LaunchScreen.storyboard */; };
@@ -162,12 +163,16 @@
 		CE9D721A24D2944500AA0260 /* AsyncDecoderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D707C24D27A6D00AA0260 /* AsyncDecoderCell.m */; };
 		CE9D721B24D2944500AA0260 /* AsyncDecoderImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D707F24D27A6D00AA0260 /* AsyncDecoderImageViewController.m */; };
 		CE9D721C24D2944500AA0260 /* AboutLineSpacingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FAA24D27A6900AA0260 /* AboutLineSpacingViewController.m */; };
+		CEDB29F924D907F200C027E1 /* TKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB29F724D907F200C027E1 /* TKTextViewController.m */; };
+		CEDB29FD24D92A6E00C027E1 /* TKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB29FC24D92A6E00C027E1 /* TKTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F51771FEBF702CE9B2697B6 /* Pods-dailyCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.release.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.release.xcconfig"; sourceTree = "<group>"; };
 		6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dailyCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA74F442AADB92665F20E /* Pods-dailyCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.debug.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.debug.xcconfig"; sourceTree = "<group>"; };
+		CE3A5D8A24D7B221001B9409 /* TKImagePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImagePickerController.h; sourceTree = "<group>"; };
+		CE3A5D8B24D7B221001B9409 /* TKImagePickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImagePickerController.m; sourceTree = "<group>"; };
 		CE81E90224D4097B0055C582 /* TKHomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKHomeCollectionViewCell.h; sourceTree = "<group>"; };
 		CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKHomeCollectionViewCell.m; sourceTree = "<group>"; };
 		CE9D6F7D24D26FC300AA0260 /* dailyCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -475,6 +480,10 @@
 		CE9D70ED24D27A7100AA0260 /* WXPracticeNodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPracticeNodeModel.h; sourceTree = "<group>"; };
 		CE9D718624D27A8200AA0260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE9D718E24D27DEE00AA0260 /* DailyCodeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCodeMacro.h; sourceTree = "<group>"; };
+		CEDB29F624D907F200C027E1 /* TKTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTextViewController.h; sourceTree = "<group>"; };
+		CEDB29F724D907F200C027E1 /* TKTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTextViewController.m; sourceTree = "<group>"; };
+		CEDB29FB24D92A6E00C027E1 /* TKTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTextView.h; sourceTree = "<group>"; };
+		CEDB29FC24D92A6E00C027E1 /* TKTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -504,6 +513,15 @@
 				6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE3A5D8924D7B1ED001B9409 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				CE3A5D8A24D7B221001B9409 /* TKImagePickerController.h */,
+				CE3A5D8B24D7B221001B9409 /* TKImagePickerController.m */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		CE81E90024D409580055C582 /* Controller */ = {
@@ -603,11 +621,11 @@
 			isa = PBXGroup;
 			children = (
 				CE9D6FAF24D27A6900AA0260 /* NSObject+TKAdd.h */,
-				CE9D6FB024D27A6900AA0260 /* NSString+TKAdd.m */,
-				CE9D6FB124D27A6900AA0260 /* UIViewController+TKAdd.m */,
-				CE9D6FB224D27A6900AA0260 /* UIViewController+TKAdd.h */,
 				CE9D6FB324D27A6900AA0260 /* NSObject+TKAdd.m */,
 				CE9D6FB424D27A6900AA0260 /* NSString+TKAdd.h */,
+				CE9D6FB024D27A6900AA0260 /* NSString+TKAdd.m */,
+				CE9D6FB224D27A6900AA0260 /* UIViewController+TKAdd.h */,
+				CE9D6FB124D27A6900AA0260 /* UIViewController+TKAdd.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -1132,6 +1150,8 @@
 		CE9D718B24D27CC400AA0260 /* Usage */ = {
 			isa = PBXGroup;
 			children = (
+				CEDB29F224D907AF00C027E1 /* TextView */,
+				CE3A5D8924D7B1ED001B9409 /* ImagePicker */,
 				CE9D706024D27A6A00AA0260 /* MacroUsage */,
 				CE9D6FA024D27A6900AA0260 /* DocumentInteractionController */,
 				CE9D706D24D27A6A00AA0260 /* GradientLayer */,
@@ -1171,6 +1191,17 @@
 				CE9D70E324D27A7000AA0260 /* SecondViewController.m */,
 			);
 			path = Mine;
+			sourceTree = "<group>";
+		};
+		CEDB29F224D907AF00C027E1 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				CEDB29F624D907F200C027E1 /* TKTextViewController.h */,
+				CEDB29F724D907F200C027E1 /* TKTextViewController.m */,
+				CEDB29FB24D92A6E00C027E1 /* TKTextView.h */,
+				CEDB29FC24D92A6E00C027E1 /* TKTextView.m */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1300,6 +1331,7 @@
 				CE9D719024D2944400AA0260 /* main.m in Sources */,
 				CE9D719124D2944400AA0260 /* AppDelegate.m in Sources */,
 				CE9D719224D2944400AA0260 /* CustomWindow.m in Sources */,
+				CEDB29F924D907F200C027E1 /* TKTextViewController.m in Sources */,
 				CE9D719324D2944400AA0260 /* TKBaseViewController.m in Sources */,
 				CE9D719424D2944400AA0260 /* TKNavigationController.m in Sources */,
 				CE9D719524D2944400AA0260 /* TKTabBarController.m in Sources */,
@@ -1421,8 +1453,10 @@
 				CE9D720924D2944500AA0260 /* UIImageView+AFNetworking.m in Sources */,
 				CE9D720A24D2944500AA0260 /* UIButton+AFNetworking.m in Sources */,
 				CE9D720B24D2944500AA0260 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				CE3A5D8C24D7B221001B9409 /* TKImagePickerController.m in Sources */,
 				CE9D720C24D2944500AA0260 /* AFAutoPurgingImageCache.m in Sources */,
 				CE9D720D24D2944500AA0260 /* AFImageDownloader.m in Sources */,
+				CEDB29FD24D92A6E00C027E1 /* TKTextView.m in Sources */,
 				CE9D720E24D2944500AA0260 /* AFURLResponseSerialization.m in Sources */,
 				CE9D720F24D2944500AA0260 /* AFHTTPSessionManager.m in Sources */,
 				CE9D721024D2944500AA0260 /* AFURLSessionManager.m in Sources */,
