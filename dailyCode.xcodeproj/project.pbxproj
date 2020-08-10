@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		412C375B24E1A91200309796 /* DQPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 412C375724E1A91200309796 /* DQPopView.m */; };
+		412C375C24E1A91200309796 /* DQPopAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 412C375824E1A91200309796 /* DQPopAnimationTool.m */; };
+		412C376024E1A94F00309796 /* TKPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412C375F24E1A94F00309796 /* TKPopViewController.m */; };
 		B290951F19ADCA6473695073 /* Pods_dailyCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */; };
 		CE3A5D8C24D7B221001B9409 /* TKImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A5D8B24D7B221001B9409 /* TKImagePickerController.m */; };
 		CE81E90424D4097B0055C582 /* TKHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */; };
@@ -169,6 +172,12 @@
 
 /* Begin PBXFileReference section */
 		1F51771FEBF702CE9B2697B6 /* Pods-dailyCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.release.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.release.xcconfig"; sourceTree = "<group>"; };
+		412C375724E1A91200309796 /* DQPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQPopView.m; sourceTree = "<group>"; };
+		412C375824E1A91200309796 /* DQPopAnimationTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DQPopAnimationTool.m; sourceTree = "<group>"; };
+		412C375924E1A91200309796 /* DQPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQPopView.h; sourceTree = "<group>"; };
+		412C375A24E1A91200309796 /* DQPopAnimationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQPopAnimationTool.h; sourceTree = "<group>"; };
+		412C375E24E1A94F00309796 /* TKPopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKPopViewController.h; sourceTree = "<group>"; };
+		412C375F24E1A94F00309796 /* TKPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKPopViewController.m; sourceTree = "<group>"; };
 		6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dailyCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA74F442AADB92665F20E /* Pods-dailyCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.debug.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.debug.xcconfig"; sourceTree = "<group>"; };
 		CE3A5D8A24D7B221001B9409 /* TKImagePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImagePickerController.h; sourceTree = "<group>"; };
@@ -498,6 +507,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		412C375624E1A91100309796 /* PopView */ = {
+			isa = PBXGroup;
+			children = (
+				412C375724E1A91200309796 /* DQPopView.m */,
+				412C375824E1A91200309796 /* DQPopAnimationTool.m */,
+				412C375924E1A91200309796 /* DQPopView.h */,
+				412C375A24E1A91200309796 /* DQPopAnimationTool.h */,
+			);
+			path = PopView;
+			sourceTree = "<group>";
+		};
+		412C375D24E1A93400309796 /* PopController */ = {
+			isa = PBXGroup;
+			children = (
+				412C375624E1A91100309796 /* PopView */,
+				412C375E24E1A94F00309796 /* TKPopViewController.h */,
+				412C375F24E1A94F00309796 /* TKPopViewController.m */,
+			);
+			path = PopController;
+			sourceTree = "<group>";
+		};
 		89C8C339D930E7796A330DDB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1150,6 +1180,7 @@
 		CE9D718B24D27CC400AA0260 /* Usage */ = {
 			isa = PBXGroup;
 			children = (
+				412C375D24E1A93400309796 /* PopController */,
 				CEDB29F224D907AF00C027E1 /* TextView */,
 				CE3A5D8924D7B1ED001B9409 /* ImagePicker */,
 				CE9D706024D27A6A00AA0260 /* MacroUsage */,
@@ -1334,6 +1365,7 @@
 				CEDB29F924D907F200C027E1 /* TKTextViewController.m in Sources */,
 				CE9D719324D2944400AA0260 /* TKBaseViewController.m in Sources */,
 				CE9D719424D2944400AA0260 /* TKNavigationController.m in Sources */,
+				412C375C24E1A91200309796 /* DQPopAnimationTool.m in Sources */,
 				CE9D719524D2944400AA0260 /* TKTabBarController.m in Sources */,
 				CE9D719724D2944400AA0260 /* TKTableView.m in Sources */,
 				CE9D719824D2944400AA0260 /* CustomTableViewCell.m in Sources */,
@@ -1434,6 +1466,8 @@
 				CE9D71F624D2944500AA0260 /* TKSDWebImageUsageViewController.m in Sources */,
 				CE9D71F724D2944500AA0260 /* ShadowVC.m in Sources */,
 				CE9D71F824D2944500AA0260 /* TKSortedViewController.m in Sources */,
+				412C375B24E1A91200309796 /* DQPopView.m in Sources */,
+				412C376024E1A94F00309796 /* TKPopViewController.m in Sources */,
 				CE9D71F924D2944500AA0260 /* TKSortedModel.m in Sources */,
 				CE9D71FA24D2944500AA0260 /* TKImagePickerUsageController.m in Sources */,
 				CE9D71FB24D2944500AA0260 /* DetailViewController.m in Sources */,
