@@ -5,6 +5,7 @@ PODS:
   - RTRootNavigationController (0.7.2):
     - RTRootNavigationController/Core (= 0.7.2)
   - RTRootNavigationController/Core (0.7.2)
+  - TKCategory (0.1.0)
   - WMPageController (2.3.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - FPSLabel
   - Masonry
   - RTRootNavigationController (~> 0.7.0)
+  - TKCategory (from `../TKCategory`)
   - WMPageController (= 2.3.0)
   - YYKit
 
@@ -27,14 +29,19 @@ SPEC REPOS:
     - WMPageController
     - YYKit
 
+EXTERNAL SOURCES:
+  TKCategory:
+    :path: "../TKCategory"
+
 SPEC CHECKSUMS:
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FPSLabel: a6386de76a8fa767102bcb2c18b7c605a3ac3d75
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
+  TKCategory: a83f510161704d725c1dadcab94b5dfb7f4aaacf
   WMPageController: 9f219bb8912a1a1f51af11fde61e2682a7b7e7f2
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 1aa16ff919befd0ea47fa61e19da84784e7a71c1
+PODFILE CHECKSUM: b82e06efc3ca15e87b2885dbfe671a1b697d3479
 
 COCOAPODS: 1.9.2

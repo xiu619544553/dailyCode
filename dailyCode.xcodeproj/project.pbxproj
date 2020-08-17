@@ -8,7 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		B290951F19ADCA6473695073 /* Pods_dailyCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */; };
+		CE0E5A8224DBA37A0045ADB6 /* NSString+TKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0E5A7F24DBA37A0045ADB6 /* NSString+TKAdd.m */; };
+		CE0E5A8324DBA37A0045ADB6 /* NSObject+TKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0E5A8124DBA37A0045ADB6 /* NSObject+TKAdd.m */; };
+		CE0E5A8624DBA3850045ADB6 /* UIViewController+TKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0E5A8424DBA3840045ADB6 /* UIViewController+TKAdd.m */; };
+		CE0E5A8924DBA3A30045ADB6 /* UIButton+TKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0E5A8824DBA3A30045ADB6 /* UIButton+TKAdd.m */; };
+		CE0E5A9124DBB9B20045ADB6 /* TKButtonUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0E5A8F24DBB9B20045ADB6 /* TKButtonUsageViewController.m */; };
+		CE0E5A9224DBB9B20045ADB6 /* TKButtonUsageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0E5A9024DBB9B20045ADB6 /* TKButtonUsageViewController.xib */; };
+		CE39597D24EA209D008FB5D7 /* TKBackgroundTaskVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE39597B24EA209D008FB5D7 /* TKBackgroundTaskVC.m */; };
+		CE39597E24EA209D008FB5D7 /* TKBackgroundTaskVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE39597C24EA209D008FB5D7 /* TKBackgroundTaskVC.xib */; };
 		CE3A5D8C24D7B221001B9409 /* TKImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A5D8B24D7B221001B9409 /* TKImagePickerController.m */; };
+		CE458DC624E1776700F392B8 /* TKColorUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE458DC424E1776700F392B8 /* TKColorUsageViewController.m */; };
+		CE458DC724E1776700F392B8 /* TKColorUsageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE458DC524E1776700F392B8 /* TKColorUsageViewController.xib */; };
+		CE458DCA24E180F400F392B8 /* UIColor+TKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE458DC924E180F400F392B8 /* UIColor+TKAdd.m */; };
+		CE5574CB24E4E0B8005D6847 /* TKSafeAreaInsetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5574CA24E4E0B8005D6847 /* TKSafeAreaInsetsViewController.m */; };
 		CE81E90424D4097B0055C582 /* TKHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */; };
 		CE81E90524D4099C0055C582 /* TKHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D70DD24D27A7000AA0260 /* TKHomePageViewController.m */; };
 		CE9D6F9024D26FC800AA0260 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE9D6F8E24D26FC800AA0260 /* LaunchScreen.storyboard */; };
@@ -33,9 +45,6 @@
 		CE9D719824D2944400AA0260 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FAC24D27A6900AA0260 /* CustomTableViewCell.m */; };
 		CE9D719924D2944400AA0260 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D70E324D27A7000AA0260 /* SecondViewController.m */; };
 		CE9D719A24D2944400AA0260 /* MSWeakTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D707A24D27A6C00AA0260 /* MSWeakTimer.m */; };
-		CE9D719B24D2944400AA0260 /* NSString+TKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FB024D27A6900AA0260 /* NSString+TKAdd.m */; };
-		CE9D719C24D2944400AA0260 /* UIViewController+TKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FB124D27A6900AA0260 /* UIViewController+TKAdd.m */; };
-		CE9D719D24D2944400AA0260 /* NSObject+TKAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FB324D27A6900AA0260 /* NSObject+TKAdd.m */; };
 		CE9D719E24D2944400AA0260 /* TKMacroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D706324D27A6A00AA0260 /* TKMacroViewController.m */; };
 		CE9D719F24D2944400AA0260 /* StudyDocumentInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FA324D27A6900AA0260 /* StudyDocumentInteractionController.m */; };
 		CE9D71A024D2944400AA0260 /* GradientLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D706F24D27A6A00AA0260 /* GradientLayerViewController.m */; };
@@ -163,6 +172,7 @@
 		CE9D721A24D2944500AA0260 /* AsyncDecoderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D707C24D27A6D00AA0260 /* AsyncDecoderCell.m */; };
 		CE9D721B24D2944500AA0260 /* AsyncDecoderImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D707F24D27A6D00AA0260 /* AsyncDecoderImageViewController.m */; };
 		CE9D721C24D2944500AA0260 /* AboutLineSpacingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FAA24D27A6900AA0260 /* AboutLineSpacingViewController.m */; };
+		CEB66ABC24E66147009ED665 /* TKMasonryOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB66ABB24E66146009ED665 /* TKMasonryOtherViewController.m */; };
 		CEDB29F924D907F200C027E1 /* TKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB29F724D907F200C027E1 /* TKTextViewController.m */; };
 		CEDB29FD24D92A6E00C027E1 /* TKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB29FC24D92A6E00C027E1 /* TKTextView.m */; };
 /* End PBXBuildFile section */
@@ -171,8 +181,29 @@
 		1F51771FEBF702CE9B2697B6 /* Pods-dailyCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.release.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.release.xcconfig"; sourceTree = "<group>"; };
 		6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dailyCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA74F442AADB92665F20E /* Pods-dailyCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.debug.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.debug.xcconfig"; sourceTree = "<group>"; };
+		CE0E5A7E24DBA37A0045ADB6 /* NSObject+TKAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TKAdd.h"; sourceTree = "<group>"; };
+		CE0E5A7F24DBA37A0045ADB6 /* NSString+TKAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TKAdd.m"; sourceTree = "<group>"; };
+		CE0E5A8024DBA37A0045ADB6 /* NSString+TKAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TKAdd.h"; sourceTree = "<group>"; };
+		CE0E5A8124DBA37A0045ADB6 /* NSObject+TKAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TKAdd.m"; sourceTree = "<group>"; };
+		CE0E5A8424DBA3840045ADB6 /* UIViewController+TKAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKAdd.m"; sourceTree = "<group>"; };
+		CE0E5A8524DBA3840045ADB6 /* UIViewController+TKAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKAdd.h"; sourceTree = "<group>"; };
+		CE0E5A8724DBA3A30045ADB6 /* UIButton+TKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+TKAdd.h"; sourceTree = "<group>"; };
+		CE0E5A8824DBA3A30045ADB6 /* UIButton+TKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TKAdd.m"; sourceTree = "<group>"; };
+		CE0E5A8E24DBB9B20045ADB6 /* TKButtonUsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKButtonUsageViewController.h; sourceTree = "<group>"; };
+		CE0E5A8F24DBB9B20045ADB6 /* TKButtonUsageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKButtonUsageViewController.m; sourceTree = "<group>"; };
+		CE0E5A9024DBB9B20045ADB6 /* TKButtonUsageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKButtonUsageViewController.xib; sourceTree = "<group>"; };
+		CE39597A24EA209D008FB5D7 /* TKBackgroundTaskVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKBackgroundTaskVC.h; sourceTree = "<group>"; };
+		CE39597B24EA209D008FB5D7 /* TKBackgroundTaskVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKBackgroundTaskVC.m; sourceTree = "<group>"; };
+		CE39597C24EA209D008FB5D7 /* TKBackgroundTaskVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKBackgroundTaskVC.xib; sourceTree = "<group>"; };
 		CE3A5D8A24D7B221001B9409 /* TKImagePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImagePickerController.h; sourceTree = "<group>"; };
 		CE3A5D8B24D7B221001B9409 /* TKImagePickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImagePickerController.m; sourceTree = "<group>"; };
+		CE458DC324E1776700F392B8 /* TKColorUsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKColorUsageViewController.h; sourceTree = "<group>"; };
+		CE458DC424E1776700F392B8 /* TKColorUsageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKColorUsageViewController.m; sourceTree = "<group>"; };
+		CE458DC524E1776700F392B8 /* TKColorUsageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKColorUsageViewController.xib; sourceTree = "<group>"; };
+		CE458DC824E180F400F392B8 /* UIColor+TKAdd.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+TKAdd.h"; sourceTree = "<group>"; };
+		CE458DC924E180F400F392B8 /* UIColor+TKAdd.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+TKAdd.m"; sourceTree = "<group>"; };
+		CE5574C924E4E0B8005D6847 /* TKSafeAreaInsetsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSafeAreaInsetsViewController.h; sourceTree = "<group>"; };
+		CE5574CA24E4E0B8005D6847 /* TKSafeAreaInsetsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKSafeAreaInsetsViewController.m; sourceTree = "<group>"; };
 		CE81E90224D4097B0055C582 /* TKHomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKHomeCollectionViewCell.h; sourceTree = "<group>"; };
 		CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKHomeCollectionViewCell.m; sourceTree = "<group>"; };
 		CE9D6F7D24D26FC300AA0260 /* dailyCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,12 +224,6 @@
 		CE9D6FAB24D27A6900AA0260 /* AboutLineSpacingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutLineSpacingViewController.h; sourceTree = "<group>"; };
 		CE9D6FAC24D27A6900AA0260 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
 		CE9D6FAD24D27A6900AA0260 /* TKTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableView.m; sourceTree = "<group>"; };
-		CE9D6FAF24D27A6900AA0260 /* NSObject+TKAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TKAdd.h"; sourceTree = "<group>"; };
-		CE9D6FB024D27A6900AA0260 /* NSString+TKAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+TKAdd.m"; sourceTree = "<group>"; };
-		CE9D6FB124D27A6900AA0260 /* UIViewController+TKAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+TKAdd.m"; sourceTree = "<group>"; };
-		CE9D6FB224D27A6900AA0260 /* UIViewController+TKAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+TKAdd.h"; sourceTree = "<group>"; };
-		CE9D6FB324D27A6900AA0260 /* NSObject+TKAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TKAdd.m"; sourceTree = "<group>"; };
-		CE9D6FB424D27A6900AA0260 /* NSString+TKAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+TKAdd.h"; sourceTree = "<group>"; };
 		CE9D6FB524D27A6900AA0260 /* CustomWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomWindow.m; path = ../Mine/CustomWindow.m; sourceTree = "<group>"; };
 		CE9D6FB724D27A6900AA0260 /* TreeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TreeTableViewCell.h; sourceTree = "<group>"; };
 		CE9D6FB824D27A6900AA0260 /* TKCatalogModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKCatalogModel.h; sourceTree = "<group>"; };
@@ -480,6 +505,8 @@
 		CE9D70ED24D27A7100AA0260 /* WXPracticeNodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPracticeNodeModel.h; sourceTree = "<group>"; };
 		CE9D718624D27A8200AA0260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE9D718E24D27DEE00AA0260 /* DailyCodeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCodeMacro.h; sourceTree = "<group>"; };
+		CEB66ABA24E66146009ED665 /* TKMasonryOtherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKMasonryOtherViewController.h; sourceTree = "<group>"; };
+		CEB66ABB24E66146009ED665 /* TKMasonryOtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMasonryOtherViewController.m; sourceTree = "<group>"; };
 		CEDB29F624D907F200C027E1 /* TKTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTextViewController.h; sourceTree = "<group>"; };
 		CEDB29F724D907F200C027E1 /* TKTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTextViewController.m; sourceTree = "<group>"; };
 		CEDB29FB24D92A6E00C027E1 /* TKTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTextView.h; sourceTree = "<group>"; };
@@ -515,6 +542,50 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE0E5A7C24DBA3290045ADB6 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				CE0E5A8524DBA3840045ADB6 /* UIViewController+TKAdd.h */,
+				CE0E5A8424DBA3840045ADB6 /* UIViewController+TKAdd.m */,
+				CE0E5A8724DBA3A30045ADB6 /* UIButton+TKAdd.h */,
+				CE0E5A8824DBA3A30045ADB6 /* UIButton+TKAdd.m */,
+				CE458DC824E180F400F392B8 /* UIColor+TKAdd.h */,
+				CE458DC924E180F400F392B8 /* UIColor+TKAdd.m */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CE0E5A7D24DBA34C0045ADB6 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				CE0E5A7E24DBA37A0045ADB6 /* NSObject+TKAdd.h */,
+				CE0E5A8124DBA37A0045ADB6 /* NSObject+TKAdd.m */,
+				CE0E5A8024DBA37A0045ADB6 /* NSString+TKAdd.h */,
+				CE0E5A7F24DBA37A0045ADB6 /* NSString+TKAdd.m */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+		CE0E5A8A24DBB93A0045ADB6 /* ButtonUsage */ = {
+			isa = PBXGroup;
+			children = (
+				CE0E5A8E24DBB9B20045ADB6 /* TKButtonUsageViewController.h */,
+				CE0E5A8F24DBB9B20045ADB6 /* TKButtonUsageViewController.m */,
+				CE0E5A9024DBB9B20045ADB6 /* TKButtonUsageViewController.xib */,
+			);
+			path = ButtonUsage;
+			sourceTree = "<group>";
+		};
+		CE39597924EA207C008FB5D7 /* BackgroundTask */ = {
+			isa = PBXGroup;
+			children = (
+				CE39597A24EA209D008FB5D7 /* TKBackgroundTaskVC.h */,
+				CE39597B24EA209D008FB5D7 /* TKBackgroundTaskVC.m */,
+				CE39597C24EA209D008FB5D7 /* TKBackgroundTaskVC.xib */,
+			);
+			path = BackgroundTask;
+			sourceTree = "<group>";
+		};
 		CE3A5D8924D7B1ED001B9409 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -522,6 +593,16 @@
 				CE3A5D8B24D7B221001B9409 /* TKImagePickerController.m */,
 			);
 			path = ImagePicker;
+			sourceTree = "<group>";
+		};
+		CE458DBF24E1758D00F392B8 /* ColorUsage */ = {
+			isa = PBXGroup;
+			children = (
+				CE458DC324E1776700F392B8 /* TKColorUsageViewController.h */,
+				CE458DC424E1776700F392B8 /* TKColorUsageViewController.m */,
+				CE458DC524E1776700F392B8 /* TKColorUsageViewController.xib */,
+			);
+			path = ColorUsage;
 			sourceTree = "<group>";
 		};
 		CE81E90024D409580055C582 /* Controller */ = {
@@ -620,12 +701,8 @@
 		CE9D6FAE24D27A6900AA0260 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				CE9D6FAF24D27A6900AA0260 /* NSObject+TKAdd.h */,
-				CE9D6FB324D27A6900AA0260 /* NSObject+TKAdd.m */,
-				CE9D6FB424D27A6900AA0260 /* NSString+TKAdd.h */,
-				CE9D6FB024D27A6900AA0260 /* NSString+TKAdd.m */,
-				CE9D6FB224D27A6900AA0260 /* UIViewController+TKAdd.h */,
-				CE9D6FB124D27A6900AA0260 /* UIViewController+TKAdd.m */,
+				CE0E5A7C24DBA3290045ADB6 /* UIKit */,
+				CE0E5A7D24DBA34C0045ADB6 /* Foundation */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -660,6 +737,10 @@
 				CE9D6FC324D27A6900AA0260 /* TKAverageVC.m */,
 				CE9D6FC224D27A6900AA0260 /* TKMasonryAnimateVC.h */,
 				CE9D6FC924D27A6900AA0260 /* TKMasonryAnimateVC.m */,
+				CE5574C924E4E0B8005D6847 /* TKSafeAreaInsetsViewController.h */,
+				CE5574CA24E4E0B8005D6847 /* TKSafeAreaInsetsViewController.m */,
+				CEB66ABA24E66146009ED665 /* TKMasonryOtherViewController.h */,
+				CEB66ABB24E66146009ED665 /* TKMasonryOtherViewController.m */,
 			);
 			path = MasonryUsage;
 			sourceTree = "<group>";
@@ -1150,14 +1231,22 @@
 		CE9D718B24D27CC400AA0260 /* Usage */ = {
 			isa = PBXGroup;
 			children = (
-				CEDB29F224D907AF00C027E1 /* TextView */,
-				CE3A5D8924D7B1ED001B9409 /* ImagePicker */,
-				CE9D706024D27A6A00AA0260 /* MacroUsage */,
+				CE39597924EA207C008FB5D7 /* BackgroundTask */,
+				CE9D707324D27A6C00AA0260 /* AboutScrollViewLayout */,
+				CE9D708C24D27A6D00AA0260 /* Adapter */,
+				CE9D70D124D27A6F00AA0260 /* AFNDemo */,
+				CE9D709C24D27A6E00AA0260 /* AlertViewController */,
+				CE9D707B24D27A6C00AA0260 /* AsyncDecoder */,
+				CE9D6FA924D27A6900AA0260 /* Attributed */,
+				CE0E5A8A24DBB93A0045ADB6 /* ButtonUsage */,
+				CE458DBF24E1758D00F392B8 /* ColorUsage */,
 				CE9D6FA024D27A6900AA0260 /* DocumentInteractionController */,
 				CE9D706D24D27A6A00AA0260 /* GradientLayer */,
+				CE3A5D8924D7B1ED001B9409 /* ImagePicker */,
 				CE9D70E724D27A7100AA0260 /* JSONSerialization */,
 				CE9D709124D27A6D00AA0260 /* Label */,
 				CE9D708024D27A6D00AA0260 /* Layout */,
+				CE9D706024D27A6A00AA0260 /* MacroUsage */,
 				CE9D6FC124D27A6900AA0260 /* MasonryUsage */,
 				CE9D6F9D24D27A6800AA0260 /* Option */,
 				CE9D70CD24D27A6F00AA0260 /* Regular */,
@@ -1166,16 +1255,11 @@
 				CE9D709524D27A6E00AA0260 /* SDWebImageUsage */,
 				CE9D708624D27A6D00AA0260 /* Shadow */,
 				CE9D6FA424D27A6900AA0260 /* Sorted */,
+				CEDB29F224D907AF00C027E1 /* TextView */,
 				CE9D709924D27A6E00AA0260 /* TKImagePickerUsageController */,
 				CE9D706424D27A6A00AA0260 /* TopViewController */,
 				CE9D6FB624D27A6900AA0260 /* TreeTableView */,
 				CE9D70DE24D27A7000AA0260 /* WebView */,
-				CE9D70D124D27A6F00AA0260 /* AFNDemo */,
-				CE9D709C24D27A6E00AA0260 /* AlertViewController */,
-				CE9D707324D27A6C00AA0260 /* AboutScrollViewLayout */,
-				CE9D708C24D27A6D00AA0260 /* Adapter */,
-				CE9D707B24D27A6C00AA0260 /* AsyncDecoder */,
-				CE9D6FA924D27A6900AA0260 /* Attributed */,
 			);
 			path = Usage;
 			sourceTree = "<group>";
@@ -1269,9 +1353,12 @@
 				CE9D6F9024D26FC800AA0260 /* LaunchScreen.storyboard in Resources */,
 				CE9D715D24D27A7100AA0260 /* TKSDWebImageUsageViewController.xib in Resources */,
 				CE9D717424D27A7100AA0260 /* tk_voice.gif in Resources */,
+				CE39597E24EA209D008FB5D7 /* TKBackgroundTaskVC.xib in Resources */,
 				CE9D714824D27A7100AA0260 /* TKMacroViewController.xib in Resources */,
+				CE458DC724E1776700F392B8 /* TKColorUsageViewController.xib in Resources */,
 				CE9D714F24D27A7100AA0260 /* GradientLayerViewController.xib in Resources */,
 				CE9D717324D27A7100AA0260 /* weakness.json in Resources */,
+				CE0E5A9224DBB9B20045ADB6 /* TKButtonUsageViewController.xib in Resources */,
 				CE9D717224D27A7100AA0260 /* tiku.json in Resources */,
 				CE9D718724D27A8200AA0260 /* Assets.xcassets in Resources */,
 				CE9D70EF24D27A7100AA0260 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf in Resources */,
@@ -1327,6 +1414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE0E5A8624DBA3850045ADB6 /* UIViewController+TKAdd.m in Sources */,
 				CE81E90524D4099C0055C582 /* TKHomePageViewController.m in Sources */,
 				CE9D719024D2944400AA0260 /* main.m in Sources */,
 				CE9D719124D2944400AA0260 /* AppDelegate.m in Sources */,
@@ -1339,9 +1427,6 @@
 				CE9D719824D2944400AA0260 /* CustomTableViewCell.m in Sources */,
 				CE9D719924D2944400AA0260 /* SecondViewController.m in Sources */,
 				CE9D719A24D2944400AA0260 /* MSWeakTimer.m in Sources */,
-				CE9D719B24D2944400AA0260 /* NSString+TKAdd.m in Sources */,
-				CE9D719C24D2944400AA0260 /* UIViewController+TKAdd.m in Sources */,
-				CE9D719D24D2944400AA0260 /* NSObject+TKAdd.m in Sources */,
 				CE9D719E24D2944400AA0260 /* TKMacroViewController.m in Sources */,
 				CE9D719F24D2944400AA0260 /* StudyDocumentInteractionController.m in Sources */,
 				CE9D71A024D2944400AA0260 /* GradientLayerViewController.m in Sources */,
@@ -1371,6 +1456,7 @@
 				CE9D71B824D2944400AA0260 /* SDAnimatedImageView.m in Sources */,
 				CE9D71B924D2944400AA0260 /* SDAnimatedImageView+WebCache.m in Sources */,
 				CE9D71BA24D2944400AA0260 /* SDDiskCache.m in Sources */,
+				CE0E5A8224DBA37A0045ADB6 /* NSString+TKAdd.m in Sources */,
 				CE9D71BB24D2944400AA0260 /* SDGraphicsImageRenderer.m in Sources */,
 				CE9D71BC24D2944500AA0260 /* SDImageAPNGCoder.m in Sources */,
 				CE9D71BD24D2944500AA0260 /* SDImageCache.m in Sources */,
@@ -1399,6 +1485,7 @@
 				CE9D71D424D2944500AA0260 /* SDWebImageDownloaderDecryptor.m in Sources */,
 				CE9D71D524D2944500AA0260 /* SDWebImageDownloaderOperation.m in Sources */,
 				CE9D71D624D2944500AA0260 /* SDWebImageDownloaderRequestModifier.m in Sources */,
+				CE0E5A8324DBA37A0045ADB6 /* NSObject+TKAdd.m in Sources */,
 				CE9D71D724D2944500AA0260 /* SDWebImageDownloaderResponseModifier.m in Sources */,
 				CE9D71D824D2944500AA0260 /* SDWebImageError.m in Sources */,
 				CE9D71D924D2944500AA0260 /* SDWebImageIndicator.m in Sources */,
@@ -1409,6 +1496,7 @@
 				CE9D71DE24D2944500AA0260 /* SDWebImageTransition.m in Sources */,
 				CE9D71DF24D2944500AA0260 /* UIButton+WebCache.m in Sources */,
 				CE9D71E024D2944500AA0260 /* UIImage+ExtendedCacheData.m in Sources */,
+				CE5574CB24E4E0B8005D6847 /* TKSafeAreaInsetsViewController.m in Sources */,
 				CE9D71E124D2944500AA0260 /* UIImage+ForceDecode.m in Sources */,
 				CE9D71E224D2944500AA0260 /* UIImage+GIF.m in Sources */,
 				CE9D71E324D2944500AA0260 /* UIImage+MemoryCacheCost.m in Sources */,
@@ -1416,8 +1504,10 @@
 				CE9D71E524D2944500AA0260 /* UIImage+MultiFormat.m in Sources */,
 				CE9D71E624D2944500AA0260 /* UIImage+Transform.m in Sources */,
 				CE9D71E724D2944500AA0260 /* UIImageView+HighlightedWebCache.m in Sources */,
+				CE458DCA24E180F400F392B8 /* UIColor+TKAdd.m in Sources */,
 				CE9D71E824D2944500AA0260 /* UIImageView+WebCache.m in Sources */,
 				CE9D71E924D2944500AA0260 /* UIView+WebCache.m in Sources */,
+				CEB66ABC24E66147009ED665 /* TKMasonryOtherViewController.m in Sources */,
 				CE9D71EA24D2944500AA0260 /* UIView+WebCacheOperation.m in Sources */,
 				CE9D71EB24D2944500AA0260 /* NSBezierPath+SDRoundedCorners.m in Sources */,
 				CE9D71EC24D2944500AA0260 /* SDAssociatedObject.m in Sources */,
@@ -1428,6 +1518,7 @@
 				CE9D71F124D2944500AA0260 /* SDImageAssetManager.m in Sources */,
 				CE81E90424D4097B0055C582 /* TKHomeCollectionViewCell.m in Sources */,
 				CE9D71F224D2944500AA0260 /* SDImageCachesManagerOperation.m in Sources */,
+				CE0E5A9124DBB9B20045ADB6 /* TKButtonUsageViewController.m in Sources */,
 				CE9D71F324D2944500AA0260 /* SDInternalMacros.m in Sources */,
 				CE9D71F424D2944500AA0260 /* SDWeakProxy.m in Sources */,
 				CE9D71F524D2944500AA0260 /* UIColor+SDHexString.m in Sources */,
@@ -1435,6 +1526,9 @@
 				CE9D71F724D2944500AA0260 /* ShadowVC.m in Sources */,
 				CE9D71F824D2944500AA0260 /* TKSortedViewController.m in Sources */,
 				CE9D71F924D2944500AA0260 /* TKSortedModel.m in Sources */,
+				CE458DC624E1776700F392B8 /* TKColorUsageViewController.m in Sources */,
+				CE0E5A8924DBA3A30045ADB6 /* UIButton+TKAdd.m in Sources */,
+				CE39597D24EA209D008FB5D7 /* TKBackgroundTaskVC.m in Sources */,
 				CE9D71FA24D2944500AA0260 /* TKImagePickerUsageController.m in Sources */,
 				CE9D71FB24D2944500AA0260 /* DetailViewController.m in Sources */,
 				CE9D71FC24D2944500AA0260 /* ViewController.m in Sources */,

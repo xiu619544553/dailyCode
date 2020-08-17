@@ -89,6 +89,14 @@ static NSString *tableViewCellId = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKMasonryAnimateVC",
                 KeyForDesc : @"Masonry 动画"
+            },
+            @{
+                KeyForVC   : @"TKSafeAreaInsetsViewController",
+                KeyForDesc : @"关于 safeAreaInsets 属性"
+            },
+            @{
+                KeyForVC   : @"TKMasonryOtherViewController",
+                KeyForDesc : @"Masonry 练手"
             }
         ];
     }

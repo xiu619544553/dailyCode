@@ -1,0 +1,22 @@
+{
+  "name": "TKCategory",
+  "version": "0.1.0",
+  "summary": "A short description of TKCategory.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/xiu619544553/TKCategory",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "xiu619544553": "hanxiuhui@offcn.com"
+  },
+  "source": {
+    "git": "https://github.com/xiu619544553/TKCategory.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "TKCategory/Classes/**/*"
+}

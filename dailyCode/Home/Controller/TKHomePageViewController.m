@@ -98,7 +98,7 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     UIEdgeInsets inset = [self insetForSection];
     CGFloat itemWidth = (CGRectGetWidth(self.view.frame) - inset.left - inset.right - minimumInteritemSpacing) / 2.f;
-    return CGSizeMake(itemWidth, itemWidth * ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 0.4 : 0.8));
+    return CGSizeMake(itemWidth, itemWidth * ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 0.3 : 0.8));
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
@@ -264,6 +264,18 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
             @{
                 KeyForVC   : @"TKTextViewController",
                 KeyForDesc : @"UITextView 使用"
+            },
+            @{
+                KeyForVC   : @"TKButtonUsageViewController",
+                KeyForDesc : @"Button 使用"
+            },
+            @{
+                KeyForVC   : @"TKColorUsageViewController",
+                KeyForDesc : @"Color 使用"
+            },
+            @{
+                KeyForVC   : @"TKBackgroundTaskVC",
+                KeyForDesc : @"后台任务"
             }
         ];
     }
