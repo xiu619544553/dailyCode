@@ -1,21 +1,21 @@
 //
-//  SecondViewController.m
+//  TKMeVC.m
 //  test
 //
 //  Created by hello on 2020/5/19.
 //  Copyright © 2020 TK. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "TKMeVC.h"
 #import "CustomTableViewCell.h"
 #import <Masonry.h>
 #import "TKTableView.h"
 
-@interface SecondViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TKMeVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) TKTableView *tableView;
 @end
 
-@implementation SecondViewController
+@implementation TKMeVC
 
 #pragma mark - LifeCycle Methods
 - (void)viewDidLoad {
@@ -59,7 +59,7 @@
 
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    SecondViewController *vc = [SecondViewController new];
+    TKMeVC *vc = [TKMeVC new];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

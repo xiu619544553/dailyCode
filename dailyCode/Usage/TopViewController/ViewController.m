@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SecondViewController.h"
+#import "TKMeVC.h"
 #import "NSString+TKAdd.h"
 #import "DetailViewController.h"
 

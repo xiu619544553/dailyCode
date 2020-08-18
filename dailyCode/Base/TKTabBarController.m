@@ -10,7 +10,7 @@
 
 #import "ViewController.h"
 #import "TKHomePageViewController.h"
-#import "SecondViewController.h"
+#import "TKMeVC.h"
 #import "TKNavigationController.h"
 
 
@@ -55,7 +55,7 @@
     TKHomePageViewController *homeVc = [[TKHomePageViewController alloc] init];
     [self addNavChildVC:homeVc image:@"tabbar_mao_bi" selectedImage:@"tabbar_mao_bi" title:@"毛笔"];
     
-    SecondViewController *secondVc = [[SecondViewController alloc] init];
+    TKMeVC *secondVc = [[TKMeVC alloc] init];
     [self addNavChildVC:secondVc image:@"tabbar_lianpu" selectedImage:@"tabbar_lianpu" title:@"脸谱"];
     
     ViewController *vc = [[ViewController alloc] init];

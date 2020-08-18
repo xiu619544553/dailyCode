@@ -1,8 +1,8 @@
 //
-//  SecondViewController.h
-//  test
+//  TKMomentVC.h
+//  dailyCode
 //
-//  Created by hello on 2020/5/19.
+//  Created by hello on 2020/8/18.
 //  Copyright © 2020 TK. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SecondViewController : TKBaseViewController
+@interface TKMomentVC : TKBaseViewController
 
 @end
 
