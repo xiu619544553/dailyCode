@@ -20,8 +20,8 @@
 #pragma mark - LifeCycle Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = NSStringFromClass(self.class);
     self.view.backgroundColor = UIColor.whiteColor;
+    self.navigationController.title = NSStringFromClass(self.class);
     
     
     self.edgesForExtendedLayout = UIRectEdgeNone;

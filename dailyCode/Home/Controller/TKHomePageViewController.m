@@ -8,6 +8,7 @@
 
 #import "TKHomePageViewController.h"
 #import "TKHomeCollectionViewCell.h"
+#import "NSString+TKAdd.h"
 #import <Masonry.h>
 
 #define KeyForVC   @"vc"
@@ -40,14 +41,6 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
     }
     
     [self.view addSubview:self.collectionView];
-    [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.edges.insets(self.view.safeAreaInsets);
-        } else {
-            make.edges.insets(UIEdgeInsetsZero);
-        }
-    }];
-    [_collectionView reloadData];
     
     [self setupNav];
     
@@ -56,6 +49,16 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    
+    
+    [_collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.edges.insets(self.view.safeAreaInsets);
+        } else {
+            make.edges.insets(UIEdgeInsetsZero);
+        }
+    }];
+    [_collectionView reloadData];
 }
 
 - (void)dealloc {

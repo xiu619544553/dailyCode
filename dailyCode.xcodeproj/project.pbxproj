@@ -215,7 +215,7 @@
 		CE5574CA24E4E0B8005D6847 /* TKSafeAreaInsetsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKSafeAreaInsetsViewController.m; sourceTree = "<group>"; };
 		CE81E90224D4097B0055C582 /* TKHomeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKHomeCollectionViewCell.h; sourceTree = "<group>"; };
 		CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKHomeCollectionViewCell.m; sourceTree = "<group>"; };
-		CE9D6F7D24D26FC300AA0260 /* dailyCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dailyCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE9D6F7D24D26FC300AA0260 /* 示例.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "示例.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE9D6F8F24D26FC800AA0260 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE9D6F9124D26FC800AA0260 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9D6F9224D26FC800AA0260 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -666,7 +666,7 @@
 		CE9D6F7E24D26FC300AA0260 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE9D6F7D24D26FC300AA0260 /* dailyCode.app */,
+				CE9D6F7D24D26FC300AA0260 /* 示例.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1271,9 +1271,6 @@
 				CE0E5A8A24DBB93A0045ADB6 /* ButtonUsage */,
 				CE458DBF24E1758D00F392B8 /* ColorUsage */,
 				412C375D24E1A93400309796 /* PopController */,
-				CEDB29F224D907AF00C027E1 /* TextView */,
-				CE3A5D8924D7B1ED001B9409 /* ImagePicker */,
-				CE9D706024D27A6A00AA0260 /* MacroUsage */,
 				CE9D6FA024D27A6900AA0260 /* DocumentInteractionController */,
 				CE9D706D24D27A6A00AA0260 /* GradientLayer */,
 				CE3A5D8924D7B1ED001B9409 /* ImagePicker */,
@@ -1341,7 +1338,7 @@
 			);
 			name = dailyCode;
 			productName = dailyCode;
-			productReference = CE9D6F7D24D26FC300AA0260 /* dailyCode.app */;
+			productReference = CE9D6F7D24D26FC300AA0260 /* 示例.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1741,6 +1738,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5FL8MZ4CH2;
+				GCC_PREFIX_HEADER = dailyCode/dailyCode.pch;
 				INFOPLIST_FILE = dailyCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1748,7 +1746,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tank.dailyCode;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "示例";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1760,6 +1758,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5FL8MZ4CH2;
+				GCC_PREFIX_HEADER = dailyCode/dailyCode.pch;
 				INFOPLIST_FILE = dailyCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1767,7 +1766,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.tank.dailyCode;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "示例";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

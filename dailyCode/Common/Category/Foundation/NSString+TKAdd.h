@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (TKAdd)
 
+- (BOOL)isEmpty;
+
 @end
 
 

@@ -10,6 +10,13 @@
 
 @implementation NSString (TKAdd)
 
+- (BOOL)isEmpty {
+    if ( ([self isKindOfClass:[NSNull class]] || self == nil || [self length] < 1 )) {
+        return YES;
+    }
+    return NO;
+}
+
 @end
 
 
