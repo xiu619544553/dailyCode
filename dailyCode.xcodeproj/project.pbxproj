@@ -516,13 +516,13 @@
 		CE9D70EC24D27A7100AA0260 /* JSONSerializationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSerializationViewController.h; sourceTree = "<group>"; };
 		CE9D70ED24D27A7100AA0260 /* WXPracticeNodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPracticeNodeModel.h; sourceTree = "<group>"; };
 		CE9D718624D27A8200AA0260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE9D718E24D27DEE00AA0260 /* DailyCodeMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DailyCodeMacro.h; sourceTree = "<group>"; };
 		CEB66ABA24E66146009ED665 /* TKMasonryOtherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKMasonryOtherViewController.h; sourceTree = "<group>"; };
 		CEB66ABB24E66146009ED665 /* TKMasonryOtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMasonryOtherViewController.m; sourceTree = "<group>"; };
 		CEDB29F624D907F200C027E1 /* TKTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTextViewController.h; sourceTree = "<group>"; };
 		CEDB29F724D907F200C027E1 /* TKTextViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTextViewController.m; sourceTree = "<group>"; };
 		CEDB29FB24D92A6E00C027E1 /* TKTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTextView.h; sourceTree = "<group>"; };
 		CEDB29FC24D92A6E00C027E1 /* TKTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTextView.m; sourceTree = "<group>"; };
+		CEEA9B4924ECBA3D00E4FAF6 /* UniversalMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniversalMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -702,6 +702,7 @@
 		CE9D6F7F24D26FC300AA0260 /* dailyCode */ = {
 			isa = PBXGroup;
 			children = (
+				CEEA9B4824ECB9A100E4FAF6 /* Constant */,
 				CE63E30E24EBC875000A7F4C /* Moment */,
 				CE9D718824D27BF300AA0260 /* Base */,
 				CE9D718A24D27CB000AA0260 /* Home */,
@@ -712,7 +713,6 @@
 				CE9D6F8E24D26FC800AA0260 /* LaunchScreen.storyboard */,
 				CE9D6F9124D26FC800AA0260 /* Info.plist */,
 				CE9D6F9C24D2790500AA0260 /* dailyCode.pch */,
-				CE9D718E24D27DEE00AA0260 /* DailyCodeMacro.h */,
 				CE9D718624D27A8200AA0260 /* Assets.xcassets */,
 			);
 			path = dailyCode;
@@ -1346,6 +1346,14 @@
 				CEDB29FC24D92A6E00C027E1 /* TKTextView.m */,
 			);
 			path = TextView;
+			sourceTree = "<group>";
+		};
+		CEEA9B4824ECB9A100E4FAF6 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA9B4924ECBA3D00E4FAF6 /* UniversalMacro.h */,
+			);
+			path = Constant;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

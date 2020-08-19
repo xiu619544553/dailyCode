@@ -1,11 +1,13 @@
 PODS:
   - FLEX (4.1.1)
   - FPSLabel (1.0.1)
+  - IQKeyboardManager (6.5.6)
   - Masonry (1.1.0)
   - RTRootNavigationController (0.7.2):
     - RTRootNavigationController/Core (= 0.7.2)
   - RTRootNavigationController/Core (0.7.2)
-  - TKCategory (0.1.0)
+  - TKCategory (0.1.0):
+    - IQKeyboardManager
   - WMPageController (2.3.0)
   - YYKit (1.0.9):
     - YYKit/no-arc (= 1.0.9)
@@ -24,6 +26,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - FLEX
     - FPSLabel
+    - IQKeyboardManager
     - Masonry
     - RTRootNavigationController
     - WMPageController
@@ -36,12 +39,13 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FLEX: 81096107977a09836eb440173010ceeef01105d6
   FPSLabel: a6386de76a8fa767102bcb2c18b7c605a3ac3d75
+  IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
-  TKCategory: a83f510161704d725c1dadcab94b5dfb7f4aaacf
+  TKCategory: f18f5dca49673de7fc55cfb17eb628eb2752c3b5
   WMPageController: 9f219bb8912a1a1f51af11fde61e2682a7b7e7f2
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: b82e06efc3ca15e87b2885dbfe671a1b697d3479
+PODFILE CHECKSUM: 0a133472e8287fc99ddc22996aa4f9b6d22a8598
 
 COCOAPODS: 1.9.2

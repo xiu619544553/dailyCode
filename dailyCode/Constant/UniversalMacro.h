@@ -1,13 +1,13 @@
 //
-//  DailyCodeMacro.h
+//  UniversalMacro.h
 //  dailyCode
 //
-//  Created by hello on 2020/7/30.
+//  Created by hello on 2020/8/19.
 //  Copyright © 2020 TK. All rights reserved.
 //
 
-#ifndef DailyCodeMacro_h
-#define DailyCodeMacro_h
+#ifndef UniversalMacro_h
+#define UniversalMacro_h
 
 
 #pragma mark - Log
@@ -43,16 +43,40 @@
 
 #pragma mark - Font
 
+// 粗体
 #ifndef kFontForPFMedium
 #define kFontForPFMedium(x) [UIFont fontWithName:@"PingFangSC-Medium" size:x]
 #endif
 
+// 普通
 #ifndef kFontForPFRegular
 #define kFontForPFRegular(x) [UIFont fontWithName:@"PingFangSC-Regular" size:x]
 #endif
 
+// 半粗体
+#ifndef kFontForPFSemibold
+#define kFontForPFSemibold(x) [UIFont fontWithName:@"PingFangSC-Semibold" size:x]
+#endif
+
+
+#pragma mark - Size
+
+#ifndef kScreenHeight
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+#endif
+
+#ifndef kScreenWidth
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#endif
+
+#ifndef kImageName
+#define kImageName(imageName)  [UIImage imageNamed:imageName]
+#endif
+
+
 
 #pragma mark - Device
+
 /*
     2007年1月9日，第一代iPhone 2G发布
  　　2008年6月10日，第二代iPhone 3G发布
@@ -125,4 +149,7 @@ isSensor = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #endif
 
 
-#endif /* DailyCodeMacro_h */
+
+
+
+#endif /* UniversalMacro_h */

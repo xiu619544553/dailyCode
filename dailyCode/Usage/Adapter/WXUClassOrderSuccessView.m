@@ -9,11 +9,6 @@
 #import "WXUClassOrderSuccessView.h"
 #import <Masonry.h>
 
-#define kScreenHeight [UIScreen mainScreen].bounds.size.height
-#define kScreenWidth [UIScreen mainScreen].bounds.size.width
-
-#define kImageName(imageName)  [UIImage imageNamed:imageName]
-
 #define kMarginWidth 15
 #define KWXWhiteColor [UIColor whiteColor]
 #define RGB(r, g, b)           [UIColor colorWithRed:(r)/255.f green:(g)/255.f blue:(b)/255.f alpha:1.f]
