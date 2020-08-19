@@ -1,12 +1,12 @@
 //
-//  TKHomePageViewController.m
+//  TKCollectionViewController.m
 //  test
 //
 //  Created by hello on 2020/6/5.
 //  Copyright © 2020 TK. All rights reserved.
 //
 
-#import "TKHomePageViewController.h"
+#import "TKCollectionViewController.h"
 #import "TKHomeCollectionViewCell.h"
 #import "NSString+TKAdd.h"
 #import <Masonry.h>
@@ -14,16 +14,17 @@
 #define KeyForVC   @"vc"
 #define KeyForDesc @"desc"
 
-static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
+static CGFloat minimumInteritemSpacing = 5.f;
+static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
 
-@interface TKHomePageViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TKCollectionViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSArray<NSDictionary<NSString *, NSString *> *> *dataSource;
 
 @end
 
-@implementation TKHomePageViewController
+@implementation TKCollectionViewController
 
 #pragma mark - LifeCycle Methods
 
@@ -34,12 +35,12 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     if (@available(iOS 11.0, *)) {
-        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
-    [self.view addSubview:self.tableView];
+    [self.view addSubview:self.collectionView];
     
     [self setupNav];
     
@@ -49,24 +50,25 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+    
+    [_collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
         if (@available(iOS 11.0, *)) {
             make.edges.insets(self.view.safeAreaInsets);
         } else {
             make.edges.insets(UIEdgeInsetsZero);
         }
     }];
-    [_tableView reloadData];
+    [_collectionView reloadData];
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark - UITableViewDelegate
+#pragma mark - UICollectionViewDelegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
     
     NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row];
     Class vcCls = NSClassFromString(dict[KeyForVC]);
@@ -77,25 +79,37 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark - UITableViewDataSource
+#pragma mark - UICollectionViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.dataSource.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homePageCellReuseIdentifier];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homePageCellReuseIdentifier];
-    }
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    TKHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:homeCellReuseIdentifier forIndexPath:indexPath];
     
     if (self.dataSource.count > indexPath.row) {
         NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row];
-        cell.textLabel.text = dict[KeyForDesc];
+        cell.detail = dict[KeyForDesc];
     }
     
     return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UIEdgeInsets inset = [self insetForSection];
+    CGFloat itemWidth = (CGRectGetWidth(self.view.frame) - inset.left - inset.right - minimumInteritemSpacing) / 2.f;
+    return CGSizeMake(itemWidth, itemWidth * ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 0.3 : 0.8));
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    return [self insetForSection];
+}
+
+- (UIEdgeInsets)insetForSection {
+    return UIEdgeInsetsMake(5.f, 10.f, 5.f, 10.f);
 }
 
 #pragma mark - Event Methods
@@ -125,20 +139,26 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidChangeStatusBarOrientationNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         __strong typeof(wself) sself = wself;
         if (!sself) return;
-        [self.tableView reloadData];
+        [self.collectionView reloadData];
     }];
 }
 
 #pragma mark - getter
 
-- (UITableView *)tableView {
-    if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
-        _tableView.delegate = self;
-        _tableView.dataSource = self;
-        _tableView.tableFooterView = [UIView new];
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
+        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
+        flowLayout.minimumLineSpacing = 5.f;
+        flowLayout.minimumInteritemSpacing = minimumInteritemSpacing;
+        
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
+        _collectionView.backgroundColor = UIColor.groupTableViewBackgroundColor;
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        [_collectionView registerClass:TKHomeCollectionViewCell.class forCellWithReuseIdentifier:homeCellReuseIdentifier];
     }
-    return _tableView;
+    return _collectionView;
 }
 
 - (NSArray<NSDictionary<NSString *,NSString *> *> *)dataSource {
@@ -146,7 +166,7 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
         _dataSource = @[
             @{
                 KeyForVC   : @"StudyDocumentInteractionController",
-                KeyForDesc : @"文档交互控制器 UIDocumentInteractionController"
+                KeyForDesc : @"学习苹果提供的文档交互控制器"
             },
             @{
                 KeyForVC   : @"WebViewController",
@@ -162,11 +182,11 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             },
             @{
                 KeyForVC   : @"AboutScrollViewLayoutViewController",
-                KeyForDesc : @"1.contentInsetAdjustmentBehavior 2.automaticallyAdjustsScrollViewInsets"
+                KeyForDesc : @"1.contentInsetAdjustmentBehavior\n2.automaticallyAdjustsScrollViewInsets"
             },
             @{
                 KeyForVC   : @"JSONSerializationViewController",
-                KeyForDesc : @"JSON 序列化"
+                KeyForDesc : @"json序列化"
             },
             @{
                 KeyForVC   : @"AboutScrollViewPropertyController",
@@ -229,8 +249,8 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
                 KeyForDesc : @"AFNetworking"
             },
             @{
-                KeyForVC   : @"TKSortViewController",
-                KeyForDesc : @"排序"
+                KeyForVC   : @"TKSortedViewController",
+                KeyForDesc : @"数组中存放 Model，针对 Model的某个属性，对数组排序"
             },
             @{
                 KeyForVC   : @"TKScalePropertyViewController",
@@ -259,10 +279,6 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKBackgroundTaskVC",
                 KeyForDesc : @"后台任务"
-            },
-            @{
-                KeyForVC   : @"TKCollectionViewController",
-                KeyForDesc : @"UICollectionView 使用"
             }
         ];
     }
@@ -288,7 +304,7 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
 //    CGPoint savedContentOffset = self.collectionView.contentOffset;
 //    CGRect savedFrame = self.collectionView.frame;
     
-    UIGraphicsBeginImageContextWithOptions(self.tableView.contentSize, NO, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions(self.collectionView.contentSize, NO, [UIScreen mainScreen].scale);
     
 //    self.contentOffset = CGPointZero;
 //    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);

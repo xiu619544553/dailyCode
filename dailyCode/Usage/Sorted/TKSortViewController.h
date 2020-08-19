@@ -1,8 +1,8 @@
 //
-//  TKSortedViewController.h
-//  test
+//  TKSortViewController.h
+//  dailyCode
 //
-//  Created by hello on 2020/7/27.
+//  Created by hello on 2020/8/19.
 //  Copyright © 2020 TK. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKSortedViewController : TKBaseViewController
+@interface TKSortViewController : TKBaseViewController
 
 @end
 

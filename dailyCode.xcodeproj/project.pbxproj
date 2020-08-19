@@ -139,7 +139,6 @@
 		CE9D71F524D2944500AA0260 /* UIColor+SDHexString.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D704724D27A6A00AA0260 /* UIColor+SDHexString.m */; };
 		CE9D71F624D2944500AA0260 /* TKSDWebImageUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D709824D27A6E00AA0260 /* TKSDWebImageUsageViewController.m */; };
 		CE9D71F724D2944500AA0260 /* ShadowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D708824D27A6D00AA0260 /* ShadowVC.m */; };
-		CE9D71F824D2944500AA0260 /* TKSortedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FA524D27A6900AA0260 /* TKSortedViewController.m */; };
 		CE9D71F924D2944500AA0260 /* TKSortedModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FA824D27A6900AA0260 /* TKSortedModel.m */; };
 		CE9D71FA24D2944500AA0260 /* TKImagePickerUsageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D709A24D27A6E00AA0260 /* TKImagePickerUsageController.m */; };
 		CE9D71FB24D2944500AA0260 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D706724D27A6A00AA0260 /* DetailViewController.m */; };
@@ -179,6 +178,9 @@
 		CEB66ABC24E66147009ED665 /* TKMasonryOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB66ABB24E66146009ED665 /* TKMasonryOtherViewController.m */; };
 		CEDB29F924D907F200C027E1 /* TKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB29F724D907F200C027E1 /* TKTextViewController.m */; };
 		CEDB29FD24D92A6E00C027E1 /* TKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB29FC24D92A6E00C027E1 /* TKTextView.m */; };
+		CEEA9B5524ECF4AE00E4FAF6 /* TKCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA9B5424ECF4AD00E4FAF6 /* TKCollectionViewController.m */; };
+		CEEA9B5924ECF7EC00E4FAF6 /* TKSortViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEA9B5724ECF7EC00E4FAF6 /* TKSortViewController.m */; };
+		CEEA9B5A24ECF7EC00E4FAF6 /* TKSortViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEEA9B5824ECF7EC00E4FAF6 /* TKSortViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -228,9 +230,7 @@
 		CE9D6FA124D27A6900AA0260 /* StudyDocumentInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudyDocumentInteractionController.h; sourceTree = "<group>"; };
 		CE9D6FA224D27A6900AA0260 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf"; sourceTree = "<group>"; };
 		CE9D6FA324D27A6900AA0260 /* StudyDocumentInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudyDocumentInteractionController.m; sourceTree = "<group>"; };
-		CE9D6FA524D27A6900AA0260 /* TKSortedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSortedViewController.m; sourceTree = "<group>"; };
 		CE9D6FA624D27A6900AA0260 /* TKSortedModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSortedModel.h; sourceTree = "<group>"; };
-		CE9D6FA724D27A6900AA0260 /* TKSortedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSortedViewController.h; sourceTree = "<group>"; };
 		CE9D6FA824D27A6900AA0260 /* TKSortedModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSortedModel.m; sourceTree = "<group>"; };
 		CE9D6FAA24D27A6900AA0260 /* AboutLineSpacingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutLineSpacingViewController.m; sourceTree = "<group>"; };
 		CE9D6FAB24D27A6900AA0260 /* AboutLineSpacingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutLineSpacingViewController.h; sourceTree = "<group>"; };
@@ -523,6 +523,11 @@
 		CEDB29FB24D92A6E00C027E1 /* TKTextView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTextView.h; sourceTree = "<group>"; };
 		CEDB29FC24D92A6E00C027E1 /* TKTextView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKTextView.m; sourceTree = "<group>"; };
 		CEEA9B4924ECBA3D00E4FAF6 /* UniversalMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniversalMacro.h; sourceTree = "<group>"; };
+		CEEA9B5324ECF4AD00E4FAF6 /* TKCollectionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKCollectionViewController.h; sourceTree = "<group>"; };
+		CEEA9B5424ECF4AD00E4FAF6 /* TKCollectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKCollectionViewController.m; sourceTree = "<group>"; };
+		CEEA9B5624ECF7EC00E4FAF6 /* TKSortViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSortViewController.h; sourceTree = "<group>"; };
+		CEEA9B5724ECF7EC00E4FAF6 /* TKSortViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKSortViewController.m; sourceTree = "<group>"; };
+		CEEA9B5824ECF7EC00E4FAF6 /* TKSortViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKSortViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -740,10 +745,11 @@
 		CE9D6FA424D27A6900AA0260 /* Sorted */ = {
 			isa = PBXGroup;
 			children = (
-				CE9D6FA524D27A6900AA0260 /* TKSortedViewController.m */,
 				CE9D6FA624D27A6900AA0260 /* TKSortedModel.h */,
-				CE9D6FA724D27A6900AA0260 /* TKSortedViewController.h */,
 				CE9D6FA824D27A6900AA0260 /* TKSortedModel.m */,
+				CEEA9B5624ECF7EC00E4FAF6 /* TKSortViewController.h */,
+				CEEA9B5724ECF7EC00E4FAF6 /* TKSortViewController.m */,
+				CEEA9B5824ECF7EC00E4FAF6 /* TKSortViewController.xib */,
 			);
 			path = Sorted;
 			sourceTree = "<group>";
@@ -1290,6 +1296,7 @@
 		CE9D718B24D27CC400AA0260 /* Usage */ = {
 			isa = PBXGroup;
 			children = (
+				CEEA9B5224ECF49500E4FAF6 /* CollectionView */,
 				CE39597924EA207C008FB5D7 /* BackgroundTask */,
 				CE9D707324D27A6C00AA0260 /* AboutScrollViewLayout */,
 				CE9D708C24D27A6D00AA0260 /* Adapter */,
@@ -1354,6 +1361,15 @@
 				CEEA9B4924ECBA3D00E4FAF6 /* UniversalMacro.h */,
 			);
 			path = Constant;
+			sourceTree = "<group>";
+		};
+		CEEA9B5224ECF49500E4FAF6 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				CEEA9B5324ECF4AD00E4FAF6 /* TKCollectionViewController.h */,
+				CEEA9B5424ECF4AD00E4FAF6 /* TKCollectionViewController.m */,
+			);
+			path = CollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1430,6 +1446,7 @@
 				CE9D717224D27A7100AA0260 /* tiku.json in Resources */,
 				CE9D718724D27A8200AA0260 /* Assets.xcassets in Resources */,
 				CE9D70EF24D27A7100AA0260 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf in Resources */,
+				CEEA9B5A24ECF7EC00E4FAF6 /* TKSortViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1516,6 +1533,7 @@
 				CE9D71AF24D2944400AA0260 /* ResponderChainViewController.m in Sources */,
 				CE9D71B024D2944400AA0260 /* ResponderChainRootView.m in Sources */,
 				CE9D71B124D2944400AA0260 /* TKScalePropertyViewController.m in Sources */,
+				CEEA9B5524ECF4AE00E4FAF6 /* TKCollectionViewController.m in Sources */,
 				CE9D71B224D2944400AA0260 /* NSButton+WebCache.m in Sources */,
 				CE9D71B324D2944400AA0260 /* NSData+ImageContentType.m in Sources */,
 				CE9D71B424D2944400AA0260 /* NSImage+Compatibility.m in Sources */,
@@ -1572,6 +1590,7 @@
 				CE9D71E424D2944500AA0260 /* UIImage+Metadata.m in Sources */,
 				CE9D71E524D2944500AA0260 /* UIImage+MultiFormat.m in Sources */,
 				CE9D71E624D2944500AA0260 /* UIImage+Transform.m in Sources */,
+				CEEA9B5924ECF7EC00E4FAF6 /* TKSortViewController.m in Sources */,
 				CE9D71E724D2944500AA0260 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CE63E31124EBC896000A7F4C /* TKMomentVC.m in Sources */,
 				CE458DCA24E180F400F392B8 /* UIColor+TKAdd.m in Sources */,
@@ -1594,7 +1613,6 @@
 				CE9D71F524D2944500AA0260 /* UIColor+SDHexString.m in Sources */,
 				CE9D71F624D2944500AA0260 /* TKSDWebImageUsageViewController.m in Sources */,
 				CE9D71F724D2944500AA0260 /* ShadowVC.m in Sources */,
-				CE9D71F824D2944500AA0260 /* TKSortedViewController.m in Sources */,
 				412C375B24E1A91200309796 /* DQPopView.m in Sources */,
 				412C376024E1A94F00309796 /* TKPopViewController.m in Sources */,
 				CE9D71F924D2944500AA0260 /* TKSortedModel.m in Sources */,
