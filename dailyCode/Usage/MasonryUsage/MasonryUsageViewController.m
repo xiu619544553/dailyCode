@@ -89,6 +89,10 @@ static NSString *tableViewCellId = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKMasonryAnimateVC",
                 KeyForDesc : @"Masonry 动画"
+            },
+            @{
+                KeyForVC   : @"TKAutoLayoutCellController",
+                KeyForDesc : @"自动布局 cell"
             }
         ];
     }

@@ -10,6 +10,8 @@
 		412C375B24E1A91200309796 /* DQPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 412C375724E1A91200309796 /* DQPopView.m */; };
 		412C375C24E1A91200309796 /* DQPopAnimationTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 412C375824E1A91200309796 /* DQPopAnimationTool.m */; };
 		412C376024E1A94F00309796 /* TKPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 412C375F24E1A94F00309796 /* TKPopViewController.m */; };
+		4177467724F53FDC0087B159 /* TKAutoLayoutCellController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4177467624F53FDC0087B159 /* TKAutoLayoutCellController.m */; };
+		4177467A24F540640087B159 /* TKAutoLayout2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4177467924F540640087B159 /* TKAutoLayout2Cell.m */; };
 		B290951F19ADCA6473695073 /* Pods_dailyCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */; };
 		CE3A5D8C24D7B221001B9409 /* TKImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3A5D8B24D7B221001B9409 /* TKImagePickerController.m */; };
 		CE81E90424D4097B0055C582 /* TKHomeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81E90324D4097B0055C582 /* TKHomeCollectionViewCell.m */; };
@@ -178,6 +180,10 @@
 		412C375A24E1A91200309796 /* DQPopAnimationTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DQPopAnimationTool.h; sourceTree = "<group>"; };
 		412C375E24E1A94F00309796 /* TKPopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKPopViewController.h; sourceTree = "<group>"; };
 		412C375F24E1A94F00309796 /* TKPopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKPopViewController.m; sourceTree = "<group>"; };
+		4177467524F53FDC0087B159 /* TKAutoLayoutCellController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAutoLayoutCellController.h; sourceTree = "<group>"; };
+		4177467624F53FDC0087B159 /* TKAutoLayoutCellController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAutoLayoutCellController.m; sourceTree = "<group>"; };
+		4177467824F540640087B159 /* TKAutoLayout2Cell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAutoLayout2Cell.h; sourceTree = "<group>"; };
+		4177467924F540640087B159 /* TKAutoLayout2Cell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAutoLayout2Cell.m; sourceTree = "<group>"; };
 		6CB57FDBBBA48943CF690897 /* Pods_dailyCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dailyCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3FDA74F442AADB92665F20E /* Pods-dailyCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.debug.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.debug.xcconfig"; sourceTree = "<group>"; };
 		CE3A5D8A24D7B221001B9409 /* TKImagePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImagePickerController.h; sourceTree = "<group>"; };
@@ -690,6 +696,10 @@
 				CE9D6FC324D27A6900AA0260 /* TKAverageVC.m */,
 				CE9D6FC224D27A6900AA0260 /* TKMasonryAnimateVC.h */,
 				CE9D6FC924D27A6900AA0260 /* TKMasonryAnimateVC.m */,
+				4177467524F53FDC0087B159 /* TKAutoLayoutCellController.h */,
+				4177467624F53FDC0087B159 /* TKAutoLayoutCellController.m */,
+				4177467824F540640087B159 /* TKAutoLayout2Cell.h */,
+				4177467924F540640087B159 /* TKAutoLayout2Cell.m */,
 			);
 			path = MasonryUsage;
 			sourceTree = "<group>";
@@ -1446,6 +1456,7 @@
 				CE9D71E324D2944500AA0260 /* UIImage+MemoryCacheCost.m in Sources */,
 				CE9D71E424D2944500AA0260 /* UIImage+Metadata.m in Sources */,
 				CE9D71E524D2944500AA0260 /* UIImage+MultiFormat.m in Sources */,
+				4177467724F53FDC0087B159 /* TKAutoLayoutCellController.m in Sources */,
 				CE9D71E624D2944500AA0260 /* UIImage+Transform.m in Sources */,
 				CE9D71E724D2944500AA0260 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CE9D71E824D2944500AA0260 /* UIImageView+WebCache.m in Sources */,
@@ -1477,6 +1488,7 @@
 				CE9D71FF24D2944500AA0260 /* TreeTableViewController.m in Sources */,
 				CE9D720024D2944500AA0260 /* TKCatalogModel.m in Sources */,
 				CE9D720124D2944500AA0260 /* TreeTableViewCell.m in Sources */,
+				4177467A24F540640087B159 /* TKAutoLayout2Cell.m in Sources */,
 				CE9D720224D2944500AA0260 /* TotalModel.m in Sources */,
 				CE9D720324D2944500AA0260 /* NodeModel.m in Sources */,
 				CE9D720424D2944500AA0260 /* WebViewController.m in Sources */,
