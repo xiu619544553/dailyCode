@@ -49,6 +49,7 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     
     NSLog(@"version 4");
     
+    NSLog(@"version 5");
     
     NSLog(@"version 1");
     
