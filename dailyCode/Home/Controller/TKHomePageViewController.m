@@ -68,6 +68,10 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     
     
     NSLog(@"测试 注释5");
+    
+    
+    
+    NSLog(@"测试 注释6");
 }
 
 - (void)viewDidLayoutSubviews {
