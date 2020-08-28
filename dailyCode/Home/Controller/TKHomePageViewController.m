@@ -47,6 +47,8 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     
     [self addNotifications];
     
+    NSLog(@"version 4");
+    
     
     NSLog(@"version 1");
     
