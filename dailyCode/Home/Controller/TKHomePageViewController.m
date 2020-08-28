@@ -44,6 +44,14 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     [self setupNav];
     
     [self addNotifications];
+    
+    
+    // 注释1：
+    NSLog(@"测试 git reset");
+    
+    
+    // 注释2
+    NSLog(@"测试 git reset");
 }
 
 - (void)viewDidLayoutSubviews {
