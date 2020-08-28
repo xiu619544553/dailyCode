@@ -55,9 +55,9 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     
     NSLog(@"version 1");
     
+    NSLog(@"version 8");
+    
     NSLog(@"version 3");
-    
-    
 }
 
 - (void)viewDidLayoutSubviews {
