@@ -44,13 +44,6 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     [self setupNav];
     
     [self addNotifications];
-    
-    
-    NSLog(@"version 1");
-    
-    NSLog(@"version 2");
-    
-    NSLog(@"version 3");
 }
 
 - (void)viewDidLayoutSubviews {
