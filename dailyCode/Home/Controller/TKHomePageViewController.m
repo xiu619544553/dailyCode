@@ -8,17 +8,17 @@
 
 #import "TKHomePageViewController.h"
 #import "TKHomeCollectionViewCell.h"
+#import "NSString+TKAdd.h"
 #import <Masonry.h>
 
 #define KeyForVC   @"vc"
 #define KeyForDesc @"desc"
 
-static CGFloat minimumInteritemSpacing = 5.f;
-static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
+static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
 
-@interface TKHomePageViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface TKHomePageViewController () <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray<NSDictionary<NSString *, NSString *> *> *dataSource;
 
 @end
@@ -34,20 +34,12 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     if (@available(iOS 11.0, *)) {
-        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     } else {
         self.automaticallyAdjustsScrollViewInsets = NO;
     }
     
-    [self.view addSubview:self.collectionView];
-    [_collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-        if (@available(iOS 11.0, *)) {
-            make.edges.insets(self.view.safeAreaInsets);
-        } else {
-            make.edges.insets(UIEdgeInsetsZero);
-        }
-    }];
-    [_collectionView reloadData];
+    [self.view addSubview:self.tableView];
     
     [self setupNav];
     
@@ -56,16 +48,25 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
 
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
+    
+    [_tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        if (@available(iOS 11.0, *)) {
+            make.edges.insets(self.view.safeAreaInsets);
+        } else {
+            make.edges.insets(UIEdgeInsetsZero);
+        }
+    }];
+    [_tableView reloadData];
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark - UICollectionViewDelegate
+#pragma mark - UITableViewDelegate
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    [collectionView deselectItemAtIndexPath:indexPath animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row];
     Class vcCls = NSClassFromString(dict[KeyForVC]);
@@ -76,37 +77,25 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-#pragma mark - UICollectionViewDataSource
+#pragma mark - UITableViewDataSource
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.dataSource.count;
 }
 
-- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    TKHomeCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:homeCellReuseIdentifier forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:homePageCellReuseIdentifier];
+    
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:homePageCellReuseIdentifier];
+    }
     
     if (self.dataSource.count > indexPath.row) {
         NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row];
-        cell.detail = dict[KeyForDesc];
+        cell.textLabel.text = dict[KeyForDesc];
     }
     
     return cell;
-}
-
-#pragma mark - UICollectionViewDelegateFlowLayout
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UIEdgeInsets inset = [self insetForSection];
-    CGFloat itemWidth = (CGRectGetWidth(self.view.frame) - inset.left - inset.right - minimumInteritemSpacing) / 2.f;
-    return CGSizeMake(itemWidth, itemWidth * ((UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) ? 0.4 : 0.8));
-}
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return [self insetForSection];
-}
-
-- (UIEdgeInsets)insetForSection {
-    return UIEdgeInsetsMake(5.f, 10.f, 5.f, 10.f);
 }
 
 #pragma mark - Event Methods
@@ -136,26 +125,20 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
     [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidChangeStatusBarOrientationNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         __strong typeof(wself) sself = wself;
         if (!sself) return;
-        [self.collectionView reloadData];
+        [self.tableView reloadData];
     }];
 }
 
 #pragma mark - getter
 
-- (UICollectionView *)collectionView {
-    if (!_collectionView) {
-        UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc] init];
-        flowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        flowLayout.minimumLineSpacing = 5.f;
-        flowLayout.minimumInteritemSpacing = minimumInteritemSpacing;
-        
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:flowLayout];
-        _collectionView.backgroundColor = UIColor.groupTableViewBackgroundColor;
-        _collectionView.delegate = self;
-        _collectionView.dataSource = self;
-        [_collectionView registerClass:TKHomeCollectionViewCell.class forCellWithReuseIdentifier:homeCellReuseIdentifier];
+- (UITableView *)tableView {
+    if (!_tableView) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:(UITableViewStylePlain)];
+        _tableView.delegate = self;
+        _tableView.dataSource = self;
+        _tableView.tableFooterView = [UIView new];
     }
-    return _collectionView;
+    return _tableView;
 }
 
 - (NSArray<NSDictionary<NSString *,NSString *> *> *)dataSource {
@@ -163,7 +146,7 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
         _dataSource = @[
             @{
                 KeyForVC   : @"StudyDocumentInteractionController",
-                KeyForDesc : @"学习苹果提供的文档交互控制器"
+                KeyForDesc : @"文档交互控制器 UIDocumentInteractionController"
             },
             @{
                 KeyForVC   : @"WebViewController",
@@ -179,11 +162,11 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
             },
             @{
                 KeyForVC   : @"AboutScrollViewLayoutViewController",
-                KeyForDesc : @"1.contentInsetAdjustmentBehavior\n2.automaticallyAdjustsScrollViewInsets"
+                KeyForDesc : @"1.contentInsetAdjustmentBehavior 2.automaticallyAdjustsScrollViewInsets"
             },
             @{
                 KeyForVC   : @"JSONSerializationViewController",
-                KeyForDesc : @"json序列化"
+                KeyForDesc : @"JSON 序列化"
             },
             @{
                 KeyForVC   : @"AboutScrollViewPropertyController",
@@ -246,8 +229,8 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
                 KeyForDesc : @"AFNetworking"
             },
             @{
-                KeyForVC   : @"TKSortedViewController",
-                KeyForDesc : @"数组中存放 Model，针对 Model的某个属性，对数组排序"
+                KeyForVC   : @"TKSortViewController",
+                KeyForDesc : @"排序"
             },
             @{
                 KeyForVC   : @"TKScalePropertyViewController",
@@ -264,6 +247,22 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
             @{
                 KeyForVC   : @"TKTextViewController",
                 KeyForDesc : @"UITextView 使用"
+            },
+            @{
+                KeyForVC   : @"TKButtonUsageViewController",
+                KeyForDesc : @"Button 使用"
+            },
+            @{
+                KeyForVC   : @"TKColorUsageViewController",
+                KeyForDesc : @"Color 使用"
+            },
+            @{
+                KeyForVC   : @"TKBackgroundTaskVC",
+                KeyForDesc : @"后台任务"
+            },
+            @{
+                KeyForVC   : @"TKCollectionViewController",
+                KeyForDesc : @"UICollectionView 使用"
             }
         ];
     }
@@ -289,7 +288,7 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
 //    CGPoint savedContentOffset = self.collectionView.contentOffset;
 //    CGRect savedFrame = self.collectionView.frame;
     
-    UIGraphicsBeginImageContextWithOptions(self.collectionView.contentSize, NO, [UIScreen mainScreen].scale);
+    UIGraphicsBeginImageContextWithOptions(self.tableView.contentSize, NO, [UIScreen mainScreen].scale);
     
 //    self.contentOffset = CGPointZero;
 //    self.frame = CGRectMake(0, 0, self.contentSize.width, self.contentSize.height);

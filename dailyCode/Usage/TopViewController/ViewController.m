@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "SecondViewController.h"
+#import "TKMeVC.h"
 #import "NSString+TKAdd.h"
 #import "DetailViewController.h"
 
@@ -30,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.title = NSStringFromClass(self.class);
     self.view.backgroundColor = UIColor.orangeColor;
     
 //    [self compareNumber];
@@ -154,7 +153,7 @@
     // 降序
     NSArray<NSNumber *> *testArray = @[@1,@5,@2,@6,@3,@7,@9];
     
-    NSArray *sortedArray = [testArray sortedArrayUsingComparator:^NSComparisonResult(NSNumber   * _Nonnull obj1, NSNumber * _Nonnull obj2) {
+    NSArray *sortedArray = [testArray sortedArrayUsingComparator:^NSComparisonResult(NSNumber * _Nonnull obj1, NSNumber * _Nonnull obj2) {
         // 因为不满足sortedArrayUsingComparator方法的默认排序顺序，则需要交换
         if (obj1.integerValue < obj2.integerValue) {
             return NSOrderedDescending;

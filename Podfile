@@ -14,5 +14,6 @@ use_frameworks!
     pod 'YYKit'
     pod 'FLEX'
     pod 'RTRootNavigationController', '~> 0.7.0'
+    pod 'TKCategory', :path => '../TKCategory'
 
 end

@@ -46,7 +46,7 @@ static NSString *tableViewCellId = @"UITableViewCell";
     NSDictionary *dict = [self.dataArray objectAtIndex:indexPath.row];
     Class vcCls = NSClassFromString(dict[KeyForVC]);
     if (!vcCls) return;
-
+    
     UIViewController *vc = [[vcCls alloc] init];
     vc.title = dict[KeyForDesc];
     [self.navigationController pushViewController:vc animated:YES];
@@ -93,6 +93,14 @@ static NSString *tableViewCellId = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKAutoLayoutCellController",
                 KeyForDesc : @"自动布局 cell"
+            },
+            @{
+                KeyForVC   : @"TKSafeAreaInsetsViewController",
+                KeyForDesc : @"关于 safeAreaInsets 属性"
+            },
+            @{
+                KeyForVC   : @"TKMasonryOtherViewController",
+                KeyForDesc : @"Masonry 练手"
             }
         ];
     }

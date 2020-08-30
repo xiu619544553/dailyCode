@@ -1,0 +1,6 @@
+framework module TKCategory {
+  umbrella header "TKCategory-umbrella.h"
+
+  export *
+  module * { export * }
+}
