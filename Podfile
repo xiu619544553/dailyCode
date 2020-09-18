@@ -9,11 +9,12 @@ target 'dailyCode' do
 use_frameworks!
 
     pod 'Masonry'
-    pod 'WMPageController', '2.3.0'
-    pod 'FPSLabel'
+#    pod 'FPSLabel'
     pod 'YYKit'
-    pod 'FLEX'
+
     pod 'RTRootNavigationController', '~> 0.7.0'
     pod 'TKCategory', :path => '../TKCategory'
-
+    
+    pod 'FLEX', '4.1.1', :configurations => ['Debug']
+    
 end

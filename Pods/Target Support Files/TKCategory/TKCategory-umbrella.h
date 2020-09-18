@@ -12,8 +12,10 @@
 
 #import "NSObject+TKAdd.h"
 #import "NSString+TKAdd.h"
+#import "TKUnicode.h"
 #import "UIButton+TKAdd.h"
 #import "UIColor+TKAdd.h"
+#import "UIView+TKAdd.h"
 #import "UIViewController+TKAdd.h"
 
 FOUNDATION_EXPORT double TKCategoryVersionNumber;

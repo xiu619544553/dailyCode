@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "TKMeVC.h"
+#import "TKUIKitVC.h"
 #import "NSString+TKAdd.h"
 #import "DetailViewController.h"
 
@@ -40,8 +40,10 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 
 
-    DetailViewController *detailVc = [DetailViewController new];
-    [self.navigationController pushViewController:detailVc animated:YES];
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[DetailViewController new]];
+    nav.modalPresentationStyle = UIModalPresentationOverFullScreen;
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)learn_ContentHuggingPriority_CompressionResistancePriority {
