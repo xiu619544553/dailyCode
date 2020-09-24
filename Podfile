@@ -12,6 +12,7 @@ use_frameworks!
 #    pod 'FPSLabel'
     pod 'YYKit'
 
+    pod 'WMPageController', '2.5.2'
     pod 'RTRootNavigationController', '~> 0.7.0'
     pod 'TKCategory', :path => '../TKCategory'
     

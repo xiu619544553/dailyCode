@@ -286,6 +286,14 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKFeedbackGeneratorViewController",
                 KeyForDesc : @"震动反馈 API"
+            },
+            @{
+                KeyForVC   : @"TKScrollViewViewController",
+                KeyForDesc : @"UIScrollView 使用"
+            },
+            @{
+                KeyForVC   : @"TKPageManagerViewController",
+                KeyForDesc : @"WMPageController 使用"
             }
         ];
     }
