@@ -8,7 +8,6 @@
 
 #import "LabelViewController.h"
 
-#define kWXWideFont(fontSize) [UIFont fontWithName:@"PingFangSC-Medium" size:fontSize]
 
 @interface LabelViewController ()
 
@@ -111,6 +110,66 @@
     label0.baselineAdjustment = UIBaselineAdjustmentNone;
     [coverImgV addSubview:label0];
     
+    
+    [self testAttri1];
 }
 
+
+- (void)testAttri1 {
+    
+    UILabel *descLabel = [[UILabel alloc] init];
+    descLabel.numberOfLines = 0;
+    [self.view addSubview:descLabel];
+    [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.inset(10.f);
+        make.right.inset(10.f);
+        make.bottom.inset(100.f);
+    }];
+
+//    NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:@"这是一件商品，他非常的便宜，可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。"];
+    
+    
+    NSString *titleString = @"我是标题！我是标题！我是标！我是标题！";
+    //创建  NSMutableAttributedString 富文本对象
+    NSMutableAttributedString *maTitleString = [[NSMutableAttributedString alloc] initWithString:titleString];
+    //创建一个小标签的Label
+    NSString *aa = @"我TM是个类似图片的标签";
+    CGFloat aaW = 12*aa.length +6;
+    UILabel *aaL = [UILabel new];
+    aaL.frame = CGRectMake(0, 0, aaW*3, 16*3);
+    aaL.text = aa;
+    aaL.font = [UIFont boldSystemFontOfSize:12*3];
+    aaL.textColor = [UIColor whiteColor];
+    aaL.backgroundColor = [UIColor redColor];
+    aaL.clipsToBounds = YES;
+    aaL.layer.cornerRadius = 3*3;
+    aaL.textAlignment = NSTextAlignmentCenter;
+    //调用方法，转化成Image
+    UIImage *image = [self imageWithUIView:aaL];
+    //创建Image的富文本格式
+    NSTextAttachment *attach = [[NSTextAttachment alloc] init];
+    attach.bounds = CGRectMake(0, -2.5, aaW, 16); //这个-2.5是为了调整下标签跟文字的位置
+    attach.image = image;
+    //添加到富文本对象里
+    NSAttributedString * imageStr = [NSAttributedString attributedStringWithAttachment:attach];
+    [maTitleString insertAttributedString:imageStr atIndex:0];//加入文字前面
+    
+    
+    
+    
+    
+    
+    
+    [descLabel setAttributedText:maTitleString];
+}
+
+//view转成image
+- (UIImage*) imageWithUIView:(UIView*) view{
+    UIGraphicsBeginImageContext(view.bounds.size);
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    [view.layer renderInContext:ctx];
+    UIImage* tImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return tImage;
+}
 @end

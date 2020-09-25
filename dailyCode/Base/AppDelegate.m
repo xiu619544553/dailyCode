@@ -11,7 +11,7 @@
 
 #import <Masonry.h>
 #import <BackgroundTasks/BackgroundTasks.h>
-#import <FPSLabel.h>
+//#import <FPSLabel.h>
 #import <FLEX/FLEX.h>
 
 @interface AppDelegate ()
@@ -26,7 +26,7 @@
     
     [self.window makeKeyAndVisible];
     [[FLEXManager sharedManager] showExplorer];
-    [FPSLabel installOnWindow:self.window];
+//    [FPSLabel installOnWindow:self.window];
     
     // 屏幕尺寸与屏幕旋转方向有关
     DLog(@"屏幕尺寸 : %@", NSStringFromCGRect([UIScreen mainScreen].bounds));
@@ -48,9 +48,9 @@
 
 #pragma mark - getter
 
-- (CustomWindow *)window {
+- (UIWindow *)window {
     if (!_window) {
-        _window = [[CustomWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
         _window.backgroundColor = UIColor.whiteColor;
         _window.rootViewController = [TKTabBarController new];
     }

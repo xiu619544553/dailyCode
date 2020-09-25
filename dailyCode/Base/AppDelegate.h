@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CustomWindow.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
-@property (nonatomic, strong) CustomWindow *window;
+@property (nonatomic, strong) UIWindow *window;
 @end
 

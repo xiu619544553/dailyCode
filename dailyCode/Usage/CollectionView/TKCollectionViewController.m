@@ -205,10 +205,6 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
                 KeyForDesc : @"关于 【异步解码图片】 的尝试"
             },
             @{
-                KeyForVC   : @"TestSuccessViewController",
-                KeyForDesc : @"关于 【适配】 的尝试"
-            },
-            @{
                 KeyForVC   : @"TreeTableViewController",
                 KeyForDesc : @"关于 【多级cell】 的尝试"
             },

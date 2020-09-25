@@ -1,6 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework
-${BUILT_PRODUCTS_DIR}/FPSLabel/FPSLabel.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework

@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "PresentViewController.h"
+#import "TempNavigationController.h"
 
 @interface DetailViewController ()
 
@@ -35,8 +36,8 @@
 //    NSLog(@"presentationController   : %@", self.presentationController);
 //    NSLog(@"===============================================================");
     
-    PresentViewController *pvc = [PresentViewController new];
-    [self presentViewController:pvc animated:YES completion:nil];
+    TempNavigationController *tempNav = [[TempNavigationController alloc] initWithRootViewController:[PresentViewController new]];
+    [self presentViewController:tempNav animated:YES completion:nil];
     
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //        NSLog(@"===============================================================");
@@ -58,5 +59,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
 
 @end
