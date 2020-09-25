@@ -294,6 +294,10 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKPageManagerViewController",
                 KeyForDesc : @"WMPageController 使用"
+            },
+            @{
+                KeyForVC   : @"TKUIViewCategoryUsageViewController",
+                KeyForDesc : @"UIView分类用法"
             }
         ];
     }
@@ -335,4 +339,18 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     return scrollImage;
 }
 
+
+
+//- (UIImage *)wh_snapshotImage {
+//
+//    UIGraphicsBeginImageContextWithOptions(self.bounds.size, YES, 0);
+//
+//    [self drawViewHierarchyInRect:self.bounds afterScreenUpdates:YES];
+//
+//    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+//
+//    UIGraphicsEndImageContext();
+//
+//    return result;
+//}
 @end

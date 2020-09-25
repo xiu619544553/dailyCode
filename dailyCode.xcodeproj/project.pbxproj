@@ -174,6 +174,8 @@
 		CE9D721A24D2944500AA0260 /* AsyncDecoderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D707C24D27A6D00AA0260 /* AsyncDecoderCell.m */; };
 		CE9D721B24D2944500AA0260 /* AsyncDecoderImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D707F24D27A6D00AA0260 /* AsyncDecoderImageViewController.m */; };
 		CE9D721C24D2944500AA0260 /* AboutLineSpacingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D6FAA24D27A6900AA0260 /* AboutLineSpacingViewController.m */; };
+		CEA315AA251DDE9200F12426 /* TKUIViewCategoryUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA315A8251DDE9200F12426 /* TKUIViewCategoryUsageViewController.m */; };
+		CEA315AB251DDE9200F12426 /* TKUIViewCategoryUsageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEA315A9251DDE9200F12426 /* TKUIViewCategoryUsageViewController.xib */; };
 		CEB66ABC24E66147009ED665 /* TKMasonryOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB66ABB24E66146009ED665 /* TKMasonryOtherViewController.m */; };
 		CEDB29F924D907F200C027E1 /* TKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB29F724D907F200C027E1 /* TKTextViewController.m */; };
 		CEDB29FD24D92A6E00C027E1 /* TKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDB29FC24D92A6E00C027E1 /* TKTextView.m */; };
@@ -527,6 +529,9 @@
 		CE9D70EC24D27A7100AA0260 /* JSONSerializationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONSerializationViewController.h; sourceTree = "<group>"; };
 		CE9D70ED24D27A7100AA0260 /* WXPracticeNodeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXPracticeNodeModel.h; sourceTree = "<group>"; };
 		CE9D718624D27A8200AA0260 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEA315A7251DDE9200F12426 /* TKUIViewCategoryUsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKUIViewCategoryUsageViewController.h; sourceTree = "<group>"; };
+		CEA315A8251DDE9200F12426 /* TKUIViewCategoryUsageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKUIViewCategoryUsageViewController.m; sourceTree = "<group>"; };
+		CEA315A9251DDE9200F12426 /* TKUIViewCategoryUsageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKUIViewCategoryUsageViewController.xib; sourceTree = "<group>"; };
 		CEB66ABA24E66146009ED665 /* TKMasonryOtherViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKMasonryOtherViewController.h; sourceTree = "<group>"; };
 		CEB66ABB24E66146009ED665 /* TKMasonryOtherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKMasonryOtherViewController.m; sourceTree = "<group>"; };
 		CEDB29F624D907F200C027E1 /* TKTextViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTextViewController.h; sourceTree = "<group>"; };
@@ -1348,6 +1353,7 @@
 		CE9D718B24D27CC400AA0260 /* Usage */ = {
 			isa = PBXGroup;
 			children = (
+				CEA315A6251DDE5A00F12426 /* UIViewCategoryUsage */,
 				CE9D707324D27A6C00AA0260 /* AboutScrollViewLayout */,
 				CE9D70D124D27A6F00AA0260 /* AFNDemo */,
 				CE9D709C24D27A6E00AA0260 /* AlertViewController */,
@@ -1393,6 +1399,16 @@
 				CE3AB0C02514839400B90FAE /* Controller */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		CEA315A6251DDE5A00F12426 /* UIViewCategoryUsage */ = {
+			isa = PBXGroup;
+			children = (
+				CEA315A7251DDE9200F12426 /* TKUIViewCategoryUsageViewController.h */,
+				CEA315A8251DDE9200F12426 /* TKUIViewCategoryUsageViewController.m */,
+				CEA315A9251DDE9200F12426 /* TKUIViewCategoryUsageViewController.xib */,
+			);
+			path = UIViewCategoryUsage;
 			sourceTree = "<group>";
 		};
 		CEDB29F224D907AF00C027E1 /* TextView */ = {
@@ -1565,6 +1581,7 @@
 				CE9D717224D27A7100AA0260 /* tiku.json in Resources */,
 				CE9D718724D27A8200AA0260 /* Assets.xcassets in Resources */,
 				CE9D70EF24D27A7100AA0260 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf in Resources */,
+				CEA315AB251DDE9200F12426 /* TKUIViewCategoryUsageViewController.xib in Resources */,
 				CEEA9B5A24ECF7EC00E4FAF6 /* TKSortViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1675,6 +1692,7 @@
 				CE9D71C224D2944500AA0260 /* SDImageCoderHelper.m in Sources */,
 				CE9D71C324D2944500AA0260 /* SDImageCodersManager.m in Sources */,
 				CE9D71C424D2944500AA0260 /* SDImageFrame.m in Sources */,
+				CEA315AA251DDE9200F12426 /* TKUIViewCategoryUsageViewController.m in Sources */,
 				CE9D71C524D2944500AA0260 /* SDImageGIFCoder.m in Sources */,
 				CE9D71C624D2944500AA0260 /* SDImageGraphics.m in Sources */,
 				CE9D71C724D2944500AA0260 /* SDImageHEICCoder.m in Sources */,

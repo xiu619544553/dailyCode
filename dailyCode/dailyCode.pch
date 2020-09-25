@@ -18,5 +18,6 @@
 #import <Masonry/Masonry.h>
 
 #import <NSObject+TKAdd.h>
+#import <UIView+TKAdd.h>
 
 #endif /* dailyCode_pch */
