@@ -163,6 +163,11 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
 - (NSArray<NSDictionary<NSString *,NSString *> *> *)dataSource {
     if (!_dataSource) {
         _dataSource = @[
+            
+            @{
+                KeyForVC   : @"TKMasonryOtherViewController",
+                KeyForDesc : @"测试"
+            },
             @{
                 KeyForVC   : @"StudyDocumentInteractionController",
                 KeyForDesc : @"文档交互控制器 UIDocumentInteractionController"
