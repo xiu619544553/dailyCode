@@ -49,7 +49,6 @@ static CGFloat const kWMMenuViewHeight = 44.0;
         
         self.menuViewContentMargin = -15.f;
         self.progressViewIsNaughty = YES;
-//        self.menuViewLayoutMode = WMMenuViewLayoutModeLeft;
         self.menuViewLayoutMode = WMMenuViewLayoutModeScatter;
         self.progressViewBottomSpace = 3.f;
         self.progressWidth = 23.5f;
@@ -98,17 +97,9 @@ static CGFloat const kWMMenuViewHeight = 44.0;
     return vc;
 }
 
-//- (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
-//    return CGRectMake(0, 0, kScreenWidth, kScreenHeight - 49.f - self.navigationController.navigationBar.height - [[UIApplication sharedApplication] statusBarFrame].size.height);
-//}
-//
 - (NSString *)pageController:(WMPageController *)pageController titleAtIndex:(NSInteger)index {
     return self.titleArray[index];
 }
-//
-//- (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
-//    return CGRectMake(0.f, 0, kScreenWidth, 44.f);
-//}
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
     return CGRectMake(0, self.maximumHeaderViewHeight, CGRectGetWidth(self.view.frame), self.menuViewHeight);
