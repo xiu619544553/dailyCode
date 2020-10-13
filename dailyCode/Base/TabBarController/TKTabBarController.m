@@ -129,10 +129,6 @@
      tabbar_icon_strategy
      tabbar_icon_activity
      */
-    
-    TKUsageListViewController *homeVc = [[TKUsageListViewController alloc] init];
-    [self addNavChildVC:homeVc image:@"tabbar_icon_game" selectedImage:@"tabbar_icon_game" title:@"首页"];
-    
     TKFoundationListViewController *foundationListVC = [[TKFoundationListViewController alloc] init];
     [self addNavChildVC:foundationListVC image:@"tabbar_icon_note" selectedImage:@"tabbar_icon_note" title:@"Foundation"];
     
@@ -141,6 +137,9 @@
     
     TK3rdUsageListViewController *thirdListVC = [[TK3rdUsageListViewController alloc] init];
     [self addNavChildVC:thirdListVC image:@"tabbar_icon_strategy" selectedImage:@"tabbar_icon_strategy" title:@"第三方"];
+    
+    TKUsageListViewController *homeVc = [[TKUsageListViewController alloc] init];
+    [self addNavChildVC:homeVc image:@"tabbar_icon_game" selectedImage:@"tabbar_icon_game" title:@"其他"];
 }
 
 // 设置 tabbar样式

@@ -185,7 +185,7 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             },
             @{
                 KeyForVC   : @"GradientLayerViewController",
-                KeyForDesc : @"关于 CAGradientLayer 的尝试"
+                KeyForDesc : @"渐变色 CAGradientLayer 的尝试"
             },
             @{
                 KeyForVC   : @"AsyncDecoderImageViewController",

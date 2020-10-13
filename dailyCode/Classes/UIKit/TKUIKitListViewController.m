@@ -48,10 +48,6 @@
                 KeyForDesc : @"关于 UILabel 的属性的尝试"
             },
             @{
-                KeyForVC   : @"GradientLayerViewController",
-                KeyForDesc : @"关于 CAGradientLayer 的尝试"
-            },
-            @{
                 KeyForVC   : @"AsyncDecoderImageViewController",
                 KeyForDesc : @"关于 【异步解码图片】 的尝试"
             },

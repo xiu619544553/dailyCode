@@ -45,6 +45,10 @@
             @{
                 KeyForVC   : @"TKScalePropertyViewController",
                 KeyForDesc : @"理解 scale 属性"
+            },
+            @{
+                KeyForVC   : @"TK_NSOperationQueue_ViewController",
+                KeyForDesc : @"NSOperationQueue 使用"
             }
         ];
     }

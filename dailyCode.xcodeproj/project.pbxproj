@@ -194,6 +194,8 @@
 		CE400E032535794B003C5E72 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE400BB3253576E9003C5E72 /* Info.plist */; };
 		CE400E0625357AC4003C5E72 /* TKUIKitListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400E0525357AC4003C5E72 /* TKUIKitListViewController.m */; };
 		CE400E0925357CD9003C5E72 /* TK3rdUsageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400E0825357CD9003C5E72 /* TK3rdUsageListViewController.m */; };
+		CE400E0D2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400E0B2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m */; };
+		CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -564,6 +566,9 @@
 		CE400E0525357AC4003C5E72 /* TKUIKitListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKUIKitListViewController.m; sourceTree = "<group>"; };
 		CE400E0725357CD9003C5E72 /* TK3rdUsageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK3rdUsageListViewController.h; sourceTree = "<group>"; };
 		CE400E0825357CD9003C5E72 /* TK3rdUsageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK3rdUsageListViewController.m; sourceTree = "<group>"; };
+		CE400E0A2535836B003C5E72 /* TK_NSOperationQueue_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_NSOperationQueue_ViewController.h; sourceTree = "<group>"; };
+		CE400E0B2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_NSOperationQueue_ViewController.m; sourceTree = "<group>"; };
+		CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_NSOperationQueue_ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -702,7 +707,7 @@
 		CE400BB4253576E9003C5E72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CE400BB5253576E9003C5E72 /* Home */,
+				CE400BB5253576E9003C5E72 /* Other */,
 				CE400BBC253576E9003C5E72 /* Options&Enum */,
 				CE400BC0253576E9003C5E72 /* UIKit */,
 				CE400C43253576E9003C5E72 /* Foundation */,
@@ -715,13 +720,13 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		CE400BB5253576E9003C5E72 /* Home */ = {
+		CE400BB5253576E9003C5E72 /* Other */ = {
 			isa = PBXGroup;
 			children = (
 				CE400BB6253576E9003C5E72 /* Controller */,
 				CE400BB9253576E9003C5E72 /* View */,
 			);
-			path = Home;
+			path = Other;
 			sourceTree = "<group>";
 		};
 		CE400BB6253576E9003C5E72 /* Controller */ = {
@@ -1170,6 +1175,9 @@
 		CE400C5C253576E9003C5E72 /* NSOperationQueue */ = {
 			isa = PBXGroup;
 			children = (
+				CE400E0A2535836B003C5E72 /* TK_NSOperationQueue_ViewController.h */,
+				CE400E0B2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m */,
+				CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */,
 			);
 			path = NSOperationQueue;
 			sourceTree = "<group>";
@@ -1632,6 +1640,7 @@
 				CE400D68253576EA003C5E72 /* TKFeedbackGeneratorViewController.xib in Resources */,
 				CE400DB4253576EA003C5E72 /* TKSDWebImageUsageViewController.xib in Resources */,
 				CE400D6F253576EA003C5E72 /* jsInvokeOcAndOCCallback.html in Resources */,
+				CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */,
 				CE400D51253576EA003C5E72 /* Assets.xcassets in Resources */,
 				CE400D80253576EA003C5E72 /* TKColorUsageViewController.xib in Resources */,
 				CE400D54253576EA003C5E72 /* tk_voice.gif in Resources */,
@@ -1835,6 +1844,7 @@
 				CE400DE8253576EA003C5E72 /* SDWebImageOptionsProcessor.m in Sources */,
 				CE400DD5253576EA003C5E72 /* SDAnimatedImageRep.m in Sources */,
 				CE400DD6253576EA003C5E72 /* UIImage+ExtendedCacheData.m in Sources */,
+				CE400E0D2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m in Sources */,
 				CE400DC2253576EA003C5E72 /* UIImage+Transform.m in Sources */,
 				CE400DE7253576EA003C5E72 /* SDWebImageDefine.m in Sources */,
 				CE400D5B253576EA003C5E72 /* TKButtonUsageViewController.m in Sources */,
