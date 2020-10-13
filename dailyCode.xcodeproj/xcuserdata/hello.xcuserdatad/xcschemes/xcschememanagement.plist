@@ -7,12 +7,12 @@
 		<key>dailyCode.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>8</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>CE9D6F7C24D26FC300AA0260</key>
+		<key>CE400B5C25357361003C5E72</key>
 		<dict>
 			<key>primary</key>
 			<true/>

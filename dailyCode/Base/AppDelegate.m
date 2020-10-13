@@ -21,9 +21,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
-    
-    
     [self.window makeKeyAndVisible];
     [[FLEXManager sharedManager] showExplorer];
 //    [FPSLabel installOnWindow:self.window];
@@ -33,9 +30,6 @@
     
     // 设备分辨率是物理属性，与屏幕旋转方向无关
     DLog(@"设备分辨率 : %@", NSStringFromCGSize([UIScreen mainScreen].currentMode.size));
-    
-    
-    
     
     return YES;
 }

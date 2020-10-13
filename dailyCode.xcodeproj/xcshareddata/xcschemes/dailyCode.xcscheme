@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CE9D6F7C24D26FC300AA0260"
-               BuildableName = "&#x793a;&#x4f8b;.app"
+               BlueprintIdentifier = "CE400B5C25357361003C5E72"
+               BuildableName = "Demo.app"
                BlueprintName = "dailyCode"
                ReferencedContainer = "container:dailyCode.xcodeproj">
             </BuildableReference>
@@ -44,8 +44,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE9D6F7C24D26FC300AA0260"
-            BuildableName = "&#x793a;&#x4f8b;.app"
+            BlueprintIdentifier = "CE400B5C25357361003C5E72"
+            BuildableName = "Demo.app"
             BlueprintName = "dailyCode"
             ReferencedContainer = "container:dailyCode.xcodeproj">
          </BuildableReference>
@@ -61,8 +61,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CE9D6F7C24D26FC300AA0260"
-            BuildableName = "&#x793a;&#x4f8b;.app"
+            BlueprintIdentifier = "CE400B5C25357361003C5E72"
+            BuildableName = "Demo.app"
             BlueprintName = "dailyCode"
             ReferencedContainer = "container:dailyCode.xcodeproj">
          </BuildableReference>
