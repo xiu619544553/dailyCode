@@ -1,5 +1,5 @@
 //
-//  TKBaseTableViewController.h
+//  TKBasePlainTableViewController.h
 //  dailyCode
 //
 //  Created by hello on 2020/10/13.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKBaseTableViewController : TKBaseViewController <UITableViewDelegate, UITableViewDataSource>
+@interface TKBasePlainTableViewController : TKBaseViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *dataSource;

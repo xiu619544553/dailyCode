@@ -1,8 +1,8 @@
 //
-//  TKFoundationListViewController.h
+//  TKThreadListViewController.h
 //  dailyCode
 //
-//  Created by hello on 2020/10/13.
+//  Created by hello on 2020/10/14.
 //  Copyright © 2020 TK. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKFoundationListViewController : TKBasePlainTableViewController
+@interface TKThreadListViewController : TKBasePlainTableViewController
 
 @end
 

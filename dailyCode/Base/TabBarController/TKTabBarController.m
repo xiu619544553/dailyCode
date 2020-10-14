@@ -15,6 +15,7 @@
 #import "TKFoundationListViewController.h"
 #import "TKUIKitListViewController.h"
 #import "TK3rdUsageListViewController.h"
+#import "TKBasicKnowledgeListViewController.h"
 
 
 #define kClassKey   @"rootVCClassString"
@@ -140,6 +141,9 @@
     
     TKUsageListViewController *homeVc = [[TKUsageListViewController alloc] init];
     [self addNavChildVC:homeVc image:@"tabbar_icon_game" selectedImage:@"tabbar_icon_game" title:@"其他"];
+    
+    TKBasicKnowledgeListViewController *basicVc = [[TKBasicKnowledgeListViewController alloc] init];
+    [self addNavChildVC:basicVc image:@"tabbar_icon_activity" selectedImage:@"tabbar_icon_activity" title:@"计算机基础"];
 }
 
 // 设置 tabbar样式

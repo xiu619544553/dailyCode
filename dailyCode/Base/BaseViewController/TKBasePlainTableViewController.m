@@ -1,19 +1,19 @@
 //
-//  TKBaseTableViewController.m
+//  TKBasePlainTableViewController.m
 //  dailyCode
 //
 //  Created by hello on 2020/10/13.
 //  Copyright © 2020 TK. All rights reserved.
 //
 
-#import "TKBaseTableViewController.h"
+#import "TKBasePlainTableViewController.h"
 #import <Masonry.h>
 
-@interface TKBaseTableViewController ()
+@interface TKBasePlainTableViewController ()
 
 @end
 
-@implementation TKBaseTableViewController
+@implementation TKBasePlainTableViewController
 
 #pragma mark - LifeCycle Methods
 
@@ -69,11 +69,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class)];
-    
-    if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:NSStringFromClass(UITableViewCell.class)];
-    }
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
+    cell.textLabel.numberOfLines = 0;
+    cell.textLabel.font = kFontForPFRegular(16.f);
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     if (self.dataSource.count > indexPath.row) {
         NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row];
@@ -102,6 +101,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
+        _tableView.separatorInset = UIEdgeInsetsMake(0.f, 15.f, 0.f, 15.f);
         
         [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
     }
@@ -121,5 +121,4 @@
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationPortraitUpsideDown;
 }
-
 @end

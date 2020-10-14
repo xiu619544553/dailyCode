@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		C0B9A793EAC1C2C296E44979 /* Pods_dailyCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72228E4741D0ECBAAC2DC9E7 /* Pods_dailyCode.framework */; };
 		CE400D4A253576EA003C5E72 /* TKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400B99253576E8003C5E72 /* TKNavigationController.m */; };
-		CE400D4B253576EA003C5E72 /* TKBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400B9F253576E8003C5E72 /* TKBaseTableViewController.m */; };
 		CE400D4C253576EA003C5E72 /* TKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BA0253576E8003C5E72 /* TKBaseViewController.m */; };
 		CE400D4D253576EA003C5E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BA1253576E8003C5E72 /* main.m */; };
 		CE400D4E253576EA003C5E72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BA2253576E8003C5E72 /* AppDelegate.m */; };
@@ -196,6 +195,11 @@
 		CE400E0925357CD9003C5E72 /* TK3rdUsageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400E0825357CD9003C5E72 /* TK3rdUsageListViewController.m */; };
 		CE400E0D2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400E0B2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m */; };
 		CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */; };
+		CEE6F2362536AE9D00E3EBF8 /* TKThreadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */; };
+		CEE6F23A2536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */; };
+		CEE6F23E2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */; };
+		CEE6F23F2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE6F23D2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib */; };
+		CEE6F2442536CAFF00E3EBF8 /* TKBasePlainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400B9F253576E8003C5E72 /* TKBasePlainTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -206,9 +210,9 @@
 		CE400B99253576E8003C5E72 /* TKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNavigationController.m; sourceTree = "<group>"; };
 		CE400B9A253576E8003C5E72 /* TKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNavigationController.h; sourceTree = "<group>"; };
 		CE400B9B253576E8003C5E72 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		CE400B9D253576E8003C5E72 /* TKBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseTableViewController.h; sourceTree = "<group>"; };
+		CE400B9D253576E8003C5E72 /* TKBasePlainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBasePlainTableViewController.h; sourceTree = "<group>"; };
 		CE400B9E253576E8003C5E72 /* TKBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseViewController.h; sourceTree = "<group>"; };
-		CE400B9F253576E8003C5E72 /* TKBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseTableViewController.m; sourceTree = "<group>"; };
+		CE400B9F253576E8003C5E72 /* TKBasePlainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBasePlainTableViewController.m; sourceTree = "<group>"; };
 		CE400BA0253576E8003C5E72 /* TKBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseViewController.m; sourceTree = "<group>"; };
 		CE400BA1253576E8003C5E72 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE400BA2253576E8003C5E72 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -569,6 +573,13 @@
 		CE400E0A2535836B003C5E72 /* TK_NSOperationQueue_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_NSOperationQueue_ViewController.h; sourceTree = "<group>"; };
 		CE400E0B2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_NSOperationQueue_ViewController.m; sourceTree = "<group>"; };
 		CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_NSOperationQueue_ViewController.xib; sourceTree = "<group>"; };
+		CEE6F2342536AE9C00E3EBF8 /* TKThreadListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKThreadListViewController.h; sourceTree = "<group>"; };
+		CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKThreadListViewController.m; sourceTree = "<group>"; };
+		CEE6F2382536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKBasicKnowledgeListViewController.h; sourceTree = "<group>"; };
+		CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKBasicKnowledgeListViewController.m; sourceTree = "<group>"; };
+		CEE6F23B2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_dispatch_barrier_ViewController.h; sourceTree = "<group>"; };
+		CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_dispatch_barrier_ViewController.m; sourceTree = "<group>"; };
+		CEE6F23D2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_dispatch_barrier_ViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -623,19 +634,11 @@
 			children = (
 				CE400D46253576EA003C5E72 /* 3rd */,
 				CE400B97253576E8003C5E72 /* Base */,
-				CE400B96253576E8003C5E72 /* Base.lproj */,
 				CE400BB4253576E9003C5E72 /* Classes */,
 				CE400BA6253576E8003C5E72 /* Constant */,
 				CE400BAA253576E9003C5E72 /* Resource */,
 			);
 			path = dailyCode;
-			sourceTree = "<group>";
-		};
-		CE400B96253576E8003C5E72 /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Base.lproj;
 			sourceTree = "<group>";
 		};
 		CE400B97253576E8003C5E72 /* Base */ = {
@@ -663,9 +666,9 @@
 		CE400B9C253576E8003C5E72 /* BaseViewController */ = {
 			isa = PBXGroup;
 			children = (
-				CE400B9D253576E8003C5E72 /* TKBaseTableViewController.h */,
+				CE400B9D253576E8003C5E72 /* TKBasePlainTableViewController.h */,
+				CE400B9F253576E8003C5E72 /* TKBasePlainTableViewController.m */,
 				CE400B9E253576E8003C5E72 /* TKBaseViewController.h */,
-				CE400B9F253576E8003C5E72 /* TKBaseTableViewController.m */,
 				CE400BA0253576E8003C5E72 /* TKBaseViewController.m */,
 			);
 			path = BaseViewController;
@@ -707,6 +710,8 @@
 		CE400BB4253576E9003C5E72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CEE6F2372536AEF900E3EBF8 /* BasicKnowledge */,
+				CEE6F2322536AE7800E3EBF8 /* Thread */,
 				CE400BB5253576E9003C5E72 /* Other */,
 				CE400BBC253576E9003C5E72 /* Options&Enum */,
 				CE400BC0253576E9003C5E72 /* UIKit */,
@@ -1575,6 +1580,35 @@
 			path = MSWeakTimer;
 			sourceTree = "<group>";
 		};
+		CEE6F2322536AE7800E3EBF8 /* Thread */ = {
+			isa = PBXGroup;
+			children = (
+				CEE6F2342536AE9C00E3EBF8 /* TKThreadListViewController.h */,
+				CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */,
+				CEE6F2332536AE8000E3EBF8 /* GCD */,
+			);
+			path = Thread;
+			sourceTree = "<group>";
+		};
+		CEE6F2332536AE8000E3EBF8 /* GCD */ = {
+			isa = PBXGroup;
+			children = (
+				CEE6F23B2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.h */,
+				CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */,
+				CEE6F23D2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib */,
+			);
+			path = GCD;
+			sourceTree = "<group>";
+		};
+		CEE6F2372536AEF900E3EBF8 /* BasicKnowledge */ = {
+			isa = PBXGroup;
+			children = (
+				CEE6F2382536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.h */,
+				CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */,
+			);
+			path = BasicKnowledge;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1638,6 +1672,7 @@
 				CE400D52253576EA003C5E72 /* LaunchScreen.storyboard in Resources */,
 				CE400DFD253576EA003C5E72 /* TKMacroViewController.xib in Resources */,
 				CE400D68253576EA003C5E72 /* TKFeedbackGeneratorViewController.xib in Resources */,
+				CEE6F23F2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib in Resources */,
 				CE400DB4253576EA003C5E72 /* TKSDWebImageUsageViewController.xib in Resources */,
 				CE400D6F253576EA003C5E72 /* jsInvokeOcAndOCCallback.html in Resources */,
 				CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */,
@@ -1706,6 +1741,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE6F2442536CAFF00E3EBF8 /* TKBasePlainTableViewController.m in Sources */,
 				CE400D94253576EA003C5E72 /* TKScalePropertyViewController.m in Sources */,
 				CE400D6D253576EA003C5E72 /* ShadowVC.m in Sources */,
 				CE400D71253576EA003C5E72 /* TKPageManagerViewController.m in Sources */,
@@ -1749,6 +1785,7 @@
 				CE400DA0253576EA003C5E72 /* TKMasonryAnimateVC.m in Sources */,
 				CE400DBF253576EA003C5E72 /* SDAnimatedImageView.m in Sources */,
 				CE400D5D253576EA003C5E72 /* TKTableViewUsageListViewController.m in Sources */,
+				CEE6F2362536AE9D00E3EBF8 /* TKThreadListViewController.m in Sources */,
 				CE400E00253576EA003C5E72 /* DQPopAnimationTool.m in Sources */,
 				CE400D67253576EA003C5E72 /* TKImagePickerController.m in Sources */,
 				CE400DB2253576EA003C5E72 /* AFSecurityPolicy.m in Sources */,
@@ -1810,6 +1847,8 @@
 				CE400DDF253576EA003C5E72 /* SDImageTransformer.m in Sources */,
 				CE400D63253576EA003C5E72 /* TKTextView.m in Sources */,
 				CE400DCE253576EA003C5E72 /* SDWebImageDownloaderResponseModifier.m in Sources */,
+				CEE6F23E2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m in Sources */,
+				CEE6F23A2536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m in Sources */,
 				CE400DF5253576EA003C5E72 /* NSBezierPath+SDRoundedCorners.m in Sources */,
 				CE400D8C253576EA003C5E72 /* AsyncDecoderCell.m in Sources */,
 				CE400DE3253576EA003C5E72 /* SDImageCacheDefine.m in Sources */,
@@ -1854,7 +1893,6 @@
 				CE400DB3253576EA003C5E72 /* TKAFNDemoViewController.m in Sources */,
 				CE400DD3253576EA003C5E72 /* SDImageIOCoder.m in Sources */,
 				CE400DC6253576EA003C5E72 /* SDWebImageIndicator.m in Sources */,
-				CE400D4B253576EA003C5E72 /* TKBaseTableViewController.m in Sources */,
 				CE400D75253576EA003C5E72 /* TreeTableViewController.m in Sources */,
 				CE400D5C253576EA003C5E72 /* TKScrollViewViewController.m in Sources */,
 				CE400D83253576EA003C5E72 /* TKUIViewCategoryUsageViewController.m in Sources */,

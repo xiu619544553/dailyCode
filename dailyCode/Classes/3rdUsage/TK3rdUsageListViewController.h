@@ -6,12 +6,12 @@
 //  Copyright © 2020 TK. All rights reserved.
 //
 
-#import "TKBaseTableViewController.h"
+#import "TKBasePlainTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 /// 第三方使用示例控制器
-@interface TK3rdUsageListViewController : TKBaseTableViewController
+@interface TK3rdUsageListViewController : TKBasePlainTableViewController
 
 @end
 
