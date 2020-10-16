@@ -87,7 +87,7 @@
     }
 }
 
-#warning 首次进入控制器，iphone调用了，但是ipad 未调用该方法
+// 首次进入控制器，iphone调用了，但是ipad 未调用该方法
 - (void)updateViewConstraints {
     [super updateViewConstraints];
     

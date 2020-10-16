@@ -20,45 +20,52 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = UIColor.whiteColor;
     
-    CGFloat labelY = 200.f;
+    CGFloat labelY = 10.f;
     CGFloat labelMargin = 20.f;
     CGFloat labelWidth = 60.f;
     CGFloat labelHeight = 30.f;
     
+    NSString *text = @"我我我我我我我";
+    
     // 正常label
     UILabel *normalLabel = [[UILabel alloc] initWithFrame:CGRectMake(labelMargin, labelY, labelWidth, labelHeight)];
     normalLabel.backgroundColor = UIColor.systemPinkColor;
-    normalLabel.text = @"我我我我我我我";
+    normalLabel.text = text;
     normalLabel.numberOfLines = 1;
     normalLabel.textAlignment = NSTextAlignmentCenter;
     normalLabel.font = [UIFont systemFontOfSize:20.f];
     [self.view addSubview:normalLabel];
     
-    DLog(@"%f", normalLabel.minimumScaleFactor);
-    
-    
     
     UILabel *fixedLabel1 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(normalLabel.frame) + labelMargin, labelY, labelWidth, labelHeight)];
     fixedLabel1.backgroundColor = UIColor.systemPinkColor;
-    fixedLabel1.text = @"我我我我我我我";
+    fixedLabel1.text = text;
     fixedLabel1.numberOfLines = 1;
     fixedLabel1.textAlignment = NSTextAlignmentCenter;
     fixedLabel1.font = [UIFont systemFontOfSize:20.f];
     
-    fixedLabel1.minimumScaleFactor = 10.0/13.0;
+    // 指示是否应该减小字体大小以使标题字符串适合标签的边框
     fixedLabel1.adjustsFontSizeToFitWidth = YES;
+    /*
+     如果将adjustsFontSizeToFitWidth属性设置为YES，那么使用这个属性为当前字体大小指定一个最小的乘数，这个乘数可以产生一个可以在显示标签文本时使用的字体大小。如果为该属性指定值为0，则使用当前字体大小作为最小字体大小。此属性的默认值为0。
+     */
+    fixedLabel1.minimumScaleFactor = 18.0/20.f; // 给定的 FontSize=15，此处我们可以设置 18.0/20.f，表示，字体在 18.f~20.f之间浮动
+    
+    /*
+     如果将adjustsFontSizeToFitWidth属性设置为YES，这个属性控制在需要调整字体大小的情况下文本基线的行为。这个属性的默认值是UIBaselineAdjustmentAlignBaselines。只有当numberOfLines属性被设置为1时，此属性才有效。
+     */
     fixedLabel1.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    
     [self.view addSubview:fixedLabel1];
     
     
     
     UILabel *fixedLabel2 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(fixedLabel1.frame) + labelMargin, labelY, labelWidth, labelHeight)];
     fixedLabel2.backgroundColor = UIColor.systemPinkColor;
-    fixedLabel2.text = @"我我我我我我我";
+    fixedLabel2.text = text;
     fixedLabel2.numberOfLines = 1;
     fixedLabel2.textAlignment = NSTextAlignmentCenter;
     fixedLabel2.font = [UIFont systemFontOfSize:20.f];
-    
     fixedLabel2.minimumScaleFactor = 0.5;
     fixedLabel2.adjustsFontSizeToFitWidth = YES;
     fixedLabel2.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
@@ -67,14 +74,14 @@
     
     UILabel *fixedLabel3 = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(fixedLabel2.frame) + labelMargin, labelY, labelWidth, labelHeight)];
     fixedLabel3.backgroundColor = UIColor.systemPinkColor;
-    fixedLabel3.text = @"我我我我我我我";
+    fixedLabel3.text = text;
     fixedLabel3.numberOfLines = 1;
     fixedLabel3.textAlignment = NSTextAlignmentCenter;
     fixedLabel3.font = [UIFont systemFontOfSize:20.f];
     
     fixedLabel3.minimumScaleFactor = 0.5;
     fixedLabel3.adjustsFontSizeToFitWidth = YES;
-    fixedLabel3.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
+//    fixedLabel3.baselineAdjustment = UIBaselineAdjustmentAlignBaselines;
     [self.view addSubview:fixedLabel3];
     
     
@@ -111,60 +118,72 @@
     [coverImgV addSubview:label0];
     
     
-    [self testAttri1];
+    // tag标签 + 文字实现的方式
+    
+    // 方式一：常规实现，如果有 UIImage，则直接使用 NSAttributedString和 NSTextAttachment
+    [self tagTextGeneralImplementation];
+    
+    // 方式二：如果没有 tag对应的 UIImage，我们可以使用 UILabel-->截图->NSTextAttachment、NSAttributedString
+    [self tagTextLabel1];
+    
+    // 方式三：取巧，利用 首行缩进
+    [self tagTextWithParagraphStyleOfFirstLineHeadIndent];
 }
 
 
-- (void)testAttri1 {
+// 图片
+- (void)tagTextGeneralImplementation {
     
-    UILabel *descLabel = [[UILabel alloc] init];
-    descLabel.numberOfLines = 0;
-    [self.view addSubview:descLabel];
-    [descLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.inset(10.f);
-        make.right.inset(10.f);
-        make.bottom.inset(100.f);
+}
+
+
+- (void)tagTextLabel1 {
+    UILabel *tagTextLabel = [[UILabel alloc] init];
+    tagTextLabel.numberOfLines = 0;
+    [self.view addSubview:tagTextLabel];
+    [tagTextLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.inset(30.f);
+        make.right.inset(30.f);
+        make.top.inset(100.f);
     }];
-
-//    NSMutableAttributedString *attri = [[NSMutableAttributedString alloc] initWithString:@"这是一件商品，他非常的便宜，可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。可以说是物美价廉了。"];
     
+    CGFloat scale = 3.f;
+    CGFloat fontSize = 12.f;
+    NSString *tagText = @"置顶";
+    CGFloat aaW = fontSize * tagText.length + 6.f;
+    UILabel *tagLabel = [UILabel new];
+    tagLabel.frame = CGRectMake(0, 0, aaW * scale, 16 * scale);
+    tagLabel.text = tagText;
+    tagLabel.font = [UIFont boldSystemFontOfSize:fontSize * scale];
+    tagLabel.textColor = [UIColor whiteColor];
+    tagLabel.backgroundColor = [UIColor redColor];
+    tagLabel.clipsToBounds = YES;
+    tagLabel.layer.cornerRadius = 2;
+    tagLabel.textAlignment = NSTextAlignmentCenter;
     
-    NSString *titleString = @"我是标题！我是标题！我是标！我是标题！";
-    //创建  NSMutableAttributedString 富文本对象
-    NSMutableAttributedString *maTitleString = [[NSMutableAttributedString alloc] initWithString:titleString];
-    //创建一个小标签的Label
-    NSString *aa = @"我TM是个类似图片的标签";
-    CGFloat aaW = 12*aa.length +6;
-    UILabel *aaL = [UILabel new];
-    aaL.frame = CGRectMake(0, 0, aaW*3, 16*3);
-    aaL.text = aa;
-    aaL.font = [UIFont boldSystemFontOfSize:12*3];
-    aaL.textColor = [UIColor whiteColor];
-    aaL.backgroundColor = [UIColor redColor];
-    aaL.clipsToBounds = YES;
-    aaL.layer.cornerRadius = 3*3;
-    aaL.textAlignment = NSTextAlignmentCenter;
-    //调用方法，转化成Image
-    UIImage *image = [self imageWithUIView:aaL];
-    //创建Image的富文本格式
-    NSTextAttachment *attach = [[NSTextAttachment alloc] init];
-    attach.bounds = CGRectMake(0, -2.5, aaW, 16); //这个-2.5是为了调整下标签跟文字的位置
-    attach.image = image;
-    //添加到富文本对象里
-    NSAttributedString * imageStr = [NSAttributedString attributedStringWithAttachment:attach];
-    [maTitleString insertAttributedString:imageStr atIndex:0];//加入文字前面
+    // 对 tagLabel截图
+    UIImage *image = [self imageWithUIView:tagLabel];
+    NSTextAttachment *tagAttachment = [[NSTextAttachment alloc] init];
+    tagAttachment.bounds = CGRectMake(0, -2.5, aaW, 16); // 这个 -2.5 是为了调整下标签跟文字的位置
+    tagAttachment.image = image;
     
+    NSAttributedString *tagAttr = [NSAttributedString attributedStringWithAttachment:tagAttachment];
     
-    
-    
-    
-    
-    
-    [descLabel setAttributedText:maTitleString];
+    NSString *titleString = @"  我是标题我是标题我是标我是标题我是标题我是标题我是标我是标题我是标题我是标题我是标我是标题我是标题我是标题我是标我是标题我是标题";
+    NSMutableAttributedString *tagTextAttr = [[NSMutableAttributedString alloc] initWithString:titleString];
+    [tagTextAttr insertAttributedString:tagAttr atIndex:0];
+    [tagTextLabel setAttributedText:tagTextAttr];
 }
+
+// 首行缩进
+- (void)tagTextWithParagraphStyleOfFirstLineHeadIndent {
+    
+}
+
+#pragma mark - Private Methods
 
 //view转成image
-- (UIImage*) imageWithUIView:(UIView*) view{
+- (UIImage*)imageWithUIView:(UIView*) view{
     UIGraphicsBeginImageContext(view.bounds.size);
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     [view.layer renderInContext:ctx];

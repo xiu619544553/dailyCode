@@ -5,6 +5,9 @@ PODS:
   - RTRootNavigationController (0.7.2):
     - RTRootNavigationController/Core (= 0.7.2)
   - RTRootNavigationController/Core (0.7.2)
+  - SDWebImage (5.9.0):
+    - SDWebImage/Core (= 5.9.0)
+  - SDWebImage/Core (5.9.0)
   - TKCategory (0.1.0):
     - IQKeyboardManager
   - WMPageController (2.5.2)
@@ -16,6 +19,7 @@ DEPENDENCIES:
   - FLEX (= 4.1.1)
   - Masonry
   - RTRootNavigationController (~> 0.7.0)
+  - SDWebImage (= 5.9.0)
   - TKCategory (from `../TKCategory`)
   - WMPageController (= 2.5.2)
   - YYKit
@@ -26,6 +30,7 @@ SPEC REPOS:
     - IQKeyboardManager
     - Masonry
     - RTRootNavigationController
+    - SDWebImage
     - WMPageController
     - YYKit
 
@@ -38,10 +43,11 @@ SPEC CHECKSUMS:
   IQKeyboardManager: 2a6e97afdafc7becf0cb17a9a8d795e3a980717f
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   RTRootNavigationController: 8344c2352d6d40fa370d0366efae2c84a945213f
+  SDWebImage: 62ae4a18473520c67b79e9724c31a63599cc9423
   TKCategory: f18f5dca49673de7fc55cfb17eb628eb2752c3b5
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 35285bc1e6fec6dfdf169a55192d69d6242e4c40
+PODFILE CHECKSUM: 34b2b8079819abddc0748463808c64ed844d06b3
 
 COCOAPODS: 1.9.2

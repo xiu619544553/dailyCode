@@ -3,6 +3,7 @@ ${BUILT_PRODUCTS_DIR}/FLEX/FLEX.framework
 ${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework
 ${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework
 ${BUILT_PRODUCTS_DIR}/RTRootNavigationController/RTRootNavigationController.framework
+${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/TKCategory/TKCategory.framework
 ${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework
 ${BUILT_PRODUCTS_DIR}/YYKit/YYKit.framework

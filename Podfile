@@ -11,6 +11,7 @@ use_frameworks!
     pod 'Masonry'
 #    pod 'FPSLabel'
     pod 'YYKit'
+    pod 'SDWebImage', '5.9.0'
 
     pod 'WMPageController', '2.5.2'
     pod 'RTRootNavigationController', '~> 0.7.0'

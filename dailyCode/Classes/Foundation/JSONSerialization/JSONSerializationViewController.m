@@ -33,8 +33,8 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"weakness" ofType:@"json"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"weakness" ofType:@"json"];
+//    NSData *data = [NSData dataWithContentsOfFile:path];
     
 //    WXBookManagerModel *nodeModel = [WXBookManagerModel modelWithJSON:data];
     
