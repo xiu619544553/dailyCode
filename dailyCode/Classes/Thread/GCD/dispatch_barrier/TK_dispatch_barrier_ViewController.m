@@ -18,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"栅栏函数的应用";
+    self.navigationItem.title = @"dispatch_barrier 栅栏函数的应用";
     /*
      区别
      官方文档：
