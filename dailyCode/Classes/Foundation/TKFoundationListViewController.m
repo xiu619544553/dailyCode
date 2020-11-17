@@ -16,11 +16,6 @@
 
 @synthesize dataSource = _dataSource;
 
-#pragma mark - Life Cycle
-- (void)viewDidLoad {
-    [super viewDidLoad];
-}
-
 #pragma mark - getter
 
 - (NSArray *)dataSource {
@@ -39,16 +34,16 @@
                 KeyForDesc : @"关于 UIScrollView 的属性的尝试"
             },
             @{
-                KeyForVC   : @"TKSortViewController",
-                KeyForDesc : @"排序"
-            },
-            @{
                 KeyForVC   : @"TKScalePropertyViewController",
                 KeyForDesc : @"理解 scale 属性"
             },
             @{
                 KeyForVC   : @"TK_NSOperationQueue_ViewController",
                 KeyForDesc : @"NSOperationQueue 使用"
+            },
+            @{
+                KeyForVC   : @"TKArrayUsageListViewController",
+                KeyForDesc : @"NSArray、NSMutableArray 的一些用法"
             }
         ];
     }

@@ -1,0 +1,36 @@
+//
+//  TKGenericsUsageViewController.m
+//  dailyCode
+//
+//  Created by hello on 2020/11/17.
+//  Copyright © 2020 TK. All rights reserved.
+//
+
+#import "TKGenericsUsageViewController.h"
+#import "TKArrayMapper.h"
+
+@interface TKGenericsUsageViewController ()
+
+@end
+
+@implementation TKGenericsUsageViewController
+
+#pragma mark - Life Cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSArray<NSNumber *> *numbers = @[@(1), @(2), @(3)];
+    
+    NSArray<NSString *> *strings = [TKArrayMapper<NSNumber *, NSString *> mapArray:numbers block:^NSString * _Nonnull(NSNumber * _Nonnull obj) {
+        
+        
+        return [obj stringValue];
+        
+    }];
+}
+
+@end

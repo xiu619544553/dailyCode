@@ -146,6 +146,10 @@
             @{
                 KeyForVC   : @"ViewController",
                 KeyForDesc : @"获取 topViewController"
+            },
+            @{
+                KeyForVC   : @"TKImageAPIUsageListVC",
+                KeyForDesc : @"UIImage API使用"
             }
         ];
     }

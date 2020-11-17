@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C0B9A793EAC1C2C296E44979 /* Pods_dailyCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72228E4741D0ECBAAC2DC9E7 /* Pods_dailyCode.framework */; };
+		18C714FB9FC65FA20D140507 /* libPods-dailyCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 907933AFAF119360B1D427A6 /* libPods-dailyCode.a */; };
+		501CEA4D7B1CC51CDA96E57F /* libPods-dailyCodeWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8D09193E337D425E08872D /* libPods-dailyCodeWidget.a */; };
+		CE242BF92563C1650013A36A /* TKArrayUsageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE242BF82563C1650013A36A /* TKArrayUsageListViewController.m */; };
+		CE242C032563C2390013A36A /* TKGenericsUsageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE242C012563C2390013A36A /* TKGenericsUsageViewController.xib */; };
+		CE242C0E2563C3360013A36A /* TKArrayMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE242C0D2563C3360013A36A /* TKArrayMapper.m */; };
+		CE242C152563C4000013A36A /* TKGenericsUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE242C002563C2390013A36A /* TKGenericsUsageViewController.m */; };
 		CE400D4A253576EA003C5E72 /* TKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400B99253576E8003C5E72 /* TKNavigationController.m */; };
 		CE400D4C253576EA003C5E72 /* TKBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BA0253576E8003C5E72 /* TKBaseViewController.m */; };
 		CE400D4D253576EA003C5E72 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BA1253576E8003C5E72 /* main.m */; };
@@ -128,16 +133,53 @@
 		CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */; };
 		CE9D68662549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D68652549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m */; };
 		CE9D6868254916B500465E56 /* TK_dispatch_barrier_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */; };
+		CE9D686F25493D5B00465E56 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D686E25493D5B00465E56 /* NotificationCenter.framework */; };
+		CE9D687325493D5B00465E56 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D687225493D5B00465E56 /* TodayViewController.m */; };
+		CE9D687A25493D5B00465E56 /* dailyCodeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CECD2497255A61E000A0610B /* TKImageAPIUsageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */; };
+		CECD249E255A631B00A0610B /* TKResizableImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD249D255A631B00A0610B /* TKResizableImageViewController.m */; };
 		CEE6F2362536AE9D00E3EBF8 /* TKThreadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */; };
 		CEE6F23A2536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */; };
 		CEE6F23F2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE6F23D2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib */; };
 		CEE6F2442536CAFF00E3EBF8 /* TKBasePlainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400B9F253576E8003C5E72 /* TKBasePlainTableViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE9D687825493D5B00465E56 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE400B5525357361003C5E72 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE9D686C25493D5B00465E56;
+			remoteInfo = dailyCodeWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CE9D687E25493D5B00465E56 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CE9D687A25493D5B00465E56 /* dailyCodeWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		64F378A5EE8D49C1C485AD0C /* Pods-dailyCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.debug.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.debug.xcconfig"; sourceTree = "<group>"; };
-		72228E4741D0ECBAAC2DC9E7 /* Pods_dailyCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dailyCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A8D09193E337D425E08872D /* libPods-dailyCodeWidget.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dailyCodeWidget.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		907933AFAF119360B1D427A6 /* libPods-dailyCode.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-dailyCode.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96D50E8511787BE3881CB130 /* Pods-dailyCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.release.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.release.xcconfig"; sourceTree = "<group>"; };
+		CE242BF72563C1650013A36A /* TKArrayUsageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKArrayUsageListViewController.h; sourceTree = "<group>"; };
+		CE242BF82563C1650013A36A /* TKArrayUsageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKArrayUsageListViewController.m; sourceTree = "<group>"; };
+		CE242BFF2563C2390013A36A /* TKGenericsUsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGenericsUsageViewController.h; sourceTree = "<group>"; };
+		CE242C002563C2390013A36A /* TKGenericsUsageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGenericsUsageViewController.m; sourceTree = "<group>"; };
+		CE242C012563C2390013A36A /* TKGenericsUsageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKGenericsUsageViewController.xib; sourceTree = "<group>"; };
+		CE242C0C2563C3360013A36A /* TKArrayMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKArrayMapper.h; sourceTree = "<group>"; };
+		CE242C0D2563C3360013A36A /* TKArrayMapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKArrayMapper.m; sourceTree = "<group>"; };
 		CE400B5D25357361003C5E72 /* iOSDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE400B99253576E8003C5E72 /* TKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNavigationController.m; sourceTree = "<group>"; };
 		CE400B9A253576E8003C5E72 /* TKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNavigationController.h; sourceTree = "<group>"; };
@@ -366,6 +408,16 @@
 		CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_NSOperationQueue_ViewController.xib; sourceTree = "<group>"; };
 		CE9D68642549168C00465E56 /* TK_asyn_syn_queue_thread_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_asyn_syn_queue_thread_VC.h; sourceTree = "<group>"; };
 		CE9D68652549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_asyn_syn_queue_thread_VC.m; sourceTree = "<group>"; };
+		CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = dailyCodeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE9D686E25493D5B00465E56 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		CE9D687125493D5B00465E56 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		CE9D687225493D5B00465E56 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		CE9D687725493D5B00465E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE9D68802549695200465E56 /* 小组件大功能.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = "小组件大功能.entitlements"; path = "../../../.Trash/小组件大功能.entitlements"; sourceTree = "<group>"; };
+		CECD2495255A61E000A0610B /* TKImageAPIUsageListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageAPIUsageListVC.h; sourceTree = "<group>"; };
+		CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageAPIUsageListVC.m; sourceTree = "<group>"; };
+		CECD249C255A631B00A0610B /* TKResizableImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKResizableImageViewController.h; sourceTree = "<group>"; };
+		CECD249D255A631B00A0610B /* TKResizableImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKResizableImageViewController.m; sourceTree = "<group>"; };
 		CEE6F2342536AE9C00E3EBF8 /* TKThreadListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKThreadListViewController.h; sourceTree = "<group>"; };
 		CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKThreadListViewController.m; sourceTree = "<group>"; };
 		CEE6F2382536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKBasicKnowledgeListViewController.h; sourceTree = "<group>"; };
@@ -373,6 +425,8 @@
 		CEE6F23B2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_dispatch_barrier_ViewController.h; sourceTree = "<group>"; };
 		CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_dispatch_barrier_ViewController.m; sourceTree = "<group>"; };
 		CEE6F23D2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_dispatch_barrier_ViewController.xib; sourceTree = "<group>"; };
+		DCA9960EEB1F389C359883B9 /* Pods-dailyCodeWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCodeWidget.debug.xcconfig"; path = "Target Support Files/Pods-dailyCodeWidget/Pods-dailyCodeWidget.debug.xcconfig"; sourceTree = "<group>"; };
+		E34540053D907645E29D2D27 /* Pods-dailyCodeWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCodeWidget.release.xcconfig"; path = "Target Support Files/Pods-dailyCodeWidget/Pods-dailyCodeWidget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -380,7 +434,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0B9A793EAC1C2C296E44979 /* Pods_dailyCode.framework in Frameworks */,
+				18C714FB9FC65FA20D140507 /* libPods-dailyCode.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE9D686A25493D5B00465E56 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE9D686F25493D5B00465E56 /* NotificationCenter.framework in Frameworks */,
+				501CEA4D7B1CC51CDA96E57F /* libPods-dailyCodeWidget.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,7 +453,9 @@
 		45D7A57A9839C8892ED2D37E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				72228E4741D0ECBAAC2DC9E7 /* Pods_dailyCode.framework */,
+				CE9D686E25493D5B00465E56 /* NotificationCenter.framework */,
+				907933AFAF119360B1D427A6 /* libPods-dailyCode.a */,
+				7A8D09193E337D425E08872D /* libPods-dailyCodeWidget.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -400,14 +465,56 @@
 			children = (
 				64F378A5EE8D49C1C485AD0C /* Pods-dailyCode.debug.xcconfig */,
 				96D50E8511787BE3881CB130 /* Pods-dailyCode.release.xcconfig */,
+				DCA9960EEB1F389C359883B9 /* Pods-dailyCodeWidget.debug.xcconfig */,
+				E34540053D907645E29D2D27 /* Pods-dailyCodeWidget.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE242BF22563C1220013A36A /* NSArray */ = {
+			isa = PBXGroup;
+			children = (
+				CE242BFE2563C2170013A36A /* Generics */,
+				CE400C56253576E9003C5E72 /* Sorted */,
+				CE242BF72563C1650013A36A /* TKArrayUsageListViewController.h */,
+				CE242BF82563C1650013A36A /* TKArrayUsageListViewController.m */,
+			);
+			path = NSArray;
+			sourceTree = "<group>";
+		};
+		CE242BFE2563C2170013A36A /* Generics */ = {
+			isa = PBXGroup;
+			children = (
+				CE242C0B2563C3280013A36A /* Mapper */,
+				CE242C082563C2600013A36A /* Controller */,
+			);
+			path = Generics;
+			sourceTree = "<group>";
+		};
+		CE242C082563C2600013A36A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CE242BFF2563C2390013A36A /* TKGenericsUsageViewController.h */,
+				CE242C002563C2390013A36A /* TKGenericsUsageViewController.m */,
+				CE242C012563C2390013A36A /* TKGenericsUsageViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CE242C0B2563C3280013A36A /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				CE242C0C2563C3360013A36A /* TKArrayMapper.h */,
+				CE242C0D2563C3360013A36A /* TKArrayMapper.m */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 		CE400B5425357361003C5E72 = {
 			isa = PBXGroup;
 			children = (
 				CE400B5F25357361003C5E72 /* dailyCode */,
+				CE9D687025493D5B00465E56 /* dailyCodeWidget */,
 				CE400B5E25357361003C5E72 /* Products */,
 				99978CB7F2FE33E34EE0495F /* Pods */,
 				45D7A57A9839C8892ED2D37E /* Frameworks */,
@@ -418,6 +525,7 @@
 			isa = PBXGroup;
 			children = (
 				CE400B5D25357361003C5E72 /* iOSDemo.app */,
+				CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -565,8 +673,6 @@
 		CE400BC0253576E9003C5E72 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				CE400E0425357AC4003C5E72 /* TKUIKitListViewController.h */,
-				CE400E0525357AC4003C5E72 /* TKUIKitListViewController.m */,
 				CE400C3E253576E9003C5E72 /* AboutScrollViewLayout */,
 				CE400BEE253576E9003C5E72 /* AlertViewController */,
 				CE400C39253576E9003C5E72 /* AsyncDecoder */,
@@ -580,13 +686,16 @@
 				CE400BE9253576E9003C5E72 /* Layout */,
 				CE400C16253576E9003C5E72 /* ResponderChain */,
 				CE400BC5253576E9003C5E72 /* ScrollView */,
+				CE400C25253576E9003C5E72 /* ScrollViewAndNav */,
 				CE400BF1253576E9003C5E72 /* Shadow */,
 				CE400BC8253576E9003C5E72 /* TableView */,
 				CE400BD7253576E9003C5E72 /* TextView */,
 				CE400BDC253576E9003C5E72 /* TKImagePickerUsageController */,
-				CE400C25253576E9003C5E72 /* ScrollViewAndNav */,
+				CE400E0425357AC4003C5E72 /* TKUIKitListViewController.h */,
+				CE400E0525357AC4003C5E72 /* TKUIKitListViewController.m */,
 				CE400C2E253576E9003C5E72 /* TopViewController */,
 				CE400C03253576E9003C5E72 /* TreeTableView */,
+				CECD2490255A617C00A0610B /* UIImage */,
 				CE400C21253576E9003C5E72 /* UIViewCategoryUsage */,
 				CE400BF4253576E9003C5E72 /* WebView */,
 				CE400BF9253576E9003C5E72 /* WMPageController */,
@@ -910,9 +1019,9 @@
 				CE400C4B253576E9003C5E72 /* Attributed */,
 				CE400C52253576E9003C5E72 /* BackgroundTask */,
 				CE400C44253576E9003C5E72 /* JSONSerialization */,
+				CE242BF22563C1220013A36A /* NSArray */,
 				CE400C5C253576E9003C5E72 /* NSOperationQueue */,
 				CE400C4E253576E9003C5E72 /* Scale */,
-				CE400C56253576E9003C5E72 /* Sorted */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -961,11 +1070,11 @@
 		CE400C56253576E9003C5E72 /* Sorted */ = {
 			isa = PBXGroup;
 			children = (
-				CE400C57253576E9003C5E72 /* TKSortViewController.h */,
 				CE400C58253576E9003C5E72 /* TKSortedModel.h */,
-				CE400C59253576E9003C5E72 /* TKSortViewController.xib */,
-				CE400C5A253576E9003C5E72 /* TKSortViewController.m */,
 				CE400C5B253576E9003C5E72 /* TKSortedModel.m */,
+				CE400C57253576E9003C5E72 /* TKSortViewController.h */,
+				CE400C5A253576E9003C5E72 /* TKSortViewController.m */,
+				CE400C59253576E9003C5E72 /* TKSortViewController.xib */,
 			);
 			path = Sorted;
 			sourceTree = "<group>";
@@ -1211,6 +1320,44 @@
 			path = dispatch_barrier;
 			sourceTree = "<group>";
 		};
+		CE9D687025493D5B00465E56 /* dailyCodeWidget */ = {
+			isa = PBXGroup;
+			children = (
+				CE9D68802549695200465E56 /* 小组件大功能.entitlements */,
+				CE9D687125493D5B00465E56 /* TodayViewController.h */,
+				CE9D687225493D5B00465E56 /* TodayViewController.m */,
+				CE9D687725493D5B00465E56 /* Info.plist */,
+			);
+			path = dailyCodeWidget;
+			sourceTree = "<group>";
+		};
+		CECD2490255A617C00A0610B /* UIImage */ = {
+			isa = PBXGroup;
+			children = (
+				CECD2494255A618D00A0610B /* Controller */,
+				CECD2493255A618600A0610B /* View */,
+			);
+			path = UIImage;
+			sourceTree = "<group>";
+		};
+		CECD2493255A618600A0610B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CECD2494255A618D00A0610B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CECD2495255A61E000A0610B /* TKImageAPIUsageListVC.h */,
+				CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */,
+				CECD249C255A631B00A0610B /* TKResizableImageViewController.h */,
+				CECD249D255A631B00A0610B /* TKResizableImageViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		CEE6F2322536AE7800E3EBF8 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
@@ -1250,16 +1397,36 @@
 				CE400B5925357361003C5E72 /* Sources */,
 				CE400B5A25357361003C5E72 /* Frameworks */,
 				CE400B5B25357361003C5E72 /* Resources */,
-				1920F16147B31F225A69C34B /* [CP] Embed Pods Frameworks */,
+				CE9D687E25493D5B00465E56 /* Embed App Extensions */,
+				6598160832E4CE85CC0E5CC1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CE9D687925493D5B00465E56 /* PBXTargetDependency */,
 			);
 			name = dailyCode;
 			productName = dailyCode;
 			productReference = CE400B5D25357361003C5E72 /* iOSDemo.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CE9D686C25493D5B00465E56 /* dailyCodeWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE9D687B25493D5B00465E56 /* Build configuration list for PBXNativeTarget "dailyCodeWidget" */;
+			buildPhases = (
+				E0A7C23878FF5668FEC1046A /* [CP] Check Pods Manifest.lock */,
+				CE9D686925493D5B00465E56 /* Sources */,
+				CE9D686A25493D5B00465E56 /* Frameworks */,
+				CE9D686B25493D5B00465E56 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = dailyCodeWidget;
+			productName = dailyCodeWidget;
+			productReference = CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -1267,10 +1434,14 @@
 		CE400B5525357361003C5E72 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Latest;
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = TK;
 				TargetAttributes = {
 					CE400B5C25357361003C5E72 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					CE9D686C25493D5B00465E56 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
 				};
@@ -1289,6 +1460,7 @@
 			projectRoot = "";
 			targets = (
 				CE400B5C25357361003C5E72 /* dailyCode */,
+				CE9D686C25493D5B00465E56 /* dailyCodeWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -1302,6 +1474,7 @@
 				CE400DFD253576EA003C5E72 /* TKMacroViewController.xib in Resources */,
 				CE400D68253576EA003C5E72 /* TKFeedbackGeneratorViewController.xib in Resources */,
 				CEE6F23F2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib in Resources */,
+				CE242C032563C2390013A36A /* TKGenericsUsageViewController.xib in Resources */,
 				CE400DB4253576EA003C5E72 /* TKSDWebImageUsageViewController.xib in Resources */,
 				CE400D6F253576EA003C5E72 /* jsInvokeOcAndOCCallback.html in Resources */,
 				CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */,
@@ -1321,26 +1494,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		1920F16147B31F225A69C34B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
+		CE9D686B25493D5B00465E56 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
 		37C734F192F162EA9FFACCD8 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1363,6 +1526,45 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		6598160832E4CE85CC0E5CC1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0A7C23878FF5668FEC1046A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-dailyCodeWidget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -1370,6 +1572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE242C152563C4000013A36A /* TKGenericsUsageViewController.m in Sources */,
 				CE9D6868254916B500465E56 /* TK_dispatch_barrier_ViewController.m in Sources */,
 				CEE6F2442536CAFF00E3EBF8 /* TKBasePlainTableViewController.m in Sources */,
 				CE400D94253576EA003C5E72 /* TKScalePropertyViewController.m in Sources */,
@@ -1434,8 +1637,10 @@
 				CE400DB0253576EA003C5E72 /* AFURLRequestSerialization.m in Sources */,
 				CE400D74253576EA003C5E72 /* WMStickyPageController.m in Sources */,
 				CE400D59253576EA003C5E72 /* OptionalViewController.m in Sources */,
+				CE242BF92563C1650013A36A /* TKArrayUsageListViewController.m in Sources */,
 				CE400D9C253576EA003C5E72 /* TKAverageVC.m in Sources */,
 				CE400D58253576EA003C5E72 /* TKHomeCollectionViewCell.m in Sources */,
+				CECD2497255A61E000A0610B /* TKImageAPIUsageListVC.m in Sources */,
 				CE400D88253576EA003C5E72 /* ViewController.m in Sources */,
 				CE400D5E253576EA003C5E72 /* TKLiftViewController.m in Sources */,
 				CE400DA7253576EA003C5E72 /* WKWebView+AFNetworking.m in Sources */,
@@ -1445,6 +1650,7 @@
 				CEE6F23A2536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m in Sources */,
 				CE400D8C253576EA003C5E72 /* AsyncDecoderCell.m in Sources */,
 				CE400D99253576EA003C5E72 /* TKSortedModel.m in Sources */,
+				CECD249E255A631B00A0610B /* TKResizableImageViewController.m in Sources */,
 				CE400DA3253576EA003C5E72 /* TKSafeAreaInsetsViewController.m in Sources */,
 				CE400D98253576EA003C5E72 /* TKSortViewController.m in Sources */,
 				CE400DA1253576EA003C5E72 /* TKAutolayoutCell.m in Sources */,
@@ -1452,6 +1658,7 @@
 				CE400D79253576EA003C5E72 /* NodeModel.m in Sources */,
 				CE400DF9253576EA003C5E72 /* TKSDWebImageUsageViewController.m in Sources */,
 				CE400D6A253576EA003C5E72 /* LayoutViewController.m in Sources */,
+				CE242C0E2563C3360013A36A /* TKArrayMapper.m in Sources */,
 				CE400D64253576EA003C5E72 /* TKTextViewController.m in Sources */,
 				CE400DAF253576EA003C5E72 /* AFURLSessionManager.m in Sources */,
 				CE400D8D253576EA003C5E72 /* AsyncDecoderImageViewController.m in Sources */,
@@ -1477,7 +1684,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE9D686925493D5B00465E56 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE9D687325493D5B00465E56 /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE9D687925493D5B00465E56 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE9D686C25493D5B00465E56 /* dailyCodeWidget */;
+			targetProxy = CE9D687825493D5B00465E56 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE400BAD253576E9003C5E72 /* LaunchScreen.storyboard */ = {
@@ -1641,6 +1864,48 @@
 			};
 			name = Release;
 		};
+		CE9D687C25493D5B00465E56 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DCA9960EEB1F389C359883B9 /* Pods-dailyCodeWidget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "dailyCodeWidget/小组件大功能.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5FL8MZ4CH2;
+				INFOPLIST_FILE = dailyCodeWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tank.dailyCode.dailyCodeWidget;
+				PRODUCT_NAME = dailyCodeWidget;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE9D687D25493D5B00465E56 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E34540053D907645E29D2D27 /* Pods-dailyCodeWidget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "dailyCodeWidget/小组件大功能.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5FL8MZ4CH2;
+				INFOPLIST_FILE = dailyCodeWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.tank.dailyCode.dailyCodeWidget;
+				PRODUCT_NAME = dailyCodeWidget;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1658,6 +1923,15 @@
 			buildConfigurations = (
 				CE400B7725357365003C5E72 /* Debug */,
 				CE400B7825357365003C5E72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE9D687B25493D5B00465E56 /* Build configuration list for PBXNativeTarget "dailyCodeWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE9D687C25493D5B00465E56 /* Debug */,
+				CE9D687D25493D5B00465E56 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
