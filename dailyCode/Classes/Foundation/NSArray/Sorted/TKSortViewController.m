@@ -38,11 +38,10 @@
     [sortedImages sortUsingDescriptors:@[sortDescriptor]];
     kTOCK
     
-    
-    NSMutableString *muString = [NSMutableString string];
-    [sortedImages enumerateObjectsUsingBlock:^(TKSortedModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        [muString appendString:[NSString stringWithFormat:@"%d     ", obj.number]];
-    }];
+    // 查看排序结果
+    for (TKSortedModel *model in sortedImages) {
+        NSLog(@"number=%@", @(model.number));
+    }
 }
 
 // 升序排序，NSArray<NSString *> *
@@ -55,7 +54,7 @@
         @"platform"   : @"iphone",
         @"user_id"    : @"31114",
         @"version"    : @"4.8.0",
-        @"appid"      : @"tiku"
+        @"appid"      : @"test666"
     };
     
     //        NSOrderedAscending = -1L,
@@ -66,6 +65,7 @@
     // 返回一个数组，该数组按升序列出接收数组的元素，由给定NSComparator块指定的比较方法确定。
     NSArray *sortedArray = [keys sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2){
         NSComparisonResult result = [obj1 compare:obj2 options:NSNumericSearch];
+        NSLog(@"obj1=%@  obj2=%@  result=%ld", obj1, obj2, result);
         return result;
     }];
     

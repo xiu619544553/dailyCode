@@ -474,10 +474,10 @@
 		CE242BF22563C1220013A36A /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
-				CE242BFE2563C2170013A36A /* Generics */,
-				CE400C56253576E9003C5E72 /* Sorted */,
 				CE242BF72563C1650013A36A /* TKArrayUsageListViewController.h */,
 				CE242BF82563C1650013A36A /* TKArrayUsageListViewController.m */,
+				CE242BFE2563C2170013A36A /* Generics */,
+				CE400C56253576E9003C5E72 /* Sorted */,
 			);
 			path = NSArray;
 			sourceTree = "<group>";
