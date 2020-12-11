@@ -21,6 +21,7 @@ target 'dailyCode' do
   
   pod 'TKCategory', :path => '../TKCategory'
   pod 'FLEX', '4.1.1', :configurations => ['Debug']
+  pod 'LookinServer', :configurations => ['Debug']
   
   pod 'SVProgressHUD'
   
@@ -29,4 +30,15 @@ end
 # extension
 target 'dailyCodeWidget' do
   sharedPods
+end
+
+
+# fix warnings: 解决 Pod中 framework与主工程部署版本(deployment version，简称DV)不一致的警告
+# 注意: 如果 Pod中有第三方库对最低系统版本有要求 DV > 主工程版本，则不可以使用下面的代码
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+        end
+    end
 end

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "TKTabBarController.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 #import <Masonry.h>
 #import <BackgroundTasks/BackgroundTasks.h>
@@ -40,6 +41,32 @@
     
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.tank.dailyCode.dailyCodeWidget"];
     [userDefaults setValue:params forKey:@"dailyCodeWidget"];
+    
+    
+    
+    
+    // bundle
+    
+    NSBundle *mainBundle = [NSBundle mainBundle];
+    NSString *mainBundlePath = [mainBundle bundlePath];
+    NSLog(@"mainBundlePath\n%@", mainBundlePath);
+    
+    NSString *mainBundleIdentifier = [mainBundle bundleIdentifier];
+    NSLog(@"mainBundleIdentifier\n%@", mainBundleIdentifier);
+    
+    NSURL *mainBundleURL = [mainBundle bundleURL];
+    NSLog(@"mainBundleURL\n%@", mainBundleURL);
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
     
     return YES;
 }

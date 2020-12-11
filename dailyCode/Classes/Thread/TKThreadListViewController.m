@@ -26,12 +26,16 @@
     if (!_dataSource) {
         _dataSource = @[
             @{
-                KeyForVC : @"TK_dispatch_barrier_ViewController",
+                KeyForVC   : @"TK_dispatch_barrier_ViewController",
                 KeyForDesc : @"栅栏函数：\ndispatch_barrier_asyn  \ndispatch_barrier_syn"
             },
             @{
-                KeyForVC : @"TK_asyn_syn_queue_thread_VC",
+                KeyForVC   : @"TK_asyn_syn_queue_thread_VC",
                 KeyForDesc : @"同步与异步的概念\n队列与线程的区别"
+            },
+            @{
+                KeyForVC   : @"TK_dispatch_group_VC",
+                KeyForDesc : @"组队列使用"
             }
         ];
     }

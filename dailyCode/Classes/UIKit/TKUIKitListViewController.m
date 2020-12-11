@@ -150,6 +150,10 @@
             @{
                 KeyForVC   : @"TKImageAPIUsageListVC",
                 KeyForDesc : @"UIImage API使用"
+            },
+            @{
+                KeyForVC   : @"TKTestShadowVC",
+                KeyForDesc : @"阴影测试"
             }
         ];
     }

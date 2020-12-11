@@ -44,6 +44,10 @@
             @{
                 KeyForVC   : @"TKArrayUsageListViewController",
                 KeyForDesc : @"NSArray、NSMutableArray 的一些用法"
+            },
+            @{
+                KeyForVC   : @"TK_NSAttributed_ViewController",
+                KeyForDesc : @"属性字符串应用"
             }
         ];
     }
