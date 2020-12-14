@@ -11,4 +11,6 @@
 
 #define kNickName @"Alex"
 
+#define kExtraField @"extra"
+
 #endif /* TestHeader_h */

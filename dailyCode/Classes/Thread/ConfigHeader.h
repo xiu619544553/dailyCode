@@ -9,5 +9,6 @@
 #ifndef ConfigHeader_h
 #define ConfigHeader_h
 
+#define kAppKey @"68fn0epo012jvkkqw9"
 
 #endif /* ConfigHeader_h */
