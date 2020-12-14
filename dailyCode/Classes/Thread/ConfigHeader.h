@@ -10,5 +10,6 @@
 #define ConfigHeader_h
 
 #define kAppKey @"68fn0epo012jvkkqw9"
+#define kAppSecret @"fewc091287"
 
 #endif /* ConfigHeader_h */
