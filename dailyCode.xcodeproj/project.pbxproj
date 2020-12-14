@@ -416,6 +416,7 @@
 		CE400E0A2535836B003C5E72 /* TK_NSOperationQueue_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_NSOperationQueue_ViewController.h; sourceTree = "<group>"; };
 		CE400E0B2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_NSOperationQueue_ViewController.m; sourceTree = "<group>"; };
 		CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_NSOperationQueue_ViewController.xib; sourceTree = "<group>"; };
+		CE962F9525874C1D002B40CD /* TestHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHeader.h; sourceTree = "<group>"; };
 		CE9D68642549168C00465E56 /* TK_asyn_syn_queue_thread_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_asyn_syn_queue_thread_VC.h; sourceTree = "<group>"; };
 		CE9D68652549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_asyn_syn_queue_thread_VC.m; sourceTree = "<group>"; };
 		CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = dailyCodeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1412,6 +1413,7 @@
 		CEE6F2322536AE7800E3EBF8 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
+				CE962F9525874C1D002B40CD /* TestHeader.h */,
 				CEE6F2342536AE9C00E3EBF8 /* TKThreadListViewController.h */,
 				CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */,
 				CEE6F2332536AE8000E3EBF8 /* GCD */,
