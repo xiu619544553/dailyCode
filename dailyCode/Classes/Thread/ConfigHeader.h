@@ -11,5 +11,6 @@
 
 #define kAppKey @"68fn0epo012jvkkqw9"
 #define kAppSecret @"fewc091287"
+#define kCommit @"11111"
 
 #endif /* ConfigHeader_h */
