@@ -16,4 +16,6 @@
 
 #define kCommit3 @"333"
 
+#define kCommit3 @"444"
+
 #endif /* ConfigHeader_h */
