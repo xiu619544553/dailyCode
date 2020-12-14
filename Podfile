@@ -21,7 +21,6 @@ target 'dailyCode' do
   
   pod 'TKCategory', :path => '../TKCategory'
   pod 'FLEX', '4.1.1', :configurations => ['Debug']
-  pod 'LookinServer', :configurations => ['Debug']
   
   pod 'SVProgressHUD'
   
