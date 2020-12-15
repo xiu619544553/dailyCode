@@ -18,4 +18,6 @@
 
 #define kCommit3 @"444"
 
+#define kDeskTop @"kDeskTop"
+
 #endif /* ConfigHeader_h */
