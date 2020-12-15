@@ -19,5 +19,6 @@
 #define kCommit3 @"444"
 
 #define kDeskTop @"kDeskTop"
+#define kDeskTop2 @"kDeskTop2"
 
 #endif /* ConfigHeader_h */
