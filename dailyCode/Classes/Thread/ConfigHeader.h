@@ -21,5 +21,6 @@
 #define kDeskTop @"kDeskTop"
 #define kDeskTop2 @"kDeskTop2"
 #define kDeskTop3 @"kDeskTop3"
+#define kDeskTop4 @"kDeskTop4"
 
 #endif /* ConfigHeader_h */
