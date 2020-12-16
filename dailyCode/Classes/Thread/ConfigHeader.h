@@ -21,5 +21,6 @@
 #define kDeskTop @"kDeskTop"
 #define kDeskTop2 @"kDeskTop2"
 #define kRebase @"git rebase"
+#define kRebase1 @"git rebase1"
 
 #endif /* ConfigHeader_h */
