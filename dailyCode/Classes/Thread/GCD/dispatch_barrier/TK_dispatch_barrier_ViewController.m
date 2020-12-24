@@ -33,6 +33,10 @@
      */
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 #pragma mark - Event Methods
 
 - (IBAction)dispatch_barrier_asynUsage:(UIButton *)sender {

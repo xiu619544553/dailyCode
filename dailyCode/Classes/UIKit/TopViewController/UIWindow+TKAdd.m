@@ -45,29 +45,6 @@
 + (UIViewController *)topViewController {
     UIViewController *topVc = [UIApplication sharedApplication].keyWindow.rootViewController;
     
-#if __has_include(<RTRootNavigationController/RTRootNavigationController.h>) || __has_include("RTRootNavigationController")
-    
-    while (YES) {
-        if ([topVc isKindOfClass:UITabBarController.class]) {
-            topVc = ((UITabBarController *)topVc).selectedViewController;
-        }
-        
-        if ([topVc isKindOfClass:RTRootNavigationController.class]) {
-            topVc = ((RTRootNavigationController*)topVc).rt_visibleViewController;
-        }
-        
-        if ([topVc isKindOfClass:RTContainerController.class]) {
-            topVc = ((RTContainerController *)topVc).contentViewController;
-        }
-        
-        if (topVc.presentedViewController) {
-            topVc = topVc.presentedViewController;
-        } else {
-            break;
-        }
-    }
-    
-#else
     while (YES) {
         if ([topVc isKindOfClass:UITabBarController.class]) {
             topVc = ((UITabBarController *)topVc).selectedViewController;
@@ -83,7 +60,6 @@
             break;
         }
     }
-#endif
     
     return topVc;
 }

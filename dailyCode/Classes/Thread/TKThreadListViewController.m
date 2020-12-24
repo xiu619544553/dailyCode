@@ -46,6 +46,10 @@
             @{
                 KeyForVC   : @"TK_dispatch_group_VC",
                 KeyForDesc : @"组队列使用"
+            },
+            @{
+                KeyForVC   : @"TK_dispatch_semaphore_VC",
+                KeyForDesc : @"信号量使用"
             }
         ];
     }

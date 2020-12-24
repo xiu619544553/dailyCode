@@ -38,6 +38,10 @@
             @{
                 KeyForVC   : @"TKSDWebImageUsageViewController",
                 KeyForDesc : @"SDWebImage"
+            },
+            @{
+                KeyForVC   : @"TK_YYKit_UsageViewController",
+                KeyForDesc : @"YYKit 的使用"
             }
         ];
     }
