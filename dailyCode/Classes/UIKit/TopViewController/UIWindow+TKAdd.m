@@ -8,8 +8,6 @@
 
 #import "UIWindow+TKAdd.h"
 
-#import <RTRootNavigationController/RTRootNavigationController.h>
-
 @implementation UIWindow (TKAdd)
 
 //+ (UIViewController *)topViewController {

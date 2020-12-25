@@ -12,6 +12,9 @@
 
 @property (nonatomic, strong) NSMutableArray<NSString *> *imageUrlStringArray;
 
+@property (strong, nonatomic) dispatch_semaphore_t dataSourceLock;
+@property (nonatomic, strong) NSMutableDictionary *dataSources;
+
 @end
 
 @implementation TK_dispatch_semaphore_VC
@@ -22,22 +25,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
 //    [self.imageUrlStringArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 //        CGSize objSize = [[self class] getImageSizeWithURL:obj];
 //        NSLog(@"\nobj：%@ - size：%@", obj, NSStringFromCGSize(objSize));
 //    }];
-    
-//    void(^asyncHandler)(int code) = ^(int code) {
-//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//            if (asyncHandler) {
-//                asyncHandler(200);
-//            }
-//        });
-//    };
 }
-
-
 
 // 串行队列 + 异步 == 只会开启一个线程，且队列中所有的任务都是在这个线程执行
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -53,13 +45,34 @@
 //        NSLog(@"333:%@",[NSThread currentThread]);
 //    });
     
+    // MARK: 模拟器信号量和异步回调组合使用
     NSLog(@"...1...");
     [self simulate_Semaphore_AsyncHandler];
     NSLog(@"...2...");
+    
+    // MARK: 设置最大并发数
+//    [self setMaxCount:1];
 }
 
 
-// MARK: 模拟器信号量和异步回调组合使用
+#pragma mark - 信号量 - 设置最大并发数
+
+- (void)setMaxCount:(NSInteger)max {
+    dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(max);
+    for (int i = 0; i < 30; i ++) {
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+        
+        dispatch_async(globalQueue, ^{
+            dispatch_semaphore_signal(semaphore);
+            NSLog(@"i=%d", i);
+        });
+    }
+}
+
+#pragma mark - 模拟器信号量和异步回调组合使用
 - (void)simulate_Semaphore_AsyncHandler {
     /*
      创建信号量
@@ -73,23 +86,87 @@
      dispatch_semaphore_signal
      */
     
-    dispatch_semaphore_t sema = dispatch_semaphore_create(1);
-    NSLog(@"...create...");
-    [self asynHandler:^(NSString *result) {
-        NSLog(@"...signal...");
-        intptr_t signalResult = dispatch_semaphore_signal(sema);
-        NSLog(@"signalResult=%@", @(signalResult));
+    
+    /*
+     注意❌
+     阻塞当前线程
+     dispatch_semaphore_create(0);
+     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+     
+     最后执行 dispatch_semaphore_signal 无效，因为当前线程已阻塞
+     */
+    
+    
+    
+    /*
+     ✅正确使用方式1：
+     
+     阻塞当前线程
+     dispatch_semaphore_create(0);
+     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+     
+     异步执行调用 dispatch_semaphore_signal，唤醒已被阻塞的线程
+     */
+    [self semaphore_style_1];
+    
+    /*
+     ✅正确使用方式2：
+     可以作为线程锁使用：当我们操作可变集合时，使用这种方式添加锁，保证集合不会出现脏数据
+     */
+//    [self semaphore_style_2];
+}
+
+#pragma mark - dispatch_semaphore_create(1) - Lock
+
+- (void)semaphore_style_2 {
+    static dispatch_semaphore_t semaphore;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        semaphore = dispatch_semaphore_create(1);
+    });
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    [self.dataSources setObject:@"xxx" forKey:@"aaa"];
+    dispatch_semaphore_signal(semaphore);
+    
+    NSLog(@"%s", __func__);
+}
+
+#pragma mark - dispatch_semaphore_create(0)
+
+- (void)semaphore_style_1 {
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    
+    [self asynHandler:^(long long result) { // 异步调用，解除阻塞的线程
+        NSLog(@"result=%@", @(result));
         
+        dispatch_semaphore_signal(sema);
     }];
-    NSLog(@"...wait...");
+    
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
 }
 
-- (void)asynHandler:(void(^)(NSString *result))handler {
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        !handler ?: handler(@"200");
+// 异步调用 dispatch_semaphore_signal
+- (void)asynHandler:(void(^)(long long result))handler {
+    dispatch_async(dispatch_queue_create("com.tank", 0), ^{
+        long long i = 0;
+        for (i = 0; i < 5000 ; i ++) {
+            NSLog(@"i=%@", @(i));
+        }
+        !handler ?: handler(i);
     });
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -256,6 +333,13 @@
 }
 
 #pragma mark - geter
+
+- (NSMutableDictionary *)dataSources {
+    if (!_dataSources) {
+        _dataSources = [NSMutableDictionary dictionary];
+    }
+    return _dataSources;
+}
 
 - (NSMutableArray<NSString *> *)imageUrlStringArray {
     if (!_imageUrlStringArray) {

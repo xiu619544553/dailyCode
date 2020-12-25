@@ -149,7 +149,15 @@ isSensor = [[UIApplication sharedApplication] delegate].window.safeAreaInsets.bo
 #endif
 
 
+#pragma mark - Lock
 
+#ifndef TK_LOCK
+#define TK_LOCK(lock) dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);
+#endif
+
+#ifndef TK_UNLOCK
+#define TK_UNLOCK(lock) dispatch_semaphore_signal(lock);
+#endif
 
 
 #endif /* UniversalMacro_h */

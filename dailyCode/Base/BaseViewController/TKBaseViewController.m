@@ -7,10 +7,8 @@
 //
 
 #import "TKBaseViewController.h"
-#import <RTRootNavigationController/RTRootNavigationController.h>
-#import <RTRootNavigationController/UIViewController+RTRootNavigationController.h>
 
-@interface TKBaseViewController () <RTNavigationItemCustomizable>
+@interface TKBaseViewController () 
 
 @end
 
@@ -30,16 +28,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-}
-
-#pragma mark - RTNavigationItemCustomizable
-
-- (UIBarButtonItem *)rt_customBackItemWithTarget:(id)target action:(SEL)action {
-    UIImage *backImg = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    return [[UIBarButtonItem alloc] initWithImage:backImg
-                                            style:UIBarButtonItemStylePlain
-                                           target:self
-                                           action:@selector(_leftItemAction:)];
 }
 
 #pragma mark - Event Methods
