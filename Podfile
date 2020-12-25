@@ -17,7 +17,6 @@ target 'dailyCode' do
 #  pod 'FPSLabel'
   pod 'SDWebImage', '5.9.0'
   pod 'WMPageController', '2.5.2'
-  pod 'RTRootNavigationController', '~> 0.7.0'
   
   pod 'TKCategory', :path => '../TKCategory'
   pod 'FLEX', '4.1.1', :configurations => ['Debug']

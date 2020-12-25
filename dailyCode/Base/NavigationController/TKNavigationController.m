@@ -9,7 +9,7 @@
 #import "TKNavigationController.h"
 #import "AboutScrollViewLayoutViewController.h"
 
-@interface TKNavigationController ()
+@interface TKNavigationController () <UIGestureRecognizerDelegate>
 @property (nonatomic, strong) NSArray<Class> *filterViewControllers;
 @end
 
@@ -31,7 +31,33 @@
         viewController.hidesBottomBarWhenPushed = (self.viewControllers.count > 0);
     }
     
+    if (viewController.navigationItem.leftBarButtonItem == nil) {
+        viewController.navigationItem.leftBarButtonItem = [self customBackItem];
+        
+        self.interactivePopGestureRecognizer.delegate = self;
+        self.interactivePopGestureRecognizer.enabled = YES;
+    }
+    
+    
+    
+    
     [super pushViewController:viewController animated:animated];
+}
+
+#pragma mark - Action Methods
+
+- (void)customLeftItemAction:(UIBarButtonItem *)sender {
+    [self popViewControllerAnimated:YES];
+}
+
+#pragma mark - Private Methods
+
+- (UIBarButtonItem *)customBackItem {
+    UIImage *backImg = [[UIImage imageNamed:@"nav_back"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+    return [[UIBarButtonItem alloc] initWithImage:backImg
+                                            style:UIBarButtonItemStylePlain
+                                           target:self
+                                           action:@selector(customLeftItemAction:)];
 }
 
 #pragma mark - getter
@@ -47,29 +73,29 @@
 
 // MARK: UINavigationController
 
-//- (BOOL)shouldAutorotate {
-//    return [self.topViewController shouldAutorotate];
-//}
-//
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-//    return [self.topViewController supportedInterfaceOrientations];
-//}
-//
-//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-//    return [self.topViewController preferredInterfaceOrientationForPresentation];
-//}
-
-
-// MARK: RTRootNavigationController
 - (BOOL)shouldAutorotate {
-    return [self.rt_topViewController shouldAutorotate];
+    return [self.topViewController shouldAutorotate];
 }
 
 - (UIInterfaceOrientationMask)supportedInterfaceOrientations {
-    return [self.rt_topViewController supportedInterfaceOrientations];
+    return [self.topViewController supportedInterfaceOrientations];
 }
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
-    return [self.rt_topViewController preferredInterfaceOrientationForPresentation];
+    return [self.topViewController preferredInterfaceOrientationForPresentation];
 }
+
+
+//// MARK: RTRootNavigationController
+//- (BOOL)shouldAutorotate {
+//    return [self.rt_topViewController shouldAutorotate];
+//}
+//
+//- (UIInterfaceOrientationMask)supportedInterfaceOrientations {
+//    return [self.rt_topViewController supportedInterfaceOrientations];
+//}
+//
+//- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+//    return [self.rt_topViewController preferredInterfaceOrientationForPresentation];
+//}
 @end

@@ -16,6 +16,11 @@
 
 @implementation TKBaseViewController
 
+#pragma mark - Override Methods
+- (void)dealloc {
+    NSLog(@"%@ - 销毁了", NSStringFromClass(self.class));
+}
+
 #pragma mark - LifeCycle Methods
 
 - (void)viewDidLoad {
@@ -25,18 +30,6 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    
-//    if ([self isKindOfClass:NSClassFromString(@"TKBasicKnowledgeListViewController")]) {
-//        if (self.navigationItem && self.navigationItem.leftBarButtonItem) {
-//
-//            self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageWithColor:UIColor.whiteColor] style:UIBarButtonItemStylePlain target:self action:@selector(__log)];
-//        }
-//    }
-}
-
-- (void)__log {
-    NSLog(@"...你好...");
 }
 
 #pragma mark - RTNavigationItemCustomizable

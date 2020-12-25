@@ -61,11 +61,25 @@
 
 // MARK: 模拟器信号量和异步回调组合使用
 - (void)simulate_Semaphore_AsyncHandler {
+    /*
+     创建信号量
+     dispatch_semaphore_create
+     
+     减少信号量的计数，如果结果值小于0，等待到一个signal才会返回，否则会一直等待。
+     dispatch_semaphore_wait
+     
+     增加计数信号量。如果前一个值小于0，这个函数在返回之前唤醒一个等待的线程。
+     返回值：如果线程被唤醒，这个函数返回非零值。否则，返回0。
+     dispatch_semaphore_signal
+     */
+    
     dispatch_semaphore_t sema = dispatch_semaphore_create(1);
     NSLog(@"...create...");
     [self asynHandler:^(NSString *result) {
         NSLog(@"...signal...");
-        dispatch_semaphore_signal(sema);
+        intptr_t signalResult = dispatch_semaphore_signal(sema);
+        NSLog(@"signalResult=%@", @(signalResult));
+        
     }];
     NSLog(@"...wait...");
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
