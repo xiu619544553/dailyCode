@@ -41,40 +41,45 @@ typedef NS_ENUM(NSInteger, TK_dispatch_group_Style) {
 #pragma mark - Event Methods
 
 - (void)usageBtnAction:(UIButton *)sender {
-    switch (sender.tag) {
-        case TK_dispatch_group_Simple:{ // 简单使用
-            dispatch_group_t loadGroup = dispatch_group_create();
-            
-            // 任务1
-            dispatch_group_enter(loadGroup);
-            [self networkTask:^{
-                DLog(@"---任务1，耗时3秒");
-                dispatch_group_leave(loadGroup);
-            } duration:3];
-            
-            // 任务2
-            dispatch_group_enter(loadGroup);
-            [self networkTask:^{
-                DLog(@"---任务2，耗时2秒");
-                dispatch_group_leave(loadGroup);
-            } duration:2];
-            
-            // 任务3
-            dispatch_group_enter(loadGroup);
-            [self networkTask:^{
-                DLog(@"---任务3，耗时1秒");
-                dispatch_group_leave(loadGroup);
-            } duration:2];
-            
-            // 任务完成通知
-            dispatch_group_notify(loadGroup, dispatch_get_main_queue(), ^{
-                DLog(@"任务已完成");
-            });
-        } break;
-            
-        default:
-            break;
+    NSInteger tag = sender.tag;
+    /*
+     dispatch_group有两个需要注意的地方：
+     1、dispatch_group_enter必须在dispatch_group_leave之前出现
+     2、dispatch_group_enter和dispatch_group_leave必须成对出现
+     */
+    if (tag == TK_dispatch_group_Simple) { // dispatch_group 简单使用
+        [self simple_batchRequest];
     }
+}
+
+- (void)simple_batchRequest {
+    dispatch_group_t loadGroup = dispatch_group_create();
+    
+    // 任务1
+    dispatch_group_enter(loadGroup);
+    [self networkTask:^{
+        DLog(@"---任务1，耗时3秒");
+        dispatch_group_leave(loadGroup);
+    } duration:3];
+    
+    // 任务2
+    dispatch_group_enter(loadGroup);
+    [self networkTask:^{
+        DLog(@"---任务2，耗时2秒");
+        dispatch_group_leave(loadGroup);
+    } duration:2];
+    
+    // 任务3
+    dispatch_group_enter(loadGroup);
+    [self networkTask:^{
+        DLog(@"---任务3，耗时1秒");
+        dispatch_group_leave(loadGroup);
+    } duration:2];
+    
+    // 任务完成通知
+    dispatch_group_notify(loadGroup, dispatch_get_main_queue(), ^{
+        DLog(@"任务已完成");
+    });
 }
 
 #pragma mark - Private Methods
