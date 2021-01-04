@@ -35,6 +35,9 @@ typedef NS_ENUM(NSInteger, TK_dispatch_group_Style) {
                   action:@selector(usageBtnAction:)
         forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:usageBtn1];
+    
+    DISPATCH_TIME_NOW;
+    DISPATCH_TIME_FOREVER;
 }
 
 

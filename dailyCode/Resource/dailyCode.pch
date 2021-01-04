@@ -20,8 +20,7 @@
 
 #import <YYKit/YYKit.h>
 #import <Masonry/Masonry.h>
+#import <TKCategory/TKHeader.h>
 
-#import <NSObject+TKAdd.h>
-#import <UIView+TKAdd.h>
 
 #endif /* dailyCode_pch */

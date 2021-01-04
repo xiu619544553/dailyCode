@@ -4,7 +4,7 @@
 //
 //  Created by hello on 2020/12/21.
 //  Copyright © 2020 TK. All rights reserved.
-//
+//  https://blog.csdn.net/a18339063397/article/details/82663788
 
 #import "TK_dispatch_semaphore_VC.h"
 
@@ -15,6 +15,9 @@
 @property (strong, nonatomic) dispatch_semaphore_t dataSourceLock;
 @property (nonatomic, strong) NSMutableDictionary *dataSources;
 
+/// 控制线程并发数
+@property (nonatomic, strong) UIButton *controlThreadCountBtn;
+
 @end
 
 @implementation TK_dispatch_semaphore_VC
@@ -24,11 +27,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    [self.view addSubview:self.controlThreadCountBtn];
     
 //    [self.imageUrlStringArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
 //        CGSize objSize = [[self class] getImageSizeWithURL:obj];
 //        NSLog(@"\nobj：%@ - size：%@", obj, NSStringFromCGSize(objSize));
 //    }];
+}
+
+
+/// 异步
+/// @param duration 线程sleep时间
+/// @param handler  回调
+- (void)asynHandlerWithDuration:(int)duration
+                        handler:(void(^)(void))handler {
+    dispatch_async(dispatch_queue_create("com.test", 0), ^{
+        sleep(duration);
+        !handler ?: handler();
+    });
+}
+
+#pragma mark - Action Methods
+
+// 控制线程并发数
+- (void)controlThreadCountBtnAction:(UIButton *)sender {
+    // 假定：期望最多开辟2个子线程
+    dispatch_semaphore_t dsema = dispatch_semaphore_create(2);
+    
+    // 任务1
+    [self asynHandlerWithDuration:1 handler:^{
+        dispatch_semaphore_signal(dsema);
+        DLog(@"任务1 - %@", [NSThread currentThread]);
+    }];
+    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
+    
+    // 任务2
+    [self asynHandlerWithDuration:1 handler:^{
+        dispatch_semaphore_signal(dsema);
+        DLog(@"任务2 - %@", [NSThread currentThread]);
+    }];
+    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
+    
+    // 任务3
+    [self asynHandlerWithDuration:1 handler:^{
+        dispatch_semaphore_signal(dsema);
+        DLog(@"任务3 - %@", [NSThread currentThread]);
+    }];
+    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
 }
 
 // 串行队列 + 异步 == 只会开启一个线程，且队列中所有的任务都是在这个线程执行
@@ -47,11 +94,13 @@
     
     // MARK: 模拟器信号量和异步回调组合使用
     NSLog(@"...1...");
-    [self simulate_Semaphore_AsyncHandler];
+//    [self simulate_Semaphore_AsyncHandler];
     NSLog(@"...2...");
     
     // MARK: 设置最大并发数
 //    [self setMaxCount:1];
+    
+    
 }
 
 
@@ -156,19 +205,6 @@
         !handler ?: handler(i);
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 根据图片url获取图片尺寸
 + (CGSize)getImageSizeWithURL:(id)imageURL
@@ -387,5 +423,24 @@
         [_imageUrlStringArray addObject:@"http://ww3.sinaimg.cn/large/72a31574gw1evvgvt0bhfj20ju0emwj2.jpg"];
     }
     return _imageUrlStringArray;
+}
+
+- (UIButton *)controlThreadCountBtn {
+    if (!_controlThreadCountBtn) {
+        _controlThreadCountBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _controlThreadCountBtn.backgroundColor = UIColor.blackColor;
+        _controlThreadCountBtn.titleLabel.font = [UIFont systemFontOfSize:14.f];
+        [_controlThreadCountBtn setTitle:@"控制最大线程并发数" forState:UIControlStateNormal];
+        [_controlThreadCountBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
+        [_controlThreadCountBtn addTarget:self
+                                   action:@selector(controlThreadCountBtnAction:)
+                         forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:_controlThreadCountBtn];
+        [_controlThreadCountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.left.offset(15.f);
+            make.size.mas_equalTo(CGSizeMake(150.f, 35.f));
+        }];
+    }
+    return _controlThreadCountBtn;
 }
 @end

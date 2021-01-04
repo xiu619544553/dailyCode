@@ -13,7 +13,11 @@
 #pragma mark - Log
 
 #ifndef DLog
-#define DLog(format, ...) printf("[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+    #ifdef DEBUG
+        #define DLog(format, ...) printf("[%s] %s [第%d行] %s\n", __TIME__, __FUNCTION__, __LINE__, [[NSString stringWithFormat:format, ## __VA_ARGS__] UTF8String]);
+    #else
+        #define DLog(...)
+    #endif
 #endif
 
 
