@@ -5,6 +5,7 @@
 //  Created by hello on 2020/12/21.
 //  Copyright © 2020 TK. All rights reserved.
 //  https://blog.csdn.net/a18339063397/article/details/82663788
+//  https://mp.weixin.qq.com/s/9s-lXQ36mPChVfWoTGXtlA
 
 #import "TK_dispatch_semaphore_VC.h"
 
