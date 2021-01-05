@@ -154,6 +154,10 @@
             @{
                 KeyForVC   : @"TKTestShadowVC",
                 KeyForDesc : @"阴影测试"
+            },
+            @{
+                KeyForVC : @"TKFontListViewController",
+                KeyForDesc : @"字体列表"
             }
         ];
     }

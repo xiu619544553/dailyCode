@@ -1,19 +1,19 @@
 //
-//  TKBasePlainTableViewController.m
+//  TKBaseGroupedTableViewController.m
 //  dailyCode
 //
-//  Created by hello on 2020/10/13.
-//  Copyright © 2020 TK. All rights reserved.
+//  Created by hello on 2021/1/5.
+//  Copyright © 2021 TK. All rights reserved.
 //
 
-#import "TKBasePlainTableViewController.h"
+#import "TKBaseGroupedTableViewController.h"
 #import <Masonry.h>
 
-@interface TKBasePlainTableViewController ()
+@interface TKBaseGroupedTableViewController ()
 
 @end
 
-@implementation TKBasePlainTableViewController
+@implementation TKBaseGroupedTableViewController
 
 #pragma mark - LifeCycle Methods
 
@@ -52,14 +52,6 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row];
-    Class vcCls = NSClassFromString(dict[KeyForVC]);
-    if (!vcCls) return;
-    
-    UIViewController *vc = [[vcCls alloc] init];
-    vc.title = dict[KeyForDesc];
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UITableViewDataSource
@@ -70,15 +62,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
-    cell.textLabel.numberOfLines = 0;
-    cell.textLabel.font = kFontForPFRegular(16.f);
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    
-    if (self.dataSource.count > indexPath.row) {
-        NSDictionary *dict = [self.dataSource objectAtIndex:indexPath.row];
-        cell.textLabel.text = dict[KeyForDesc];
-    }
-    
     return cell;
 }
 
@@ -97,13 +80,14 @@
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStyleGrouped];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableFooterView = [UIView new];
         _tableView.separatorInset = UIEdgeInsetsMake(0.f, 15.f, 0.f, 15.f);
         
-        [_tableView registerClass:UITableViewCell.class forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
+        [_tableView registerClass:UITableViewCell.class
+           forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
     }
     return _tableView;
 }
@@ -121,4 +105,5 @@
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
     return UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeLeft | UIInterfaceOrientationLandscapeRight | UIInterfaceOrientationPortraitUpsideDown;
 }
+
 @end

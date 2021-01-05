@@ -22,6 +22,17 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // InjectionIII - Objective-C
+#if DEBUG
+    NSBundle *injectionBundle = [NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"];
+    [injectionBundle load];
+#endif
+    
+    
+    
+    
+    
     [self.window makeKeyAndVisible];
     [[FLEXManager sharedManager] showExplorer];
 //    [FPSLabel installOnWindow:self.window];
@@ -39,14 +50,14 @@
     params[@"userId"] = @"123456";
     params[@"nickName"] = @"Tank";
     
+    
+    // Extensions
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"com.tank.dailyCode.dailyCodeWidget"];
     [userDefaults setValue:params forKey:@"dailyCodeWidget"];
-    
-    
+    [userDefaults synchronize];
     
     
     // bundle
-    
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSString *mainBundlePath = [mainBundle bundlePath];
     NSLog(@"mainBundlePath\n%@", mainBundlePath);
@@ -58,15 +69,9 @@
     NSLog(@"mainBundleURL\n%@", mainBundleURL);
     
     
-
-    
-    
-    
-    
-    
-    
-    
-    
+    // font
+    NSArray<NSString *> *familyNames = [UIFont familyNames];
+    NSLog(@"familyNames=\n%@", familyNames);
     
     return YES;
 }
