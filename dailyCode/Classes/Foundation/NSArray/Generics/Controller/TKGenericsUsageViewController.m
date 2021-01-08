@@ -23,6 +23,7 @@
     NSArray<NSString *> *strings = [TKArrayMapper<NSNumber *, NSString *> mapArray:numbers block:^NSString * _Nonnull(NSNumber * _Nonnull obj) {
         return [obj stringValue];
     }];
+    DLog(@"strings:\n%@", strings);
 }
 
 @end

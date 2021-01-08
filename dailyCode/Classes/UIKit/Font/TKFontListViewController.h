@@ -6,11 +6,11 @@
 //  Copyright © 2021 TK. All rights reserved.
 //
 
-#import "TKBaseGroupedTableViewController.h"
+#import "TKBasePlainTableViewController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKFontListViewController : TKBaseGroupedTableViewController
+@interface TKFontListViewController : TKBasePlainTableViewController
 
 @end
 

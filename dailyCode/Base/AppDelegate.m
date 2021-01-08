@@ -68,11 +68,6 @@
     NSURL *mainBundleURL = [mainBundle bundleURL];
     NSLog(@"mainBundleURL\n%@", mainBundleURL);
     
-    
-    // font
-    NSArray<NSString *> *familyNames = [UIFont familyNames];
-    NSLog(@"familyNames=\n%@", familyNames);
-    
     return YES;
 }
 
@@ -83,6 +78,7 @@
     NSString *scheme = url.scheme;
     NSString *host   = url.host;
     NSString *query  = url.query;
+    DLog(@"scheme:%@  host:%@  query:%@", scheme, host, query);
     
     if (scheme && [scheme isEqualToString:@"liteDailyCode"]) { // today extension
         // 可以通过设置 query，跳转到指定的页面

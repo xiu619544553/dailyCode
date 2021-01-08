@@ -8,9 +8,6 @@
 
 #import "TK_asyn_syn_queue_thread_VC.h"
 
-static char *keyForMainQueue = "keyForMainQueue";
-
-
 @interface TK_asyn_syn_queue_thread_VC ()
 @property (nonatomic, strong) UIButton *asynBtn;
 @end

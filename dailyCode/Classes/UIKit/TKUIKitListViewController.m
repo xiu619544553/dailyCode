@@ -157,7 +157,7 @@
             },
             @{
                 KeyForVC : @"TKFontListViewController",
-                KeyForDesc : @"字体列表"
+                KeyForDesc : @"UIFont"
             }
         ];
     }
