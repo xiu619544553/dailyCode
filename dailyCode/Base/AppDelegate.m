@@ -72,6 +72,9 @@
     UIViewController *topVC = [UIWindow topViewController];
     DLog(@"topVC-----%@", topVC);
     
+    // MARK: 测试代码1
+    DLog(@"1111");
+    
     return YES;
 }
 
