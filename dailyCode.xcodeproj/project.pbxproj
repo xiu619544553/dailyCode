@@ -135,6 +135,7 @@
 		CE400E0D2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400E0B2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m */; };
 		CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */; };
 		CE81C50F25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81C50E25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m */; };
+		CE93109F25AEC7C2005F502F /* TKImageChangeColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93109E25AEC7C2005F502F /* TKImageChangeColorVC.m */; };
 		CE9D68662549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D68652549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m */; };
 		CE9D6868254916B500465E56 /* TK_dispatch_barrier_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */; };
 		CE9D686F25493D5B00465E56 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D686E25493D5B00465E56 /* NotificationCenter.framework */; };
@@ -422,6 +423,8 @@
 		CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_NSOperationQueue_ViewController.xib; sourceTree = "<group>"; };
 		CE81C50D25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_dispatch_semaphore_VC.h; sourceTree = "<group>"; };
 		CE81C50E25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_dispatch_semaphore_VC.m; sourceTree = "<group>"; };
+		CE93109D25AEC7C2005F502F /* TKImageChangeColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageChangeColorVC.h; sourceTree = "<group>"; };
+		CE93109E25AEC7C2005F502F /* TKImageChangeColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageChangeColorVC.m; sourceTree = "<group>"; };
 		CE962F9525874C1D002B40CD /* TestHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHeader.h; sourceTree = "<group>"; };
 		CE962F9825874D1B002B40CD /* ConfigHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigHeader.h; sourceTree = "<group>"; };
 		CE9D68642549168C00465E56 /* TK_asyn_syn_queue_thread_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_asyn_syn_queue_thread_VC.h; sourceTree = "<group>"; };
@@ -1432,6 +1435,8 @@
 				CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */,
 				CECD249C255A631B00A0610B /* TKResizableImageViewController.h */,
 				CECD249D255A631B00A0610B /* TKResizableImageViewController.m */,
+				CE93109D25AEC7C2005F502F /* TKImageChangeColorVC.h */,
+				CE93109E25AEC7C2005F502F /* TKImageChangeColorVC.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1781,6 +1786,7 @@
 				CE400D83253576EA003C5E72 /* TKUIViewCategoryUsageViewController.m in Sources */,
 				CE400D9E253576EA003C5E72 /* TKMasonryOtherViewController.m in Sources */,
 				CE400DA2253576EA003C5E72 /* TKAutoLayoutCellController.m in Sources */,
+				CE93109F25AEC7C2005F502F /* TKImageChangeColorVC.m in Sources */,
 				CEF485B625A4364B00E60631 /* TKFontListViewController.m in Sources */,
 				CE400D81253576EA003C5E72 /* TKColorUsageViewController.m in Sources */,
 				CE400D77253576EA003C5E72 /* TreeTableViewCell.m in Sources */,

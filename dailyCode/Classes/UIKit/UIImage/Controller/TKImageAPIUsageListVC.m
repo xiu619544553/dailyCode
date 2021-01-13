@@ -30,6 +30,10 @@
             @{
                 KeyForVC   : @"TKResizableImageViewController",
                 KeyForDesc : @"-resizableImageWithCapInsets"
+            },
+            @{
+                KeyForVC : @"TKImageChangeColorVC",
+                KeyForDesc : @"改变 icon 颜色"
             }
         ];
     }

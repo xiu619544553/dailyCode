@@ -149,7 +149,7 @@
             },
             @{
                 KeyForVC   : @"TKImageAPIUsageListVC",
-                KeyForDesc : @"UIImage API使用"
+                KeyForDesc : @"UIImage"
             },
             @{
                 KeyForVC   : @"TKTestShadowVC",
