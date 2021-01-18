@@ -22,6 +22,7 @@ target 'dailyCode' do
   pod 'FLEX', '4.1.1', :configurations => ['Debug']
   
   pod 'SVProgressHUD'
+  pod 'RTRootNavigationController', '0.7.2'
   
 end
 

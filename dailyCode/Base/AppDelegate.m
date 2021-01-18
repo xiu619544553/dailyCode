@@ -23,15 +23,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // InjectionIII - Objective-C
+    // 热重载InjectionIII - Objective-C
 #if DEBUG
     NSBundle *injectionBundle = [NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"];
     [injectionBundle load];
 #endif
-    
-    
-    
-    
     
     [self.window makeKeyAndVisible];
     [[FLEXManager sharedManager] showExplorer];
