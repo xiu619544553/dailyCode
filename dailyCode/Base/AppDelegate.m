@@ -71,6 +71,9 @@
     // MARK: 1
     NSLog(@"测试代码1");
     
+    // MARK: 2
+    NSLog(@"测试代码2");
+    
     return YES;
 }
 
