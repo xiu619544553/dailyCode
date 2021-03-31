@@ -48,6 +48,10 @@
             @{
                 KeyForVC   : @"TK_NSAttributed_ViewController",
                 KeyForDesc : @"属性字符串应用"
+            },
+            @{
+                KeyForVC   : @"TK_Font_TableViewController",
+                KeyForDesc : @"Apple 字体列表"
             }
         ];
     }
