@@ -21,7 +21,7 @@ target 'dailyCode' do
   pod 'TKCategory', :path => '../TKCategory'
   pod 'FLEX', '4.1.1', :configurations => ['Debug']
   
-  pod 'SVProgressHUD'
+  pod 'MBProgressHUD'
   pod 'RTRootNavigationController', '0.7.2'
   
 end

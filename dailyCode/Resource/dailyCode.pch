@@ -21,6 +21,7 @@
 #import <YYKit/YYKit.h>
 #import <Masonry/Masonry.h>
 #import <TKCategory/TKHeader.h>
+#import "NSObject+TKHUD.h"
 
 
 #endif /* dailyCode_pch */

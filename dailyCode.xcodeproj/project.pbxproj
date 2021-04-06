@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -135,6 +135,7 @@
 		CE400E0D2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400E0B2535836B003C5E72 /* TK_NSOperationQueue_ViewController.m */; };
 		CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */; };
 		CE49D48D2614162F00B82837 /* TK_Font_TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE49D48C2614162F00B82837 /* TK_Font_TableViewController.m */; };
+		CE80B0EA261BF00A0059DC06 /* NSObject+TKHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80B0E9261BF00A0059DC06 /* NSObject+TKHUD.m */; };
 		CE81C50F25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81C50E25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m */; };
 		CE93109F25AEC7C2005F502F /* TKImageChangeColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93109E25AEC7C2005F502F /* TKImageChangeColorVC.m */; };
 		CE9D68662549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D68652549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m */; };
@@ -424,6 +425,8 @@
 		CE400E0C2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_NSOperationQueue_ViewController.xib; sourceTree = "<group>"; };
 		CE49D48B2614162F00B82837 /* TK_Font_TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_Font_TableViewController.h; sourceTree = "<group>"; };
 		CE49D48C2614162F00B82837 /* TK_Font_TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_Font_TableViewController.m; sourceTree = "<group>"; };
+		CE80B0E8261BF0090059DC06 /* NSObject+TKHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+TKHUD.h"; sourceTree = "<group>"; };
+		CE80B0E9261BF00A0059DC06 /* NSObject+TKHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TKHUD.m"; sourceTree = "<group>"; };
 		CE81C50D25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_dispatch_semaphore_VC.h; sourceTree = "<group>"; };
 		CE81C50E25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_dispatch_semaphore_VC.m; sourceTree = "<group>"; };
 		CE93109D25AEC7C2005F502F /* TKImageChangeColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageChangeColorVC.h; sourceTree = "<group>"; };
@@ -593,6 +596,7 @@
 		CE400B5F25357361003C5E72 /* dailyCode */ = {
 			isa = PBXGroup;
 			children = (
+				CE80B0E6261BECDB0059DC06 /* Vendor */,
 				CE400D46253576EA003C5E72 /* 3rd */,
 				CE400B97253576E8003C5E72 /* Base */,
 				CE400BB4253576E9003C5E72 /* Classes */,
@@ -1377,6 +1381,23 @@
 			path = Font;
 			sourceTree = "<group>";
 		};
+		CE80B0E6261BECDB0059DC06 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				CE80B0E7261BED030059DC06 /* HUD */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		CE80B0E7261BED030059DC06 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				CE80B0E8261BF0090059DC06 /* NSObject+TKHUD.h */,
+				CE80B0E9261BF00A0059DC06 /* NSObject+TKHUD.m */,
+			);
+			path = HUD;
+			sourceTree = "<group>";
+		};
 		CE81C50C25903E6D00FEBAD5 /* dispatch_semaphore */ = {
 			isa = PBXGroup;
 			children = (
@@ -1516,7 +1537,6 @@
 				CE400B5A25357361003C5E72 /* Frameworks */,
 				CE400B5B25357361003C5E72 /* Resources */,
 				CE9D687E25493D5B00465E56 /* Embed App Extensions */,
-				6598160832E4CE85CC0E5CC1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1642,23 +1662,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		6598160832E4CE85CC0E5CC1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dailyCode/Pods-dailyCode-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E0A7C23878FF5668FEC1046A /* [CP] Check Pods Manifest.lock */ = {
@@ -1807,6 +1810,7 @@
 				CE400D69253576EA003C5E72 /* TKFeedbackGeneratorViewController.m in Sources */,
 				CE400D4E253576EA003C5E72 /* AppDelegate.m in Sources */,
 				CE400DAD253576EA003C5E72 /* AFURLResponseSerialization.m in Sources */,
+				CE80B0EA261BF00A0059DC06 /* NSObject+TKHUD.m in Sources */,
 				CE400DB1253576EA003C5E72 /* AFNetworkReachabilityManager.m in Sources */,
 				CE400D66253576EA003C5E72 /* TKCollectionViewController.m in Sources */,
 			);

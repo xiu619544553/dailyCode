@@ -31,7 +31,7 @@
         viewController.hidesBottomBarWhenPushed = (self.viewControllers.count > 0);
     }
     
-    if (viewController.navigationItem.leftBarButtonItem == nil) {
+    if (viewController.navigationItem.leftBarButtonItem == nil && self.navigationController.viewControllers.count >= 1) {
         viewController.navigationItem.leftBarButtonItem = [self customBackItem];
         
         self.interactivePopGestureRecognizer.delegate = self;
