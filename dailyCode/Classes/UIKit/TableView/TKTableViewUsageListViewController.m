@@ -90,7 +90,7 @@
         _tableView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        
+        _tableView.tableFooterView = [UIView new];
     }
     return _tableView;
 }
@@ -102,7 +102,12 @@
             @{
                 KeyForVC   : @"TKLiftViewController",
                 KeyForDesc : @"梯子视图"
-            }];
+            },
+            @{
+                KeyForVC   : @"TKScreenshotTableViewController",
+                KeyForDesc : @"UITableView 截图"
+            }
+        ];
     }
     return _dataSource;
 }

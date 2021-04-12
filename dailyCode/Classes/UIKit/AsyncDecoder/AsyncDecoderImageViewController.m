@@ -21,46 +21,6 @@
     self.tableView.rowHeight = 300.f;
     [self.tableView registerClass:AsyncDecoderCell.class forCellReuseIdentifier:NSStringFromClass(AsyncDecoderCell.class)];
     [self.tableView reloadData];
-    
-    
-//    DLog(@"******************************");
-//    UIScreen *mainScreen = [UIScreen mainScreen];
-//    DLog(@"screen = %@", NSStringFromCGRect(mainScreen.bounds));
-//
-//    UIScreenMode *currentMode = mainScreen.currentMode;
-//    DLog(@"currentMode.size = %@", NSStringFromCGSize(currentMode.size));
-//
-//    // The aspect ratio of a single pixel. The ratio is defined as X/Y.
-//    // 一个像素的高宽比。这个比值定义为X/Y。
-//    DLog(@"pixelAspectRatio = %@", @(currentMode.pixelAspectRatio));
-//
-//
-//    if (kIs_4Inch_Screen) {
-//        DLog(@"kIs4InchScreen");
-//    }
-//
-//
-//    if (kIs_47Inch_Screen) {
-//        DLog(@"4.7英寸手机屏幕");
-//    }
-//
-//
-//    if (kIs_55Inch_Screen) {
-//        DLog(@"5.5英寸手机屏幕");
-//    }
-//
-//    if (kIs_iPhoneX) {
-//        DLog(@"IS_iPhoneX");
-//    }
-//
-//    if (kIs_iPhoneXR) {
-//        DLog(@"IS_iPhoneXR");
-//    }
-    
-//    DLog(@"栈底控制器有 %lu 个", (unsigned long)self.navigationController.viewControllers.count);
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [self.navigationController pushViewController:[AsyncDecoderImageViewController new] animated:NO];
-//    });
 }
 
 #pragma mark - UITableViewDataSource
@@ -79,7 +39,6 @@
     
     return cell;
 }
-
 
 #pragma mark - geter
 

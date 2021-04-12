@@ -28,6 +28,10 @@
     if (!_dataSource) {
         _dataSource = @[
             @{
+                KeyForVC : @"TKPageViewController",
+                KeyForDesc : @"UIPageViewController"
+            },
+            @{
                 KeyForVC   : @"StudyDocumentInteractionController",
                 KeyForDesc : @"文档交互控制器 UIDocumentInteractionController"
             },
@@ -97,19 +101,19 @@
             },
             @{
                 KeyForVC   : @"TKImagePickerController",
-                KeyForDesc : @"UIImagePickerController 使用、旋转等等"
+                KeyForDesc : @"UIImagePickerController、旋转等等"
             },
             @{
                 KeyForVC   : @"TKTextViewController",
-                KeyForDesc : @"UITextView 使用"
+                KeyForDesc : @"UITextView"
             },
             @{
                 KeyForVC   : @"TKButtonUsageViewController",
-                KeyForDesc : @"Button 使用"
+                KeyForDesc : @"UIButton"
             },
             @{
                 KeyForVC   : @"TKColorUsageViewController",
-                KeyForDesc : @"Color 使用"
+                KeyForDesc : @"UIColor"
             },
             @{
                 KeyForVC   : @"TKBackgroundTaskVC",
@@ -117,11 +121,11 @@
             },
             @{
                 KeyForVC   : @"TKCollectionViewController",
-                KeyForDesc : @"UICollectionView 使用"
+                KeyForDesc : @"UICollectionView"
             },
             @{
                 KeyForVC   : @"TKTableViewUsageListViewController",
-                KeyForDesc : @"UITableView 使用"
+                KeyForDesc : @"UITableView"
             },
             @{
                 KeyForVC   : @"TKFeedbackGeneratorViewController",
@@ -129,15 +133,15 @@
             },
             @{
                 KeyForVC   : @"TKScrollViewViewController",
-                KeyForDesc : @"UIScrollView 使用"
+                KeyForDesc : @"UIScrollView"
             },
             @{
                 KeyForVC   : @"TKPageManagerViewController",
-                KeyForDesc : @"WMPageController 使用"
+                KeyForDesc : @"WMPageController"
             },
             @{
                 KeyForVC   : @"TKUIViewCategoryUsageViewController",
-                KeyForDesc : @"UIView分类用法"
+                KeyForDesc : @"UIView"
             },
             @{
                 KeyForVC   : @"TKScrollViewAndNavVC",

@@ -27,10 +27,6 @@
     return self;
 }
 
-- (void)dealloc {
-    NSLog(@"%@ - 销毁了", NSStringFromClass(self.class));
-}
-
 #pragma mark - setter
 
 - (void)setImageUrlString:(NSString *)imageUrlString {
@@ -38,11 +34,8 @@
     
     _urlNameLabel.text = imageUrlString;
     
-    // 主线程解码
+    // MARK: 主线程解码
 //    [_imgv sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:self.placeholderImage];
-    
-    
-    
     
     // 异步解码
     __weak typeof(_imgv) wImgv = _imgv;
@@ -79,8 +72,6 @@
         _urlNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(10.f, 10.f, [UIScreen mainScreen].bounds.size.width - 20.f, 40.f)];
         _urlNameLabel.font = [UIFont systemFontOfSize:15.f];
         _urlNameLabel.numberOfLines = 0;
-        
-        
     }
     return _urlNameLabel;
 }

@@ -8,10 +8,8 @@
 
 #import "AppDelegate.h"
 #import "TKTabBarController.h"
-#import <AudioToolbox/AudioToolbox.h>
 #import <Masonry.h>
 #import <BackgroundTasks/BackgroundTasks.h>
-//#import <FPSLabel.h>
 #import <FLEX/FLEX.h>
 #import "UIWindow+TKAdd.h"
 

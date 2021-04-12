@@ -260,10 +260,6 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
                 KeyForDesc : @"UICollectionView 使用"
             },
             @{
-                KeyForVC   : @"TKTableViewUsageListViewController",
-                KeyForDesc : @"UITableView 使用"
-            },
-            @{
                 KeyForVC   : @"TKFeedbackGeneratorViewController",
                 KeyForDesc : @"震动反馈 API"
             },
