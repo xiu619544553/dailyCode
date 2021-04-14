@@ -135,8 +135,6 @@
 
 #pragma mark -返回当前页的控制器
 - (TKPageContentViewController *)viewControllersAtIndex:(NSInteger)index {
-    if (index <= self.arrayM.count) return nil;
-    
     TKPageContentViewController *pageContentVC = [[TKPageContentViewController alloc] init];
     pageContentVC.pageTitle = [self.arrayM objectAtIndex:index];
     pageContentVC.view.backgroundColor = [UIColor grayColor];
