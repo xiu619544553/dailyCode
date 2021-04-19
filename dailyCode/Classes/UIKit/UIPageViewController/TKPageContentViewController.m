@@ -19,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor grayColor];
+    
     UILabel *titleLabel = [[UILabel alloc] init];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.backgroundColor = UIColor.whiteColor;
@@ -31,59 +33,24 @@
         make.height.mas_equalTo(100.f);
         make.left.right.equalTo(self.view);
     }];
-    /*
-     
-     */
-    /*
-     内联函数的执行过程与带参数宏定义很相似，但参数的处理不同。带参数的宏定义并不对参数进行运算，而是直接替换；内联函数首先是函数，这就意味着函数的很多性质都适用于内联函数，即内联函数先把参数表达式进行运算求值，然后把表达式的值传递给形式参数。
+}
 
-     内联函数与带参数宏定义的另一个区别是，内联函数的参数类型和返回值类型在声明中都有明确的指定；而带参数宏定义的参数没有类型的概念，只有在宏展开以后，才由编译器检查语法，这就存在很多的安全隐患。
-
-     使用内联函数时，应注意的问题：
-     　　1）内联函数的定义性声明应该出现在对该函数的第一次调用之前。
-     　　2）内联函数首先是函数，函数的很多性质都适用于内联函数，如内联函数可以重载。
-     　　3）在内联函数中不允许使用循环语句和switch结果，带有异常接口声明的函数也不能声明为内联函数。
-
-     宏和函数的区别：
-     　　1. 宏做的是简单的字符串替换（注意是字符串的替换，不是其他类型参数的替换），而函数的参数的传递，参数是有数据类型的，可以是各种各样的类型。
-     　　2. 宏的参数替换是不经计算而直接处理的，而函数调用是将实参的值传递给形参，既然说是值，自然是计算得来的。
-     　　3. 宏在编译之前进行，即先用宏体替换宏名，然后再编译的，而函数显然是编译之后，在执行时，才调用的。因此，宏占用的是编译的时间，而函数占用的是执行时的时间。
-     　　4. 宏的参数是不占内存空间的，因为只是做字符串的替换，而函数调用时的参数传递则是具体变量之间的信息传递，形参作为函数的局部变量，显然是占用内存的。
-     　　5. 函数的调用是需要付出一定的时空开销的，因为系统在调用函数时，要保留现场，然后转入被调用函数去执行，调用完，再返回主调函数，此时再恢复现场，这些操作，显然在宏中是没有的。
-
-     内联函数
-     所谓“内联函数”就是将很简单的函数“内嵌”到调用他的程序代码中，只样做的目的是为了避免上面说到的第5点，目的旨在节约下原本函数调用时的时空开销。但必须注意的是：作为内联函数，函数体必须十分简单，不能含有循环、条件、选择等复杂的结构，否则就不能做为内联函数了。事实上，即便你没有指定函数为内联函数，有的编译系统也会自动将很简单的函数作为内联函数处理；而对于复杂的函数，即便你指定他为内联函数，系统也不会理会的。
-     */
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    /*
-     在c++中普通函数与 内联函数的区别 https://blog.csdn.net/m0_37962600/article/details/78332985
-     
-     一.普通函数的调用
-         a.当代码执行到函数调用指令时，程序将在函数调用后立即存储该指令的地址，同时将参数复制到堆栈中；
-         b.然后跳到标记函数起点的内存单元当中，执行函数代码，将返回值放回到寄存器当中；
-         c.跳回到地址被保存的指令处；
+    if (self.lifeCycleDelegate
+        && [self.lifeCycleDelegate respondsToSelector:@selector(viewController:willAppearAtIndex:)]) {
+        [self.lifeCycleDelegate viewController:self willAppearAtIndex:self.pageIndex];
+    }
+}
 
-     为了能够对这个执行过程有更加明确的理解，我在这里举个例子：
-     比如我们在看一篇文章的时候，有个词组的意思我们不理解，这时候我们就需要会去看书下面给的注释，在阅读完注释后我们就会很快的返回的当时正在阅读的地方。这和普通函数在调用过程中的原理非常相似。
-
-     因此，在使用普通函数时由于需要来回跳转所以它的执行速度比较慢，特别是需要调用很多次函数时。
-     
-     二.内联函数的调用
-
-     1.如何才能使用内联函数？
-         a,在函数声明前加上关键字 inline
-         b.在函数定义前加上关键字 inline
-
-     以上两种方法任选其一即可。
-     
-     2.调用原理
-     内联函数，顾名思义就是将编译代码和其它代码 “内联” 起来了。所以它在调用的时候是编译器使用相应的函数代码替换函数调用。（这一点和宏替换十分相似）
-     由于内联代码在执行的时候程序无需进行来回的跳转，所以它的执行速度相对于普通函数能快点；不过它也有自己的缺点，那就是对内存得耗损，如果程序需要在十个地方调用同一个内联函数，那这个程序将会将这个代码拷贝10次
-
-     下面我通过一张图片来更加清楚的描述下普通函数和内联函数两者的区别
-     
-     
-     */
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    if (self.lifeCycleDelegate
+        && [self.lifeCycleDelegate respondsToSelector:@selector(viewController:didAppearAtIndex:)]) {
+        [self.lifeCycleDelegate viewController:self didAppearAtIndex:self.pageIndex];
+    }
 }
 
 @end

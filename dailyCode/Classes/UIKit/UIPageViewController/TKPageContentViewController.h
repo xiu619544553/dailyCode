@@ -7,12 +7,24 @@
 //
 
 #import "TKBaseViewController.h"
+@class TKPageContentViewController;
 
 NS_ASSUME_NONNULL_BEGIN
 
+@protocol TKPageContentViewControllerDelegate <NSObject>
+
+- (void)viewController:(TKPageContentViewController *)viewController didAppearAtIndex:(NSInteger)index;
+- (void)viewController:(TKPageContentViewController *)viewController willAppearAtIndex:(NSInteger)index;
+
+@end
+
 @interface TKPageContentViewController : TKBaseViewController
+
 @property (nonatomic, assign) NSInteger pageIndex;
 @property (nonatomic, copy) NSString *pageTitle;
+
+@property (nonatomic, weak) id <TKPageContentViewControllerDelegate> lifeCycleDelegate;
+
 @end
 
 NS_ASSUME_NONNULL_END

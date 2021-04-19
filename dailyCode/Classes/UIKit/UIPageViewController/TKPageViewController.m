@@ -9,7 +9,7 @@
 #import "TKPageViewController.h"
 #import "TKPageContentViewController.h"
 
-@interface TKPageViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource>
+@interface TKPageViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, TKPageContentViewControllerDelegate>
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (nonatomic, strong) NSMutableArray<NSString *> *arrayM;
 @end
@@ -137,9 +137,21 @@
 - (TKPageContentViewController *)viewControllersAtIndex:(NSInteger)index {
     TKPageContentViewController *pageContentVC = [[TKPageContentViewController alloc] init];
     pageContentVC.pageTitle = [self.arrayM objectAtIndex:index];
-    pageContentVC.view.backgroundColor = [UIColor grayColor];
     pageContentVC.pageIndex = index;
+    pageContentVC.lifeCycleDelegate = self;
     return pageContentVC;
+}
+
+#pragma mark - TKPageContentViewControllerDelegate
+
+- (void)viewController:(TKPageContentViewController *)viewController willAppearAtIndex:(NSInteger)index {
+    NSLog(@"第 %@ 页视图即将出现。", @(index));
+}
+
+- (void)viewController:(TKPageContentViewController *)viewController didAppearAtIndex:(NSInteger)index {
+    NSLog(@"第 %@ 页视图已出现。", @(index));
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"第 %@ 页", @(index)];
 }
 
 #pragma mark - getter
