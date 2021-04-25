@@ -13,8 +13,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @protocol TKPageContentViewControllerDelegate <NSObject>
 
-- (void)viewController:(TKPageContentViewController *)viewController didAppearAtIndex:(NSInteger)index;
+@optional
 - (void)viewController:(TKPageContentViewController *)viewController willAppearAtIndex:(NSInteger)index;
+- (void)viewController:(TKPageContentViewController *)viewController didAppearAtIndex:(NSInteger)index;
+
+- (void)viewController:(TKPageContentViewController *)viewController willDisappearAtIndex:(NSInteger)index;
+- (void)viewController:(TKPageContentViewController *)viewController didDisappearAtIndex:(NSInteger)index;
 
 @end
 

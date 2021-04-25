@@ -53,4 +53,21 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    if (self.lifeCycleDelegate
+        && [self.lifeCycleDelegate respondsToSelector:@selector(viewController:willDisappearAtIndex:)]) {
+        [self.lifeCycleDelegate viewController:self willDisappearAtIndex:self.pageIndex];
+    }
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    if (self.lifeCycleDelegate
+        && [self.lifeCycleDelegate respondsToSelector:@selector(viewController:didDisappearAtIndex:)]) {
+        [self.lifeCycleDelegate viewController:self didDisappearAtIndex:self.pageIndex];
+    }
+}
 @end

@@ -9,9 +9,13 @@
 #import "TKPageViewController.h"
 #import "TKPageContentViewController.h"
 
-@interface TKPageViewController () <UIPageViewControllerDelegate, UIPageViewControllerDataSource, TKPageContentViewControllerDelegate>
+@interface TKPageViewController ()
+<UIPageViewControllerDelegate, UIPageViewControllerDataSource,
+TKPageContentViewControllerDelegate,
+UIScrollViewDelegate>
 @property (nonatomic, strong) UIPageViewController *pageViewController;
 @property (nonatomic, strong) NSMutableArray<NSString *> *arrayM;
+@property (nonatomic, strong) TKPageContentViewController *visibleViewController;
 @end
 
 @implementation TKPageViewController
@@ -139,6 +143,7 @@
     pageContentVC.pageTitle = [self.arrayM objectAtIndex:index];
     pageContentVC.pageIndex = index;
     pageContentVC.lifeCycleDelegate = self;
+    _visibleViewController = pageContentVC;
     return pageContentVC;
 }
 
@@ -146,12 +151,54 @@
 
 - (void)viewController:(TKPageContentViewController *)viewController willAppearAtIndex:(NSInteger)index {
     NSLog(@"第 %@ 页视图即将出现。", @(index));
+    [self setupNavigationTitle:[NSString stringWithFormat:@"第 %@ 页视图即将出现", @(index)]];
 }
 
 - (void)viewController:(TKPageContentViewController *)viewController didAppearAtIndex:(NSInteger)index {
     NSLog(@"第 %@ 页视图已出现。", @(index));
     
-    self.navigationItem.title = [NSString stringWithFormat:@"第 %@ 页", @(index)];
+    [self setupNavigationTitle:[NSString stringWithFormat:@"第 %@ 页视图已出现", @(index)]];
+}
+
+- (void)viewController:(TKPageContentViewController *)viewController willDisappearAtIndex:(NSInteger)index {
+    NSLog(@"第 %@ 页视图将要消失。", @(index));
+    
+    [self setupNavigationTitle:[NSString stringWithFormat:@"第 %@ 页视图将要消失", @(index)]];
+}
+- (void)viewController:(TKPageContentViewController *)viewController didDisappearAtIndex:(NSInteger)index {
+    NSLog(@"第 %@ 页视图已消失。", @(index));
+    
+    [self setupNavigationTitle:[NSString stringWithFormat:@"第 %@ 页视图已消失", @(index)]];
+}
+
+- (void)setupNavigationTitle:(NSString *)title {
+    self.navigationItem.title = title;
+}
+
+#pragma mark - UIScrollViewDelegate
+
+// 减速完成。手动减速到0，不会调用该方法
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    NSLog(@"...减速完成...");
+    
+    if ((self.visibleViewController.pageIndex == (self.arrayM.count - 1))) {
+        // 滑动到最后一页了
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"提示" message:@"交卷" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        UIAlertAction *submitAction = [UIAlertAction actionWithTitle:@"交卷" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            
+        }];
+        
+        [alertController addAction:cancelAction];
+        [alertController addAction:submitAction];
+        
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    }
 }
 
 #pragma mark - getter
@@ -161,16 +208,22 @@
         
         // 转场动画有关的 options
         // UIPageViewControllerTransitionStylePageCurl
-        NSDictionary *curlOptions = @{UIPageViewControllerOptionSpineLocationKey : @(100)};
+//        NSDictionary *curlOptions = @{UIPageViewControllerOptionSpineLocationKey : @(100)};
         // UIPageViewControllerTransitionStyleScroll
         NSDictionary *scrollOptions = @{UIPageViewControllerOptionInterPageSpacingKey : @(10.f)};
         
-        _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStylePageCurl
+        _pageViewController = [[UIPageViewController alloc] initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
                                                               navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
                                                                             options:scrollOptions];
         
         _pageViewController.delegate = self;
         _pageViewController.dataSource = self;
+        
+        for (UIView *subView in _pageViewController.view.subviews) {
+            if ([subView isKindOfClass:[UIScrollView class]]) {
+                ((UIScrollView *)subView).delegate = self;
+            }
+        }
     }
     return _pageViewController;
 }
