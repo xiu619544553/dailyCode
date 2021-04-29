@@ -10,6 +10,8 @@
 		18C714FB9FC65FA20D140507 /* libPods-dailyCode.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 907933AFAF119360B1D427A6 /* libPods-dailyCode.a */; };
 		501CEA4D7B1CC51CDA96E57F /* libPods-dailyCodeWidget.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A8D09193E337D425E08872D /* libPods-dailyCodeWidget.a */; };
 		CE10D6C42574CF4C00B48A1C /* TK_dispatch_group_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE10D6C32574CF4C00B48A1C /* TK_dispatch_group_VC.m */; };
+		CE1E1186263A855E00365B51 /* TKGestureRecognizerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1E1185263A855E00365B51 /* TKGestureRecognizerViewController.m */; };
+		CE1E1190263A933800365B51 /* TKClickBlankOnTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1E118F263A933800365B51 /* TKClickBlankOnTableViewController.m */; };
 		CE242BF92563C1650013A36A /* TKArrayUsageListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE242BF82563C1650013A36A /* TKArrayUsageListViewController.m */; };
 		CE242C032563C2390013A36A /* TKGenericsUsageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE242C012563C2390013A36A /* TKGenericsUsageViewController.xib */; };
 		CE242C0E2563C3360013A36A /* TKArrayMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE242C0D2563C3360013A36A /* TKArrayMapper.m */; };
@@ -191,6 +193,10 @@
 		96D50E8511787BE3881CB130 /* Pods-dailyCode.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCode.release.xcconfig"; path = "Target Support Files/Pods-dailyCode/Pods-dailyCode.release.xcconfig"; sourceTree = "<group>"; };
 		CE10D6C22574CF4C00B48A1C /* TK_dispatch_group_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_dispatch_group_VC.h; sourceTree = "<group>"; };
 		CE10D6C32574CF4C00B48A1C /* TK_dispatch_group_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_dispatch_group_VC.m; sourceTree = "<group>"; };
+		CE1E1184263A855E00365B51 /* TKGestureRecognizerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGestureRecognizerViewController.h; sourceTree = "<group>"; };
+		CE1E1185263A855E00365B51 /* TKGestureRecognizerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGestureRecognizerViewController.m; sourceTree = "<group>"; };
+		CE1E118E263A933800365B51 /* TKClickBlankOnTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKClickBlankOnTableViewController.h; sourceTree = "<group>"; };
+		CE1E118F263A933800365B51 /* TKClickBlankOnTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKClickBlankOnTableViewController.m; sourceTree = "<group>"; };
 		CE242BF72563C1650013A36A /* TKArrayUsageListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKArrayUsageListViewController.h; sourceTree = "<group>"; };
 		CE242BF82563C1650013A36A /* TKArrayUsageListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKArrayUsageListViewController.m; sourceTree = "<group>"; };
 		CE242BFF2563C2390013A36A /* TKGenericsUsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGenericsUsageViewController.h; sourceTree = "<group>"; };
@@ -532,6 +538,24 @@
 			path = dispatch_group;
 			sourceTree = "<group>";
 		};
+		CE1E1183263A848000365B51 /* GestureRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				CE1E1184263A855E00365B51 /* TKGestureRecognizerViewController.h */,
+				CE1E1185263A855E00365B51 /* TKGestureRecognizerViewController.m */,
+			);
+			path = GestureRecognizer;
+			sourceTree = "<group>";
+		};
+		CE1E118B263A930B00365B51 /* ClickBlankOnTableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE1E118E263A933800365B51 /* TKClickBlankOnTableViewController.h */,
+				CE1E118F263A933800365B51 /* TKClickBlankOnTableViewController.m */,
+			);
+			path = ClickBlankOnTableView;
+			sourceTree = "<group>";
+		};
 		CE242BF22563C1220013A36A /* NSArray */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,7 +638,7 @@
 			isa = PBXGroup;
 			children = (
 				CE80B0E6261BECDB0059DC06 /* Vendor */,
-				CE400D46253576EA003C5E72 /* 3rd */,
+				CE400D46253576EA003C5E72 /* ClickBlankOnTableView */,
 				CE400B97253576E8003C5E72 /* Base */,
 				CE400BB4253576E9003C5E72 /* Classes */,
 				CE400BA6253576E8003C5E72 /* Constant */,
@@ -757,9 +781,6 @@
 			children = (
 				CE400E0425357AC4003C5E72 /* TKUIKitListViewController.h */,
 				CE400E0525357AC4003C5E72 /* TKUIKitListViewController.m */,
-				CE5F8EEF262036360054000E /* UIPageViewController */,
-				CEF485AE25A4357A00E60631 /* Font */,
-				CE3F06302582FEDC0035FE71 /* TestShadow */,
 				CE400C3E253576E9003C5E72 /* AboutScrollViewLayout */,
 				CE400BEE253576E9003C5E72 /* AlertViewController */,
 				CE400C39253576E9003C5E72 /* AsyncDecoder */,
@@ -768,6 +789,8 @@
 				CE400C1D253576E9003C5E72 /* ColorUsage */,
 				CE400C12253576E9003C5E72 /* DocumentInteractionController */,
 				CE400BE5253576E9003C5E72 /* FeedbackGenerator */,
+				CEF485AE25A4357A00E60631 /* Font */,
+				CE1E1183263A848000365B51 /* GestureRecognizer */,
 				CE400BE2253576E9003C5E72 /* ImagePicker */,
 				CE400C0E253576E9003C5E72 /* Label */,
 				CE400BE9253576E9003C5E72 /* Layout */,
@@ -776,11 +799,13 @@
 				CE400C25253576E9003C5E72 /* ScrollViewAndNav */,
 				CE400BF1253576E9003C5E72 /* Shadow */,
 				CE400BC8253576E9003C5E72 /* TableView */,
+				CE3F06302582FEDC0035FE71 /* TestShadow */,
 				CE400BD7253576E9003C5E72 /* TextView */,
 				CE400BDC253576E9003C5E72 /* TKImagePickerUsageController */,
 				CE400C2E253576E9003C5E72 /* TopViewController */,
 				CE400C03253576E9003C5E72 /* TreeTableView */,
 				CECD2490255A617C00A0610B /* UIImage */,
+				CE5F8EEF262036360054000E /* UIPageViewController */,
 				CE400C21253576E9003C5E72 /* UIViewCategoryUsage */,
 				CE400BF4253576E9003C5E72 /* WebView */,
 				CE400BF9253576E9003C5E72 /* WMPageController */,
@@ -812,6 +837,7 @@
 			children = (
 				CE400BCA253576E9003C5E72 /* TKTableViewUsageListViewController.h */,
 				CE400BC9253576E9003C5E72 /* TKTableViewUsageListViewController.m */,
+				CE1E118B263A930B00365B51 /* ClickBlankOnTableView */,
 				CEF390A8261D3C8100561556 /* Screenshot */,
 				CE400BCB253576E9003C5E72 /* Lift */,
 			);
@@ -940,11 +966,11 @@
 		CE400BF9253576E9003C5E72 /* WMPageController */ = {
 			isa = PBXGroup;
 			children = (
+				CE400C01253576E9003C5E72 /* TKPageManagerViewController.h */,
 				CE400BFA253576E9003C5E72 /* TKPageManagerViewController.m */,
+				CE400C02253576E9003C5E72 /* TKTableViewController.h */,
 				CE400BFB253576E9003C5E72 /* TKTableViewController.m */,
 				CE400BFC253576E9003C5E72 /* WMStickyPageController */,
-				CE400C01253576E9003C5E72 /* TKPageManagerViewController.h */,
-				CE400C02253576E9003C5E72 /* TKTableViewController.h */,
 			);
 			path = WMPageController;
 			sourceTree = "<group>";
@@ -1373,12 +1399,12 @@
 			path = PopView;
 			sourceTree = "<group>";
 		};
-		CE400D46253576EA003C5E72 /* 3rd */ = {
+		CE400D46253576EA003C5E72 /* ClickBlankOnTableView */ = {
 			isa = PBXGroup;
 			children = (
 				CE400D47253576EA003C5E72 /* MSWeakTimer */,
 			);
-			path = 3rd;
+			path = ClickBlankOnTableView;
 			sourceTree = "<group>";
 		};
 		CE400D47253576EA003C5E72 /* MSWeakTimer */ = {
@@ -1777,6 +1803,7 @@
 				CE400D93253576EA003C5E72 /* AboutLineSpacingViewController.m in Sources */,
 				CE400D73253576EA003C5E72 /* WMMagicScrollView.m in Sources */,
 				CEA92F5D2623D4E200343DA6 /* TKPageContentViewController.m in Sources */,
+				CE1E1186263A855E00365B51 /* TKGestureRecognizerViewController.m in Sources */,
 				CE400DAB253576EA003C5E72 /* AFAutoPurgingImageCache.m in Sources */,
 				CE400D8E253576EA003C5E72 /* AboutScrollViewPropertyController.m in Sources */,
 				CE400DFF253576EA003C5E72 /* DQPopView.m in Sources */,
@@ -1821,6 +1848,7 @@
 				CE400D6B253576EA003C5E72 /* LayoutSubView1.m in Sources */,
 				CEF390AC261D3CC200561556 /* TKScreenshotTableViewController.m in Sources */,
 				CE400DA8253576EA003C5E72 /* UIImageView+AFNetworking.m in Sources */,
+				CE1E1190263A933800365B51 /* TKClickBlankOnTableViewController.m in Sources */,
 				CE400DA5253576EA003C5E72 /* UIRefreshControl+AFNetworking.m in Sources */,
 				CE400D4C253576EA003C5E72 /* TKBaseViewController.m in Sources */,
 				CE400D8A253576EA003C5E72 /* PresentViewController.m in Sources */,

@@ -28,6 +28,10 @@
     if (!_dataSource) {
         _dataSource = @[
             @{
+                KeyForVC : @"TKGestureRecognizerViewController",
+                KeyForDesc : @"UIGestureRecognizer - 手势处理"
+            },
+            @{
                 KeyForVC : @"TKPageViewController",
                 KeyForDesc : @"UIPageViewController"
             },
