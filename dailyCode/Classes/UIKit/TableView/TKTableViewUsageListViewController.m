@@ -106,6 +106,10 @@
             @{
                 KeyForVC   : @"TKScreenshotTableViewController",
                 KeyForDesc : @"UITableView 截图"
+            },
+            @{
+                KeyForVC   : @"TKClickBlankOnTableViewController",
+                KeyForDesc : @"UITableView 空白处点击事件处理"
             }
         ];
     }
