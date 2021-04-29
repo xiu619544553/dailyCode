@@ -28,6 +28,10 @@
             @{
                 KeyForVC : @"TKThreadListViewController",
                 KeyForDesc : @"线程"
+            },
+            @{
+                KeyForVC : @"TKRunLoopViewController",
+                KeyForDesc : @"RunLoop"
             }
         ];
     }

@@ -148,6 +148,7 @@
 		CEB5649B258B0329004E9256 /* TK_YYKit_UsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB5649A258B0329004E9256 /* TK_YYKit_UsageViewController.m */; };
 		CECD2497255A61E000A0610B /* TKImageAPIUsageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */; };
 		CECD249E255A631B00A0610B /* TKResizableImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD249D255A631B00A0610B /* TKResizableImageViewController.m */; };
+		CEE1A0EF26350F3A003CB162 /* TKRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE1A0EE26350F3A003CB162 /* TKRunLoopViewController.m */; };
 		CEE1F4D22581FB2900A62B74 /* TK_NSAttributed_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE1F4D12581FB2900A62B74 /* TK_NSAttributed_ViewController.m */; };
 		CEE6F2362536AE9D00E3EBF8 /* TKThreadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */; };
 		CEE6F23A2536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */; };
@@ -455,6 +456,10 @@
 		CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageAPIUsageListVC.m; sourceTree = "<group>"; };
 		CECD249C255A631B00A0610B /* TKResizableImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKResizableImageViewController.h; sourceTree = "<group>"; };
 		CECD249D255A631B00A0610B /* TKResizableImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKResizableImageViewController.m; sourceTree = "<group>"; };
+		CEE1A0ED26350F3A003CB162 /* TKRunLoopViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKRunLoopViewController.h; sourceTree = "<group>"; };
+		CEE1A0EE26350F3A003CB162 /* TKRunLoopViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKRunLoopViewController.m; sourceTree = "<group>"; };
+		CEE1A0F42635148E003CB162 /* CFRunLoop.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CFRunLoop.c; sourceTree = "<group>"; };
+		CEE1A0FA263516D0003CB162 /* CFRunLoop_comment.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = CFRunLoop_comment.c; sourceTree = "<group>"; };
 		CEE1F4D02581FB2900A62B74 /* TK_NSAttributed_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_NSAttributed_ViewController.h; sourceTree = "<group>"; };
 		CEE1F4D12581FB2900A62B74 /* TK_NSAttributed_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_NSAttributed_ViewController.m; sourceTree = "<group>"; };
 		CEE6F2342536AE9C00E3EBF8 /* TKThreadListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKThreadListViewController.h; sourceTree = "<group>"; };
@@ -690,7 +695,6 @@
 			isa = PBXGroup;
 			children = (
 				CEE6F2372536AEF900E3EBF8 /* BasicKnowledge */,
-				CEE6F2322536AE7800E3EBF8 /* Thread */,
 				CE400BB5253576E9003C5E72 /* Other */,
 				CE400BBC253576E9003C5E72 /* Options&Enum */,
 				CE400BC0253576E9003C5E72 /* UIKit */,
@@ -1500,6 +1504,17 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		CEE1A0E226350E82003CB162 /* RunLoop */ = {
+			isa = PBXGroup;
+			children = (
+				CEE1A0F42635148E003CB162 /* CFRunLoop.c */,
+				CEE1A0FA263516D0003CB162 /* CFRunLoop_comment.c */,
+				CEE1A0ED26350F3A003CB162 /* TKRunLoopViewController.h */,
+				CEE1A0EE26350F3A003CB162 /* TKRunLoopViewController.m */,
+			);
+			path = RunLoop;
+			sourceTree = "<group>";
+		};
 		CEE1F4CF2581FAF400A62B74 /* NSAttributedString */ = {
 			isa = PBXGroup;
 			children = (
@@ -1535,6 +1550,8 @@
 		CEE6F2372536AEF900E3EBF8 /* BasicKnowledge */ = {
 			isa = PBXGroup;
 			children = (
+				CEE1A0E226350E82003CB162 /* RunLoop */,
+				CEE6F2322536AE7800E3EBF8 /* Thread */,
 				CEE6F2382536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.h */,
 				CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */,
 			);
@@ -1771,6 +1788,7 @@
 				CE400D7C253576EA003C5E72 /* StudyDocumentInteractionController.m in Sources */,
 				CE400D65253576EA003C5E72 /* TKImagePickerUsageController.m in Sources */,
 				CE400D84253576EA003C5E72 /* TKScrollViewAndNavVC.m in Sources */,
+				CEE1A0EF26350F3A003CB162 /* TKRunLoopViewController.m in Sources */,
 				CE400E0625357AC4003C5E72 /* TKUIKitListViewController.m in Sources */,
 				CE400D7A253576EA003C5E72 /* LabelViewController.m in Sources */,
 				CE400D6C253576EA003C5E72 /* AboutAlertViewController.m in Sources */,
