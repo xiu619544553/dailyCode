@@ -5,6 +5,54 @@
 //  Created by hello on 2021/4/29.
 //  Copyright © 2021 TK. All rights reserved.
 //  translation n. 翻译；译文；转化；调任
+ 
+
+// OneGesture 优先级低于 TwoGesture优先级
+// TwoGesture 识别失败时，才开始识别 OneGesture
+// [OneGesture requireGestureRecognizerToFail:TwoGesture;
+
+
+// @protocol UIGestureRecognizerDelegate <NSObject>
+// @optional
+// /**
+//  是否允许识别该手势
+//  当手势识别器识别到手势,准备从UIGestureRecognizerStatePossible状态开始转换时.调用此代理,如果返回YES,那么就继续识别
+//  如果返回NO,那么手势识别器将会将状态置为UIGestureRecognizerStateFailed.
+//  */
+// - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer;
+//
+// /**
+//  当其中一个手势识别器或另一个手势识别器的识别被对方阻止时调用
+//  返回YES以允许两者同时识别。默认实现返回NO(默认情况下不能同时识别两种手势)
+//  注意:返回YES保证允许同时识别。不能保证返回NO来防止同时识别，因为其他手势的委派可能会返回YES
+//  */
+// - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer;
+//
+// /**
+//  一般用来重写该方法.来定义什么时候手势识别失败.
+//  如果直接返回YES,那么gestureRecognizer与otherGestureRecognizer互斥的话gestureRecognizer识别失败.
+//  可以用tap手势和longPress手势试试.
+//  */
+// - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRequireFailureOfGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer NS_AVAILABLE_IOS(7_0);
+// /**
+//  基本同上,注意这个Be,所以是相反的,如果互斥,otherGestureRecognizer识别失败.
+//  */
+// - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldBeRequiredToFailByGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer NS_AVAILABLE_IOS(7_0);
+//
+// /**
+//  返回手势识别器是否允许检查手势对象.
+//  UIKit将会在touchesBegan:withEvent:方法之前调用这个代理.
+//  */
+// - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch;
+//
+// /**
+//  返回手势识别器是否允许检查按压(UIPress对象).
+//  UIKit将会在touchesBegan:withEvent:方法之前调用这个代理.
+//  */
+// - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceivePress:(UIPress *)press;
+//
+// @end
+
 
 #import "TKGestureRecognizerViewController.h"
 
