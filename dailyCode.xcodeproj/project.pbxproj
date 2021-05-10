@@ -1576,10 +1576,10 @@
 		CEE6F2372536AEF900E3EBF8 /* BasicKnowledge */ = {
 			isa = PBXGroup;
 			children = (
-				CEE1A0E226350E82003CB162 /* RunLoop */,
-				CEE6F2322536AE7800E3EBF8 /* Thread */,
 				CEE6F2382536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.h */,
 				CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */,
+				CEE1A0E226350E82003CB162 /* RunLoop */,
+				CEE6F2322536AE7800E3EBF8 /* Thread */,
 			);
 			path = BasicKnowledge;
 			sourceTree = "<group>";
