@@ -444,8 +444,6 @@
 		CE81C50E25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_dispatch_semaphore_VC.m; sourceTree = "<group>"; };
 		CE93109D25AEC7C2005F502F /* TKImageChangeColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageChangeColorVC.h; sourceTree = "<group>"; };
 		CE93109E25AEC7C2005F502F /* TKImageChangeColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageChangeColorVC.m; sourceTree = "<group>"; };
-		CE962F9525874C1D002B40CD /* TestHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestHeader.h; sourceTree = "<group>"; };
-		CE962F9825874D1B002B40CD /* ConfigHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigHeader.h; sourceTree = "<group>"; };
 		CE9D68642549168C00465E56 /* TK_asyn_syn_queue_thread_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_asyn_syn_queue_thread_VC.h; sourceTree = "<group>"; };
 		CE9D68652549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_asyn_syn_queue_thread_VC.m; sourceTree = "<group>"; };
 		CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = dailyCodeWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1553,8 +1551,6 @@
 		CEE6F2322536AE7800E3EBF8 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
-				CE962F9525874C1D002B40CD /* TestHeader.h */,
-				CE962F9825874D1B002B40CD /* ConfigHeader.h */,
 				CEE6F2342536AE9C00E3EBF8 /* TKThreadListViewController.h */,
 				CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */,
 				CEE6F2332536AE8000E3EBF8 /* GCD */,
