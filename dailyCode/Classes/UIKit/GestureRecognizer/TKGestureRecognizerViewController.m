@@ -64,6 +64,8 @@
 
 @implementation TKGestureRecognizerViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"手势处理";
@@ -75,18 +77,23 @@
 
 - (void)panAction:(UIPanGestureRecognizer *)pan {
     
-    // 获取手指在 self.view 坐标系内移动的距离
+    // 1. 获取拖拽手势在 self.view 坐标系平移的距离
     CGPoint point1 = [pan translationInView:self.view];
-//    NSLog(@"前，point1: %@", NSStringFromCGPoint(point1));
+//    NSLog(@"拖拽手势在 self.view 坐标系中平移的距离: %@", NSStringFromCGPoint(point1));
     
-    // 更新 self.panView 的x、y坐标
+    // 2.0 更新 self.panView 的x、y坐标
     self.panView.left += point1.x;
     self.panView.top += point1.y;
     
-    // 清空偏移量
+    // 2.1 针对 panView 添加限制条件。比如 panView.x 不可以小于0
+    self.panView.left = (self.panView.left < 0.f) ? 0.f : self.panView.left;
+    
+    // 3. 清空拖拽手势平移距离
     [pan setTranslation:CGPointZero inView:self.view];
+    
+    // 验证：清空后，拖拽手势平移距离为 {0, 0}
     CGPoint point2 = [pan translationInView:self.view];
-//    NSLog(@"后，point2: %@", NSStringFromCGPoint(point2));
+    NSLog(@"清空拖拽手势平移距离: %@", NSStringFromCGPoint(point2));
     
     
     switch (pan.state) {
@@ -111,6 +118,7 @@
         case UIGestureRecognizerStateEnded:
             // 识别器接收到被识别为手势结束的触摸。动作方法将在运行循环的下一个回合被调用，识别器将重置为UIGestureRecognizerStatePossible
             NSLog(@"Ended");
+            self.panView.left = 0.f;
             break;
             
         case UIGestureRecognizerStateCancelled:
@@ -135,6 +143,8 @@
     if (!_panView) {
         _panView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 100.f, 50.f, 50.f)];
         _panView.backgroundColor = UIColor.redColor;
+        _panView.layer.cornerRadius = _panView.width/2.f;
+        _panView.layer.masksToBounds = YES;
     }
     return _panView;
 }

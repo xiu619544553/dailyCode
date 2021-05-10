@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,39 +16,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hamburger" translatesAutoresizingMaskIntoConstraints="NO" id="joj-78-qdi">
-                                <rect key="frame" x="147" y="144" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="dOF-nD-lHs"/>
-                                    <constraint firstAttribute="width" constant="120" id="dTW-Yd-Jmf"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noodle" translatesAutoresizingMaskIntoConstraints="NO" id="FYp-vB-neI">
-                                <rect key="frame" x="147" y="279" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="BdL-DT-FCV"/>
-                                    <constraint firstAttribute="width" constant="120" id="uXC-OC-5XO"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cake" translatesAutoresizingMaskIntoConstraints="NO" id="hXq-bW-Iob">
-                                <rect key="frame" x="147" y="414" width="120" height="120"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="120" id="41j-QF-g42"/>
-                                    <constraint firstAttribute="width" constant="120" id="a4Q-Ii-c3O"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="joj-78-qdi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="2Xh-nJ-P17"/>
-                            <constraint firstItem="FYp-vB-neI" firstAttribute="top" secondItem="joj-78-qdi" secondAttribute="bottom" constant="15" id="3WA-Ig-bQe"/>
-                            <constraint firstItem="joj-78-qdi" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="eiD-cS-IyW"/>
-                            <constraint firstItem="hXq-bW-Iob" firstAttribute="top" secondItem="FYp-vB-neI" secondAttribute="bottom" constant="15" id="mdJ-a1-HM8"/>
-                            <constraint firstItem="hXq-bW-Iob" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rd6-ij-jIN"/>
-                            <constraint firstItem="FYp-vB-neI" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="t6V-1d-BRa"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -57,9 +26,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="cake" width="128" height="128"/>
-        <image name="hamburger" width="128" height="128"/>
-        <image name="noodle" width="128" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
