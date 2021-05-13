@@ -177,7 +177,7 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             },
             @{
                 KeyForVC   : @"AboutScrollViewLayoutViewController",
-                KeyForDesc : @"1.contentInsetAdjustmentBehavior 2.automaticallyAdjustsScrollViewInsets"
+                KeyForDesc : @"1.contentInsetAdjustmentBehavior \n2.automaticallyAdjustsScrollViewInsets"
             },
             @{
                 KeyForVC   : @"LabelViewController",
@@ -212,10 +212,6 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
                 KeyForDesc : @"AlertViewController 在 iPad中的使用"
             },
             @{
-                KeyForVC   : @"MasonryUsageViewController",
-                KeyForDesc : @"Masonry 的使用"
-            },
-            @{
                 KeyForVC   : @"ShadowVC",
                 KeyForDesc : @"shadow 阴影"
             },
@@ -226,10 +222,6 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKAutolayoutViewController",
                 KeyForDesc : @"自动布局cell"
-            },
-            @{
-                KeyForVC   : @"TKAFNDemoViewController",
-                KeyForDesc : @"AFNetworking"
             },
             @{
                 KeyForVC   : @"TKSDWebImageUsageViewController",
@@ -254,10 +246,6 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKBackgroundTaskVC",
                 KeyForDesc : @"后台任务"
-            },
-            @{
-                KeyForVC   : @"TKCollectionViewController",
-                KeyForDesc : @"UICollectionView 使用"
             },
             @{
                 KeyForVC   : @"TKFeedbackGeneratorViewController",

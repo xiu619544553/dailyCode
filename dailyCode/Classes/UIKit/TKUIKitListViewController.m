@@ -29,7 +29,7 @@
         _dataSource = @[
             @{
                 KeyForVC : @"TKGestureRecognizerViewController",
-                KeyForDesc : @"UIGestureRecognizer - 手势处理"
+                KeyForDesc : @"UIGestureRecognizer"
             },
             @{
                 KeyForVC : @"TKPageViewController",
@@ -53,11 +53,11 @@
             },
             @{
                 KeyForVC   : @"LabelViewController",
-                KeyForDesc : @"关于 UILabel 的属性的尝试"
+                KeyForDesc : @"UILabel"
             },
             @{
                 KeyForVC   : @"AsyncDecoderImageViewController",
-                KeyForDesc : @"关于 【异步解码图片】 的尝试"
+                KeyForDesc : @"异步解码图片"
             },
             @{
                 KeyForVC   : @"TreeTableViewController",
@@ -77,11 +77,7 @@
             },
             @{
                 KeyForVC   : @"AboutAlertViewController",
-                KeyForDesc : @"AlertViewController 在 iPad中的使用"
-            },
-            @{
-                KeyForVC   : @"MasonryUsageViewController",
-                KeyForDesc : @"Masonry 的使用"
+                KeyForDesc : @"UIAlertViewController"
             },
             @{
                 KeyForVC   : @"ShadowVC",
@@ -94,10 +90,6 @@
             @{
                 KeyForVC   : @"TKAutolayoutViewController",
                 KeyForDesc : @"自动布局cell"
-            },
-            @{
-                KeyForVC   : @"TKAFNDemoViewController",
-                KeyForDesc : @"AFNetworking"
             },
             @{
                 KeyForVC   : @"TKSDWebImageUsageViewController",

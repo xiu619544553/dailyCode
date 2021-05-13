@@ -225,10 +225,6 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
                 KeyForDesc : @"AlertViewController 在 iPad中的使用"
             },
             @{
-                KeyForVC   : @"MasonryUsageViewController",
-                KeyForDesc : @"Masonry 的使用"
-            },
-            @{
                 KeyForVC   : @"ShadowVC",
                 KeyForDesc : @"shadow 阴影"
             },
@@ -241,16 +237,12 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
                 KeyForDesc : @"自动布局cell"
             },
             @{
-                KeyForVC   : @"TKAFNDemoViewController",
-                KeyForDesc : @"AFNetworking"
-            },
-            @{
                 KeyForVC   : @"TKSortedViewController",
                 KeyForDesc : @"数组中存放 Model，针对 Model的某个属性，对数组排序"
             },
             @{
                 KeyForVC   : @"TKScalePropertyViewController",
-                KeyForDesc : @"理解 scale 属性"
+                KeyForDesc : @"UIScreen mainScreen].scale"
             },
             @{
                 KeyForVC   : @"TKSDWebImageUsageViewController",
@@ -262,15 +254,15 @@ static NSString *homeCellReuseIdentifier = @"TKHomeCollectionViewCell";
             },
             @{
                 KeyForVC   : @"TKTextViewController",
-                KeyForDesc : @"UITextView 使用"
+                KeyForDesc : @"UITextView"
             },
             @{
                 KeyForVC   : @"TKButtonUsageViewController",
-                KeyForDesc : @"Button 使用"
+                KeyForDesc : @"UIButton"
             },
             @{
                 KeyForVC   : @"TKColorUsageViewController",
-                KeyForDesc : @"Color 使用"
+                KeyForDesc : @"UIColor"
             },
             @{
                 KeyForVC   : @"TKBackgroundTaskVC",

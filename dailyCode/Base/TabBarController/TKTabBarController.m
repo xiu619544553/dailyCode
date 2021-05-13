@@ -114,6 +114,8 @@
     
     childVC.tabBarItem = tabBarItem;
     
+    childVC.title = title;
+    
     // 添加导航栏控制器
     TKNavigationController *nav = [[TKNavigationController alloc] initWithRootViewController:childVC];
     
