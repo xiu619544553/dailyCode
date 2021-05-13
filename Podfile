@@ -14,7 +14,6 @@ target 'dailyCode' do
   
   sharedPods
   
-#  pod 'FPSLabel'
   pod 'SDWebImage', '5.9.0'
   pod 'WMPageController', '2.5.2'
   

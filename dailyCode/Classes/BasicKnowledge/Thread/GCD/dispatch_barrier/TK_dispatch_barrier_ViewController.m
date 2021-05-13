@@ -97,43 +97,40 @@
     DLog(@"%@ - 8", currentThread);
 }
 
+#pragma mark - dispatch_barrier_sync 用法
+
+/*
+ 这里的 dispatch_barrier_sync 上的队列要和需要阻塞的任务在同一队列上，否则是无效的。
+ 从打印上看，任务 0-4 和任务任务 5-9 因为是异步并发的原因，彼此是无序的。而由于栅栏函数的存在，导致顺序必然是先执行任务 0-4，再执行栅栏函数，再去执行任务 5-9。
+ */
 - (IBAction)dispatch_barrier_synUsage:(UIButton *)sender {
     
-    DLog(@"...开始...");
-    NSThread *currentThread = [NSThread currentThread];
+    NSLog(@"start - %@", [NSThread currentThread]);
     
-    dispatch_queue_t queue = dispatch_queue_create("com.dispatch.barrier", DISPATCH_QUEUE_CONCURRENT);
+    dispatch_queue_t queue = dispatch_queue_create("com.sync.dispatch_barrier", DISPATCH_QUEUE_CONCURRENT);
     
-    dispatch_async(queue, ^{
-        sleep(2);
-        DLog(@"%@ - 1", currentThread);
-    });
+    for (int i = 0; i < 5; i ++ ) {
+        dispatch_async(queue, ^{
+            NSLog(@"%@ - %@", @(i), [NSThread currentThread]);
+        });
+    }
     
-    dispatch_async(queue, ^{
-        sleep(1);
-        DLog(@"%@ - 2", currentThread);
-    });
-    
-    /*
-     串行栅栏函数，会阻塞主队列和串行队列
-     */
+    // dispatch_barrier_sync 串行栅栏函数阻塞主队列和队列
     dispatch_barrier_sync(queue, ^{
-        sleep(5);
-        DLog(@"%@ - barrier", currentThread);
+        sleep(3);
+        NSLog(@"barrier - %@", [NSThread currentThread]);
     });
     
-    DLog(@"%@ - barrier之后，任务3之前", currentThread);
+    // 主队列也会被串行栅栏函数阻塞，栅栏函数执行完毕后才会执行该行代码
+    NSLog(@"x - %@", [NSThread currentThread]);
     
-    dispatch_async(queue, ^{
-        sleep(1);
-        DLog(@"%@ - 3", currentThread);
-    });
+    for (int i = 5; i < 10; i ++ ) {
+        dispatch_async(queue, ^{
+            NSLog(@"%@ - %@", @(i), [NSThread currentThread]);
+        });
+    }
     
-    dispatch_async(queue, ^{
-        DLog(@"%@ - 4", currentThread);
-    });
-    
-    DLog(@"%@ - 最后", currentThread);
+    NSLog(@"end - %@", [NSThread currentThread]);
 }
 
 #pragma mark - 多读单写
@@ -143,15 +140,16 @@
      多读单写的意思就是:可以多个读者同时读取数据，而在读的时候，不能写入数据。并且，在写的过程 中，不能有其他写者去写。即读者之间是并发的，写者与读者或其他写者是互斥的。
      这里的写处理就是通过栅栏的形式去写。 就可以用 dispatch_barrier_sync（栅栏函数）去实现
      */
-    
 }
 
+// 单写
 - (void)cacheObject:(NSNumber *)obj forKey:(NSString *)key {
     dispatch_barrier_sync(self.synQueue, ^{
         [self.cachedImages setObject:@1 forKey:@"1"];
     });
 }
 
+// 多读
 - (NSNumber *)getObjectForKey:(NSString *)key {
     return [self.cachedImages objectForKey:key];
 }

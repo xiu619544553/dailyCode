@@ -10,8 +10,11 @@
 #import "TKTabBarController.h"
 #import <Masonry.h>
 #import <BackgroundTasks/BackgroundTasks.h>
-#import <FLEX/FLEX.h>
 #import "UIWindow+TKAdd.h"
+
+#ifdef DEBUG
+#import <FLEX/FLEX.h>
+#endif
 
 @interface AppDelegate ()
 
@@ -25,11 +28,11 @@
 #if DEBUG
     NSBundle *injectionBundle = [NSBundle bundleWithPath:@"/Applications/InjectionIII.app/Contents/Resources/iOSInjection.bundle"];
     [injectionBundle load];
+    
+    [[FLEXManager sharedManager] showExplorer];
 #endif
     
     [self.window makeKeyAndVisible];
-    [[FLEXManager sharedManager] showExplorer];
-//    [FPSLabel installOnWindow:self.window];
     
     // 屏幕尺寸与屏幕旋转方向有关
     DLog(@"屏幕尺寸 : %@", NSStringFromCGRect([UIScreen mainScreen].bounds));
