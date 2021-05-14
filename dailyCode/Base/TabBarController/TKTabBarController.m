@@ -9,7 +9,7 @@
 #import "TKTabBarController.h"
 
 #import "ViewController.h"
-#import "TKUsageListViewController.h"
+#import "TKOtherViewController.h"
 #import "TKScrollViewAndNavVC.h"
 #import "TKNavigationController.h"
 #import "TKFoundationListViewController.h"
@@ -141,7 +141,7 @@
     TK3rdUsageListViewController *thirdListVC = [[TK3rdUsageListViewController alloc] init];
     [self addNavChildVC:thirdListVC image:@"tabbar_icon_strategy" selectedImage:@"tabbar_icon_strategy" title:@"第三方"];
     
-    TKUsageListViewController *homeVc = [[TKUsageListViewController alloc] init];
+    TKOtherViewController *homeVc = [[TKOtherViewController alloc] init];
     [self addNavChildVC:homeVc image:@"tabbar_icon_game" selectedImage:@"tabbar_icon_game" title:@"其他"];
     
     TKBasicKnowledgeListViewController *basicVc = [[TKBasicKnowledgeListViewController alloc] init];

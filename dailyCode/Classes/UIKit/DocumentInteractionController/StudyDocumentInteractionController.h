@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 文档交互控制器
 @interface StudyDocumentInteractionController : UIViewController
 
 @end

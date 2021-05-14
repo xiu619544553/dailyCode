@@ -1,5 +1,5 @@
 //
-//  TKUsageListViewController.m
+//  TKOtherViewController.m
 //  test
 //
 //  Created by hello on 2020/6/5.
@@ -7,18 +7,18 @@
 //
 
 
-#import "TKUsageListViewController.h"
+#import "TKOtherViewController.h"
 
 static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
 
-@interface TKUsageListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface TKOtherViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray<NSDictionary<NSString *, NSString *> *> *dataSource;
 
 @end
 
-@implementation TKUsageListViewController
+@implementation TKOtherViewController
 
 #pragma mark - LifeCycle Methods
 
@@ -164,24 +164,8 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
     if (!_dataSource) {
         _dataSource = @[
             @{
-                KeyForVC   : @"StudyDocumentInteractionController",
-                KeyForDesc : @"文档交互控制器 UIDocumentInteractionController"
-            },
-            @{
-                KeyForVC   : @"WebViewController",
-                KeyForDesc : @"WKWebView"
-            },
-            @{
                 KeyForVC   : @"ResponderChainViewController",
                 KeyForDesc : @"响应者链、hit-test机制"
-            },
-            @{
-                KeyForVC   : @"AboutScrollViewLayoutViewController",
-                KeyForDesc : @"1.contentInsetAdjustmentBehavior \n2.automaticallyAdjustsScrollViewInsets"
-            },
-            @{
-                KeyForVC   : @"LabelViewController",
-                KeyForDesc : @"关于 UILabel 的属性的尝试"
             },
             @{
                 KeyForVC   : @"GradientLayerViewController",
@@ -208,10 +192,6 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
                 KeyForDesc : @"layoutSubViews 调用时机"
             },
             @{
-                KeyForVC   : @"AboutAlertViewController",
-                KeyForDesc : @"AlertViewController 在 iPad中的使用"
-            },
-            @{
                 KeyForVC   : @"ShadowVC",
                 KeyForDesc : @"shadow 阴影"
             },
@@ -220,28 +200,8 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
                 KeyForDesc : @"常见宏使用"
             },
             @{
-                KeyForVC   : @"TKAutolayoutViewController",
-                KeyForDesc : @"自动布局cell"
-            },
-            @{
-                KeyForVC   : @"TKSDWebImageUsageViewController",
-                KeyForDesc : @"SDWebImage"
-            },
-            @{
                 KeyForVC   : @"TKImagePickerController",
                 KeyForDesc : @"UIImagePickerController 使用、旋转等等"
-            },
-            @{
-                KeyForVC   : @"TKTextViewController",
-                KeyForDesc : @"UITextView 使用"
-            },
-            @{
-                KeyForVC   : @"TKButtonUsageViewController",
-                KeyForDesc : @"Button 使用"
-            },
-            @{
-                KeyForVC   : @"TKColorUsageViewController",
-                KeyForDesc : @"Color 使用"
             },
             @{
                 KeyForVC   : @"TKBackgroundTaskVC",
@@ -252,16 +212,12 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
                 KeyForDesc : @"震动反馈 API"
             },
             @{
-                KeyForVC   : @"TKScrollViewViewController",
-                KeyForDesc : @"UIScrollView 使用"
-            },
-            @{
-                KeyForVC   : @"TKPageManagerViewController",
-                KeyForDesc : @"WMPageController 使用"
-            },
-            @{
                 KeyForVC   : @"TKUIViewCategoryUsageViewController",
                 KeyForDesc : @"UIView分类用法"
+            },
+            @{
+                KeyForVC   : @"AsyncDecoderImageViewController",
+                KeyForDesc : @"异步解码图片"
             }
         ];
     }

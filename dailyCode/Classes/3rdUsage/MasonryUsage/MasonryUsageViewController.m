@@ -101,6 +101,10 @@ static NSString *tableViewCellId = @"UITableViewCell";
             @{
                 KeyForVC   : @"TKMasonryOtherViewController",
                 KeyForDesc : @"Masonry 练手"
+            },
+            @{
+                KeyForVC   : @"TKAutolayoutViewController",
+                KeyForDesc : @"自动布局cell"
             }
         ];
     }

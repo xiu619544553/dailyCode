@@ -42,6 +42,10 @@
             @{
                 KeyForVC   : @"TK_YYKit_UsageViewController",
                 KeyForDesc : @"YYKit 的使用"
+            },
+            @{
+                KeyForVC   : @"TKPageManagerViewController",
+                KeyForDesc : @"WMPageController 使用"
             }
         ];
     }

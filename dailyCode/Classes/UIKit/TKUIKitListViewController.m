@@ -28,6 +28,42 @@
     if (!_dataSource) {
         _dataSource = @[
             @{
+                KeyForVC   : @"TKUIViewCategoryUsageViewController",
+                KeyForDesc : @"UIView"
+            },
+            @{
+                KeyForVC   : @"LabelViewController",
+                KeyForDesc : @"UILabel"
+            },
+            @{
+                KeyForVC   : @"TKButtonUsageViewController",
+                KeyForDesc : @"UIButton"
+            },
+            @{
+                KeyForVC   : @"TKScrollViewViewController",
+                KeyForDesc : @"UIScrollView"
+            },
+            @{
+                KeyForVC   : @"TKTableViewUsageListViewController",
+                KeyForDesc : @"UITableView"
+            },
+            @{
+                KeyForVC   : @"TKCollectionViewController",
+                KeyForDesc : @"UICollectionView"
+            },
+            @{
+                KeyForVC   : @"TKTextViewController",
+                KeyForDesc : @"UITextView"
+            },
+            @{
+                KeyForVC   : @"TKImageAPIUsageListVC",
+                KeyForDesc : @"UIImage"
+            },
+            @{
+                KeyForVC   : @"WebViewController",
+                KeyForDesc : @"WKWebView"
+            },
+            @{
                 KeyForVC : @"TKGestureRecognizerViewController",
                 KeyForDesc : @"UIGestureRecognizer"
             },
@@ -36,128 +72,52 @@
                 KeyForDesc : @"UIPageViewController"
             },
             @{
-                KeyForVC   : @"StudyDocumentInteractionController",
-                KeyForDesc : @"文档交互控制器 UIDocumentInteractionController"
-            },
-            @{
-                KeyForVC   : @"WebViewController",
-                KeyForDesc : @"WKWebView"
-            },
-            @{
-                KeyForVC   : @"ResponderChainViewController",
-                KeyForDesc : @"响应者链、hit-test机制"
-            },
-            @{
-                KeyForVC   : @"AboutScrollViewLayoutViewController",
-                KeyForDesc : @"1.contentInsetAdjustmentBehavior 2.automaticallyAdjustsScrollViewInsets"
-            },
-            @{
-                KeyForVC   : @"LabelViewController",
-                KeyForDesc : @"UILabel"
-            },
-            @{
-                KeyForVC   : @"AsyncDecoderImageViewController",
-                KeyForDesc : @"异步解码图片"
-            },
-            @{
-                KeyForVC   : @"TreeTableViewController",
-                KeyForDesc : @"关于 【多级cell】 的尝试"
-            },
-            @{
-                KeyForVC   : @"TKRegularViewController",
-                KeyForDesc : @"正则表达式"
-            },
-            @{
-                KeyForVC   : @"OptionalViewController",
-                KeyForDesc : @"NS_OPTIONS 与 NS_ENUM 区别"
-            },
-            @{
-                KeyForVC   : @"LayoutViewController",
-                KeyForDesc : @"layoutSubViews 调用时机"
-            },
-            @{
                 KeyForVC   : @"AboutAlertViewController",
                 KeyForDesc : @"UIAlertViewController"
             },
             @{
-                KeyForVC   : @"ShadowVC",
-                KeyForDesc : @"shadow 阴影"
-            },
-            @{
-                KeyForVC   : @"TKMacroViewController",
-                KeyForDesc : @"常见宏使用"
-            },
-            @{
-                KeyForVC   : @"TKAutolayoutViewController",
-                KeyForDesc : @"自动布局cell"
-            },
-            @{
-                KeyForVC   : @"TKSDWebImageUsageViewController",
-                KeyForDesc : @"SDWebImage"
-            },
-            @{
                 KeyForVC   : @"TKImagePickerController",
-                KeyForDesc : @"UIImagePickerController、旋转等等"
-            },
-            @{
-                KeyForVC   : @"TKTextViewController",
-                KeyForDesc : @"UITextView"
-            },
-            @{
-                KeyForVC   : @"TKButtonUsageViewController",
-                KeyForDesc : @"UIButton"
+                KeyForDesc : @"UIImagePickerController"
             },
             @{
                 KeyForVC   : @"TKColorUsageViewController",
                 KeyForDesc : @"UIColor"
             },
             @{
-                KeyForVC   : @"TKBackgroundTaskVC",
-                KeyForDesc : @"后台任务"
+                KeyForVC   : @"StudyDocumentInteractionController",
+                KeyForDesc : @"UIDocumentInteractionController"
             },
             @{
-                KeyForVC   : @"TKCollectionViewController",
-                KeyForDesc : @"UICollectionView"
-            },
-            @{
-                KeyForVC   : @"TKTableViewUsageListViewController",
-                KeyForDesc : @"UITableView"
-            },
-            @{
-                KeyForVC   : @"TKFeedbackGeneratorViewController",
-                KeyForDesc : @"震动反馈 API"
-            },
-            @{
-                KeyForVC   : @"TKScrollViewViewController",
-                KeyForDesc : @"UIScrollView"
-            },
-            @{
-                KeyForVC   : @"TKPageManagerViewController",
-                KeyForDesc : @"WMPageController"
-            },
-            @{
-                KeyForVC   : @"TKUIViewCategoryUsageViewController",
-                KeyForDesc : @"UIView"
-            },
-            @{
-                KeyForVC   : @"TKScrollViewAndNavVC",
-                KeyForDesc : @"控制器属性 UIRectEdge、导航栏属性 translucent"
+                KeyForVC : @"TKFontListViewController",
+                KeyForDesc : @"UIFont"
             },
             @{
                 KeyForVC   : @"ViewController",
                 KeyForDesc : @"获取 topViewController"
             },
             @{
-                KeyForVC   : @"TKImageAPIUsageListVC",
-                KeyForDesc : @"UIImage"
+                KeyForVC   : @"AboutScrollViewLayoutViewController",
+                KeyForDesc : @"1.contentInsetAdjustmentBehavior 2.automaticallyAdjustsScrollViewInsets"
+            },
+            @{
+                KeyForVC   : @"ShadowVC",
+                KeyForDesc : @"shadow 阴影"
             },
             @{
                 KeyForVC   : @"TKTestShadowVC",
                 KeyForDesc : @"阴影测试"
             },
             @{
-                KeyForVC : @"TKFontListViewController",
-                KeyForDesc : @"UIFont"
+                KeyForVC   : @"TKScrollViewAndNavVC",
+                KeyForDesc : @"控制器属性 UIRectEdge、导航栏属性 translucent"
+            },
+            @{
+                KeyForVC   : @"LayoutViewController",
+                KeyForDesc : @"layoutSubViews 调用时机"
+            },
+            @{
+                KeyForVC   : @"TreeTableViewController",
+                KeyForDesc : @"关于 【多级cell】 的尝试"
             }
         ];
     }

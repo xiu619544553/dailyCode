@@ -1,5 +1,5 @@
 //
-//  TKUsageListViewController.h
+//  TKOtherViewController.h
 //  test
 //
 //  Created by hello on 2020/6/5.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TKUsageListViewController : TKBaseViewController
+@interface TKOtherViewController : TKBaseViewController
 
 @end
 

@@ -110,6 +110,10 @@
             @{
                 KeyForVC   : @"TKClickBlankOnTableViewController",
                 KeyForDesc : @"UITableView 空白处点击事件处理"
+            },
+            @{
+                KeyForVC   : @"TKSectionHeaderViewCeilingViewController",
+                KeyForDesc : @"组视图 吸顶效果"
             }
         ];
     }

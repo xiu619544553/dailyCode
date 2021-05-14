@@ -62,6 +62,10 @@
 #define kFontForPFSemibold(x) [UIFont fontWithName:@"PingFangSC-Semibold" size:x]
 #endif
 
+// 浓缩粗体
+#ifndef kFontForDINBold
+#define kFontForDINBold(x)  [UIFont fontWithName:@"DINCondensed-Bold" size:x]
+#endif
 
 #pragma mark - Size
 
