@@ -78,6 +78,8 @@ typedef NS_ENUM(NSInteger, AFImageDownloadPrioritization) {
 
 /**
  Defines the order prioritization of incoming download requests being inserted into the queue. `AFImageDownloadPrioritizationFIFO` by default.
+ 
+ 定义传入下载请求插入队列的顺序优先级。默认 AFImageDownloadPrioritizationFIFO
  */
 @property (nonatomic, assign) AFImageDownloadPrioritization downloadPrioritization;
 

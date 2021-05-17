@@ -63,6 +63,8 @@ static NSString *imageUrlString = @"https://s.eoffcn.com/tiku/banner/ipad/3/e1f5
     }];
 }
 
+#pragma mark - getter
+
 - (UIImageView *)imageView {
     if (!_imageView) {
         _imageView = [[UIImageView alloc] initWithFrame:CGRectMake(15.f, 100.f, self.view.bounds.size.width - 30.f, 150.f)];

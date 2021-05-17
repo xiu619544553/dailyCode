@@ -97,13 +97,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TKLiftTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(TKLiftTableViewCell.class)];
     
-    
-    
-    
-    
     self.tableHeaderView.selectedIndex = indexPath.section;
-    
-    
     
     return cell;
 }
