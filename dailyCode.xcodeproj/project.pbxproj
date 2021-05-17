@@ -156,7 +156,6 @@
 		CEE1F4D22581FB2900A62B74 /* TK_NSAttributed_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE1F4D12581FB2900A62B74 /* TK_NSAttributed_ViewController.m */; };
 		CEE6F2362536AE9D00E3EBF8 /* TKThreadListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */; };
 		CEE6F23A2536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */; };
-		CEE6F23F2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEE6F23D2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib */; };
 		CEE6F2442536CAFF00E3EBF8 /* TKBasePlainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400B9F253576E8003C5E72 /* TKBasePlainTableViewController.m */; };
 		CEF390AC261D3CC200561556 /* TKScreenshotTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF390AB261D3CC200561556 /* TKScreenshotTableViewController.m */; };
 		CEF390B6261D7A3500561556 /* TKScreenshotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF390B5261D7A3500561556 /* TKScreenshotCell.m */; };
@@ -478,7 +477,6 @@
 		CEE6F2392536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKBasicKnowledgeListViewController.m; sourceTree = "<group>"; };
 		CEE6F23B2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_dispatch_barrier_ViewController.h; sourceTree = "<group>"; };
 		CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_dispatch_barrier_ViewController.m; sourceTree = "<group>"; };
-		CEE6F23D2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TK_dispatch_barrier_ViewController.xib; sourceTree = "<group>"; };
 		CEF390AA261D3CC200561556 /* TKScreenshotTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKScreenshotTableViewController.h; sourceTree = "<group>"; };
 		CEF390AB261D3CC200561556 /* TKScreenshotTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKScreenshotTableViewController.m; sourceTree = "<group>"; };
 		CEF390B4261D7A3500561556 /* TKScreenshotCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKScreenshotCell.h; sourceTree = "<group>"; };
@@ -1442,7 +1440,6 @@
 			children = (
 				CEE6F23B2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.h */,
 				CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */,
-				CEE6F23D2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib */,
 			);
 			path = dispatch_barrier;
 			sourceTree = "<group>";
@@ -1688,7 +1685,6 @@
 				CE400D52253576EA003C5E72 /* LaunchScreen.storyboard in Resources */,
 				CE400DFD253576EA003C5E72 /* TKMacroViewController.xib in Resources */,
 				CE400D68253576EA003C5E72 /* TKFeedbackGeneratorViewController.xib in Resources */,
-				CEE6F23F2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.xib in Resources */,
 				CE242C032563C2390013A36A /* TKGenericsUsageViewController.xib in Resources */,
 				CE400DB4253576EA003C5E72 /* TKSDWebImageUsageViewController.xib in Resources */,
 				CE400D6F253576EA003C5E72 /* jsInvokeOcAndOCCallback.html in Resources */,

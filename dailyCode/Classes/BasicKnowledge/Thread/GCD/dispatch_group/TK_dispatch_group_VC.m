@@ -6,8 +6,11 @@
 //  Copyright © 2020 TK. All rights reserved.
 /*
  
- 一、
+ 0、
+ dispatch_group_async
+ 场景:在 n 个耗时并发任务都完成后，再去执行接下来的任务。比如，在 n 个网络请求完成后去刷新 UI 页 面。
  
+1、
  dispatch_group有两个需要注意的地方：
  1、dispatch_group_enter必须在dispatch_group_leave之前出现
  2、dispatch_group_enter和dispatch_group_leave必须成对出现
@@ -20,13 +23,6 @@
  */
 
 #import "TK_dispatch_group_VC.h"
-
-typedef NS_ENUM(NSInteger, TK_dispatch_group_Number) {
-    TK_dispatch_group_1 = 1,
-    TK_dispatch_group_2 = 2,
-    TK_dispatch_group_3 = 3,
-    TK_dispatch_group_4 = 4
-};
 
 @interface TK_dispatch_group_VC ()
 @property (nonatomic, strong) dispatch_queue_t requestQueue;
@@ -49,14 +45,25 @@ typedef NS_ENUM(NSInteger, TK_dispatch_group_Number) {
 - (void)usageBtnAction:(UIButton *)sender {
     NSInteger tag = sender.tag;
     
-    if (tag == TK_dispatch_group_1) {
-        [self gcd_dispatch_group_1];
-    } else if (tag == TK_dispatch_group_2) {
-        [self gcd_dispatch_group_2];
-    } else if (tag == TK_dispatch_group_3) {
-        [self gcd_dispatch_group_3];
-    } else if (tag == TK_dispatch_group_4) {
-        [self gcd_dispatch_group_4];
+    switch (tag) {
+        case 1:
+            [self gcd_dispatch_group_1];
+            break;
+            
+        case 2:
+            [self gcd_dispatch_group_2];
+            break;
+            
+        case 3:
+            [self gcd_dispatch_group_3];
+            break;
+            
+        case 4:
+            [self gcd_dispatch_group_4];
+            break;
+            
+        default:
+            break;
     }
 }
 
@@ -199,41 +206,6 @@ typedef NS_ENUM(NSInteger, TK_dispatch_group_Number) {
     });
 }
 
-/*!
- * @function dispatch_group_wait
- *
- * @abstract
- * Wait synchronously until all the blocks associated with a group have completed or until the specified timeout has elapsed.
- * 同步地等待，直到与一个组相关联的所有块都完成，或者直到指定的超时已经过去。
- *
- * @discussion
- * This function waits for the completion of the blocks associated with the given dispatch group, and returns after all blocks have completed or when the specified timeout has elapsed.
- *
- * 该函数会等待所有与 dispatc_group_t 关联的 blocks 完成，然后在所有 blocks完成或超时后返回（不在阻塞dispat_group_t）
- *
- * This function will return immediately if there are no blocks associated with the dispatch group (i.e. the group is empty).
- * 如果没有与分派组相关的块(即分派组是空的)，这个函数将立即返回。
- *
- * The result of calling this function from multiple threads simultaneously with the same dispatch group is undefined.
- * 使用同一个 dispatch_group_t 同时从多个线程调用此函数的结果是未定义的。
- *
- * After the successful return of this function, the dispatch group is empty.
- * It may either be released with dispatch_release() or re-used for additional
- * blocks. See dispatch_group_async() for more information.
- *
- * @param group
- * The dispatch group to wait on.
- * The result of passing NULL in this parameter is undefined.
- *
- * @param timeout
- * When to timeout (see dispatch_time). As a convenience, there are the
- * DISPATCH_TIME_NOW and DISPATCH_TIME_FOREVER constants.
- *
- * @result
- * Returns zero on success (all blocks associated with the group completed
- * within the specified timeout) or non-zero on error (i.e. timed out).
- */
-//intptr_t dispatch_group_wait(dispatch_group_t group, dispatch_time_t timeout);
 
 #pragma mark - Private Methods
 
@@ -259,31 +231,33 @@ typedef NS_ENUM(NSInteger, TK_dispatch_group_Number) {
 }
 
 - (void)setupViews {
-    UIButton *usageBtn1 = [self addBtnsTag:TK_dispatch_group_1
-                                     frame:CGRectMake(10.f, 100.f, 200.f, 35.f)
+    CGFloat btnWidth = self.view.width - 20.f;
+    UIButton *usageBtn1 = [self addBtnsTag:1
+                                     frame:CGRectMake(10.f, 100.f, btnWidth, 35.f)
                                      title:@"dispatch_group 用法1"];
     
-    UIButton *usageBtn2 = [self addBtnsTag:TK_dispatch_group_2
-                                     frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn1.frame) + 20.f, 200.f, 35.f)
+    UIButton *usageBtn2 = [self addBtnsTag:2
+                                     frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn1.frame) + 20.f, btnWidth, 35.f)
                                      title:@"dispatch_group 用法2"];
     
-    UIButton *usageBtn3 = [self addBtnsTag:TK_dispatch_group_3
-                                     frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn2.frame) + 20.f, 200.f, 35.f)
+    UIButton *usageBtn3 = [self addBtnsTag:3
+                                     frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn2.frame) + 20.f, btnWidth, 35.f)
                                      title:@"dispatch_group 用法3"];
     
-    [self addBtnsTag:TK_dispatch_group_4
-               frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn3.frame) + 20.f, 200.f, 35.f)
+    [self addBtnsTag:4
+               frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn3.frame) + 20.f, btnWidth, 60.f)
                title:@"dispatch_barrier_async 实现与 dispatch_group_t 同样的效果"];
 }
 
-- (UIButton *)addBtnsTag:(TK_dispatch_group_Number)number
+- (UIButton *)addBtnsTag:(NSInteger)tag
              frame:(CGRect)frame
              title:(NSString *)title {
     UIButton *usageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     usageBtn.frame = frame;
-    usageBtn.tag = TK_dispatch_group_3;
+    usageBtn.tag = tag;
     usageBtn.backgroundColor = UIColor.blackColor;
     usageBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
+    usageBtn.titleLabel.numberOfLines = 0;
     
     [usageBtn setTitle:title
               forState:UIControlStateNormal];
