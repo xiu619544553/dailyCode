@@ -16,9 +16,6 @@
 @property (strong, nonatomic) dispatch_semaphore_t dataSourceLock;
 @property (nonatomic, strong) NSMutableDictionary *dataSources;
 
-/// 控制线程并发数
-@property (nonatomic, strong) UIButton *controlThreadCountBtn;
-
 @end
 
 @implementation TK_dispatch_semaphore_VC
@@ -28,82 +25,103 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    [self.view addSubview:self.controlThreadCountBtn];
+    self.view.backgroundColor = UIColor.whiteColor;
     
-//    [self.imageUrlStringArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        CGSize objSize = [[self class] getImageSizeWithURL:obj];
-//        NSLog(@"\nobj：%@ - size：%@", obj, NSStringFromCGSize(objSize));
-//    }];
+    [self setupViews];
+    
+    //    [self.imageUrlStringArray enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    //        CGSize objSize = [[self class] getImageSizeWithURL:obj];
+    //        NSLog(@"\nobj：%@ - size：%@", obj, NSStringFromCGSize(objSize));
+    //    }];
 }
 
+#pragma mark - Event Methods
 
-/// 异步
-/// @param duration 线程sleep时间
-/// @param handler  回调
-- (void)asynHandlerWithDuration:(int)duration
-                        handler:(void(^)(void))handler {
+- (void)usageBtnAction:(UIButton *)sender {
+    [self.view endEditing:YES];
+    
+    NSInteger tag = sender.tag;
+    
+    switch (tag) {
+        case 1:
+            [self dispatch_semaphore_simple_usage];
+            break;
+            
+        case 2:
+            [self controlThreadCountAction];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+#pragma mark - dispatch_semaphore 简单用法
+
+- (void)dispatch_semaphore_simple_usage {
+    // 当两个线程需要协调特定事件的完成时，传递0值非常有用。传递一个大于0的值对于管理有限的资源池非常有用，其中资源池大小等于这个值。
+    dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+    
+    for (int i = 0; i < 10; i ++) {
+        [self asynDuration:1 handler:^{
+            NSLog(@"%@ - %@", @(i), [NSThread currentThread]);
+            dispatch_semaphore_signal(semaphore);
+        }];
+    }
+    
+    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+}
+
+#pragma mark - 控制线程并发数
+
+// 控制线程并发数
+- (void)controlThreadCountAction {
+    // 当两个线程需要协调特定事件的完成时，传递0值非常有用。传递一个大于0的值对于管理有限的资源池非常有用，其中资源池大小等于这个值。
+    // 假定：期望最多开辟2个子线程
+    dispatch_semaphore_t dsema = dispatch_semaphore_create(2);
+    
+    // 任务1
+    [self asynDuration:1 handler:^{
+        dispatch_semaphore_signal(dsema);
+        NSLog(@"任务1 - %@", [NSThread currentThread]);
+    }];
+    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
+    
+    // 任务2
+    [self asynDuration:1 handler:^{
+        dispatch_semaphore_signal(dsema);
+        NSLog(@"任务2 - %@", [NSThread currentThread]);
+    }];
+    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
+    
+    // 任务3
+    [self asynDuration:1 handler:^{
+        dispatch_semaphore_signal(dsema);
+        NSLog(@"任务3 - %@", [NSThread currentThread]);
+    }];
+    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
+}
+
+- (void)asynDuration:(int)duration
+             handler:(void(^)(void))handler {
     dispatch_async(dispatch_queue_create("com.test", 0), ^{
         sleep(duration);
         !handler ?: handler();
     });
 }
 
-#pragma mark - Action Methods
-
-// 控制线程并发数
-- (void)controlThreadCountBtnAction:(UIButton *)sender {
-    // 假定：期望最多开辟2个子线程
-    dispatch_semaphore_t dsema = dispatch_semaphore_create(2);
-    
-    // 任务1
-    [self asynHandlerWithDuration:1 handler:^{
-        dispatch_semaphore_signal(dsema);
-        DLog(@"任务1 - %@", [NSThread currentThread]);
-    }];
-    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
-    
-    // 任务2
-    [self asynHandlerWithDuration:1 handler:^{
-        dispatch_semaphore_signal(dsema);
-        DLog(@"任务2 - %@", [NSThread currentThread]);
-    }];
-    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
-    
-    // 任务3
-    [self asynHandlerWithDuration:1 handler:^{
-        dispatch_semaphore_signal(dsema);
-        DLog(@"任务3 - %@", [NSThread currentThread]);
-    }];
-    dispatch_semaphore_wait(dsema, DISPATCH_TIME_FOREVER);
-}
-
 // 串行队列 + 异步 == 只会开启一个线程，且队列中所有的任务都是在这个线程执行
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
-//    dispatch_queue_t queue = dispatch_queue_create("serial", DISPATCH_QUEUE_SERIAL);
-//    dispatch_async(queue, ^{
-//        NSLog(@"111:%@",[NSThread currentThread]);
-//    });
-//    dispatch_async(queue, ^{
-//        NSLog(@"222:%@",[NSThread currentThread]);
-//    });
-//    dispatch_async(queue, ^{
-//        NSLog(@"333:%@",[NSThread currentThread]);
-//    });
-    
     // MARK: 模拟器信号量和异步回调组合使用
     NSLog(@"...1...");
-//    [self simulate_Semaphore_AsyncHandler];
+    //    [self simulate_Semaphore_AsyncHandler];
     NSLog(@"...2...");
     
     // MARK: 设置最大并发数
-//    [self setMaxCount:1];
-    
-    
+    //    [self setMaxCount:1];
 }
-
 
 #pragma mark - 信号量 - 设置最大并发数
 
@@ -163,7 +181,7 @@
      ✅正确使用方式2：
      可以作为线程锁使用：当我们操作可变集合时，使用这种方式添加锁，保证集合不会出现脏数据
      */
-//    [self semaphore_style_2];
+    //    [self semaphore_style_2];
 }
 
 #pragma mark - dispatch_semaphore_create(1) - Lock
@@ -426,22 +444,50 @@
     return _imageUrlStringArray;
 }
 
-- (UIButton *)controlThreadCountBtn {
-    if (!_controlThreadCountBtn) {
-        _controlThreadCountBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _controlThreadCountBtn.backgroundColor = UIColor.blackColor;
-        _controlThreadCountBtn.titleLabel.font = [UIFont systemFontOfSize:14.f];
-        [_controlThreadCountBtn setTitle:@"控制最大线程并发数" forState:UIControlStateNormal];
-        [_controlThreadCountBtn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [_controlThreadCountBtn addTarget:self
-                                   action:@selector(controlThreadCountBtnAction:)
-                         forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:_controlThreadCountBtn];
-        [_controlThreadCountBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.offset(15.f);
-            make.size.mas_equalTo(CGSizeMake(150.f, 35.f));
-        }];
-    }
-    return _controlThreadCountBtn;
+- (void)setupViews {
+    CGFloat btnWidth = self.view.width - 20.f;
+    UIButton *usageBtn1 = [self addBtnsTag:1
+                                     frame:CGRectMake(10.f, 100.f, btnWidth, 35.f)
+                                     title:@"dispatch_semaphore 简单用法"];
+    
+    UIButton *usageBtn2 = [self addBtnsTag:2
+                                     frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn1.frame) + 20.f, btnWidth, 35.f)
+                                     title:@"控制最大线程并发数"];
+    
+    // 设置最大并发数
+    CGFloat threadCountTFW = 130.f;
+    UITextField *threadCountTF = [[UITextField alloc] initWithFrame:CGRectMake(10.f, CGRectGetMaxY(usageBtn2.frame) + 20.f, threadCountTFW, 35.f)];
+    threadCountTF.placeholder = @"设置最大并发数";
+    threadCountTF.font = [UIFont systemFontOfSize:15.f];
+    threadCountTF.borderStyle = UITextBorderStyleRoundedRect;
+    [self.view addSubview:threadCountTF];
+    
+    [self addBtnsTag:3
+               frame:CGRectMake(threadCountTF.right + 10.f, threadCountTF.top, self.view.width - threadCountTF.right - 10.f, 35.f)
+               title:@"设置最大并发数"];
+}
+
+- (UIButton *)addBtnsTag:(NSInteger)tag
+                   frame:(CGRect)frame
+                   title:(NSString *)title {
+    UIButton *usageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    usageBtn.frame = frame;
+    usageBtn.tag = tag;
+    usageBtn.backgroundColor = UIColor.blackColor;
+    usageBtn.titleLabel.font = [UIFont systemFontOfSize:16.f];
+    usageBtn.titleLabel.numberOfLines = 0;
+    
+    [usageBtn setTitle:title
+              forState:UIControlStateNormal];
+    
+    [usageBtn setTitleColor:UIColor.whiteColor
+                   forState:UIControlStateNormal];
+    
+    [usageBtn addTarget:self
+                 action:@selector(usageBtnAction:)
+       forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:usageBtn];
+    return usageBtn;
 }
 @end

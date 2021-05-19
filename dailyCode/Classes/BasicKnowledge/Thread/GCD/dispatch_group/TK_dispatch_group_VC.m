@@ -62,6 +62,10 @@
             [self gcd_dispatch_group_4];
             break;
             
+        case 5:
+            [self gcd_dispatch_group_5];
+            break;
+            
         default:
             break;
     }
@@ -96,6 +100,36 @@
     // 任务完成通知
     dispatch_group_notify(loadGroup, dispatch_get_main_queue(), ^{
         DLog(@"任务已完成");
+    });
+}
+
+#pragma mark - 用法5
+- (void)gcd_dispatch_group_5 {
+ 
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"0 - %@", [NSThread currentThread]);
+       
+        dispatch_group_t group = dispatch_group_create();
+        dispatch_queue_t queue = dispatch_queue_create("com.5.dispatch_group", DISPATCH_QUEUE_CONCURRENT);
+        
+        dispatch_group_enter(group);
+        dispatch_async(queue, ^{
+            sleep(2);
+            NSLog(@"1 - %@", [NSThread currentThread]);
+            dispatch_group_leave(group);
+        });
+        
+        dispatch_group_enter(group);
+        dispatch_async(queue, ^{
+            sleep(1);
+            NSLog(@"2 - %@", [NSThread currentThread]);
+            dispatch_group_leave(group);
+        });
+        
+        dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+            sleep(1);
+            NSLog(@"3 - %@", [NSThread currentThread]);
+        });
     });
 }
 
@@ -244,9 +278,13 @@
                                      frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn2.frame) + 20.f, btnWidth, 35.f)
                                      title:@"dispatch_group 用法3"];
     
-    [self addBtnsTag:4
-               frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn3.frame) + 20.f, btnWidth, 60.f)
-               title:@"dispatch_barrier_async 实现与 dispatch_group_t 同样的效果"];
+    UIButton *usageBtn4 = [self addBtnsTag:4
+                                     frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn3.frame) + 20.f, btnWidth, 60.f)
+                                     title:@"dispatch_barrier_async 实现与 dispatch_group_t 同样的效果"];
+    
+    [self addBtnsTag:5
+               frame:CGRectMake(10.f, CGRectGetMaxY(usageBtn4.frame) + 20.f, btnWidth, 35.f)
+               title:@"dispatch_group 用法5，与用法 1 等同"];
 }
 
 - (UIButton *)addBtnsTag:(NSInteger)tag
