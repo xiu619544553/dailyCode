@@ -22,6 +22,10 @@
     if (!_dataSource) {
         _dataSource = @[
             @{
+                KeyForVC   : @"TK_Notification_ViewController",
+                KeyForDesc : @"NSNotification"
+            },
+            @{
                 KeyForVC   : @"AboutLineSpacingViewController",
                 KeyForDesc : @"正确设置行间距与行高",
             },
