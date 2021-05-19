@@ -4,10 +4,7 @@
 //
 //  Created by hello on 2020/10/14.
 //  Copyright © 2020 TK. All rights reserved.
-
-/*
- 
- */
+//
 
 #import "TKThreadListViewController.h"
 
@@ -21,12 +18,35 @@
 
 @synthesize dataSource = _dataSource;
 
+
+static inline void TKAsyncToMainQueue(void (^blk)(void)) {
+    if (strcmp(dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL), dispatch_queue_get_label(dispatch_get_main_queue())) == 0) {
+        blk();
+    } else {
+        dispatch_async(dispatch_get_main_queue(), blk);
+    }
+}
+
 #pragma mark - Life Cycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.title = [NSString stringWithFormat:@"当前系统处于激活状态的处理器有 %@ 个", @(self.limitQueueCount)];
+    
+    
+    // 获取队列的标签
+    dispatch_queue_t customQueue = dispatch_queue_create("com.daily.code", DISPATCH_QUEUE_CONCURRENT);
+    NSLog(@"customQueue：%s", dispatch_queue_get_label(customQueue));
+    
+    
+    // DISPATCH_CURRENT_QUEUE_LABEL：常量传递给 dispatch_queue_get_label() 函数以检索当前队列的标签。
+    NSLog(@"%s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL)); // com.apple.main-thread
+    NSLog(@"%s", dispatch_queue_get_label(dispatch_get_main_queue()));    // com.apple.main-thread
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        // 全局并发队列 com.apple.root.default-qos
+        NSLog(@"%s", dispatch_queue_get_label(DISPATCH_CURRENT_QUEUE_LABEL));
+    });
 }
 
 #pragma mark - getter
