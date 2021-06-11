@@ -22,6 +22,10 @@
     if (!_dataSource) {
         _dataSource = @[
             @{
+                KeyForVC   : @"TK_NSURL_ViewController",
+                KeyForDesc : @"NSURL"
+            },
+            @{
                 KeyForVC   : @"TK_Notification_ViewController",
                 KeyForDesc : @"NSNotification"
             },

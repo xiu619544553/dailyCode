@@ -16,6 +16,7 @@
 		CE242C032563C2390013A36A /* TKGenericsUsageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE242C012563C2390013A36A /* TKGenericsUsageViewController.xib */; };
 		CE242C0E2563C3360013A36A /* TKArrayMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE242C0D2563C3360013A36A /* TKArrayMapper.m */; };
 		CE242C152563C4000013A36A /* TKGenericsUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE242C002563C2390013A36A /* TKGenericsUsageViewController.m */; };
+		CE38912B266E131A008E72B7 /* TK_NSURL_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38912A266E131A008E72B7 /* TK_NSURL_ViewController.m */; };
 		CE3ACC3626550AF6008D18DE /* TK_Notification_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3ACC3526550AF6008D18DE /* TK_Notification_ViewController.m */; };
 		CE3F06332582FF040035FE71 /* TKTestShadowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3F06322582FF040035FE71 /* TKTestShadowVC.m */; };
 		CE3F0647258306AE0035FE71 /* TKTestShadowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE3F0646258306AE0035FE71 /* TKTestShadowCell.m */; };
@@ -206,6 +207,8 @@
 		CE242C012563C2390013A36A /* TKGenericsUsageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKGenericsUsageViewController.xib; sourceTree = "<group>"; };
 		CE242C0C2563C3360013A36A /* TKArrayMapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKArrayMapper.h; sourceTree = "<group>"; };
 		CE242C0D2563C3360013A36A /* TKArrayMapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKArrayMapper.m; sourceTree = "<group>"; };
+		CE389129266E131A008E72B7 /* TK_NSURL_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_NSURL_ViewController.h; sourceTree = "<group>"; };
+		CE38912A266E131A008E72B7 /* TK_NSURL_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_NSURL_ViewController.m; sourceTree = "<group>"; };
 		CE3ACC3426550AF6008D18DE /* TK_Notification_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_Notification_ViewController.h; sourceTree = "<group>"; };
 		CE3ACC3526550AF6008D18DE /* TK_Notification_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_Notification_ViewController.m; sourceTree = "<group>"; };
 		CE3F06312582FF040035FE71 /* TKTestShadowVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKTestShadowVC.h; sourceTree = "<group>"; };
@@ -598,6 +601,15 @@
 				CE242C0D2563C3360013A36A /* TKArrayMapper.m */,
 			);
 			path = Mapper;
+			sourceTree = "<group>";
+		};
+		CE389128266E12E8008E72B7 /* NSURL */ = {
+			isa = PBXGroup;
+			children = (
+				CE389129266E131A008E72B7 /* TK_NSURL_ViewController.h */,
+				CE38912A266E131A008E72B7 /* TK_NSURL_ViewController.m */,
+			);
+			path = NSURL;
 			sourceTree = "<group>";
 		};
 		CE3ACC3326550AB4008D18DE /* NSNotification */ = {
@@ -1128,6 +1140,7 @@
 				CEE1F4CF2581FAF400A62B74 /* NSAttributedString */,
 				CE3ACC3326550AB4008D18DE /* NSNotification */,
 				CE400C5C253576E9003C5E72 /* NSOperationQueue */,
+				CE389128266E12E8008E72B7 /* NSURL */,
 				CE400C4E253576E9003C5E72 /* Scale */,
 			);
 			path = Foundation;
@@ -1798,6 +1811,7 @@
 				CE3ACC3626550AF6008D18DE /* TK_Notification_ViewController.m in Sources */,
 				CEA92F5D2623D4E200343DA6 /* TKPageContentViewController.m in Sources */,
 				CE1E1186263A855E00365B51 /* TKGestureRecognizerViewController.m in Sources */,
+				CE38912B266E131A008E72B7 /* TK_NSURL_ViewController.m in Sources */,
 				CE400DAB253576EA003C5E72 /* AFAutoPurgingImageCache.m in Sources */,
 				CE400D8E253576EA003C5E72 /* AboutScrollViewPropertyController.m in Sources */,
 				CE400DFF253576EA003C5E72 /* DQPopView.m in Sources */,
