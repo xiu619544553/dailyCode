@@ -165,6 +165,9 @@
 		CEF485B625A4364B00E60631 /* TKFontListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF485B525A4364B00E60631 /* TKFontListViewController.m */; };
 		CEFBCEDE2679AA6E00C553C9 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBCEDB2679AA6E00C553C9 /* NSObject+YYModel.m */; };
 		CEFBCEDF2679AA6E00C553C9 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBCEDC2679AA6E00C553C9 /* YYClassInfo.m */; };
+		CEFBCEE72679CE3A00C553C9 /* TKAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBCEE62679CE3A00C553C9 /* TKAccount.m */; };
+		CEFBCEEE2679CF3000C553C9 /* TKThreadCaseVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBCEED2679CF3000C553C9 /* TKThreadCaseVC.m */; };
+		CEFBCEF32679D3E500C553C9 /* TKSafeAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFBCEF22679D3E500C553C9 /* TKSafeAccount.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -498,6 +501,12 @@
 		CEFBCEDB2679AA6E00C553C9 /* NSObject+YYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+YYModel.m"; sourceTree = "<group>"; };
 		CEFBCEDC2679AA6E00C553C9 /* YYClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYClassInfo.m; sourceTree = "<group>"; };
 		CEFBCEDD2679AA6E00C553C9 /* NSObject+YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+YYModel.h"; sourceTree = "<group>"; };
+		CEFBCEE52679CE3A00C553C9 /* TKAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKAccount.h; sourceTree = "<group>"; };
+		CEFBCEE62679CE3A00C553C9 /* TKAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKAccount.m; sourceTree = "<group>"; };
+		CEFBCEEC2679CF3000C553C9 /* TKThreadCaseVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKThreadCaseVC.h; sourceTree = "<group>"; };
+		CEFBCEED2679CF3000C553C9 /* TKThreadCaseVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKThreadCaseVC.m; sourceTree = "<group>"; };
+		CEFBCEF12679D3E500C553C9 /* TKSafeAccount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSafeAccount.h; sourceTree = "<group>"; };
+		CEFBCEF22679D3E500C553C9 /* TKSafeAccount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKSafeAccount.m; sourceTree = "<group>"; };
 		DCA9960EEB1F389C359883B9 /* Pods-dailyCodeWidget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCodeWidget.debug.xcconfig"; path = "Target Support Files/Pods-dailyCodeWidget/Pods-dailyCodeWidget.debug.xcconfig"; sourceTree = "<group>"; };
 		E34540053D907645E29D2D27 /* Pods-dailyCodeWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dailyCodeWidget.release.xcconfig"; path = "Target Support Files/Pods-dailyCodeWidget/Pods-dailyCodeWidget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -1586,6 +1595,7 @@
 			children = (
 				CEE6F2342536AE9C00E3EBF8 /* TKThreadListViewController.h */,
 				CEE6F2352536AE9C00E3EBF8 /* TKThreadListViewController.m */,
+				CEFBCEE42679CDC300C553C9 /* Case */,
 				CEE6F2332536AE8000E3EBF8 /* GCD */,
 			);
 			path = Thread;
@@ -1659,6 +1669,19 @@
 				CEFBCEDA2679AA6E00C553C9 /* YYModel.h */,
 			);
 			path = YYModel;
+			sourceTree = "<group>";
+		};
+		CEFBCEE42679CDC300C553C9 /* Case */ = {
+			isa = PBXGroup;
+			children = (
+				CEFBCEE52679CE3A00C553C9 /* TKAccount.h */,
+				CEFBCEE62679CE3A00C553C9 /* TKAccount.m */,
+				CEFBCEF12679D3E500C553C9 /* TKSafeAccount.h */,
+				CEFBCEF22679D3E500C553C9 /* TKSafeAccount.m */,
+				CEFBCEEC2679CF3000C553C9 /* TKThreadCaseVC.h */,
+				CEFBCEED2679CF3000C553C9 /* TKThreadCaseVC.m */,
+			);
+			path = Case;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1865,9 +1888,11 @@
 				CE400D7A253576EA003C5E72 /* LabelViewController.m in Sources */,
 				CE400D6C253576EA003C5E72 /* AboutAlertViewController.m in Sources */,
 				CE400D86253576EA003C5E72 /* TKTableView.m in Sources */,
+				CEFBCEF32679D3E500C553C9 /* TKSafeAccount.m in Sources */,
 				CE400D95253576EA003C5E72 /* TKBackgroundTaskVC.m in Sources */,
 				CE400D78253576EA003C5E72 /* TotalModel.m in Sources */,
 				CE400D7F253576EA003C5E72 /* ResponderChainRootView.m in Sources */,
+				CEFBCEE72679CE3A00C553C9 /* TKAccount.m in Sources */,
 				CE400DFA253576EA003C5E72 /* GradientLayerViewController.m in Sources */,
 				CE400E0925357CD9003C5E72 /* TK3rdUsageListViewController.m in Sources */,
 				CE400DA0253576EA003C5E72 /* TKMasonryAnimateVC.m in Sources */,
@@ -1916,6 +1941,7 @@
 				CE242BF92563C1650013A36A /* TKArrayUsageListViewController.m in Sources */,
 				CE400D9C253576EA003C5E72 /* TKAverageVC.m in Sources */,
 				CE400D58253576EA003C5E72 /* TKHomeCollectionViewCell.m in Sources */,
+				CEFBCEEE2679CF3000C553C9 /* TKThreadCaseVC.m in Sources */,
 				CECD2497255A61E000A0610B /* TKImageAPIUsageListVC.m in Sources */,
 				CE400D88253576EA003C5E72 /* ViewController.m in Sources */,
 				CE400D5E253576EA003C5E72 /* TKLiftViewController.m in Sources */,

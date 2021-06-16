@@ -335,6 +335,9 @@ NS_ASSUME_NONNULL_BEGIN
  If you need to create instances of different classes during json->object transform,
  use the method to choose custom class based on dictionary data.
  
+ 如果你需要在json->对象转换期间创建不同类的实例，
+ 使用该方法根据字典数据选择自定义类。
+ 
  @discussion If the model implements this method, it will be called to determine resulting class
  during `+modelWithJSON:`, `+modelWithDictionary:`, conveting object of properties of parent objects 
  (both singular and containers via `+modelContainerPropertyGenericClass`).
