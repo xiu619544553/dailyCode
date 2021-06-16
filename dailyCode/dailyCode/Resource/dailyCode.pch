@@ -18,10 +18,21 @@
 // 常量
 #import "TKConstant.h"
 
-#import <YYKit/YYKit.h>
 #import <Masonry/Masonry.h>
 #import <TKCategory/TKHeader.h>
 #import "NSObject+TKHUD.h"
+
+#if __has_include(<YYCategories/YYCategories.h>)
+#import <YYCategories/YYCategories.h>
+#else
+#import "YYCategories.h"
+#endif
+
+#if __has_include(<YYModel/YYModel.h>)
+#import <YYModel/YYModel.h>
+#else
+#import "YYModel.h"
+#endif
 
 
 #endif /* dailyCode_pch */

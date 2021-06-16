@@ -9,7 +9,6 @@
 #import "JSONSerializationViewController.h"
 #import "WXPracticeNodeModel.h"
 #import "WXBookManagerModel.h"
-#import <YYKit.h>
 
 @interface JSONSerializationViewController ()
 

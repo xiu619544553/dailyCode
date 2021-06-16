@@ -7,7 +7,6 @@
 //
 
 #import "TreeTableViewController.h"
-#import <YYKit.h>
 
 #import "TotalModel.h"
 #import "NodeModel.h"
@@ -59,7 +58,8 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *path = [[NSBundle mainBundle] pathForResource:@"tiku" ofType:@"json"];
         NSData *data = [NSData dataWithContentsOfFile:path];
-        TotalModel *totalM = [TotalModel modelWithJSON:data];
+        
+        TotalModel *totalM = [TotalModel yy_modelWithJSON:data];
         NSArray *temporiginalNodes = [NSMutableArray arrayWithArray:totalM.catalog];
         
         for (NodeModel *l1 in temporiginalNodes) {
@@ -84,7 +84,7 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *path = [[NSBundle mainBundle] pathForResource:@"weakness" ofType:@"json"];
         NSData *data = [NSData dataWithContentsOfFile:path];
-        TotalModel *totalM = [TotalModel modelWithJSON:data];
+        TotalModel *totalM = [TotalModel yy_modelWithJSON:data];
         NSArray *temporiginalNodes = [NSMutableArray arrayWithArray:totalM.catalog];
         
         for (NodeModel *l1 in temporiginalNodes) {
