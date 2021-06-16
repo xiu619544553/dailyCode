@@ -53,9 +53,6 @@
 		CE400D6B253576EA003C5E72 /* LayoutSubView1.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BED253576E9003C5E72 /* LayoutSubView1.m */; };
 		CE400D6C253576EA003C5E72 /* AboutAlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BEF253576E9003C5E72 /* AboutAlertViewController.m */; };
 		CE400D6D253576EA003C5E72 /* ShadowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BF3253576E9003C5E72 /* ShadowVC.m */; };
-		CE400D6E253576EA003C5E72 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BF5253576E9003C5E72 /* WebViewController.m */; };
-		CE400D6F253576EA003C5E72 /* jsInvokeOcAndOCCallback.html in Resources */ = {isa = PBXBuildFile; fileRef = CE400BF6253576E9003C5E72 /* jsInvokeOcAndOCCallback.html */; };
-		CE400D70253576EA003C5E72 /* JStoOC.html in Resources */ = {isa = PBXBuildFile; fileRef = CE400BF7253576E9003C5E72 /* JStoOC.html */; };
 		CE400D71253576EA003C5E72 /* TKPageManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BFA253576E9003C5E72 /* TKPageManagerViewController.m */; };
 		CE400D72253576EA003C5E72 /* TKTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BFB253576E9003C5E72 /* TKTableViewController.m */; };
 		CE400D73253576EA003C5E72 /* WMMagicScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400BFE253576E9003C5E72 /* WMMagicScrollView.m */; };
@@ -101,7 +98,6 @@
 		CE400D9B253576EA003C5E72 /* TKAutoLayout2Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400C61253576E9003C5E72 /* TKAutoLayout2Cell.m */; };
 		CE400D9C253576EA003C5E72 /* TKAverageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400C62253576E9003C5E72 /* TKAverageVC.m */; };
 		CE400D9D253576EA003C5E72 /* MasonryUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400C66253576E9003C5E72 /* MasonryUsageViewController.m */; };
-		CE400D9E253576EA003C5E72 /* TKMasonryOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400C67253576E9003C5E72 /* TKMasonryOtherViewController.m */; };
 		CE400D9F253576EA003C5E72 /* TKAutolayoutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400C69253576E9003C5E72 /* TKAutolayoutViewController.m */; };
 		CE400DA0253576EA003C5E72 /* TKMasonryAnimateVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400C6C253576E9003C5E72 /* TKMasonryAnimateVC.m */; };
 		CE400DA1253576EA003C5E72 /* TKAutolayoutCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400C6D253576E9003C5E72 /* TKAutolayoutCell.m */; };
@@ -150,6 +146,10 @@
 		CE9D687A25493D5B00465E56 /* dailyCodeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CEA92F5D2623D4E200343DA6 /* TKPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA92F5C2623D4E200343DA6 /* TKPageContentViewController.m */; };
 		CEB5649B258B0329004E9256 /* TK_YYKit_UsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB5649A258B0329004E9256 /* TK_YYKit_UsageViewController.m */; };
+		CECA47C42673477F007BC952 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA47BD2673477F007BC952 /* WebViewController.m */; };
+		CECA47C52673477F007BC952 /* jsInvokeOcAndOCCallback.html in Resources */ = {isa = PBXBuildFile; fileRef = CECA47BE2673477F007BC952 /* jsInvokeOcAndOCCallback.html */; };
+		CECA47C62673477F007BC952 /* JStoOC.html in Resources */ = {isa = PBXBuildFile; fileRef = CECA47BF2673477F007BC952 /* JStoOC.html */; };
+		CECA47C72673477F007BC952 /* TKMasonryOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA47C22673477F007BC952 /* TKMasonryOtherViewController.m */; };
 		CECD2497255A61E000A0610B /* TKImageAPIUsageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */; };
 		CECD249E255A631B00A0610B /* TKResizableImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD249D255A631B00A0610B /* TKResizableImageViewController.m */; };
 		CEDC4594264E1CD1000064CB /* TKSectionHeaderViewCeilingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC4593264E1CD1000064CB /* TKSectionHeaderViewCeilingView.m */; };
@@ -279,10 +279,6 @@
 		CE400BF0253576E9003C5E72 /* AboutAlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutAlertViewController.h; sourceTree = "<group>"; };
 		CE400BF2253576E9003C5E72 /* ShadowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShadowVC.h; sourceTree = "<group>"; };
 		CE400BF3253576E9003C5E72 /* ShadowVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShadowVC.m; sourceTree = "<group>"; };
-		CE400BF5253576E9003C5E72 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
-		CE400BF6253576E9003C5E72 /* jsInvokeOcAndOCCallback.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jsInvokeOcAndOCCallback.html; sourceTree = "<group>"; };
-		CE400BF7253576E9003C5E72 /* JStoOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JStoOC.html; sourceTree = "<group>"; };
-		CE400BF8253576E9003C5E72 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		CE400BFA253576E9003C5E72 /* TKPageManagerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPageManagerViewController.m; sourceTree = "<group>"; };
 		CE400BFB253576E9003C5E72 /* TKTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTableViewController.m; sourceTree = "<group>"; };
 		CE400BFD253576E9003C5E72 /* WMStickyPageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMStickyPageController.h; sourceTree = "<group>"; };
@@ -369,14 +365,12 @@
 		CE400C64253576E9003C5E72 /* TKAutolayoutCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAutolayoutCell.h; sourceTree = "<group>"; };
 		CE400C65253576E9003C5E72 /* TKAutoLayoutCellController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAutoLayoutCellController.h; sourceTree = "<group>"; };
 		CE400C66253576E9003C5E72 /* MasonryUsageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasonryUsageViewController.m; sourceTree = "<group>"; };
-		CE400C67253576E9003C5E72 /* TKMasonryOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMasonryOtherViewController.m; sourceTree = "<group>"; };
 		CE400C68253576E9003C5E72 /* TKSafeAreaInsetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKSafeAreaInsetsViewController.h; sourceTree = "<group>"; };
 		CE400C69253576E9003C5E72 /* TKAutolayoutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAutolayoutViewController.m; sourceTree = "<group>"; };
 		CE400C6A253576E9003C5E72 /* TKAverageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAverageVC.h; sourceTree = "<group>"; };
 		CE400C6B253576E9003C5E72 /* TKAutoLayout2Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKAutoLayout2Cell.h; sourceTree = "<group>"; };
 		CE400C6C253576E9003C5E72 /* TKMasonryAnimateVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMasonryAnimateVC.m; sourceTree = "<group>"; };
 		CE400C6D253576E9003C5E72 /* TKAutolayoutCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAutolayoutCell.m; sourceTree = "<group>"; };
-		CE400C6E253576E9003C5E72 /* TKMasonryOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMasonryOtherViewController.h; sourceTree = "<group>"; };
 		CE400C6F253576E9003C5E72 /* MasonryUsageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasonryUsageViewController.h; sourceTree = "<group>"; };
 		CE400C70253576E9003C5E72 /* TKAutoLayoutCellController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKAutoLayoutCellController.m; sourceTree = "<group>"; };
 		CE400C71253576E9003C5E72 /* TKSafeAreaInsetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKSafeAreaInsetsViewController.m; sourceTree = "<group>"; };
@@ -463,6 +457,12 @@
 		CEA92F5C2623D4E200343DA6 /* TKPageContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKPageContentViewController.m; sourceTree = "<group>"; };
 		CEB56499258B0329004E9256 /* TK_YYKit_UsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_YYKit_UsageViewController.h; sourceTree = "<group>"; };
 		CEB5649A258B0329004E9256 /* TK_YYKit_UsageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_YYKit_UsageViewController.m; sourceTree = "<group>"; };
+		CECA47BD2673477F007BC952 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		CECA47BE2673477F007BC952 /* jsInvokeOcAndOCCallback.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = jsInvokeOcAndOCCallback.html; sourceTree = "<group>"; };
+		CECA47BF2673477F007BC952 /* JStoOC.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JStoOC.html; sourceTree = "<group>"; };
+		CECA47C02673477F007BC952 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		CECA47C22673477F007BC952 /* TKMasonryOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKMasonryOtherViewController.m; sourceTree = "<group>"; };
+		CECA47C32673477F007BC952 /* TKMasonryOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKMasonryOtherViewController.h; sourceTree = "<group>"; };
 		CECD2495255A61E000A0610B /* TKImageAPIUsageListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageAPIUsageListVC.h; sourceTree = "<group>"; };
 		CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageAPIUsageListVC.m; sourceTree = "<group>"; };
 		CECD249C255A631B00A0610B /* TKResizableImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKResizableImageViewController.h; sourceTree = "<group>"; };
@@ -744,6 +744,7 @@
 		CE400BB4253576E9003C5E72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CECA47B3267345CB007BC952 /* WebKit */,
 				CEE6F2372536AEF900E3EBF8 /* BasicKnowledge */,
 				CE400BB5253576E9003C5E72 /* Other */,
 				CE400BC0253576E9003C5E72 /* UIKit */,
@@ -808,7 +809,6 @@
 				CECD2490255A617C00A0610B /* UIImage */,
 				CE5F8EEF262036360054000E /* UIPageViewController */,
 				CE400C21253576E9003C5E72 /* UIViewCategoryUsage */,
-				CE400BF4253576E9003C5E72 /* WebView */,
 				CE400BF9253576E9003C5E72 /* WMPageController */,
 			);
 			path = UIKit;
@@ -954,17 +954,6 @@
 				CE400BF3253576E9003C5E72 /* ShadowVC.m */,
 			);
 			path = Shadow;
-			sourceTree = "<group>";
-		};
-		CE400BF4253576E9003C5E72 /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-				CE400BF5253576E9003C5E72 /* WebViewController.m */,
-				CE400BF6253576E9003C5E72 /* jsInvokeOcAndOCCallback.html */,
-				CE400BF7253576E9003C5E72 /* JStoOC.html */,
-				CE400BF8253576E9003C5E72 /* WebViewController.h */,
-			);
-			path = WebView;
 			sourceTree = "<group>";
 		};
 		CE400BF9253576E9003C5E72 /* WMPageController */ = {
@@ -1239,8 +1228,6 @@
 				CE400C62253576E9003C5E72 /* TKAverageVC.m */,
 				CE400C60253576E9003C5E72 /* TKMasonryAnimateVC.h */,
 				CE400C6C253576E9003C5E72 /* TKMasonryAnimateVC.m */,
-				CE400C6E253576E9003C5E72 /* TKMasonryOtherViewController.h */,
-				CE400C67253576E9003C5E72 /* TKMasonryOtherViewController.m */,
 				CE400C68253576E9003C5E72 /* TKSafeAreaInsetsViewController.h */,
 				CE400C71253576E9003C5E72 /* TKSafeAreaInsetsViewController.m */,
 			);
@@ -1490,6 +1477,35 @@
 			path = YYKitUsage;
 			sourceTree = "<group>";
 		};
+		CECA47B3267345CB007BC952 /* WebKit */ = {
+			isa = PBXGroup;
+			children = (
+				CECA47BC2673477F007BC952 /* Usage1 */,
+				CECA47C12673477F007BC952 /* Usage2 */,
+			);
+			path = WebKit;
+			sourceTree = "<group>";
+		};
+		CECA47BC2673477F007BC952 /* Usage1 */ = {
+			isa = PBXGroup;
+			children = (
+				CECA47BE2673477F007BC952 /* jsInvokeOcAndOCCallback.html */,
+				CECA47BF2673477F007BC952 /* JStoOC.html */,
+				CECA47C02673477F007BC952 /* WebViewController.h */,
+				CECA47BD2673477F007BC952 /* WebViewController.m */,
+			);
+			path = Usage1;
+			sourceTree = "<group>";
+		};
+		CECA47C12673477F007BC952 /* Usage2 */ = {
+			isa = PBXGroup;
+			children = (
+				CECA47C22673477F007BC952 /* TKMasonryOtherViewController.m */,
+				CECA47C32673477F007BC952 /* TKMasonryOtherViewController.h */,
+			);
+			path = Usage2;
+			sourceTree = "<group>";
+		};
 		CECD2490255A617C00A0610B /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1712,20 +1728,20 @@
 				CE400DFD253576EA003C5E72 /* TKMacroViewController.xib in Resources */,
 				CE400D68253576EA003C5E72 /* TKFeedbackGeneratorViewController.xib in Resources */,
 				CE242C032563C2390013A36A /* TKGenericsUsageViewController.xib in Resources */,
+				CECA47C52673477F007BC952 /* jsInvokeOcAndOCCallback.html in Resources */,
 				CE400DB4253576EA003C5E72 /* TKSDWebImageUsageViewController.xib in Resources */,
-				CE400D6F253576EA003C5E72 /* jsInvokeOcAndOCCallback.html in Resources */,
 				CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */,
 				CE400D51253576EA003C5E72 /* Assets.xcassets in Resources */,
 				CE400D80253576EA003C5E72 /* TKColorUsageViewController.xib in Resources */,
 				CE400D54253576EA003C5E72 /* tk_voice.gif in Resources */,
 				CE400D96253576EA003C5E72 /* TKBackgroundTaskVC.xib in Resources */,
 				CE400DFB253576EA003C5E72 /* GradientLayerViewController.xib in Resources */,
+				CECA47C62673477F007BC952 /* JStoOC.html in Resources */,
 				CE400D82253576EA003C5E72 /* TKUIViewCategoryUsageViewController.xib in Resources */,
 				CE400D7B253576EA003C5E72 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf in Resources */,
 				CE400D55253576EA003C5E72 /* json.json in Resources */,
 				CE400D53253576EA003C5E72 /* weakness.json in Resources */,
 				CE400D50253576EA003C5E72 /* tiku.json in Resources */,
-				CE400D70253576EA003C5E72 /* JStoOC.html in Resources */,
 				CE400D5A253576EA003C5E72 /* TKButtonUsageViewController.xib in Resources */,
 				CE400D97253576EA003C5E72 /* TKSortViewController.xib in Resources */,
 			);
@@ -1862,7 +1878,9 @@
 				CE400D8A253576EA003C5E72 /* PresentViewController.m in Sources */,
 				CE400D8B253576EA003C5E72 /* UIWindow+TKAdd.m in Sources */,
 				CE400D4A253576EA003C5E72 /* TKNavigationController.m in Sources */,
+				CECA47C72673477F007BC952 /* TKMasonryOtherViewController.m in Sources */,
 				CE400D9F253576EA003C5E72 /* TKAutolayoutViewController.m in Sources */,
+				CECA47C42673477F007BC952 /* WebViewController.m in Sources */,
 				CE9D68662549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m in Sources */,
 				CE400D92253576EA003C5E72 /* WXBookManagerModel.m in Sources */,
 				CE400D85253576EA003C5E72 /* CustomTableViewCell.m in Sources */,
@@ -1880,7 +1898,6 @@
 				CE400D88253576EA003C5E72 /* ViewController.m in Sources */,
 				CE400D5E253576EA003C5E72 /* TKLiftViewController.m in Sources */,
 				CE400DA7253576EA003C5E72 /* WKWebView+AFNetworking.m in Sources */,
-				CE400D6E253576EA003C5E72 /* WebViewController.m in Sources */,
 				CE400D9D253576EA003C5E72 /* MasonryUsageViewController.m in Sources */,
 				CE400D63253576EA003C5E72 /* TKTextView.m in Sources */,
 				CEE6F23A2536AF1B00E3EBF8 /* TKBasicKnowledgeListViewController.m in Sources */,
@@ -1910,7 +1927,6 @@
 				CE400D75253576EA003C5E72 /* TreeTableViewController.m in Sources */,
 				CE400D5C253576EA003C5E72 /* TKScrollViewViewController.m in Sources */,
 				CE400D83253576EA003C5E72 /* TKUIViewCategoryUsageViewController.m in Sources */,
-				CE400D9E253576EA003C5E72 /* TKMasonryOtherViewController.m in Sources */,
 				CEF390B6261D7A3500561556 /* TKScreenshotCell.m in Sources */,
 				CE400DA2253576EA003C5E72 /* TKAutoLayoutCellController.m in Sources */,
 				CE93109F25AEC7C2005F502F /* TKImageChangeColorVC.m in Sources */,

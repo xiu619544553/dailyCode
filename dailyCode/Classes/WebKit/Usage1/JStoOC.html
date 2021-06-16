@@ -11,7 +11,7 @@
     img{
         cursor:pointer;
     }
-   </style>
+</style>
 
 <body>
     
@@ -53,38 +53,33 @@
     
     <!--        JS语法-->
     <script type = "text/javascript">
+        
+        function jsToOcFunction1()
+        {
+            window.webkit.messageHandlers.showTitleBar.postMessage(true);
+        }
     
-    function jsToOcFunction1()
-    {
-       window.webkit.messageHandlers.showTitleBar.postMessage(true);
+    function jsToOcFunction2() {
+        <!--        var cookie = window.prompt("getToken");-->
+        <!--<!--        window.webkit.messageHandlers.showTitleBar.postMessage(false);-->-->
     }
     
-    function jsToOcFunction2()
-    {
-<!--        var cookie = window.prompt("getToken");-->
-        window.webkit.messageHandlers.showTitleBar.postMessage(false);
-    }
-    
-    function showAlert()
-    {
+    function showAlert() {
         alert("被OC截获到了");
     }
     
-    //图片点击事件
-    function clickImage()
-    {
+    // 图片点击事件
+    function clickImage() {
         alert("欢迎你关注我！点击了图片");
     }
     
-    //OC调用JS改变背景色
-    function changeColor()
-    {
+    // OC调用JS改变背景色
+    function changeColor() {
         document.body.style.backgroundColor = randomColor();
     }
     
-    //随机生成颜色
-    function randomColor()
-    {
+    // 随机生成颜色
+    function randomColor() {
         var r=Math.floor(Math.random()*256);
         var g=Math.floor(Math.random()*256);
         var b=Math.floor(Math.random()*256);
@@ -97,7 +92,7 @@
         image.src = path;
     }
     
-    </script>
+        </script>
     
 </body>
 

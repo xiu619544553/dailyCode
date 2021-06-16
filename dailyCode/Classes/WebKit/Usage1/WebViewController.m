@@ -19,6 +19,20 @@ static void * const WebViewKVOContext = (void *)&WebViewKVOContext;
 
 @implementation WebViewController
 
+- (void)dealloc {
+    NSLog(@"%@ - 销毁了", NSStringFromClass(self.class));
+    if (_webView) {
+        [_webView removeObserver:self
+                      forKeyPath:NSStringFromSelector(@selector(estimatedProgress))
+                         context:WebViewKVOContext];
+        [_webView removeObserver:self
+                      forKeyPath:NSStringFromSelector(@selector(title))
+                         context:WebViewKVOContext];
+    }
+}
+
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -44,29 +58,40 @@ static void * const WebViewKVOContext = (void *)&WebViewKVOContext;
                forKeyPath:NSStringFromSelector(@selector(estimatedProgress))
                   options:(NSKeyValueObservingOptionNew)
                   context:WebViewKVOContext];
-// 监听标题
-[_webView addObserver:self
-           forKeyPath:NSStringFromSelector(@selector(title))
-              options:NSKeyValueObservingOptionNew
-              context:WebViewKVOContext];
+    // 监听标题
+    [_webView addObserver:self
+               forKeyPath:NSStringFromSelector(@selector(title))
+                  options:NSKeyValueObservingOptionNew
+                  context:WebViewKVOContext];
     
-    // 加载
+    
+    // 定制化需求 --> 加载页面
+    __weak typeof(self) ws = self;
+    [self customizedUserAgent:^(id _Nullable result, NSError * _Nullable error) {
+        __strong typeof(ws) ss = ws;
+        
+        // navigator.userAgent: Mozilla/5.0 (iPhone; CPU iPhone OS 14_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148
+        
+        NSString *userAgent = (NSString *)result;
+        if (userAgent.length > 0) {
+            [userAgent stringByAppendingString:@" app=pro"];
+        }
+        
+        [self.webView setCustomUserAgent:userAgent];
+        
+        [ss loadRequest];
+    }];
+}
+
+- (void)customizedUserAgent:(void (^ _Nullable)(_Nullable id, NSError * _Nullable error))completionHandler   {
+    [_webView evaluateJavaScript:@"navigator.userAgent" completionHandler:completionHandler];
+}
+
+- (void)loadRequest {
     NSString *path = [[NSBundle mainBundle] pathForResource:@"jsInvokeOcAndOCCallback" ofType:@"html"];
     NSURL *url = [NSURL fileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
-}
-
-- (void)dealloc {
-    NSLog(@"%@ - 销毁了", NSStringFromClass(self.class));
-    if (_webView) {
-        [_webView removeObserver:self
-                      forKeyPath:NSStringFromSelector(@selector(estimatedProgress))
-                         context:WebViewKVOContext];
-        [_webView removeObserver:self
-                      forKeyPath:NSStringFromSelector(@selector(title))
-                         context:WebViewKVOContext];
-    }
 }
 
 

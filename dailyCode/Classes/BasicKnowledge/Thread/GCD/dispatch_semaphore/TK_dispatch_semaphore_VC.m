@@ -49,7 +49,8 @@
             break;
             
         case 2:
-            [self controlThreadCountAction];
+            // 设置线程并发数
+            [self setThreadConcurrentCount];
             break;
             
         default:
@@ -75,8 +76,8 @@
 
 #pragma mark - 控制线程并发数
 
-// 控制线程并发数
-- (void)controlThreadCountAction {
+// 设置线程并发数
+- (void)setThreadConcurrentCount {
     // 当两个线程需要协调特定事件的完成时，传递0值非常有用。传递一个大于0的值对于管理有限的资源池非常有用，其中资源池大小等于这个值。
     // 假定：期望最多开辟2个子线程
     dispatch_semaphore_t dsema = dispatch_semaphore_create(2);
@@ -143,15 +144,12 @@
 #pragma mark - 模拟器信号量和异步回调组合使用
 - (void)simulate_Semaphore_AsyncHandler {
     /*
-     创建信号量
-     dispatch_semaphore_create
+     dispatch_semaphore_create：创建信号量
      
-     减少信号量的计数，如果结果值小于0，等待到一个signal才会返回，否则会一直等待。
-     dispatch_semaphore_wait
+     dispatch_semaphore_wait：减少信号量的计数，如果结果值小于0，等待到一个signal才会返回，否则会一直等待。
      
-     增加计数信号量。如果前一个值小于0，这个函数在返回之前唤醒一个等待的线程。
+     dispatch_semaphore_signal：增加计数信号量。如果前一个值小于0，这个函数在返回之前唤醒一个等待的线程。
      返回值：如果线程被唤醒，这个函数返回非零值。否则，返回0。
-     dispatch_semaphore_signal
      */
     
     
