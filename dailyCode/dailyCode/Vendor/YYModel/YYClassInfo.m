@@ -343,12 +343,14 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
         metaCache = CFDictionaryCreateMutable(CFAllocatorGetDefault(), 0, &kCFTypeDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
         lock = dispatch_semaphore_create(1);
     });
+    
     dispatch_semaphore_wait(lock, DISPATCH_TIME_FOREVER);       //只允许同时1个线程
     YYClassInfo *info = CFDictionaryGetValue(class_isMetaClass(cls) ? metaCache : classCache, (__bridge const void *)(cls));        //获取曾经解析过的缓存
     if (info && info->_needUpdate) {        //如果存在且需要更新，则重新解析class并更新结构体
         [info _update];
     }
     dispatch_semaphore_signal(lock);                        //释放锁
+    
     if (!info) {                                            //如果没有缓存，则第一次解析class
         info = [[YYClassInfo alloc] initWithClass:cls];
         if (info) {                                         //解析完毕设置缓存
