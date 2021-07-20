@@ -86,9 +86,11 @@
 //    class_replaceMethod(<#Class  _Nullable __unsafe_unretained cls#>, <#SEL  _Nonnull name#>, <#IMP  _Nonnull imp#>, <#const char * _Nullable types#>)
     
     [self test];
+    
+    [self dynamicCreateClass];
 }
 
-
+#pragma mark - 输出
 - (void)test {
     NSLog(@"=================类与对象操作函数====================");
     MyClass *myClass = [[MyClass alloc] init];
@@ -107,6 +109,7 @@
     NSLog(@"MyClass is %@ a meta-class", (class_isMetaClass(cls) ? @"" : @"not"));
     NSLog(@"==========================================================");
     
+    // 这里需要注意的是：我们在一个类对象调用class方法是无法获取meta-class，它只是返回类而已。
     Class meta_class = objc_getMetaClass(class_getName(cls));
     NSLog(@"%s's meta-class is %s", class_getName(cls), class_getName(meta_class));
     NSLog(@"==========================================================");
@@ -170,6 +173,77 @@
     }
     NSLog(@"MyClass is%@ responsed to protocol %s", class_conformsToProtocol(cls, protocol) ? @"" : @" not", protocol_getName(protocol));
     NSLog(@"==========================================================");
+}
+
+#pragma mark - 动态创建类
+
+void imp_submethod1(id self, SEL _cmd) {
+    NSLog(@"%@ %s", self, __func__);
+}
+
+- (void)dynamicCreateClass {
+    
+    Class cls = objc_allocateClassPair(MyClass.class, "MySubClass", 0);
+    class_addMethod(cls, @selector(submethod1), (IMP)imp_submethod1, "v@:");
+    class_replaceMethod(cls, @selector(method1), (IMP)imp_submethod1, "v@:");
+    class_addIvar(cls, "_ivar1", sizeof(NSString *), log(sizeof(NSString *)), "i");
+    objc_property_attribute_t type = {"T", "@\"NSString\""};
+    objc_property_attribute_t ownership = { "C", "" };
+    objc_property_attribute_t backingivar = { "V", "_ivar1"};
+    objc_property_attribute_t attrs[] = {type, ownership, backingivar};
+    class_addProperty(cls, "property2", attrs, 3);
+    objc_registerClassPair(cls);
+    id instance = [[cls alloc] init];
+    [instance performSelector:@selector(submethod1)];
+    [instance performSelector:@selector(method1)];
+}
+
+#pragma mark - AFN
+
++ (void)swizzleResumeAndSuspendMethodForClass:(Class)theClass {
+    Method afResumeMethod = class_getInstanceMethod(self, @selector(af_resume));
+    Method afSuspendMethod = class_getInstanceMethod(self, @selector(af_suspend));
+
+    if (af_addMethod(theClass, @selector(af_resume), afResumeMethod)) {
+        af_swizzleSelector(theClass, @selector(resume), @selector(af_resume));
+    }
+
+    if (af_addMethod(theClass, @selector(af_suspend), afSuspendMethod)) {
+        af_swizzleSelector(theClass, @selector(suspend), @selector(af_suspend));
+    }
+}
+
+static inline void af_swizzleSelector(Class theClass, SEL originalSelector, SEL swizzledSelector) {
+    Method originalMethod = class_getInstanceMethod(theClass, originalSelector);
+    Method swizzledMethod = class_getInstanceMethod(theClass, swizzledSelector);
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+}
+
+static inline BOOL af_addMethod(Class theClass, SEL selector, Method method) {
+    // class_addMethod的实现会覆盖父类的方法实现，但不会取代本类中已存在的实现，如果本类中包含一个同名的实现，则函数会返回NO。
+    // 如果要修改已存在实现，可以使用method_setImplementation
+    return class_addMethod(theClass, selector,  method_getImplementation(method),  method_getTypeEncoding(method));
+}
+
+#pragma mark - YYKit
+
++ (BOOL)swizzleInstanceMethod:(SEL)originalSel with:(SEL)newSel {
+    Method originalMethod = class_getInstanceMethod(self, originalSel);
+    Method newMethod = class_getInstanceMethod(self, newSel);
+    if (!originalMethod || !newMethod) return NO;
+    
+    class_addMethod(self,
+                    originalSel,
+                    class_getMethodImplementation(self, originalSel),
+                    method_getTypeEncoding(originalMethod));
+    class_addMethod(self,
+                    newSel,
+                    class_getMethodImplementation(self, newSel),
+                    method_getTypeEncoding(newMethod));
+    
+    method_exchangeImplementations(class_getInstanceMethod(self, originalSel),
+                                   class_getInstanceMethod(self, newSel));
+    return YES;
 }
 
 @end

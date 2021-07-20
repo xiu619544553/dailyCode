@@ -69,6 +69,13 @@
     UIViewController *topVC = [UIWindow topViewController];
     DLog(@"topVC-----%@", topVC);
     
+    
+    
+    
+    
+    
+    
+    
     return YES;
 }
 

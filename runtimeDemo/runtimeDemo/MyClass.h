@@ -18,6 +18,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)method2;
 + (void)classMethod1;
 
+
+- (void)imp_submethod1;
+
+
 @end
 
 NS_ASSUME_NONNULL_END

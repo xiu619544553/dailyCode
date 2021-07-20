@@ -34,4 +34,8 @@
     NSLog(@"arg1 : %ld, arg2 : %@", arg1, arg2);
 }
 
+- (void)imp_submethod1 {
+    
+}
+
 @end
