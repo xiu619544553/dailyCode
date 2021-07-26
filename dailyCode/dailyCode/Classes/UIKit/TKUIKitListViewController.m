@@ -48,7 +48,7 @@
                 KeyForDesc : @"UITableView"
             },
             @{
-                KeyForVC   : @"TKCollectionViewController",
+                KeyForVC   : @"TKCollectionViewUsageController",
                 KeyForDesc : @"UICollectionView"
             },
             @{

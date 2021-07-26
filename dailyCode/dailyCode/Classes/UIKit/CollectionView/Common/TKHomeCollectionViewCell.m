@@ -22,7 +22,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-
+        
         self.contentView.layer.cornerRadius = 6.f;
         self.contentView.layer.masksToBounds = YES;
         
