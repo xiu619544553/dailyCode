@@ -165,6 +165,7 @@
 		CEE6F2442536CAFF00E3EBF8 /* TKBasePlainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE400B9F253576E8003C5E72 /* TKBasePlainTableViewController.m */; };
 		CEEE5BFE26AE5D9A00F643F6 /* TKDynamicSpaceSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE5BFD26AE5D9A00F643F6 /* TKDynamicSpaceSectionHeaderView.m */; };
 		CEEE5C0526AE5DB500F643F6 /* TKDynamicSpaceSectionFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE5C0426AE5DB500F643F6 /* TKDynamicSpaceSectionFooterView.m */; };
+		CEEE5C1326AE707000F643F6 /* TKResponderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEEE5C1226AE707000F643F6 /* TKResponderViewController.m */; };
 		CEF390AC261D3CC200561556 /* TKScreenshotTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF390AB261D3CC200561556 /* TKScreenshotTableViewController.m */; };
 		CEF390B6261D7A3500561556 /* TKScreenshotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF390B5261D7A3500561556 /* TKScreenshotCell.m */; };
 		CEF485B125A435DC00E60631 /* TKBaseGroupedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEF485B025A435DC00E60631 /* TKBaseGroupedTableViewController.m */; };
@@ -506,6 +507,8 @@
 		CEEE5BFD26AE5D9A00F643F6 /* TKDynamicSpaceSectionHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKDynamicSpaceSectionHeaderView.m; sourceTree = "<group>"; };
 		CEEE5C0326AE5DB500F643F6 /* TKDynamicSpaceSectionFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDynamicSpaceSectionFooterView.h; sourceTree = "<group>"; };
 		CEEE5C0426AE5DB500F643F6 /* TKDynamicSpaceSectionFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKDynamicSpaceSectionFooterView.m; sourceTree = "<group>"; };
+		CEEE5C1126AE707000F643F6 /* TKResponderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKResponderViewController.h; sourceTree = "<group>"; };
+		CEEE5C1226AE707000F643F6 /* TKResponderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKResponderViewController.m; sourceTree = "<group>"; };
 		CEF390AA261D3CC200561556 /* TKScreenshotTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKScreenshotTableViewController.h; sourceTree = "<group>"; };
 		CEF390AB261D3CC200561556 /* TKScreenshotTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKScreenshotTableViewController.m; sourceTree = "<group>"; };
 		CEF390B4261D7A3500561556 /* TKScreenshotCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKScreenshotCell.h; sourceTree = "<group>"; };
@@ -778,6 +781,7 @@
 		CE400BB4253576E9003C5E72 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CEEE5C1026AE6A7D00F643F6 /* UIResponder */,
 				CECA47B3267345CB007BC952 /* WebKit */,
 				CEE6F2372536AEF900E3EBF8 /* BasicKnowledge */,
 				CE400BB5253576E9003C5E72 /* Other */,
@@ -1685,6 +1689,15 @@
 			path = Supplementary;
 			sourceTree = "<group>";
 		};
+		CEEE5C1026AE6A7D00F643F6 /* UIResponder */ = {
+			isa = PBXGroup;
+			children = (
+				CEEE5C1126AE707000F643F6 /* TKResponderViewController.h */,
+				CEEE5C1226AE707000F643F6 /* TKResponderViewController.m */,
+			);
+			path = UIResponder;
+			sourceTree = "<group>";
+		};
 		CEF390A8261D3C8100561556 /* Screenshot */ = {
 			isa = PBXGroup;
 			children = (
@@ -1980,6 +1993,7 @@
 				CE400D5F253576EA003C5E72 /* TKLiftHeaderInSectionView.m in Sources */,
 				CE400D7E253576EA003C5E72 /* ResponderChainViewController.m in Sources */,
 				CE400D6B253576EA003C5E72 /* LayoutSubView1.m in Sources */,
+				CEEE5C1326AE707000F643F6 /* TKResponderViewController.m in Sources */,
 				CEF390AC261D3CC200561556 /* TKScreenshotTableViewController.m in Sources */,
 				CEFBCEDE2679AA6E00C553C9 /* NSObject+YYModel.m in Sources */,
 				CE400DA8253576EA003C5E72 /* UIImageView+AFNetworking.m in Sources */,

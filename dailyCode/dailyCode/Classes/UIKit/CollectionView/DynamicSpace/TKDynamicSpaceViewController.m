@@ -22,6 +22,8 @@
     
     self.edgesForExtendedLayout = UIRectEdgeNone;
     [self.view addSubview:self.mainView];
+    
+    
 }
 
 #pragma mark - Override Methods
