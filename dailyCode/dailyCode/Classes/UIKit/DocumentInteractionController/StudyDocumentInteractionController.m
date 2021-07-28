@@ -7,6 +7,7 @@
 //
 
 #import "StudyDocumentInteractionController.h"
+#import <YYCategories/CALayer+YYAdd.h>
 
 @interface StudyDocumentInteractionController () <UIDocumentInteractionControllerDelegate>
 // 文档交互控制器
@@ -19,11 +20,20 @@
 
 - (UIDocumentInteractionController *)documentController {
     if (!_documentController) {
+        
+        // -1.图片分享
+//        UIImage * shareImage = [self.view.layer snapshotImage];
+//        NSString *path_document = NSHomeDirectory();
+//        NSString *imagePath = [path_document stringByAppendingString:@"/Documents/test_pic.png"];
+//        [UIImagePNGRepresentation(shareImage) writeToFile:imagePath atomically:YES];
+//        NSURL *imageUrl = [NSURL fileURLWithPath:imagePath];
+        
         // 0.pdf地址
         NSString *path = [[NSBundle mainBundle] pathForResource:@"1168EAE7-AB02-44AE-9651-5FF80486F0A9" ofType:@"pdf"];
+        NSURL *pdfUrl = [NSURL fileURLWithPath:path];
         
         // 1.指定要分享的链接
-        _documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:path]];
+        _documentController = [UIDocumentInteractionController interactionControllerWithURL:pdfUrl];
         
         // 2.设置分享代理
         _documentController.delegate = self;

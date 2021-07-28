@@ -23,6 +23,22 @@
     [self layoutUI];
 }
 
+// 死锁
+- (void)testDeadlock {
+    /*
+     同步函数 + 主队列，加入任务 ==> 死锁
+     
+     同步函数与主队列的特点
+     同步函数 dispatch_sync : 立刻执行，并且必须等这个函数执行完才能往下执行
+     主队列特点：凡是放到主队列中的任务，都会放到主线程中执行。如果主队列发现当前主线程有任务在执行，那么主队列会暂停调度队列中的任务，直到主线程空闲为止。
+     综合同步函数与主队列各自的特点，不难发现为何会产生死锁的现象，主线程在执行同步函数的时候主队列也暂停调度任务，而同步函数没有执行完就没法往下执行。
+     */
+    dispatch_sync(dispatch_get_main_queue(), ^{
+        NSLog(@"__In");
+    });
+    NSLog(@"__Out");
+}
+
 #pragma mark - UI
 
 - (void)layoutUI {
@@ -45,22 +61,22 @@
      下列的代码执行，异步子线程中创建UI控件，会有警告：
      
      +[UIView setAnimationsEnabled:] being called from a background thread. Performing any operation from a background thread on UIView or a subclass is not supported and may result in unexpected and insidious behavior. trace=(
-         0   UIKitCore                           0x00000001f0ed87f0 <redacted> + 116
-         1   libdispatch.dylib                   0x00000001012c8c78 _dispatch_client_callout + 16
-         2   libdispatch.dylib                   0x00000001012cac84 _dispatch_once_callout + 84
-         3   UIKitCore                           0x00000001f0ed8778 <redacted> + 100
-         4   UIKitCore                           0x00000001f0ed88e4 <redacted> + 92
-         5   UIKitCore                           0x00000001f0e5bfb4 <redacted> + 368
-         6   UIKitCore                           0x00000001f0e5c098 <redacted> + 32
-         7   QuartzCore                          0x00000001c895dc08 <redacted> + 332
-         8   QuartzCore                          0x00000001c88c03e4 <redacted> + 348
-         9   QuartzCore                          0x00000001c88ee620 <redacted> + 640
-         10  QuartzCore                          0x00000001c88ef6ec <redacted> + 228
-         11  libsystem_pthread.dylib             0x00000001c403c4b4 <redacted> + 580
-         12  libsystem_pthread.dylib             0x00000001c4039904 <redacted> + 80
-         13  libsystem_pthread.dylib             0x00000001c403a508 pthread_workqueue_setdispatchoffset_np + 0
-         14  libsystem_pthread.dylib             0x00000001c403a14c _pthread_wqthread + 360
-         15  libsystem_pthread.dylib             0x00000001c403ccd4 start_wqthread + 4
+     0   UIKitCore                           0x00000001f0ed87f0 <redacted> + 116
+     1   libdispatch.dylib                   0x00000001012c8c78 _dispatch_client_callout + 16
+     2   libdispatch.dylib                   0x00000001012cac84 _dispatch_once_callout + 84
+     3   UIKitCore                           0x00000001f0ed8778 <redacted> + 100
+     4   UIKitCore                           0x00000001f0ed88e4 <redacted> + 92
+     5   UIKitCore                           0x00000001f0e5bfb4 <redacted> + 368
+     6   UIKitCore                           0x00000001f0e5c098 <redacted> + 32
+     7   QuartzCore                          0x00000001c895dc08 <redacted> + 332
+     8   QuartzCore                          0x00000001c88c03e4 <redacted> + 348
+     9   QuartzCore                          0x00000001c88ee620 <redacted> + 640
+     10  QuartzCore                          0x00000001c88ef6ec <redacted> + 228
+     11  libsystem_pthread.dylib             0x00000001c403c4b4 <redacted> + 580
+     12  libsystem_pthread.dylib             0x00000001c4039904 <redacted> + 80
+     13  libsystem_pthread.dylib             0x00000001c403a508 pthread_workqueue_setdispatchoffset_np + 0
+     14  libsystem_pthread.dylib             0x00000001c403a14c _pthread_wqthread + 360
+     15  libsystem_pthread.dylib             0x00000001c403ccd4 start_wqthread + 4
      )
      */
     dispatch_queue_t queue = dispatch_queue_create("test.update.com", DISPATCH_QUEUE_CONCURRENT);

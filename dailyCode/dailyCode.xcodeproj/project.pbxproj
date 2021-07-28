@@ -144,6 +144,8 @@
 		CE9D686F25493D5B00465E56 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D686E25493D5B00465E56 /* NotificationCenter.framework */; };
 		CE9D687325493D5B00465E56 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D687225493D5B00465E56 /* TodayViewController.m */; };
 		CE9D687A25493D5B00465E56 /* dailyCodeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEA0940B26AFD7FC00208BF9 /* TKKVCUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0940A26AFD7FC00208BF9 /* TKKVCUsageViewController.m */; };
+		CEA0941026AFD90400208BF9 /* TKKVCPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0940F26AFD90400208BF9 /* TKKVCPerson.m */; };
 		CEA92F5D2623D4E200343DA6 /* TKPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA92F5C2623D4E200343DA6 /* TKPageContentViewController.m */; };
 		CEB5649B258B0329004E9256 /* TK_YYKit_UsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB5649A258B0329004E9256 /* TK_YYKit_UsageViewController.m */; };
 		CEC3469226A7EFE200394E71 /* TKCollectionViewUsageController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC3469126A7EFE200394E71 /* TKCollectionViewUsageController.m */; };
@@ -465,6 +467,10 @@
 		CE9D687225493D5B00465E56 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		CE9D687725493D5B00465E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9D68802549695200465E56 /* 小组件大功能.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = "小组件大功能.entitlements"; path = "../../../.Trash/小组件大功能.entitlements"; sourceTree = "<group>"; };
+		CEA0940926AFD7FC00208BF9 /* TKKVCUsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKVCUsageViewController.h; sourceTree = "<group>"; };
+		CEA0940A26AFD7FC00208BF9 /* TKKVCUsageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKKVCUsageViewController.m; sourceTree = "<group>"; };
+		CEA0940E26AFD90400208BF9 /* TKKVCPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKVCPerson.h; sourceTree = "<group>"; };
+		CEA0940F26AFD90400208BF9 /* TKKVCPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKKVCPerson.m; sourceTree = "<group>"; };
 		CEA92F5B2623D4E200343DA6 /* TKPageContentViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKPageContentViewController.h; sourceTree = "<group>"; };
 		CEA92F5C2623D4E200343DA6 /* TKPageContentViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKPageContentViewController.m; sourceTree = "<group>"; };
 		CEB56499258B0329004E9256 /* TK_YYKit_UsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_YYKit_UsageViewController.h; sourceTree = "<group>"; };
@@ -572,6 +578,13 @@
 				E34540053D907645E29D2D27 /* Pods-dailyCodeWidget.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		CE0954AF26B155CC0008BDC0 /* SystemShare */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SystemShare;
 			sourceTree = "<group>";
 		};
 		CE10D6C12574CF1B00B48A1C /* dispatch_group */ = {
@@ -820,7 +833,7 @@
 		CE400BC0253576E9003C5E72 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				CEDC4597264E20A3000064CB /* SystemShare */,
+				CE0954AF26B155CC0008BDC0 /* SystemShare */,
 				CE400E0425357AC4003C5E72 /* TKUIKitListViewController.h */,
 				CE400E0525357AC4003C5E72 /* TKUIKitListViewController.m */,
 				CE400C3E253576E9003C5E72 /* AboutScrollViewLayout */,
@@ -1046,8 +1059,8 @@
 		CE400C12253576E9003C5E72 /* DocumentInteractionController */ = {
 			isa = PBXGroup;
 			children = (
-				CE400C13253576E9003C5E72 /* StudyDocumentInteractionController.h */,
 				CE400C14253576E9003C5E72 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf */,
+				CE400C13253576E9003C5E72 /* StudyDocumentInteractionController.h */,
 				CE400C15253576E9003C5E72 /* StudyDocumentInteractionController.m */,
 			);
 			path = DocumentInteractionController;
@@ -1157,18 +1170,19 @@
 		CE400C43253576E9003C5E72 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				CE400C51253576E9003C5E72 /* TKFoundationListViewController.h */,
-				CE400C5D253576E9003C5E72 /* TKFoundationListViewController.m */,
 				CE400C4B253576E9003C5E72 /* Attributed */,
 				CE400C52253576E9003C5E72 /* BackgroundTask */,
 				CE49D48A2614160D00B82837 /* Font */,
 				CE400C44253576E9003C5E72 /* JSONSerialization */,
+				CEA0940626AFD79300208BF9 /* KVC */,
 				CE242BF22563C1220013A36A /* NSArray */,
 				CEE1F4CF2581FAF400A62B74 /* NSAttributedString */,
 				CE3ACC3326550AB4008D18DE /* NSNotification */,
 				CE400C5C253576E9003C5E72 /* NSOperationQueue */,
 				CE389128266E12E8008E72B7 /* NSURL */,
 				CE400C4E253576E9003C5E72 /* Scale */,
+				CE400C51253576E9003C5E72 /* TKFoundationListViewController.h */,
+				CE400C5D253576E9003C5E72 /* TKFoundationListViewController.m */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -1507,6 +1521,17 @@
 			path = dailyCodeWidget;
 			sourceTree = "<group>";
 		};
+		CEA0940626AFD79300208BF9 /* KVC */ = {
+			isa = PBXGroup;
+			children = (
+				CEA0940926AFD7FC00208BF9 /* TKKVCUsageViewController.h */,
+				CEA0940A26AFD7FC00208BF9 /* TKKVCUsageViewController.m */,
+				CEA0940E26AFD90400208BF9 /* TKKVCPerson.h */,
+				CEA0940F26AFD90400208BF9 /* TKKVCPerson.m */,
+			);
+			path = KVC;
+			sourceTree = "<group>";
+		};
 		CEB56498258B02DA004E9256 /* YYKitUsage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1607,13 +1632,6 @@
 				CEDC4593264E1CD1000064CB /* TKSectionHeaderViewCeilingView.m */,
 			);
 			path = Ceiling;
-			sourceTree = "<group>";
-		};
-		CEDC4597264E20A3000064CB /* SystemShare */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SystemShare;
 			sourceTree = "<group>";
 		};
 		CEE1A0E226350E82003CB162 /* RunLoop */ = {
@@ -1938,6 +1956,7 @@
 				CE400D8F253576EA003C5E72 /* AboutScrollViewLayoutViewController.m in Sources */,
 				CE400DA4253576EA003C5E72 /* UIProgressView+AFNetworking.m in Sources */,
 				CE400D76253576EA003C5E72 /* TKCatalogModel.m in Sources */,
+				CEA0940B26AFD7FC00208BF9 /* TKKVCUsageViewController.m in Sources */,
 				CE3F06332582FF040035FE71 /* TKTestShadowVC.m in Sources */,
 				CEFBCEDF2679AA6E00C553C9 /* YYClassInfo.m in Sources */,
 				CE400DA9253576EA003C5E72 /* UIButton+AFNetworking.m in Sources */,
@@ -2043,6 +2062,7 @@
 				CE400D6A253576EA003C5E72 /* LayoutViewController.m in Sources */,
 				CE242C0E2563C3360013A36A /* TKArrayMapper.m in Sources */,
 				CE400D64253576EA003C5E72 /* TKTextViewController.m in Sources */,
+				CEA0941026AFD90400208BF9 /* TKKVCPerson.m in Sources */,
 				CE400DAF253576EA003C5E72 /* AFURLSessionManager.m in Sources */,
 				CE400D8D253576EA003C5E72 /* AsyncDecoderImageViewController.m in Sources */,
 				CE3F0647258306AE0035FE71 /* TKTestShadowCell.m in Sources */,
