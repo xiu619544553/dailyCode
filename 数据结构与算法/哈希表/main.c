@@ -28,7 +28,7 @@ typedef struct hashTable table;
 
 
 // 初始化哈希表
-void initHashTable(table* t) {
+void initHashTable(table *t) {
     if (t == NULL) return;
     
     int i;
@@ -42,6 +42,21 @@ void initHashTable(table* t) {
 // 释放哈希表
 void freeHashTable(table* t) {
     if (t == NULL) return;
+    
+    int i;
+    entry *e, *ep;
+    for (i = 0; i < BUCKETCOUNT; i ++) {
+        
+        e = &(t->bucket[i]);
+        while (e->next != NULL) {
+            ep = e->next;
+            e->next = ep->next;
+            ep->next = NULL;
+            ep->value = NULL;
+            ep = NULL;
+        }
+        
+    }
     
 }
 
