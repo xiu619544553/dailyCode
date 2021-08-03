@@ -133,6 +133,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41BB7E7426BA08FA0025BEB3 /* 哈希表运行时内存布局.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "哈希表运行时内存布局.png"; sourceTree = "<group>"; };
+		41BB7E7526BA0A230025BEB3 /* 哈希表实现原理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "哈希表实现原理.png"; sourceTree = "<group>"; };
 		CE97B2B926A6B52D0096D794 /* 数据结构与算法 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "数据结构与算法"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE97B2BC26A6B52D0096D794 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CE97B2C826A6B5880096D794 /* 线性表_单链表 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "线性表_单链表"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -376,6 +378,8 @@
 		CED05D8126B3F3CC000AEA83 /* 哈希表 */ = {
 			isa = PBXGroup;
 			children = (
+				41BB7E7526BA0A230025BEB3 /* 哈希表实现原理.png */,
+				41BB7E7426BA08FA0025BEB3 /* 哈希表运行时内存布局.png */,
 				CED05D8226B3F3CC000AEA83 /* main.c */,
 			);
 			path = "哈希表";
