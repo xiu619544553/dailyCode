@@ -187,6 +187,34 @@ int insertEntry(table *t, const char *key, char *value) {
     return index;
 }
 
+// 因为这个哈希表中保存的是键值对，所以这个方法是从哈希表中查找key对应的value的。要注意，这里返回的是value的地址，不应该对其指向的数据进行修改，否则可能会有意外发生。
+// 找到了则返回 value的地址；没找到则返回 NULL
+const char *findValueByKey(const table *t, const char *key) {
+    
+    if (t == NULL || key == NULL) return NULL;
+    
+    int index;
+    const entry *e;
+
+    index = keyToIndex(key);
+    e = &(t->bucket)[index];
+    
+    // 这个桶没有元素
+    if (e->key == NULL) return NULL;
+    
+    while (e != NULL) {
+        if (0 == strcmp(e->key, key)) {
+            // 找到
+            return e->value;
+        }
+        // 未找到，则会一直查找，直到找到或者找到尾指针为止
+        e = e->next;
+    }
+    
+    return NULL;
+}
+
+
 int main(int argc, const char * argv[]) {
     
     /*
