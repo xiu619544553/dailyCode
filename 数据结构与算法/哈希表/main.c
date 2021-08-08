@@ -25,18 +25,30 @@
  关于用到的 C语言函数介绍：
  
  1、char *strdup(const char *__s1);
-    strdup 在堆上分配足以保存 __s1 的内存，并拷贝 __s1 内容到新分配位置。
+    * 功能：strdup 在堆上分配足以保存 __s1 的内存，并拷贝 __s1 内容到新分配位置。一般和free（）函数成对出现
  
  2、int strcmp(const char *__s1, const char *__s2);
- strcmp函数是 string compare(字符串比较)的缩写，用于比较两个字符串并根据比较结果返回整数。基本形式为 strcmp(str1,str2)，
+    * 功能：strcmp函数是 string compare(字符串比较)的缩写，用于比较两个字符串并根据比较结果返回整数。基本形式为 strcmp(str1,str2)，
     若 str1=str2，则返回零；
     若 str1<str2，则返回负数；
     若 str1>str2，则返回正数。
+ 
+ 3、void *memcpy(void *__dst, const void *__src, size_t __n);
+    * 功能：从源内存地址的起始位置开始拷贝若干个字节到目标内存地址中。即从 __src 中拷贝 __n 个字节到目标 __dst中。
+    * 参数
+        __dst -- 指向用于存储复制内容的目标数组，类型强制转换为 void* 指针。
+        __src -- 指向要复制的数据源，类型强制转换为 void* 指针。
+        __n   -- 要被复制的字节数。
+    * 返回值
+        该函数返回一个指向目标存储区 __dst 的指针。
+ 
  */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+
 
 // MARK: 定义节点数据
 struct hashEntry {
@@ -125,7 +137,7 @@ int insertEntry(table *t, const char *key, char *value) {
     
     if (t == NULL || key == NULL || value == NULL) return Undefined;
     
-    int index;
+    int index, vlen1, vlen2;
     entry *e, *ep;
     
     // 通过散列算法，计算 index
@@ -140,18 +152,39 @@ int insertEntry(table *t, const char *key, char *value) {
     } else { // 哈希表中存在 key
         
         e = ep = &(t->bucket[index]);
-        while (e != NULL) {
+        
+        while (e != NULL) { // 先从已知的开始找
             
-            if (strcmp(e->key, key) == 0) {
+            if (strcmp(e->key, key) == 0) { // 找到 key
                 
+                vlen1 = strlen(value);
+                vlen2 = strlen(e->value);
+                
+                if (vlen1 > vlen2) {
+                    e->value = NULL;
+                    e->value = (char *)malloc(vlen1 + 1);
+                }
+                
+                memcpy(e->value, value, vlen1 + 1);
+                
+                return index;
             }
             
+            ep = e;
+            e = e->next;
         }
         
+        // 没有在当前桶中找到
+        // 创建条目加入
+        e = (entry *)malloc(sizeof(entry));
+        e->key = strdup(key);
+        e->value = strdup(value);
+        e->next = NULL;
         
+        ep->next = e;
     }
     
-    return 0;
+    return index;
 }
 
 int main(int argc, const char * argv[]) {
