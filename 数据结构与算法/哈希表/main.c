@@ -11,13 +11,13 @@
 /*
  先说一下原理。
  先是有一个bucket数组，也就是所谓的桶。
-
+ 
  哈希表的特点就是数据与其在表中的位置存在相关性，也就是有关系的，通过数据应该可以计算出其位置。
-
+ 
  这个哈希表是用于存储一些键值对(key -- value)关系的数据，其key也就是其在表中的索引，value是附带的数据。
-
+ 
  通过散列算法，将字符串的key映射到某个桶中，这个算法是确定的，也就是说一个key必然对应一个bucket。
-
+ 
  然后是碰撞问题，也就是说多个key对应一个索引值。举个例子：有三个key:key1,key3,key5通过散列算法keyToIndex得到的索引值都为2，也就是这三个key产生了碰撞，对于碰撞的处理，采取的是用链表连接起来，而没有进行再散列。
  */
 
@@ -25,22 +25,22 @@
  关于用到的 C语言函数介绍：
  
  1、char *strdup(const char *__s1);
-    * 功能：strdup 在堆上分配足以保存 __s1 的内存，并拷贝 __s1 内容到新分配位置。一般和free（）函数成对出现
+ * 功能：strdup 在堆上分配足以保存 __s1 的内存，并拷贝 __s1 内容到新分配位置。一般和free（）函数成对出现
  
  2、int strcmp(const char *__s1, const char *__s2);
-    * 功能：strcmp函数是 string compare(字符串比较)的缩写，用于比较两个字符串并根据比较结果返回整数。基本形式为 strcmp(str1,str2)，
-    若 str1=str2，则返回零；
-    若 str1<str2，则返回负数；
-    若 str1>str2，则返回正数。
+ * 功能：strcmp函数是 string compare(字符串比较)的缩写，用于比较两个字符串并根据比较结果返回整数。基本形式为 strcmp(str1,str2)，
+ 若 str1=str2，则返回零；
+ 若 str1<str2，则返回负数；
+ 若 str1>str2，则返回正数。
  
  3、void *memcpy(void *__dst, const void *__src, size_t __n);
-    * 功能：从源内存地址的起始位置开始拷贝若干个字节到目标内存地址中。即从 __src 中拷贝 __n 个字节到目标 __dst中。
-    * 参数
-        __dst -- 指向用于存储复制内容的目标数组，类型强制转换为 void* 指针。
-        __src -- 指向要复制的数据源，类型强制转换为 void* 指针。
-        __n   -- 要被复制的字节数。
-    * 返回值
-        该函数返回一个指向目标存储区 __dst 的指针。
+ * 功能：从源内存地址的起始位置开始拷贝若干个字节到目标内存地址中。即从 __src 中拷贝 __n 个字节到目标 __dst中。
+ * 参数
+ __dst -- 指向用于存储复制内容的目标数组，类型强制转换为 void* 指针。
+ __src -- 指向要复制的数据源，类型强制转换为 void* 指针。
+ __n   -- 要被复制的字节数。
+ * 返回值
+ 该函数返回一个指向目标存储区 __dst 的指针。
  
  */
 
@@ -195,7 +195,7 @@ const char *findValueByKey(const table *t, const char *key) {
     
     int index;
     const entry *e;
-
+    
     index = keyToIndex(key);
     e = &(t->bucket)[index];
     
@@ -214,6 +214,91 @@ const char *findValueByKey(const table *t, const char *key) {
     return NULL;
 }
 
+/*
+ 哈希表元素的移除
+ 
+ 这个函数用于将哈希表中key对应的节点移除，如果其不存在，那就返回NULL。如果存在，就返回这个节点的地址。注意，这里并没有释放节点，如果不需要了，应该手动释放它。
+ */
+entry *removeEntry(table *t, char *key) {
+    
+    if (t == NULL || key == NULL) return NULL;
+    
+    int index;
+    entry *e;
+    entry *ep; // 查找的时候将 ep 作为返回值
+    
+    index = findValueByKey(t, key);
+    e = &(t->bucket[index]);
+    
+    while (e != NULL) {
+        
+        if (0 == strcmp(key, e->key)) {
+            
+            // 如果要找的元素在桶的第一个
+            if (e == (&(t->bucket[index]))) {
+                
+                ep = e->next; // 把 e->next 的地址赋予指针变量 ep
+                if (ep != NULL) { // 如果这个桶元素个数>=2
+                    // 交换第一个和第二个，然后移除第二个
+                    entry temp = *e; // 值拷贝
+                    *e = *ep; // 相当于链表的头结点已被移除
+                    *ep = temp; // 这就是移除下来的链表头结点
+                    ep->next = NULL;
+                }
+                else {
+                    // 这个桶只有第一个元素
+                    ep = (entry *)malloc(sizeof(entry));
+                    *ep = *e;
+                    e->key = NULL;
+                    e->value = NULL;
+                    e->next = NULL;
+                }
+                
+            }
+            else {
+                // 如果不是桶的第一个元素
+                // 找到它的前一个
+                ep = &(t->bucket[index]);
+                while (ep->next != e) {
+                    ep = ep->next;
+                }
+                
+                ep->next = e->next;
+                e->next = NULL;
+                ep = e;
+            }
+            
+            return ep;
+            
+        }
+        else {
+            e = e->next;
+        }
+    }
+    
+    return NULL;
+}
+
+/*
+ 哈希表打印
+ 
+ 这个函数用于打印哈希表的内容的。
+ */
+void printTable(table* t)
+{
+    int i;
+    entry* e;
+    if (t == NULL)return;
+    for (i = 0; i<BUCKETCOUNT; ++i) {
+        printf("\nbucket[%d]:\n" , i);
+        e = &(t->bucket[i]);
+        while (e->key != NULL) {
+            printf("\t%s\t=\t%s\n" , e->key , e->value);
+            if (e->next == NULL)break;
+            e = e->next;
+        }
+    }
+}
 
 int main(int argc, const char * argv[]) {
     
@@ -224,7 +309,53 @@ int main(int argc, const char * argv[]) {
      
      strdup(const char *__s1)
      */
+    table t;
+    initHashTable(&t);
     
+    insertEntry(&t , "电脑型号" , "华硕 X550JK 笔记本电脑");
+    insertEntry(&t , "操作系统" , "Windows 8.1 64位 (DirectX 11)");
+    insertEntry(&t , "处理器" , "英特尔 Core i7 - 4710HQ @ 2.50GHz 四核");
+    insertEntry(&t , "主板" , "华硕 X550JK(英特尔 Haswell)");
+    insertEntry(&t , "内存" , "4 GB(Hynix / Hyundai)");
+    insertEntry(&t , "主硬盘" , "日立 HGST HTS541010A9E680(1 TB / 5400 转 / 分)");
+    insertEntry(&t , "显卡" , "NVIDIA GeForce GTX 850M       (2 GB / 华硕)");
+    insertEntry(&t , "显示器" , "奇美 CMN15C4(15.3 英寸)");
+    insertEntry(&t , "光驱" , "松下 DVD - RAM UJ8E2 S DVD刻录机");
+    insertEntry(&t , "声卡" , "Conexant SmartAudio HD @ 英特尔 Lynx Point 高保真音频");
+    insertEntry(&t , "网卡" , "瑞昱 RTL8168 / 8111 / 8112 Gigabit Ethernet Controller / 华硕");
+    insertEntry(&t , "主板型号" , "华硕 X550JK");
+    insertEntry(&t , "芯片组" , "英特尔 Haswell");
+    insertEntry(&t , "BIOS" , "X550JK.301");
+    insertEntry(&t , "制造日期" , "06 / 26 / 2014");
+    insertEntry(&t , "主人" , "就是我");
+    insertEntry(&t , "价格" , "六十张红色毛主席");
+    insertEntry(&t , "主硬盘" , "换了个120G的固态");
+    
+    entry* e = removeEntry(&t , "主板型号");
+    if (e != NULL) {
+        puts("找到后要释放");
+        free(e->key);
+        free(e->value);
+        free(e);
+        e = NULL;
+    }
+    
+    printTable(&t);
+    
+    const char* keys[] = { "显示器" , "主人","没有" , "处理器" };
+    for (int i = 0; i < 4; ++i) {
+        const char* value = findValueByKey(&t , keys[i]);
+        if (value != NULL) {
+            printf("find %s\t=\t%s\n" ,keys[i], value);
+        }
+        else {
+            printf("not found %s\n",keys[i]);
+        }
+    }
+    
+    
+    freeHashTable(&t);
+    getchar();
     
     
     return 0;
