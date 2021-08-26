@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		41B53E4C26C496BA00DBC696 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 41B53E4B26C496BA00DBC696 /* main.c */; };
 		CE97B2BD26A6B52D0096D794 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE97B2BC26A6B52D0096D794 /* main.c */; };
 		CE97B2CB26A6B5890096D794 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE97B2CA26A6B5890096D794 /* main.c */; };
 		CE97B2D826A6B5A80096D794 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE97B2D726A6B5A80096D794 /* main.c */; };
@@ -22,6 +23,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		41B53E4226C496A200DBC696 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		CE97B2B726A6B52D0096D794 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -133,6 +143,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41B53E4426C496A200DBC696 /* 哈希表2 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "哈希表2"; sourceTree = BUILT_PRODUCTS_DIR; };
+		41B53E4B26C496BA00DBC696 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		41BB7E7426BA08FA0025BEB3 /* 哈希表运行时内存布局.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "哈希表运行时内存布局.png"; sourceTree = "<group>"; };
 		41BB7E7526BA0A230025BEB3 /* 哈希表实现原理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "哈希表实现原理.png"; sourceTree = "<group>"; };
 		CE97B2B926A6B52D0096D794 /* 数据结构与算法 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "数据结构与算法"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +174,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		41B53E4126C496A200DBC696 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE97B2B626A6B52D0096D794 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,6 +268,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		41B53E4526C496A200DBC696 /* 哈希表2 */ = {
+			isa = PBXGroup;
+			children = (
+				41B53E4B26C496BA00DBC696 /* main.c */,
+			);
+			path = "哈希表2";
+			sourceTree = "<group>";
+		};
 		CE97B2B026A6B52C0096D794 = {
 			isa = PBXGroup;
 			children = (
@@ -264,6 +291,7 @@
 				CE97B34D26A6B6990096D794 /* 循环队列 */,
 				CE97B36226A6B6AE0096D794 /* 链式循环队列 */,
 				CED05D8126B3F3CC000AEA83 /* 哈希表 */,
+				41B53E4526C496A200DBC696 /* 哈希表2 */,
 				CE97B2BA26A6B52D0096D794 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -283,6 +311,7 @@
 				CE97B34C26A6B6990096D794 /* 循环队列 */,
 				CE97B36126A6B6AE0096D794 /* 链式循环队列 */,
 				CED05D8026B3F3CC000AEA83 /* 哈希表 */,
+				41B53E4426C496A200DBC696 /* 哈希表2 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,6 +417,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		41B53E4326C496A200DBC696 /* 哈希表2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 41B53E4826C496A200DBC696 /* Build configuration list for PBXNativeTarget "哈希表2" */;
+			buildPhases = (
+				41B53E4026C496A200DBC696 /* Sources */,
+				41B53E4126C496A200DBC696 /* Frameworks */,
+				41B53E4226C496A200DBC696 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "哈希表2";
+			productName = "哈希表2";
+			productReference = 41B53E4426C496A200DBC696 /* 哈希表2 */;
+			productType = "com.apple.product-type.tool";
+		};
 		CE97B2B826A6B52D0096D794 /* 数据结构与算法 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE97B2C026A6B52D0096D794 /* Build configuration list for PBXNativeTarget "数据结构与算法" */;
@@ -600,6 +646,9 @@
 			attributes = {
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					41B53E4326C496A200DBC696 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 					CE97B2B826A6B52D0096D794 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -663,11 +712,20 @@
 				CE97B34B26A6B6990096D794 /* 循环队列 */,
 				CE97B36026A6B6AE0096D794 /* 链式循环队列 */,
 				CED05D7F26B3F3CC000AEA83 /* 哈希表 */,
+				41B53E4326C496A200DBC696 /* 哈希表2 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		41B53E4026C496A200DBC696 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41B53E4C26C496BA00DBC696 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE97B2B526A6B52D0096D794 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -767,6 +825,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		41B53E4926C496A200DBC696 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41B53E4A26C496A200DBC696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CE97B2BE26A6B52D0096D794 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1073,6 +1149,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		41B53E4826C496A200DBC696 /* Build configuration list for PBXNativeTarget "哈希表2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41B53E4926C496A200DBC696 /* Debug */,
+				41B53E4A26C496A200DBC696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE97B2B426A6B52D0096D794 /* Build configuration list for PBXProject "数据结构与算法" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

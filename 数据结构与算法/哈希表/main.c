@@ -75,10 +75,8 @@ void initHashTable(table *t) {
     if (t == NULL) return;
     
     int i;
-    for (i = 0; BUCKETCOUNT; i ++) {
-        t->bucket[i].key   = NULL;
-        t->bucket[i].value = NULL;
-        t->bucket[i].next  = NULL;
+    for (i = 0; i < BUCKETCOUNT; i ++) {
+        (t->bucket[i]) = malloc(sizeof(entry));
     }
 }
 
