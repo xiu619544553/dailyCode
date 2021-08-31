@@ -6,6 +6,7 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 
 /*
  题目：
@@ -25,13 +26,8 @@
  */
 
 
-int search(int *array, int size) {
-    
-}
-
 
 int main(int argc, const char * argv[]) {
-    
     
     
     return 0;
