@@ -73,6 +73,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		41355DFF26E0C6EC00603102 /* 单链表_有环示意图如下.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "单链表_有环示意图如下.jpg"; sourceTree = "<group>"; };
 		4146A61626DD9D49001F3661 /* 两个链表相加 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "两个链表相加"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4146A61826DD9D4A001F3661 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		4146A62126DD9EBC001F3661 /* 链表的环的入口结点 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "链表的环的入口结点"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +145,7 @@
 		4146A62226DD9EBC001F3661 /* 链表的环的入口结点 */ = {
 			isa = PBXGroup;
 			children = (
+				41355DFF26E0C6EC00603102 /* 单链表_有环示意图如下.jpg */,
 				4146A62326DD9EBC001F3661 /* main.c */,
 			);
 			path = "链表的环的入口结点";
