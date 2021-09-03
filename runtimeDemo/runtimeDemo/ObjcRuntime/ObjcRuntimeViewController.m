@@ -1,21 +1,21 @@
 //
-//  ViewController.m
+//  ObjcRuntimeViewController.m
 //  RuntimeDemo
 //
 //  Created by hello on 2021/6/17.
 //
 
-#import "ViewController.h"
+#import "ObjcRuntimeViewController.h"
 #import <objc/runtime.h>
 
 #import "Test.h"
 #import "MyClass.h"
 
-@interface ViewController ()
+@interface ObjcRuntimeViewController ()
 
 @end
 
-@implementation ViewController
+@implementation ObjcRuntimeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -220,8 +220,6 @@ static inline void af_swizzleSelector(Class theClass, SEL originalSelector, SEL 
 }
 
 static inline BOOL af_addMethod(Class theClass, SEL selector, Method method) {
-    // class_addMethod的实现会覆盖父类的方法实现，但不会取代本类中已存在的实现，如果本类中包含一个同名的实现，则函数会返回NO。
-    // 如果要修改已存在实现，可以使用method_setImplementation
     return class_addMethod(theClass, selector,  method_getImplementation(method),  method_getTypeEncoding(method));
 }
 

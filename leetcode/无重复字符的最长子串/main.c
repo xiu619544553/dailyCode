@@ -42,7 +42,7 @@ int main(int argc, const char * argv[]) {
     char string[20] = "abcabcbb";
     
     size_t len = strlen(string);
-    printf("len=%zu", len);
+    printf("len=%zu\n", len);
     
     
     return 0;

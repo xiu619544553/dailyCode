@@ -54,7 +54,7 @@
 struct hashEntry {
     const char *key;
     char *value;
-    struct hashEntry* next;
+    struct hashEntry *next;
 };
 
 typedef struct hashEntry entry;
@@ -75,8 +75,13 @@ void initHashTable(table *t) {
     if (t == NULL) return;
     
     int i;
+    t = malloc(sizeof(struct hashEntry));
+    entry bucket[BUCKETCOUNT];
     for (i = 0; i < BUCKETCOUNT; i ++) {
-        (t->bucket[i]) = malloc(sizeof(entry));
+        
+        bucket[i] = (struct hashEntry)malloc(sizeof(struct hashEntry));
+        
+//        (t->bucket[i]) = (struct hashEntry)malloc(sizeof(entry));
     }
 }
 
