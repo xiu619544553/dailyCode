@@ -59,28 +59,6 @@ struct ListNode {
 typedef int Status;
 
 
-/// 单链表是否有环
-/// @param L 单链表
-Status hasCycle(struct ListNode *L) {
-    
-    // 异常
-    if (L == NULL || (L->next) == NULL) return ERROR;
-    
-    struct ListNode *fast, *slow;
-    
-    fast = slow = L;
-    
-    while ((fast != NULL) && (slow != NULL)) {
-        fast = L->next->next;
-        slow = L->next;
-        
-        if (fast == slow) {
-            return TRUE;
-        }
-    }
-    
-    return FALSE;
-}
 
 // MARK: 求环的入口
 /*
@@ -111,10 +89,118 @@ Status hasCycle(struct ListNode *L) {
  N2 >= 2*N1
  
  # 当 N2 == 2*N1 时，该单链表是一个环。
- 
  */
 
+
+/// 单链表是否有环
+/// @param head 单链表
+Status hasCycle(struct ListNode *head) {
+    
+    // 异常
+    if (head == NULL || (head->next) == NULL) return FALSE;
+    
+    struct ListNode *fast, *slow;
+    
+    fast = slow = head;
+    
+    while ((fast != NULL) && (slow != NULL)) {
+        
+        if ((fast->next) == NULL || (fast->next->next) == NULL || (slow->next) == NULL) {
+            return FALSE;
+        }
+        
+        fast = fast->next->next;
+        slow = slow->next;
+        
+        if (fast == slow) {
+            return TRUE;
+        }
+    }
+    
+    return FALSE;
+}
+
+/// 找环入口
+struct ListNode *findEntranceNode(struct ListNode *L) {
+    
+    // 异常
+    if (L == NULL || (L->next) == NULL) return NULL;
+    
+    // 验证是否有环
+    struct ListNode *fast, *slow;
+    
+    fast = slow = L;
+    
+    while ((fast != NULL) && (slow != NULL)) {
+        fast = fast->next->next;
+        slow = slow->next;
+        
+        // DEBUG
+        if ((fast != NULL) && (slow != NULL)) {
+            printf("fast->val = %d   slow->val = %d \n", fast->val, slow->val);
+        }
+        
+        if (fast == slow) {
+            break;
+        }
+    }
+    
+    if (fast == NULL) {
+        printf("该链表没有环\n");
+        return NULL;
+    }
+    
+    // fast指向头结点，步长为1
+    fast = L;
+    
+    while (fast != slow) {
+        fast = fast->next;
+        slow = slow->next;
+    }
+    
+    return fast;
+}
+
+
 int main(int argc, const char * argv[]) {
+    
+    
+    // 构造有环的链表
+    struct ListNode *L = (struct ListNode *)malloc(sizeof(struct ListNode));
+    struct ListNode *tailNode = L;
+    
+    // 记录环入口，最后闭合使用
+    struct ListNode *entranceNode;
+    
+    for (int i = 1; i < 11; i++) {
+        
+        struct ListNode *node = (struct ListNode *)malloc(sizeof(struct ListNode));
+        node->val = i;
+        node->next = NULL;
+        
+        if (i == 4) {
+            entranceNode = node;
+        }
+        
+        if (i == 10) {
+            tailNode->next = node;
+            node->next = entranceNode;
+        } else {
+            tailNode->next = node;
+            tailNode = node;
+        }
+    }
+    
+    
+    // 是否有环
+    Status sts = hasCycle(L);
+    printf("%s\n", sts == TRUE ? "有环" : "没有坏");
+    
+    
+    // 找环入口
+    struct ListNode *result = findEntranceNode(L);
+    printf("result->val = %d\n", result->val);
+    
     
     
     
