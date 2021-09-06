@@ -48,60 +48,45 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+#define Undefined -1
 
 // MARK: 定义节点数据
-struct hashEntry {
-    const char *key;
-    char *value;
-    struct hashEntry *next;
+struct HashEntry {
+    const char* key;
+    char* value;
+    struct HashEntry* next;
 };
+typedef struct HashEntry Entry;
 
-typedef struct hashEntry entry;
 
 // MARK: 定义哈希表
 #define BUCKETCOUNT 16
-struct hashTable {
-    entry bucket[BUCKETCOUNT];
+struct HashTable {
+    Entry* bucket;
 };
-
-typedef struct hashTable table;
-
-#define Undefined -1
+typedef struct HashTable Table;
 
 
 // MARK: 初始化哈希表
-void initHashTable(table *t) {
+void initHashTable(Table *t) {
     if (t == NULL) return;
     
-    int i;
-    t = malloc(sizeof(struct hashEntry));
-    entry bucket[BUCKETCOUNT];
-    for (i = 0; i < BUCKETCOUNT; i ++) {
-        
-        bucket[i] = (struct hashEntry)malloc(sizeof(struct hashEntry));
-        
-//        (t->bucket[i]) = (struct hashEntry)malloc(sizeof(entry));
+    t = malloc(sizeof(Entry));
+    t->bucket = (Entry *)calloc(BUCKETCOUNT, sizeof(Entry));
+    
+    for (int i = 0; i < BUCKETCOUNT; i ++) {
+        t->bucket[i].key = NULL;
+        t->bucket[i].value = NULL;
+        t->bucket[i].next = NULL;
     }
 }
 
 // MARK: 释放哈希表
-void freeHashTable(table* t) {
+void freeHashTable(Table* t) {
     if (t == NULL) return;
     
-    int i;
-    entry *e, *ep;
-    for (i = 0; i < BUCKETCOUNT; i ++) {
-        
-        e = &(t->bucket[i]);
-        while (e->next != NULL) {
-            ep = e->next;
-            e->next = ep->next;
-            ep->next = NULL;
-            ep->value = NULL;
-            ep = NULL;
-        }
-    }
+    free(t->bucket);
+    free(t);
 }
 
 // MARK: 哈希散列算法
@@ -136,17 +121,17 @@ int keyToIndex(const char *key) {
 /// @param key key
 /// @param value value
 /// @return 插入数据的下标。如果返回值是 -1，则标识插入失败
-int insertEntry(table *t, const char *key, char *value) {
+int insertEntry(Table *t, const char *key, char *value) {
     
     if (t == NULL || key == NULL || value == NULL) return Undefined;
     
     int index, vlen1, vlen2;
-    entry *e, *ep;
+    Entry *e, *ep;
     
     // 通过散列算法，计算 index
     index = keyToIndex(key);
     
-    if (t->bucket[index].key == NULL) { // 哈希表中不存在 key，则将 key 和 value 存储进哈希表
+    if ((t->bucket[index].key) == NULL) { // 哈希表中不存在 key，则将 key 和 value 存储进哈希表
         
         // strdup 在堆上分配足以保存str的内存，并拷贝str内容到新分配位置，防止外部通过指针篡改值
         t->bucket[index].key = strdup(key);
@@ -155,6 +140,8 @@ int insertEntry(table *t, const char *key, char *value) {
     } else { // 哈希表中存在 key
         
         e = ep = &(t->bucket[index]);
+        Entry entry = t->bucket[index];
+        printf(entry.key);
         
         while (e != NULL) { // 先从已知的开始找
             
@@ -179,7 +166,7 @@ int insertEntry(table *t, const char *key, char *value) {
         
         // 没有在当前桶中找到
         // 创建条目加入
-        e = (entry *)malloc(sizeof(entry));
+        e = (Entry *)malloc(sizeof(Entry));
         e->key = strdup(key);
         e->value = strdup(value);
         e->next = NULL;
@@ -192,12 +179,12 @@ int insertEntry(table *t, const char *key, char *value) {
 
 // 因为这个哈希表中保存的是键值对，所以这个方法是从哈希表中查找key对应的value的。要注意，这里返回的是value的地址，不应该对其指向的数据进行修改，否则可能会有意外发生。
 // 找到了则返回 value的地址；没找到则返回 NULL
-const char *findValueByKey(const table *t, const char *key) {
+const char *findValueByKey(const Table *t, const char *key) {
     
     if (t == NULL || key == NULL) return NULL;
     
     int index;
-    const entry *e;
+    const Entry *e;
     
     index = keyToIndex(key);
     e = &(t->bucket)[index];
@@ -217,18 +204,17 @@ const char *findValueByKey(const table *t, const char *key) {
     return NULL;
 }
 
-/*
- 哈希表元素的移除
- 
- 这个函数用于将哈希表中key对应的节点移除，如果其不存在，那就返回NULL。如果存在，就返回这个节点的地址。注意，这里并没有释放节点，如果不需要了，应该手动释放它。
- */
-entry *removeEntry(table *t, char *key) {
+/// 移除元素
+/// @param t 哈希表
+/// @param key 关键字
+/// @return 这个函数用于将哈希表中key对应的节点移除，如果其不存在，那就返回NULL。如果存在，就返回这个节点的地址。注意，这里并没有释放节点，如果不需要了，应该手动释放它。
+Entry *removeEntry(Table *t, char *key) {
     
     if (t == NULL || key == NULL) return NULL;
     
     int index;
-    entry *e;
-    entry *ep; // 查找的时候将 ep 作为返回值
+    Entry *e;
+    Entry *ep; // 查找的时候将 ep 作为返回值
     
     index = findValueByKey(t, key);
     e = &(t->bucket[index]);
@@ -243,14 +229,14 @@ entry *removeEntry(table *t, char *key) {
                 ep = e->next; // 把 e->next 的地址赋予指针变量 ep
                 if (ep != NULL) { // 如果这个桶元素个数>=2
                     // 交换第一个和第二个，然后移除第二个
-                    entry temp = *e; // 值拷贝
+                    Entry temp = *e; // 值拷贝
                     *e = *ep; // 相当于链表的头结点已被移除
                     *ep = temp; // 这就是移除下来的链表头结点
                     ep->next = NULL;
                 }
                 else {
                     // 这个桶只有第一个元素
-                    ep = (entry *)malloc(sizeof(entry));
+                    ep = (Entry *)malloc(sizeof(Entry));
                     *ep = *e;
                     e->key = NULL;
                     e->value = NULL;
@@ -282,15 +268,12 @@ entry *removeEntry(table *t, char *key) {
     return NULL;
 }
 
-/*
- 哈希表打印
- 
- 这个函数用于打印哈希表的内容的。
- */
-void printTable(table* t)
+/// 打印哈希表
+/// @param t 哈希表。这个函数用于打印哈希表的内容的。
+void printTable(Table* t)
 {
     int i;
-    entry* e;
+    Entry* e;
     if (t == NULL)return;
     for (i = 0; i<BUCKETCOUNT; ++i) {
         printf("\nbucket[%d]:\n" , i);
@@ -312,8 +295,10 @@ int main(int argc, const char * argv[]) {
      
      strdup(const char *__s1)
      */
-    table t;
+    Table t;
     initHashTable(&t);
+    printTable(&t);
+    
     
     insertEntry(&t , "电脑型号" , "华硕 X550JK 笔记本电脑");
     insertEntry(&t , "操作系统" , "Windows 8.1 64位 (DirectX 11)");
@@ -334,7 +319,7 @@ int main(int argc, const char * argv[]) {
     insertEntry(&t , "价格" , "六十张红色毛主席");
     insertEntry(&t , "主硬盘" , "换了个120G的固态");
     
-    entry* e = removeEntry(&t , "主板型号");
+    Entry* e = removeEntry(&t , "主板型号");
     if (e != NULL) {
         puts("找到后要释放");
         free(e->key);
