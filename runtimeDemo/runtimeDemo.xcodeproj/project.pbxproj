@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		CE16C18B267C819E00D03BEB /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16C18A267C819E00D03BEB /* MyClass.m */; };
+		CE32B4CB26E5E6FB003D5ECF /* TKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */; };
+		CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CF26E5E710003D5ECF /* TKKid.m */; };
 		CE38BE8E26E1FDEA00B894EB /* MethodSwizzingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38BE8D26E1FDEA00B894EB /* MethodSwizzingViewController.m */; };
 		CE92199126E207F700F1BA03 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE92199026E207F700F1BA03 /* Person.m */; };
 		CE92199626E2080400F1BA03 /* Kid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE92199526E2080400F1BA03 /* Kid.m */; };
@@ -24,6 +26,10 @@
 /* Begin PBXFileReference section */
 		CE16C189267C819E00D03BEB /* MyClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyClass.h; sourceTree = "<group>"; };
 		CE16C18A267C819E00D03BEB /* MyClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyClass.m; sourceTree = "<group>"; };
+		CE32B4C926E5E6FB003D5ECF /* TKPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKPerson.h; path = runtimeDemo/interview/TKPerson.h; sourceTree = SOURCE_ROOT; };
+		CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKPerson.m; path = runtimeDemo/interview/TKPerson.m; sourceTree = SOURCE_ROOT; };
+		CE32B4CE26E5E710003D5ECF /* TKKid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKKid.h; path = runtimeDemo/interview/TKKid.h; sourceTree = SOURCE_ROOT; };
+		CE32B4CF26E5E710003D5ECF /* TKKid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKKid.m; path = runtimeDemo/interview/TKKid.m; sourceTree = SOURCE_ROOT; };
 		CE38BE8C26E1FDEA00B894EB /* MethodSwizzingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MethodSwizzingViewController.h; path = RuntimeDemo/Swizzing/MethodSwizzingViewController.h; sourceTree = SOURCE_ROOT; };
 		CE38BE8D26E1FDEA00B894EB /* MethodSwizzingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MethodSwizzingViewController.m; path = RuntimeDemo/Swizzing/MethodSwizzingViewController.m; sourceTree = SOURCE_ROOT; };
 		CE92198F26E207F700F1BA03 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Person.h; path = runtimeDemo/Swizzing/Person.h; sourceTree = SOURCE_ROOT; };
@@ -58,6 +64,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE32B4C826E5E6E7003D5ECF /* interview */ = {
+			isa = PBXGroup;
+			children = (
+				CE32B4C926E5E6FB003D5ECF /* TKPerson.h */,
+				CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */,
+				CE32B4CE26E5E710003D5ECF /* TKKid.h */,
+				CE32B4CF26E5E710003D5ECF /* TKKid.m */,
+			);
+			path = interview;
+			sourceTree = "<group>";
+		};
 		CE92198E26E207E000F1BA03 /* Swizzing */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +126,7 @@
 				CEA4E07226E1F53B00B0E40F /* MainTableViewController.m */,
 				CEA4E06D26E1EC1B00B0E40F /* NSObject+Runtime.h */,
 				CEA4E06E26E1EC1B00B0E40F /* NSObject+Runtime.m */,
+				CE32B4C826E5E6E7003D5ECF /* interview */,
 				CE92199826E2125B00F1BA03 /* ObjcRuntime */,
 				CE92198E26E207E000F1BA03 /* Swizzing */,
 				CEFCBE1C267B41BC0095C0EA /* Assets.xcassets */,
@@ -192,9 +210,11 @@
 				CEFCBE18267B41B90095C0EA /* ObjcRuntimeViewController.m in Sources */,
 				CE92199126E207F700F1BA03 /* Person.m in Sources */,
 				CEA4E06F26E1EC1B00B0E40F /* NSObject+Runtime.m in Sources */,
+				CE32B4CB26E5E6FB003D5ECF /* TKPerson.m in Sources */,
 				CEFCBE30267B42F20095C0EA /* Test.m in Sources */,
 				CE16C18B267C819E00D03BEB /* MyClass.m in Sources */,
 				CEFCBE12267B41B90095C0EA /* AppDelegate.m in Sources */,
+				CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */,
 				CE38BE8E26E1FDEA00B894EB /* MethodSwizzingViewController.m in Sources */,
 				CEFCBE23267B41BD0095C0EA /* main.m in Sources */,
 			);
