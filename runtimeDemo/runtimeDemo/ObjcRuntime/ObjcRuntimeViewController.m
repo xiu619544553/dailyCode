@@ -522,6 +522,8 @@ NSArray<Class> *GetAllSubclasses(Class cls, BOOL includeSelf) {
     for (int i = 0; i < count; i++) {
         Class candidate = buffer[i];
         Class superclass = candidate;
+        
+        // 我们不能假设从该函数中获取的类对象是继承自NSObject体系的，所以在这些类上调用方法是，都应该先检测一下这个方法是否在这个类中实现。
         while ((superclass = class_getSuperclass(superclass))) {
             if (superclass == cls) {
                 [classes addObject:candidate];
