@@ -22,19 +22,28 @@ void TestMetaClass(id self, SEL _cmd) {
 
 @implementation Test
 
+
 - (void)ex_registerClassPair {
     // 创建一个新类和元类
     Class newClass = objc_allocateClassPair([NSError class], "TestClass", 0);
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
     class_addMethod(newClass, @selector(testMetaClass), (IMP)TestMetaClass, "v@:");
+#pragma clang diagnostic pop
+    
     objc_registerClassPair(newClass);
     id instance = [[newClass alloc] initWithDomain:@"some domain" code:0 userInfo:nil];
+    
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wundeclared-selector"
     [instance performSelector:@selector(testMetaClass)];
+#pragma clang diagnostic pop
     
     Class currentClass = objc_getMetaClass((__bridge void*)[self class]);
     NSLog(@"objc_getMetaClass: %@", currentClass);
     
     // objc[58500]: class `\250_\314' not linked into application
-    
     
     Class cls = NSClassFromString(@"TestClass");
     NSLog(@"cls: %@", cls);

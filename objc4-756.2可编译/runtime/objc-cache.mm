@@ -525,6 +525,8 @@ bucket_t * cache_t::find(SEL s, id receiver)
     mask_t begin = cache_hash(s, m);
     mask_t i = begin;
     do {
+        // 用这个i从散列表取值，如果取出来的bucket_t的 key = k，则查询成功，返回该bucket_t，
+        // 如果key = 0，说明在索引i的位置上还没有缓存过方法，同样需要返回该bucket_t，用于中止缓存查询。
         if (b[i].sel() == 0  ||  b[i].sel() == s) {
             return &b[i];
         }
@@ -540,7 +542,9 @@ void cache_t::expand()
 {
     cacheUpdateLock.assertLocked();
     
+    // 拿到当前的容量
     uint32_t oldCapacity = capacity();
+    // 扩容当前容量的2倍
     uint32_t newCapacity = oldCapacity ? oldCapacity*2 : INIT_CACHE_SIZE;
 
     if ((uint32_t)(mask_t)newCapacity != newCapacity) {
@@ -548,7 +552,8 @@ void cache_t::expand()
         // fixme this wastes one bit of mask
         newCapacity = oldCapacity;
     }
-
+    
+    // 开辟新的buckets
     reallocate(oldCapacity, newCapacity);
 }
 
@@ -563,14 +568,18 @@ static void cache_fill_nolock(Class cls, SEL sel, IMP imp, id receiver)
     // Make sure the entry wasn't added to the cache by some other thread 
     // before we grabbed the cacheUpdateLock.
     if (cache_getImp(cls, sel)) return;
-
+    
+    // 拿到类中的缓存
     cache_t *cache = getCache(cls);
 
     // Use the cache as-is if it is less than 3/4 full
     mask_t newOccupied = cache->occupied() + 1;
     mask_t capacity = cache->capacity();
+    
+    // 判断cache是否初始化了
     if (cache->isConstantEmptyCache()) {
         // Cache is read-only. Replace it.
+        // 初始化cache。cache尚未初始化，则会分配一个大小为4的数组
         cache->reallocate(capacity, capacity ?: INIT_CACHE_SIZE);
     }
     else if (newOccupied <= capacity / 4 * 3) {
@@ -578,14 +587,20 @@ static void cache_fill_nolock(Class cls, SEL sel, IMP imp, id receiver)
     }
     else {
         // Cache is too full. Expand it.
+        // 扩容
+        // 如果缓存方法后的大小超过_buckets容量的四分之三，则会扩容为原来的2倍，并放弃原有的缓存，新扩展的缓存为空。
         cache->expand();
     }
 
     // Scan for the first unused slot and insert there.
     // There is guaranteed to be an empty slot because the 
     // minimum size is 4 and we resized at 3/4 full.
+    
+    // 哈希元素的key就是sel，根据sel查找bucket_t
     bucket_t *bucket = cache->find(sel, receiver);
     if (bucket->sel() == 0) cache->incrementOccupied();
+    
+    // 将方法添加到缓存
     bucket->set<Atomic>(sel, imp);
 }
 

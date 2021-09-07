@@ -10,6 +10,9 @@
 		CE16C18B267C819E00D03BEB /* MyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = CE16C18A267C819E00D03BEB /* MyClass.m */; };
 		CE32B4CB26E5E6FB003D5ECF /* TKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */; };
 		CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CF26E5E710003D5ECF /* TKKid.m */; };
+		CE33F9A226E71276004C3D7F /* meta-class继承体系.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE33F99F26E71275004C3D7F /* meta-class继承体系.jpeg */; };
+		CE33F9A326E71276004C3D7F /* runtime_struct.itmz in Resources */ = {isa = PBXBuildFile; fileRef = CE33F9A026E71276004C3D7F /* runtime_struct.itmz */; };
+		CE33F9A426E71276004C3D7F /* cache流程.png in Resources */ = {isa = PBXBuildFile; fileRef = CE33F9A126E71276004C3D7F /* cache流程.png */; };
 		CE38BE8E26E1FDEA00B894EB /* MethodSwizzingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38BE8D26E1FDEA00B894EB /* MethodSwizzingViewController.m */; };
 		CE92199126E207F700F1BA03 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE92199026E207F700F1BA03 /* Person.m */; };
 		CE92199626E2080400F1BA03 /* Kid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE92199526E2080400F1BA03 /* Kid.m */; };
@@ -20,7 +23,6 @@
 		CEFCBE1D267B41BC0095C0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFCBE1C267B41BC0095C0EA /* Assets.xcassets */; };
 		CEFCBE20267B41BD0095C0EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFCBE1E267B41BD0095C0EA /* LaunchScreen.storyboard */; };
 		CEFCBE23267B41BD0095C0EA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFCBE22267B41BD0095C0EA /* main.m */; };
-		CEFCBE30267B42F20095C0EA /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFCBE2F267B42F20095C0EA /* Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,9 @@
 		CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKPerson.m; path = runtimeDemo/interview/TKPerson.m; sourceTree = SOURCE_ROOT; };
 		CE32B4CE26E5E710003D5ECF /* TKKid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKKid.h; path = runtimeDemo/interview/TKKid.h; sourceTree = SOURCE_ROOT; };
 		CE32B4CF26E5E710003D5ECF /* TKKid.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKKid.m; path = runtimeDemo/interview/TKKid.m; sourceTree = SOURCE_ROOT; };
+		CE33F99F26E71275004C3D7F /* meta-class继承体系.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "meta-class继承体系.jpeg"; sourceTree = SOURCE_ROOT; };
+		CE33F9A026E71276004C3D7F /* runtime_struct.itmz */ = {isa = PBXFileReference; lastKnownFileType = file; path = runtime_struct.itmz; sourceTree = SOURCE_ROOT; };
+		CE33F9A126E71276004C3D7F /* cache流程.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cache流程.png"; sourceTree = SOURCE_ROOT; };
 		CE38BE8C26E1FDEA00B894EB /* MethodSwizzingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MethodSwizzingViewController.h; path = RuntimeDemo/Swizzing/MethodSwizzingViewController.h; sourceTree = SOURCE_ROOT; };
 		CE38BE8D26E1FDEA00B894EB /* MethodSwizzingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MethodSwizzingViewController.m; path = RuntimeDemo/Swizzing/MethodSwizzingViewController.m; sourceTree = SOURCE_ROOT; };
 		CE92198F26E207F700F1BA03 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Person.h; path = runtimeDemo/Swizzing/Person.h; sourceTree = SOURCE_ROOT; };
@@ -49,8 +54,6 @@
 		CEFCBE1F267B41BD0095C0EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEFCBE21267B41BD0095C0EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEFCBE22267B41BD0095C0EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CEFCBE2E267B42F20095C0EA /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
-		CEFCBE2F267B42F20095C0EA /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,8 +96,6 @@
 			children = (
 				CEFCBE16267B41B90095C0EA /* ObjcRuntimeViewController.h */,
 				CEFCBE17267B41B90095C0EA /* ObjcRuntimeViewController.m */,
-				CEFCBE2E267B42F20095C0EA /* Test.h */,
-				CEFCBE2F267B42F20095C0EA /* Test.m */,
 				CE16C189267C819E00D03BEB /* MyClass.h */,
 				CE16C18A267C819E00D03BEB /* MyClass.m */,
 			);
@@ -120,6 +121,9 @@
 		CEFCBE0F267B41B90095C0EA /* RuntimeDemo */ = {
 			isa = PBXGroup;
 			children = (
+				CE33F9A126E71276004C3D7F /* cache流程.png */,
+				CE33F99F26E71275004C3D7F /* meta-class继承体系.jpeg */,
+				CE33F9A026E71276004C3D7F /* runtime_struct.itmz */,
 				CEFCBE10267B41B90095C0EA /* AppDelegate.h */,
 				CEFCBE11267B41B90095C0EA /* AppDelegate.m */,
 				CEA4E07126E1F53B00B0E40F /* MainTableViewController.h */,
@@ -194,6 +198,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEFCBE20267B41BD0095C0EA /* LaunchScreen.storyboard in Resources */,
+				CE33F9A426E71276004C3D7F /* cache流程.png in Resources */,
+				CE33F9A326E71276004C3D7F /* runtime_struct.itmz in Resources */,
+				CE33F9A226E71276004C3D7F /* meta-class继承体系.jpeg in Resources */,
 				CEFCBE1D267B41BC0095C0EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,7 +218,6 @@
 				CE92199126E207F700F1BA03 /* Person.m in Sources */,
 				CEA4E06F26E1EC1B00B0E40F /* NSObject+Runtime.m in Sources */,
 				CE32B4CB26E5E6FB003D5ECF /* TKPerson.m in Sources */,
-				CEFCBE30267B42F20095C0EA /* Test.m in Sources */,
 				CE16C18B267C819E00D03BEB /* MyClass.m in Sources */,
 				CEFCBE12267B41B90095C0EA /* AppDelegate.m in Sources */,
 				CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */,
