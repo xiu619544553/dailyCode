@@ -39,7 +39,7 @@
      struct objc_protocol_list *protocols     OBJC2_UNAVAILABLE;     // 协议链表
  #endif
  } OBJC2_UNAVAILABLE;
- 
+  
  
  struct objc_cache {
     unsigned int mask;      // total = mask + 1。
@@ -53,21 +53,50 @@
 
 #import "ObjcRuntimeViewController.h"
 #import <objc/runtime.h>
-
-#import "Test.h"
 #import "MyClass.h"
 
+
 typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
+    /// runtime api
     ObjcRuntimeBtnTagRuntimeAPI = 1,
+    /// 动态注册类
     ObjcRuntimeBtnTagDynamicRegisterClass1,
+    /// 动态注册类
     ObjcRuntimeBtnTagDynamicRegisterClass2,
+    /// 动态创建实例对象
     ObjcRuntimeBtnTagDynamicCreateInstance,
+    /// 实例
     ObjcRuntimeBtnTagInstanceOperation,
-    ObjcRuntimeBtnTagGetClassList
+    /// 获取类的所有子类
+    ObjcRuntimeBtnTagGetClassList,
+    /// 类型编码
+    ObjcRuntimeBtnTagTypeEncoding
 };
 
-@interface ObjcRuntimeViewController ()
+@interface ObjcRuntimeItem : NSObject
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, assign) ObjcRuntimeBtnTag tag;
+@end
 
+@implementation ObjcRuntimeItem
+
++ (instancetype)itemWithTitle:(NSString *)title tag:(ObjcRuntimeBtnTag)tag {
+    return [[ObjcRuntimeItem alloc] initWithTitle:title tag:tag];
+}
+
+- (instancetype)initWithTitle:(NSString *)title tag:(ObjcRuntimeBtnTag)tag {
+    self = [super init];
+    if (self) {
+        _title = title;
+        _tag = tag;
+    }
+    return self;
+}
+
+@end
+
+@interface ObjcRuntimeViewController ()
+@property (nonatomic, strong) NSArray<ObjcRuntimeItem *> *items;
 @end
 
 @implementation ObjcRuntimeViewController
@@ -77,40 +106,12 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.edgesForExtendedLayout = UIRectEdgeNone;
     self.view.backgroundColor = UIColor.whiteColor;
-    
-    // 1. runtime api
-    CGRect btn1Rect = CGRectMake(20.f, 20.f, self.view.bounds.size.width - 40.f, 35.f);
-    [self btnWithTag:ObjcRuntimeBtnTagRuntimeAPI title:@"1. runtime api" frame:btn1Rect];
-    
-    // 2. 动态创建类（一）
-    CGRect btn2Rect = CGRectMake(CGRectGetMinX(btn1Rect), CGRectGetMaxY(btn1Rect) + 15.f, CGRectGetWidth(btn1Rect), CGRectGetHeight(btn1Rect));
-    [self btnWithTag:ObjcRuntimeBtnTagDynamicRegisterClass1 title:@"2. 动态创建类（一）" frame:btn2Rect];
-    
-    // 3. 动态创建类（二）
-    CGRect btn3Rect = CGRectMake(CGRectGetMinX(btn2Rect), CGRectGetMaxY(btn2Rect) + 15.f, CGRectGetWidth(btn2Rect), CGRectGetHeight(btn2Rect));
-    [self btnWithTag:ObjcRuntimeBtnTagDynamicRegisterClass2 title:@"3. 动态创建类（二）" frame:btn3Rect];
-    
-    // 4. 动态创建对象
-    CGRect btn4Rect = CGRectMake(CGRectGetMinX(btn3Rect), CGRectGetMaxY(btn3Rect) + 15.f, CGRectGetWidth(btn3Rect), CGRectGetHeight(btn3Rect));
-    [self btnWithTag:ObjcRuntimeBtnTagDynamicCreateInstance title:@"4. 动态创建对象" frame:btn4Rect];
-    
-    // 5.实例操作函数
-    CGRect btn5Rect = CGRectMake(CGRectGetMinX(btn4Rect), CGRectGetMaxY(btn4Rect) + 15.f, CGRectGetWidth(btn4Rect), CGRectGetHeight(btn4Rect));
-    [self btnWithTag:ObjcRuntimeBtnTagInstanceOperation title:@"5.实例操作函数" frame:btn5Rect];
-    
-    // 6.获取类定义
-    CGRect btn6Rect = CGRectMake(CGRectGetMinX(btn5Rect), CGRectGetMaxY(btn5Rect) + 15.f, CGRectGetWidth(btn5Rect), CGRectGetHeight(btn5Rect));
-    [self btnWithTag:ObjcRuntimeBtnTagGetClassList title:@"6.获取类定义" frame:btn6Rect];
-    
+    self.tableView.tableFooterView = [UIView new];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
 }
 
-- (void)btnAction:(UIButton *)sender {
-    
-    ObjcRuntimeBtnTag tag = sender.tag;
-    
+- (void)didSelectedTag:(ObjcRuntimeBtnTag)tag {
     switch (tag) {
         case ObjcRuntimeBtnTagRuntimeAPI:
             [self runtimeAPI];
@@ -136,12 +137,17 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
             [self getClassList];
             break;
             
+        case ObjcRuntimeBtnTagTypeEncoding:
+            [self typeEncoding];
+            break;
+            
         default:
             break;
     }
 }
 
-#pragma mark - 输出
+#pragma mark - runtime API
+
 - (void)runtimeAPI {
     NSLog(@"=====================类与对象操作函数========================");
     MyClass *myClass = [[MyClass alloc] init];
@@ -214,6 +220,13 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
          const char *name;
          const char *attributes;
      };
+     
+     // Defines a property attribute
+     // 定义属性属性
+     typedef struct {
+         const char * _Nonnull name;           // 特性名
+         const char * _Nonnull value;          // 特性值
+     } objc_property_attribute_t;
      
      // 获取指定的属性
      objc_property_t class_getProperty ( Class cls, const char *name );
@@ -617,8 +630,7 @@ NSArray<Class> *GetAllSubclasses(Class cls, BOOL includeSelf) {
      
      */
     
-    GetAllSubclasses([NSObject class], YES);
-    return;
+//    GetAllSubclasses([NSObject class], YES);
     
     int numClasses;
     Class * classes = NULL;
@@ -638,25 +650,65 @@ NSArray<Class> *GetAllSubclasses(Class cls, BOOL includeSelf) {
     }
 }
 
-
-#pragma mark - Private Methods
-
-- (UIButton *)btnWithTag:(ObjcRuntimeBtnTag)tag
-                   title:(NSString *)title
-                   frame:(CGRect)frame {
-    UIButton *btn = ({
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.tag = tag;
-        btn.frame = frame;
-        btn.backgroundColor = UIColor.orangeColor;
-        [btn setTitle:title forState:UIControlStateNormal];
-        [btn setTitleColor:UIColor.whiteColor forState:UIControlStateNormal];
-        [btn addTarget:self action:@selector(btnAction:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:btn];
-        
-        btn;
-    });
+- (void)typeEncoding {
+    float a[] = {1.0, 2.0, 3.0};
+    NSLog(@"array encoding type: %s", @encode(typeof(a)));
     
-    return btn;
+    // 类型编码 https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ObjCRuntimeGuide/Articles/ocrtTypeEncodings.html#//apple_ref/doc/uid/TP40008048-CH100-SW1
+    // 参考
+    // YYModel -> YYClassInfo.h
+    // FLEX    -> FLEXRuntimeConstants.h
+    
+    /*
+     类型编码 Type Encoding
+     作为对Runtime的补充，编译器将每个方法的返回值和参数类型编码为一个字符串，并将其与方法的selector关联在一起。这种编码方案在其它情况下也是非常有用的，因此我们可以使用@encode编译器指令来获取它。当给定一个类型时，@encode返回这个类型的字符串编码。这些类型可以是诸如int、指针这样的基本类型，也可以是结构体、类等类型。事实上，任何可以作为sizeof()操作参数的类型都可以用于@encode()。
+     */
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.items.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
+    
+    // Configure the cell...
+    if (_items.count > indexPath.row) {
+        ObjcRuntimeItem *item = [_items objectAtIndex:indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"%@.%@", @(indexPath.row + 1), item.title];
+    }
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (_items.count <= indexPath.row) return;
+    
+    ObjcRuntimeItem *item = [_items objectAtIndex:indexPath.row];
+    ObjcRuntimeBtnTag tag = item.tag;
+    
+    [self didSelectedTag:tag];
+}
+
+#pragma mark - getter
+
+- (NSArray<ObjcRuntimeItem *> *)items {
+    if (!_items) {
+        
+        _items = @[
+            [ObjcRuntimeItem itemWithTitle:@"runtime api" tag:ObjcRuntimeBtnTagRuntimeAPI],
+            [ObjcRuntimeItem itemWithTitle:@"动态创建类（一）" tag:ObjcRuntimeBtnTagDynamicRegisterClass1],
+            [ObjcRuntimeItem itemWithTitle:@"动态创建类（二）" tag:ObjcRuntimeBtnTagDynamicRegisterClass2],
+            [ObjcRuntimeItem itemWithTitle:@"动态创建对象" tag:ObjcRuntimeBtnTagDynamicCreateInstance],
+            [ObjcRuntimeItem itemWithTitle:@"实例操作函数" tag:ObjcRuntimeBtnTagInstanceOperation],
+            [ObjcRuntimeItem itemWithTitle:@"获取类定义" tag:ObjcRuntimeBtnTagGetClassList],
+            [ObjcRuntimeItem itemWithTitle:@"类型编码" tag:ObjcRuntimeBtnTagTypeEncoding]
+        ];
+    }
+    return _items;
 }
 @end

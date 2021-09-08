@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ObjcRuntimeViewController : UIViewController
+@interface ObjcRuntimeViewController : UITableViewController
 
 @end
 

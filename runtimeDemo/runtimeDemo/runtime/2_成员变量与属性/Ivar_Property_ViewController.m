@@ -1,0 +1,134 @@
+//
+//  Ivar_Property_ViewController.m
+//  RuntimeDemo
+//
+//  Created by hello on 2021/9/8.
+//
+//  http://southpeak.github.io/2014/10/30/objective-c-runtime-2/
+
+#pragma mark - 成员变量和属性
+/*
+ Runtime中关于成员变量和属性的相关数据结构并不多，只有三个，并且都很简单。不过还有个非常实用但可能经常被忽视的特性，即关联对象
+ 
+ 
+ 一、基础数据类型
+ 
+ 1、Ivar
+ Ivar是表示实例变量的类型，其实际上是一个指向 objc_ivar 结构体的指针。定义如下
+ 
+ typedef struct objc_ivar *Ivar;
+ struct objc_ivar {
+     char *ivar_name                   OBJC2_UNAVAILABLE;   // 变量名
+     char *ivar_type                 OBJC2_UNAVAILABLE;     // 变量类型
+     int ivar_offset                    OBJC2_UNAVAILABLE;  // 基地址偏移字节
+ #ifdef __LP64__
+     int space                         OBJC2_UNAVAILABLE;
+ #endif
+ }
+ 
+ 2、objc_property_t
+ objc_property_t 是表示 Objective-C 声明的属性的类型，其实际是指向objc_property结构体的指针，其定义如下：
+ 
+ typedef struct objc_property *objc_property_t;
+ struct property_t {
+     const char *name;
+     const char *attributes;
+ };
+
+ 
+ 3、objc_property_attribute_t
+ objc_property_attribute_t定义了属性的特性(attribute)，它是一个结构体，定义如下：
+
+
+ // Defines a property attribute
+ // 定义属性属性
+ typedef struct {
+     const char * _Nonnull name;           // 特性名
+     const char * _Nonnull value;          // 特性值
+ } objc_property_attribute_t;
+ 
+ 
+ 二、 关联对象(Associated Object)
+ 关联对象是Runtime中一个非常实用的特性，不过可能很容易被忽视。
+
+ 关联对象类似于成员变量，不过是在运行时添加的。我们通常会把成员变量(Ivar)放在类声明的头文件中，或者放在类实现的@implementation后面。但这有一个缺点，我们不能在分类中添加成员变量。如果我们尝试在分类中添加新的成员变量，编译器会报错。
+
+ 我们可能希望通过使用(甚至是滥用)全局变量来解决这个问题。但这些都不是Ivar，因为他们不会连接到一个单独的实例。因此，这种方法很少使用。
+
+ Objective-C针对这一问题，提供了一个解决方案：即关联对象(Associated Object)。
+ 
+ 
+ 涉及到的函数
+ static char myKey; // 指定key
+ 
+ // 设置关联关系
+ void objc_setAssociatedObject(id _Nonnull object, const void * _Nonnull key, id _Nullable value, objc_AssociationPolicy policy);
+ 
+ // 获取关联的属性
+ id _Nullable objc_getAssociatedObject(id _Nonnull object, const void * _Nonnull key);
+ 
+ // 移除关联关系
+ void objc_removeAssociatedObjects(id _Nonnull object)
+ 
+ 我们可以使用objc_removeAssociatedObjects函数来移除一个关联对象，或者使用objc_setAssociatedObject函数将key指定的关联对象设置为nil。
+ 
+ 
+ 三、成员变量、属性的操作方法
+
+ 1、成员变量操作
+ 
+ // 获取成员变量名
+ const char * ivar_getName ( Ivar v );
+ 
+ // 获取成员变量类型编码
+ const char * ivar_getTypeEncoding ( Ivar v );
+ 
+ // 获取成员变量的偏移量
+ ptrdiff_t ivar_getOffset ( Ivar v );
+ 
+ * ivar_getOffset函数，对于类型id或其它对象类型的实例变量，可以调用object_getIvar和object_setIvar来直接访问成员变量，而不使用偏移量。
+ 
+ 
+ 2、关联对象
+ 
+ // 设置关联对象
+ void objc_setAssociatedObject ( id object, const void *key, id value, objc_AssociationPolicy policy );
+ 
+ // 获取关联对象
+ id objc_getAssociatedObject ( id object, const void *key );
+ 
+ // 移除关联对象
+ void objc_removeAssociatedObjects ( id object );
+ 
+ 
+ 3、属性
+ 
+ // 获取属性名
+ const char * property_getName ( objc_property_t property );
+ 
+ // 获取属性特性描述字符串
+ const char * property_getAttributes ( objc_property_t property );
+ 
+ // 获取属性中指定的特性。⚠️返回的char *在使用完后需要调用free()释放。
+ char * property_copyAttributeValue ( objc_property_t property, const char *attributeName );
+ 
+ // 获取属性的特性列表。⚠️返回值在使用完后需要调用free()释放。
+ objc_property_attribute_t * property_copyAttributeList ( objc_property_t property, unsigned int *outCount );
+ */
+
+#import "Ivar_Property_ViewController.h"
+#import <objc/runtime.h>
+
+@interface Ivar_Property_ViewController ()
+
+@end
+
+@implementation Ivar_Property_ViewController
+
+#pragma mark - Life Cycle
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+@end
