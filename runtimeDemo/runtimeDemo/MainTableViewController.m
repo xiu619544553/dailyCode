@@ -39,32 +39,14 @@
 
 @implementation MainTableViewController
 
+#pragma mark - Life Cycle
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = UIColor.whiteColor;
-    
-    // Uncomment the following line to preserve selection between presentations.
-     self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+    self.tableView.tableFooterView = [UIView new];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
-    
-    [self buildItems];
-}
-
-- (void)buildItems {
-    MainItem *item1 = [MainItem itemWithCls:[MethodSwizzingViewController class] title:@"Method Swizzing"];
-    MainItem *item2 = [MainItem itemWithCls:[ObjcRuntimeViewController class] title:@"objc/runtime API使用"];
-    
-    _items = @[item1, item2];
-    NSLog(@"_items.count = %@", @(_items.count));
-    
-    self.tableView.dataSource = self;
-    
-    [self.tableView reloadData];
 }
 
 #pragma mark - Table view data source
@@ -95,9 +77,22 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (_items.count <= indexPath.row) return;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
+    if (_items.count <= indexPath.row) return;
     [self.navigationController pushViewController:(UIViewController *)[[_items objectAtIndex:indexPath.row].cls new] animated:YES];
 }
 
+#pragma mark - getter
+
+- (NSArray<MainItem *> *)items {
+    if (!_items) {
+        
+        MainItem *item1 = [MainItem itemWithCls:[MethodSwizzingViewController class] title:@"Method Swizzing"];
+        MainItem *item2 = [MainItem itemWithCls:[ObjcRuntimeViewController class] title:@"objc/runtime API使用"];
+        
+        _items = @[item1, item2];
+    }
+    return _items;
+}
 @end

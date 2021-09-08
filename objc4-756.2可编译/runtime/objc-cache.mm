@@ -567,6 +567,7 @@ static void cache_fill_nolock(Class cls, SEL sel, IMP imp, id receiver)
 
     // Make sure the entry wasn't added to the cache by some other thread 
     // before we grabbed the cacheUpdateLock.
+    // 查找方法实现。底层是汇编。
     if (cache_getImp(cls, sel)) return;
     
     // 拿到类中的缓存
