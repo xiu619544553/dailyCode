@@ -54,7 +54,8 @@
 #import "ObjcRuntimeViewController.h"
 #import <objc/runtime.h>
 #import "MyClass.h"
-
+#import "Ivar_Property_ViewController.h"
+#import "Method_SendMsg_ViewController.h"
 
 typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
     /// runtime api
@@ -70,7 +71,11 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
     /// 获取类的所有子类
     ObjcRuntimeBtnTagGetClassList,
     /// 类型编码
-    ObjcRuntimeBtnTagTypeEncoding
+    ObjcRuntimeBtnTagTypeEncoding,
+    /// 成员变量与属性
+    ObjcRuntimeBtnTagIavrProperty,
+    /// 方法与消息
+    ObjcRuntimeBtnTagMethodSendMessage
 };
 
 @interface ObjcRuntimeItem : NSObject
@@ -140,6 +145,16 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
         case ObjcRuntimeBtnTagTypeEncoding:
             [self typeEncoding];
             break;
+            
+        case ObjcRuntimeBtnTagIavrProperty: {
+            Ivar_Property_ViewController *ipVc = [Ivar_Property_ViewController new];
+            [self.navigationController pushViewController:ipVc animated:YES];
+        } break;
+            
+        case ObjcRuntimeBtnTagMethodSendMessage: {
+            Method_SendMsg_ViewController *msVc = [Method_SendMsg_ViewController new];
+            [self.navigationController pushViewController:msVc animated:YES];
+        } break;
             
         default:
             break;
@@ -706,7 +721,9 @@ NSArray<Class> *GetAllSubclasses(Class cls, BOOL includeSelf) {
             [ObjcRuntimeItem itemWithTitle:@"动态创建对象" tag:ObjcRuntimeBtnTagDynamicCreateInstance],
             [ObjcRuntimeItem itemWithTitle:@"实例操作函数" tag:ObjcRuntimeBtnTagInstanceOperation],
             [ObjcRuntimeItem itemWithTitle:@"获取类定义" tag:ObjcRuntimeBtnTagGetClassList],
-            [ObjcRuntimeItem itemWithTitle:@"类型编码" tag:ObjcRuntimeBtnTagTypeEncoding]
+            [ObjcRuntimeItem itemWithTitle:@"类型编码" tag:ObjcRuntimeBtnTagTypeEncoding],
+            [ObjcRuntimeItem itemWithTitle:@"成员变量与属性" tag:ObjcRuntimeBtnTagIavrProperty],
+            [ObjcRuntimeItem itemWithTitle:@"方法与消息" tag:ObjcRuntimeBtnTagMethodSendMessage],
         ];
     }
     return _items;

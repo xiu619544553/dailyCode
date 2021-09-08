@@ -19,6 +19,9 @@
 		CE43EB5326E89B80003415A2 /* cache流程.png in Resources */ = {isa = PBXBuildFile; fileRef = CE43EB5026E89B80003415A2 /* cache流程.png */; };
 		CE43EB5426E89B80003415A2 /* meta-class继承体系.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE43EB5126E89B80003415A2 /* meta-class继承体系.jpeg */; };
 		CE43EB5526E89B80003415A2 /* runtime_struct.itmz in Resources */ = {isa = PBXBuildFile; fileRef = CE43EB5226E89B80003415A2 /* runtime_struct.itmz */; };
+		CE43EC0D26E8A9C6003415A2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC0C26E8A9C6003415A2 /* README.md */; };
+		CE43EC1026E8A9E8003415A2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC0F26E8A9E8003415A2 /* README.md */; };
+		CE43EC1326E8A9F1003415A2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC1226E8A9F1003415A2 /* README.md */; };
 		CE92199126E207F700F1BA03 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE92199026E207F700F1BA03 /* Person.m */; };
 		CE92199626E2080400F1BA03 /* Kid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE92199526E2080400F1BA03 /* Kid.m */; };
 		CEA4E06F26E1EC1B00B0E40F /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E06E26E1EC1B00B0E40F /* NSObject+Runtime.m */; };
@@ -51,6 +54,9 @@
 		CE43EB5026E89B80003415A2 /* cache流程.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cache流程.png"; sourceTree = "<group>"; };
 		CE43EB5126E89B80003415A2 /* meta-class继承体系.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "meta-class继承体系.jpeg"; sourceTree = "<group>"; };
 		CE43EB5226E89B80003415A2 /* runtime_struct.itmz */ = {isa = PBXFileReference; lastKnownFileType = file; path = runtime_struct.itmz; sourceTree = "<group>"; };
+		CE43EC0C26E8A9C6003415A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CE43EC0F26E8A9E8003415A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CE43EC1226E8A9F1003415A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CE92198F26E207F700F1BA03 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Person.h; path = runtimeDemo/Swizzing/Person.h; sourceTree = SOURCE_ROOT; };
 		CE92199026E207F700F1BA03 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = runtimeDemo/Swizzing/Person.m; sourceTree = SOURCE_ROOT; };
 		CE92199426E2080400F1BA03 /* Kid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Kid.h; path = runtimeDemo/Swizzing/Kid.h; sourceTree = SOURCE_ROOT; };
@@ -105,10 +111,10 @@
 		CE43EB3726E89B09003415A2 /* TypeEncoding_类型编码 */ = {
 			isa = PBXGroup;
 			children = (
-				CE43EB3826E89B09003415A2 /* YYClassInfo.h */,
 				CE43EB3926E89B09003415A2 /* FLEXRuntimeConstants.h */,
-				CE43EB3A26E89B09003415A2 /* YYClassInfo.m */,
 				CE43EB3B26E89B09003415A2 /* FLEXRuntimeConstants.m */,
+				CE43EB3826E89B09003415A2 /* YYClassInfo.h */,
+				CE43EB3A26E89B09003415A2 /* YYClassInfo.m */,
 			);
 			path = "TypeEncoding_类型编码";
 			sourceTree = "<group>";
@@ -116,6 +122,7 @@
 		CE43EB3C26E89B09003415A2 /* 3_方法与消息 */ = {
 			isa = PBXGroup;
 			children = (
+				CE43EC0C26E8A9C6003415A2 /* README.md */,
 				CE43EB3D26E89B09003415A2 /* Method_SendMsg_ViewController.h */,
 				CE43EB3E26E89B09003415A2 /* Method_SendMsg_ViewController.m */,
 			);
@@ -125,8 +132,9 @@
 		CE43EB3F26E89B09003415A2 /* 2_成员变量与属性 */ = {
 			isa = PBXGroup;
 			children = (
-				CE43EB4026E89B09003415A2 /* Ivar_Property_ViewController.m */,
+				CE43EC0F26E8A9E8003415A2 /* README.md */,
 				CE43EB4126E89B09003415A2 /* Ivar_Property_ViewController.h */,
+				CE43EB4026E89B09003415A2 /* Ivar_Property_ViewController.m */,
 			);
 			path = "2_成员变量与属性";
 			sourceTree = "<group>";
@@ -134,10 +142,11 @@
 		CE43EB4226E89B09003415A2 /* 1_类与对象 */ = {
 			isa = PBXGroup;
 			children = (
-				CE43EB4326E89B09003415A2 /* ObjcRuntimeViewController.m */,
+				CE43EC1226E8A9F1003415A2 /* README.md */,
 				CE43EB4426E89B09003415A2 /* MyClass.h */,
 				CE43EB4526E89B09003415A2 /* MyClass.m */,
 				CE43EB4626E89B09003415A2 /* ObjcRuntimeViewController.h */,
+				CE43EB4326E89B09003415A2 /* ObjcRuntimeViewController.m */,
 			);
 			path = "1_类与对象";
 			sourceTree = "<group>";
@@ -267,10 +276,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE43EC0D26E8A9C6003415A2 /* README.md in Resources */,
 				CE43EB5526E89B80003415A2 /* runtime_struct.itmz in Resources */,
 				CEFCBE20267B41BD0095C0EA /* LaunchScreen.storyboard in Resources */,
+				CE43EC1026E8A9E8003415A2 /* README.md in Resources */,
 				CE43EB5426E89B80003415A2 /* meta-class继承体系.jpeg in Resources */,
 				CE43EB5326E89B80003415A2 /* cache流程.png in Resources */,
+				CE43EC1326E8A9F1003415A2 /* README.md in Resources */,
 				CEFCBE1D267B41BC0095C0EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

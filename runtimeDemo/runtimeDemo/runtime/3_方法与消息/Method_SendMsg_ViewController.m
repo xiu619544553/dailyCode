@@ -6,6 +6,7 @@
 //
 
 #import "Method_SendMsg_ViewController.h"
+#import <objc/runtime.h>
 
 @interface Method_SendMsg_ViewController ()
 
@@ -16,16 +17,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    /*
+     1、不同的类，函数名相同，都有参数或都没参数，则 SEL相同；
+     2、不同的类，函数名相同，一个有参数、一个没有参数，那么 SEL不同；
+     
+     */
+    SEL sel = @selector(test);
+    NSLog(@"sel : %p", sel);
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)test {
+    NSLog(@"这是个测试");
 }
-*/
+
 
 @end
