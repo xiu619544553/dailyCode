@@ -7,8 +7,10 @@
 
 #import "AppDelegate.h"
 #import "MainTableViewController.h"
-#import "TKKid.h"
-#import "TKPerson.h"
+
+#ifdef DEBUG
+#import <FLEX/FLEX.h>
+#endif
 
 @interface AppDelegate ()
 
@@ -18,6 +20,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+#ifdef DEBUG
+    [[FLEXManager sharedManager] showExplorer];
+#endif
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     

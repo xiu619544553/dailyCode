@@ -9,6 +9,10 @@
 #import "ObjcRuntimeViewController.h"
 #import "MethodSwizzingViewController.h"
 
+#ifdef DEBUG
+#import <FLEX/FLEX.h>
+#endif
+
 @interface MainItem : NSObject
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, strong) Class cls;
@@ -47,6 +51,17 @@
     self.view.backgroundColor = UIColor.whiteColor;
     self.tableView.tableFooterView = [UIView new];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"ToggleFlexExplorer"
+                                                                              style:UIBarButtonItemStyleDone
+                                                                             target:self
+                                                                             action:@selector(toggleFlexExplorer)];
+}
+
+- (void)toggleFlexExplorer {
+#ifdef DEBUG
+    [[FLEXManager sharedManager] toggleExplorer];
+#endif
 }
 
 #pragma mark - Table view data source

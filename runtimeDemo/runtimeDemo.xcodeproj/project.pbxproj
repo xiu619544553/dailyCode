@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160CCDB9279FD01CCC1D4BC2 /* Pods_RuntimeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED05402B0B1439B46B7BA5C /* Pods_RuntimeDemo.framework */; };
 		CE32B4CB26E5E6FB003D5ECF /* TKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */; };
 		CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CF26E5E710003D5ECF /* TKKid.m */; };
 		CE38BE8E26E1FDEA00B894EB /* MethodSwizzingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38BE8D26E1FDEA00B894EB /* MethodSwizzingViewController.m */; };
@@ -19,13 +20,15 @@
 		CE43EB5326E89B80003415A2 /* cache流程.png in Resources */ = {isa = PBXBuildFile; fileRef = CE43EB5026E89B80003415A2 /* cache流程.png */; };
 		CE43EB5426E89B80003415A2 /* meta-class继承体系.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CE43EB5126E89B80003415A2 /* meta-class继承体系.jpeg */; };
 		CE43EB5526E89B80003415A2 /* runtime_struct.itmz in Resources */ = {isa = PBXBuildFile; fileRef = CE43EB5226E89B80003415A2 /* runtime_struct.itmz */; };
-		CE43EC0D26E8A9C6003415A2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC0C26E8A9C6003415A2 /* README.md */; };
-		CE43EC1026E8A9E8003415A2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC0F26E8A9E8003415A2 /* README.md */; };
-		CE43EC1326E8A9F1003415A2 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC1226E8A9F1003415A2 /* README.md */; };
+		CE43EC0D26E8A9C6003415A2 /* 方法与消息.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC0C26E8A9C6003415A2 /* 方法与消息.md */; };
+		CE43EC1026E8A9E8003415A2 /* 成员变量与属性.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC0F26E8A9E8003415A2 /* 成员变量与属性.md */; };
+		CE43EC1326E8A9F1003415A2 /* 类与对象.md in Resources */ = {isa = PBXBuildFile; fileRef = CE43EC1226E8A9F1003415A2 /* 类与对象.md */; };
 		CE92199126E207F700F1BA03 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CE92199026E207F700F1BA03 /* Person.m */; };
 		CE92199626E2080400F1BA03 /* Kid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE92199526E2080400F1BA03 /* Kid.m */; };
 		CEA4E06F26E1EC1B00B0E40F /* NSObject+Runtime.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E06E26E1EC1B00B0E40F /* NSObject+Runtime.m */; };
 		CEA4E07326E1F53B00B0E40F /* MainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA4E07226E1F53B00B0E40F /* MainTableViewController.m */; };
+		CEB6806826E9AC33004D8814 /* 消息的基本框架.png in Resources */ = {isa = PBXBuildFile; fileRef = CEB6806726E9AC32004D8814 /* 消息的基本框架.png */; };
+		CEB6807026E9E145004D8814 /* TestForwardFlow.m in Sources */ = {isa = PBXBuildFile; fileRef = CEB6806F26E9E145004D8814 /* TestForwardFlow.m */; };
 		CEFCBE12267B41B90095C0EA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEFCBE11267B41B90095C0EA /* AppDelegate.m */; };
 		CEFCBE1D267B41BC0095C0EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEFCBE1C267B41BC0095C0EA /* Assets.xcassets */; };
 		CEFCBE20267B41BD0095C0EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEFCBE1E267B41BD0095C0EA /* LaunchScreen.storyboard */; };
@@ -33,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8DB34CA42562F82DEC78FC10 /* Pods-RuntimeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuntimeDemo.debug.xcconfig"; path = "Target Support Files/Pods-RuntimeDemo/Pods-RuntimeDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		BF035DA8B6875821E164C57F /* Pods-RuntimeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuntimeDemo.release.xcconfig"; path = "Target Support Files/Pods-RuntimeDemo/Pods-RuntimeDemo.release.xcconfig"; sourceTree = "<group>"; };
 		CE32B4C926E5E6FB003D5ECF /* TKPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKPerson.h; path = runtimeDemo/interview/TKPerson.h; sourceTree = SOURCE_ROOT; };
 		CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKPerson.m; path = runtimeDemo/interview/TKPerson.m; sourceTree = SOURCE_ROOT; };
 		CE32B4CE26E5E710003D5ECF /* TKKid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKKid.h; path = runtimeDemo/interview/TKKid.h; sourceTree = SOURCE_ROOT; };
@@ -54,9 +59,9 @@
 		CE43EB5026E89B80003415A2 /* cache流程.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cache流程.png"; sourceTree = "<group>"; };
 		CE43EB5126E89B80003415A2 /* meta-class继承体系.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "meta-class继承体系.jpeg"; sourceTree = "<group>"; };
 		CE43EB5226E89B80003415A2 /* runtime_struct.itmz */ = {isa = PBXFileReference; lastKnownFileType = file; path = runtime_struct.itmz; sourceTree = "<group>"; };
-		CE43EC0C26E8A9C6003415A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		CE43EC0F26E8A9E8003415A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		CE43EC1226E8A9F1003415A2 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		CE43EC0C26E8A9C6003415A2 /* 方法与消息.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "方法与消息.md"; sourceTree = "<group>"; };
+		CE43EC0F26E8A9E8003415A2 /* 成员变量与属性.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "成员变量与属性.md"; sourceTree = "<group>"; };
+		CE43EC1226E8A9F1003415A2 /* 类与对象.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "类与对象.md"; sourceTree = "<group>"; };
 		CE92198F26E207F700F1BA03 /* Person.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Person.h; path = runtimeDemo/Swizzing/Person.h; sourceTree = SOURCE_ROOT; };
 		CE92199026E207F700F1BA03 /* Person.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Person.m; path = runtimeDemo/Swizzing/Person.m; sourceTree = SOURCE_ROOT; };
 		CE92199426E2080400F1BA03 /* Kid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Kid.h; path = runtimeDemo/Swizzing/Kid.h; sourceTree = SOURCE_ROOT; };
@@ -65,6 +70,9 @@
 		CEA4E06E26E1EC1B00B0E40F /* NSObject+Runtime.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Runtime.m"; path = "RuntimeDemo/Swizzing/NSObject+Runtime.m"; sourceTree = SOURCE_ROOT; };
 		CEA4E07126E1F53B00B0E40F /* MainTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainTableViewController.h; path = RuntimeDemo/Main/MainTableViewController.h; sourceTree = SOURCE_ROOT; };
 		CEA4E07226E1F53B00B0E40F /* MainTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainTableViewController.m; path = RuntimeDemo/Main/MainTableViewController.m; sourceTree = SOURCE_ROOT; };
+		CEB6806726E9AC32004D8814 /* 消息的基本框架.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "消息的基本框架.png"; sourceTree = "<group>"; };
+		CEB6806E26E9E145004D8814 /* TestForwardFlow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestForwardFlow.h; sourceTree = "<group>"; };
+		CEB6806F26E9E145004D8814 /* TestForwardFlow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestForwardFlow.m; sourceTree = "<group>"; };
 		CEFCBE0D267B41B90095C0EA /* RuntimeDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RuntimeDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEFCBE10267B41B90095C0EA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEFCBE11267B41B90095C0EA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +80,7 @@
 		CEFCBE1F267B41BD0095C0EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEFCBE21267B41BD0095C0EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CEFCBE22267B41BD0095C0EA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DED05402B0B1439B46B7BA5C /* Pods_RuntimeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RuntimeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +88,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160CCDB9279FD01CCC1D4BC2 /* Pods_RuntimeDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C706AA18B1F6905F8350A54 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DED05402B0B1439B46B7BA5C /* Pods_RuntimeDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		58BB904300CFB953B745BF03 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8DB34CA42562F82DEC78FC10 /* Pods-RuntimeDemo.debug.xcconfig */,
+				BF035DA8B6875821E164C57F /* Pods-RuntimeDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CE32B4C826E5E6E7003D5ECF /* interview */ = {
 			isa = PBXGroup;
 			children = (
@@ -122,9 +149,12 @@
 		CE43EB3C26E89B09003415A2 /* 3_方法与消息 */ = {
 			isa = PBXGroup;
 			children = (
-				CE43EC0C26E8A9C6003415A2 /* README.md */,
+				CEB6806726E9AC32004D8814 /* 消息的基本框架.png */,
+				CE43EC0C26E8A9C6003415A2 /* 方法与消息.md */,
 				CE43EB3D26E89B09003415A2 /* Method_SendMsg_ViewController.h */,
 				CE43EB3E26E89B09003415A2 /* Method_SendMsg_ViewController.m */,
+				CEB6806E26E9E145004D8814 /* TestForwardFlow.h */,
+				CEB6806F26E9E145004D8814 /* TestForwardFlow.m */,
 			);
 			path = "3_方法与消息";
 			sourceTree = "<group>";
@@ -132,7 +162,7 @@
 		CE43EB3F26E89B09003415A2 /* 2_成员变量与属性 */ = {
 			isa = PBXGroup;
 			children = (
-				CE43EC0F26E8A9E8003415A2 /* README.md */,
+				CE43EC0F26E8A9E8003415A2 /* 成员变量与属性.md */,
 				CE43EB4126E89B09003415A2 /* Ivar_Property_ViewController.h */,
 				CE43EB4026E89B09003415A2 /* Ivar_Property_ViewController.m */,
 			);
@@ -142,7 +172,7 @@
 		CE43EB4226E89B09003415A2 /* 1_类与对象 */ = {
 			isa = PBXGroup;
 			children = (
-				CE43EC1226E8A9F1003415A2 /* README.md */,
+				CE43EC1226E8A9F1003415A2 /* 类与对象.md */,
 				CE43EB4426E89B09003415A2 /* MyClass.h */,
 				CE43EB4526E89B09003415A2 /* MyClass.m */,
 				CE43EB4626E89B09003415A2 /* ObjcRuntimeViewController.h */,
@@ -194,6 +224,8 @@
 			children = (
 				CEFCBE0F267B41B90095C0EA /* RuntimeDemo */,
 				CEFCBE0E267B41B90095C0EA /* Products */,
+				58BB904300CFB953B745BF03 /* Pods */,
+				0C706AA18B1F6905F8350A54 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -227,9 +259,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CEFCBE26267B41BD0095C0EA /* Build configuration list for PBXNativeTarget "RuntimeDemo" */;
 			buildPhases = (
+				08B53BC0E07439AD5E269675 /* [CP] Check Pods Manifest.lock */,
 				CEFCBE09267B41B90095C0EA /* Sources */,
 				CEFCBE0A267B41B90095C0EA /* Frameworks */,
 				CEFCBE0B267B41B90095C0EA /* Resources */,
+				A9D90F5692DD464ABA8B3A29 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,18 +310,61 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE43EC0D26E8A9C6003415A2 /* README.md in Resources */,
+				CE43EC0D26E8A9C6003415A2 /* 方法与消息.md in Resources */,
 				CE43EB5526E89B80003415A2 /* runtime_struct.itmz in Resources */,
+				CEB6806826E9AC33004D8814 /* 消息的基本框架.png in Resources */,
 				CEFCBE20267B41BD0095C0EA /* LaunchScreen.storyboard in Resources */,
-				CE43EC1026E8A9E8003415A2 /* README.md in Resources */,
+				CE43EC1026E8A9E8003415A2 /* 成员变量与属性.md in Resources */,
 				CE43EB5426E89B80003415A2 /* meta-class继承体系.jpeg in Resources */,
 				CE43EB5326E89B80003415A2 /* cache流程.png in Resources */,
-				CE43EC1326E8A9F1003415A2 /* README.md in Resources */,
+				CE43EC1326E8A9F1003415A2 /* 类与对象.md in Resources */,
 				CEFCBE1D267B41BC0095C0EA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08B53BC0E07439AD5E269675 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RuntimeDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9D90F5692DD464ABA8B3A29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RuntimeDemo/Pods-RuntimeDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RuntimeDemo/Pods-RuntimeDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RuntimeDemo/Pods-RuntimeDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CEFCBE09267B41B90095C0EA /* Sources */ = {
@@ -303,6 +380,7 @@
 				CE43EB4926E89B09003415A2 /* Method_SendMsg_ViewController.m in Sources */,
 				CE32B4CB26E5E6FB003D5ECF /* TKPerson.m in Sources */,
 				CEFCBE12267B41B90095C0EA /* AppDelegate.m in Sources */,
+				CEB6807026E9E145004D8814 /* TestForwardFlow.m in Sources */,
 				CE43EB4A26E89B09003415A2 /* Ivar_Property_ViewController.m in Sources */,
 				CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */,
 				CE38BE8E26E1FDEA00B894EB /* MethodSwizzingViewController.m in Sources */,
@@ -440,6 +518,7 @@
 		};
 		CEFCBE27267B41BD0095C0EA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8DB34CA42562F82DEC78FC10 /* Pods-RuntimeDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +538,7 @@
 		};
 		CEFCBE28267B41BD0095C0EA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BF035DA8B6875821E164C57F /* Pods-RuntimeDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

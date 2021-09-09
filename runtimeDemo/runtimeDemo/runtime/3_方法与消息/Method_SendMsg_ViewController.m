@@ -7,6 +7,8 @@
 
 #import "Method_SendMsg_ViewController.h"
 #import <objc/runtime.h>
+#import <objc/message.h>
+#import "TestForwardFlow.h"
 
 @interface Method_SendMsg_ViewController ()
 
@@ -16,7 +18,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.view.backgroundColor = UIColor.whiteColor;
     
     /*
      1、不同的类，函数名相同，都有参数或都没参数，则 SEL相同；
@@ -31,5 +33,12 @@
     NSLog(@"这是个测试");
 }
 
+- (void)method1 {
+    NSLog(@"%s", __func__);
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [TestForwardFlow new];
+}
 
 @end
