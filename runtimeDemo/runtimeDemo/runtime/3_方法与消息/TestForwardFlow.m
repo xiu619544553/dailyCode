@@ -91,12 +91,17 @@
 //    return [super forwardingTargetForSelector:aSelector];
 //}
 
+
+/// 返回一个NSMethodSignature对象，该对象包含由给定选择器标识的方法的描述。
+/// @param aSelector 方法选择器
+/// @return 返回一个NSMethodSignature实例对象，包含由aSelector识别的方法的描述，如果找不到该方法，则为nil。
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     
     NSLog(@"%s", __func__);
     
     NSMethodSignature *signature = [super methodSignatureForSelector:aSelector];
-    if (!signature) {
+    
+    if (!signature) { // 如果 signature 为空，则表示当前类没有实现 aSelector。我们可以找一个实现了 aSelector 实例对象，构建一个新的 signature
         if ([TestForwardHelper instancesRespondToSelector:aSelector]) {
             signature = [TestForwardHelper instanceMethodSignatureForSelector:aSelector];
         }
