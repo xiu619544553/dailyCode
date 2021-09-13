@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		160CCDB9279FD01CCC1D4BC2 /* Pods_RuntimeDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED05402B0B1439B46B7BA5C /* Pods_RuntimeDemo.framework */; };
+		CE2A9EAC26EEE13500B329A7 /* UIViewController+Tracking.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2A9EAB26EEE13500B329A7 /* UIViewController+Tracking.m */; };
+		CE2A9EB726EF008A00B329A7 /* Method Swizzing.md in Resources */ = {isa = PBXBuildFile; fileRef = CE2A9EB626EF008A00B329A7 /* Method Swizzing.md */; };
 		CE32B4CB26E5E6FB003D5ECF /* TKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */; };
 		CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CF26E5E710003D5ECF /* TKKid.m */; };
 		CE38BE8E26E1FDEA00B894EB /* MethodSwizzingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38BE8D26E1FDEA00B894EB /* MethodSwizzingViewController.m */; };
@@ -38,6 +40,9 @@
 /* Begin PBXFileReference section */
 		8DB34CA42562F82DEC78FC10 /* Pods-RuntimeDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuntimeDemo.debug.xcconfig"; path = "Target Support Files/Pods-RuntimeDemo/Pods-RuntimeDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BF035DA8B6875821E164C57F /* Pods-RuntimeDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RuntimeDemo.release.xcconfig"; path = "Target Support Files/Pods-RuntimeDemo/Pods-RuntimeDemo.release.xcconfig"; sourceTree = "<group>"; };
+		CE2A9EAA26EEE13500B329A7 /* UIViewController+Tracking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Tracking.h"; sourceTree = "<group>"; };
+		CE2A9EAB26EEE13500B329A7 /* UIViewController+Tracking.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Tracking.m"; sourceTree = "<group>"; };
+		CE2A9EB626EF008A00B329A7 /* Method Swizzing.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "Method Swizzing.md"; sourceTree = "<group>"; };
 		CE32B4C926E5E6FB003D5ECF /* TKPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKPerson.h; path = runtimeDemo/interview/TKPerson.h; sourceTree = SOURCE_ROOT; };
 		CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKPerson.m; path = runtimeDemo/interview/TKPerson.m; sourceTree = SOURCE_ROOT; };
 		CE32B4CE26E5E710003D5ECF /* TKKid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKKid.h; path = runtimeDemo/interview/TKKid.h; sourceTree = SOURCE_ROOT; };
@@ -112,6 +117,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		CE2A9EA926EEDF4400B329A7 /* 4_Method Swizzing */ = {
+			isa = PBXGroup;
+			children = (
+				CE2A9EB626EF008A00B329A7 /* Method Swizzing.md */,
+				CE2A9EAA26EEE13500B329A7 /* UIViewController+Tracking.h */,
+				CE2A9EAB26EEE13500B329A7 /* UIViewController+Tracking.m */,
+			);
+			path = "4_Method Swizzing";
+			sourceTree = "<group>";
+		};
+		CE2A9EB926EF03BC00B329A7 /* 5_协议与分类 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "5_协议与分类";
+			sourceTree = "<group>";
+		};
 		CE32B4C826E5E6E7003D5ECF /* interview */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +151,8 @@
 				CE43EB4226E89B09003415A2 /* 1_类与对象 */,
 				CE43EB3F26E89B09003415A2 /* 2_成员变量与属性 */,
 				CE43EB3C26E89B09003415A2 /* 3_方法与消息 */,
+				CE2A9EA926EEDF4400B329A7 /* 4_Method Swizzing */,
+				CE2A9EB926EF03BC00B329A7 /* 5_协议与分类 */,
 				CE43EB3726E89B09003415A2 /* TypeEncoding_类型编码 */,
 			);
 			name = Runtime;
@@ -319,6 +343,7 @@
 				CE43EB5326E89B80003415A2 /* cache流程.png in Resources */,
 				CE43EC1326E8A9F1003415A2 /* 类与对象.md in Resources */,
 				CEFCBE1D267B41BC0095C0EA /* Assets.xcassets in Resources */,
+				CE2A9EB726EF008A00B329A7 /* Method Swizzing.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +410,7 @@
 				CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */,
 				CE38BE8E26E1FDEA00B894EB /* MethodSwizzingViewController.m in Sources */,
 				CE43EB4C26E89B09003415A2 /* MyClass.m in Sources */,
+				CE2A9EAC26EEE13500B329A7 /* UIViewController+Tracking.m in Sources */,
 				CE43EB4726E89B09003415A2 /* YYClassInfo.m in Sources */,
 				CEFCBE23267B41BD0095C0EA /* main.m in Sources */,
 			);

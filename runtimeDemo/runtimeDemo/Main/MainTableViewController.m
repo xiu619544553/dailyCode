@@ -8,6 +8,7 @@
 #import "MainTableViewController.h"
 #import "ObjcRuntimeViewController.h"
 #import "MethodSwizzingViewController.h"
+#import "AppDelegate.h"
 
 #ifdef DEBUG
 #import <FLEX/FLEX.h>
@@ -62,6 +63,9 @@
 #ifdef DEBUG
     [[FLEXManager sharedManager] toggleExplorer];
 #endif
+    
+    NSLog(@"ViewControllerCountDict: \n%@", ViewControllerCountDict);
+    
 }
 
 #pragma mark - Table view data source

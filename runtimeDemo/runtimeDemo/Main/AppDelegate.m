@@ -21,6 +21,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    if (!ViewControllerCountDict) {
+        ViewControllerCountDict = [NSMutableDictionary dictionary];
+    }
+    
 #ifdef DEBUG
     [[FLEXManager sharedManager] showExplorer];
 #endif
