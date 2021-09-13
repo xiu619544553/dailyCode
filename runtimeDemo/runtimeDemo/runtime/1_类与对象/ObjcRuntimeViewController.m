@@ -56,6 +56,8 @@
 #import "MyClass.h"
 #import "Ivar_Property_ViewController.h"
 #import "Method_SendMsg_ViewController.h"
+#import "ProtocolCategoryViewController.h"
+#import "ShiYiViewController.h"
 
 typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
     /// runtime api
@@ -75,7 +77,11 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
     /// 成员变量与属性
     ObjcRuntimeBtnTagIavrProperty,
     /// 方法与消息
-    ObjcRuntimeBtnTagMethodSendMessage
+    ObjcRuntimeBtnTagMethodSendMessage,
+    /// 协议与分类
+    ObjcRuntimeBtnTagMethodProtocolCategory,
+    /// 拾遗
+    ObjcRuntimeBtnTagShiYi
 };
 
 @interface ObjcRuntimeItem : NSObject
@@ -154,6 +160,16 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
         case ObjcRuntimeBtnTagMethodSendMessage: {
             Method_SendMsg_ViewController *msVc = [Method_SendMsg_ViewController new];
             [self.navigationController pushViewController:msVc animated:YES];
+        } break;
+            
+        case ObjcRuntimeBtnTagMethodProtocolCategory: {
+            ProtocolCategoryViewController *pcVc = [ProtocolCategoryViewController new];
+            [self.navigationController pushViewController:pcVc animated:YES];
+        } break;
+            
+        case ObjcRuntimeBtnTagShiYi: {
+            ShiYiViewController *syVc = [ShiYiViewController new];
+            [self.navigationController pushViewController:syVc animated:YES];
         } break;
             
         default:
@@ -724,6 +740,8 @@ NSArray<Class> *GetAllSubclasses(Class cls, BOOL includeSelf) {
             [ObjcRuntimeItem itemWithTitle:@"类型编码" tag:ObjcRuntimeBtnTagTypeEncoding],
             [ObjcRuntimeItem itemWithTitle:@"成员变量与属性" tag:ObjcRuntimeBtnTagIavrProperty],
             [ObjcRuntimeItem itemWithTitle:@"方法与消息" tag:ObjcRuntimeBtnTagMethodSendMessage],
+            [ObjcRuntimeItem itemWithTitle:@"协议与分类" tag:ObjcRuntimeBtnTagMethodProtocolCategory],
+            [ObjcRuntimeItem itemWithTitle:@"拾遗" tag:ObjcRuntimeBtnTagShiYi]
         ];
     }
     return _items;
