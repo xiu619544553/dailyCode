@@ -16,16 +16,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = UIColor.whiteColor;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    
+    // The nil case
+    // __weak id weakPtr;
+    
+    // The non-nil case
+    NSObject *o = [NSObject new];
+    __weak id weakPtr = o;
+    NSLog(@"o__%@_%p", o, o);
+    NSLog(@"weakPtr__%@_%p", weakPtr, weakPtr);
 }
-*/
+
 
 @end

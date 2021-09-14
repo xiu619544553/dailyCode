@@ -58,6 +58,7 @@
 #import "Method_SendMsg_ViewController.h"
 #import "ProtocolCategoryViewController.h"
 #import "ShiYiViewController.h"
+#import "Weak_ViewController.h"
 
 typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
     /// runtime api
@@ -81,7 +82,9 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
     /// 协议与分类
     ObjcRuntimeBtnTagMethodProtocolCategory,
     /// 拾遗
-    ObjcRuntimeBtnTagShiYi
+    ObjcRuntimeBtnTagShiYi,
+    /// weak底层原理
+    ObjcRuntimeBtnTagWeak
 };
 
 @interface ObjcRuntimeItem : NSObject
@@ -170,6 +173,11 @@ typedef NS_ENUM(NSInteger, ObjcRuntimeBtnTag) {
         case ObjcRuntimeBtnTagShiYi: {
             ShiYiViewController *syVc = [ShiYiViewController new];
             [self.navigationController pushViewController:syVc animated:YES];
+        } break;
+            
+        case ObjcRuntimeBtnTagWeak: {
+            Weak_ViewController *weakVc = [Weak_ViewController new];
+            [self.navigationController pushViewController:weakVc animated:YES];
         } break;
             
         default:
@@ -741,7 +749,8 @@ NSArray<Class> *GetAllSubclasses(Class cls, BOOL includeSelf) {
             [ObjcRuntimeItem itemWithTitle:@"成员变量与属性" tag:ObjcRuntimeBtnTagIavrProperty],
             [ObjcRuntimeItem itemWithTitle:@"方法与消息" tag:ObjcRuntimeBtnTagMethodSendMessage],
             [ObjcRuntimeItem itemWithTitle:@"协议与分类" tag:ObjcRuntimeBtnTagMethodProtocolCategory],
-            [ObjcRuntimeItem itemWithTitle:@"拾遗" tag:ObjcRuntimeBtnTagShiYi]
+            [ObjcRuntimeItem itemWithTitle:@"拾遗" tag:ObjcRuntimeBtnTagShiYi],
+            [ObjcRuntimeItem itemWithTitle:@"__weak底层原理" tag:ObjcRuntimeBtnTagWeak]
         ];
     }
     return _items;

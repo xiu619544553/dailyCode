@@ -17,6 +17,8 @@
 		CE2A9ECC26EF2A3900B329A7 /* 拾遗.md in Resources */ = {isa = PBXBuildFile; fileRef = CE2A9ECB26EF2A3900B329A7 /* 拾遗.md */; };
 		CE2A9ED026EF2A5200B329A7 /* ShiYiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2A9ECF26EF2A5200B329A7 /* ShiYiViewController.m */; };
 		CE2A9ED426EF318700B329A7 /* TESTSuper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2A9ED326EF318700B329A7 /* TESTSuper.m */; };
+		CE2A9ED926EF499300B329A7 /* Weak_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2A9ED826EF499300B329A7 /* Weak_ViewController.m */; };
+		CE2A9EDD26EF49B300B329A7 /* weak底层原理.md in Resources */ = {isa = PBXBuildFile; fileRef = CE2A9EDC26EF49B300B329A7 /* weak底层原理.md */; };
 		CE32B4CB26E5E6FB003D5ECF /* TKPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */; };
 		CE32B4D026E5E710003D5ECF /* TKKid.m in Sources */ = {isa = PBXBuildFile; fileRef = CE32B4CF26E5E710003D5ECF /* TKKid.m */; };
 		CE38BE8E26E1FDEA00B894EB /* MethodSwizzingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE38BE8D26E1FDEA00B894EB /* MethodSwizzingViewController.m */; };
@@ -62,6 +64,9 @@
 		CE2A9ECF26EF2A5200B329A7 /* ShiYiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShiYiViewController.m; sourceTree = "<group>"; };
 		CE2A9ED226EF318700B329A7 /* TESTSuper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TESTSuper.h; sourceTree = "<group>"; };
 		CE2A9ED326EF318700B329A7 /* TESTSuper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TESTSuper.m; sourceTree = "<group>"; };
+		CE2A9ED726EF499300B329A7 /* Weak_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Weak_ViewController.h; sourceTree = "<group>"; };
+		CE2A9ED826EF499300B329A7 /* Weak_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Weak_ViewController.m; sourceTree = "<group>"; };
+		CE2A9EDC26EF49B300B329A7 /* weak底层原理.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "weak底层原理.md"; sourceTree = "<group>"; };
 		CE32B4C926E5E6FB003D5ECF /* TKPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKPerson.h; path = runtimeDemo/interview/TKPerson.h; sourceTree = SOURCE_ROOT; };
 		CE32B4CA26E5E6FB003D5ECF /* TKPerson.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TKPerson.m; path = runtimeDemo/interview/TKPerson.m; sourceTree = SOURCE_ROOT; };
 		CE32B4CE26E5E710003D5ECF /* TKKid.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TKKid.h; path = runtimeDemo/interview/TKKid.h; sourceTree = SOURCE_ROOT; };
@@ -172,6 +177,16 @@
 			path = "6_拾遗";
 			sourceTree = "<group>";
 		};
+		CE2A9ED626EF497600B329A7 /* 7_weak */ = {
+			isa = PBXGroup;
+			children = (
+				CE2A9EDC26EF49B300B329A7 /* weak底层原理.md */,
+				CE2A9ED726EF499300B329A7 /* Weak_ViewController.h */,
+				CE2A9ED826EF499300B329A7 /* Weak_ViewController.m */,
+			);
+			path = 7_weak;
+			sourceTree = "<group>";
+		};
 		CE32B4C826E5E6E7003D5ECF /* interview */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +207,7 @@
 				CE2A9EA926EEDF4400B329A7 /* 4_Method Swizzing */,
 				CE2A9EB926EF03BC00B329A7 /* 5_协议与分类 */,
 				CE2A9ECA26EF29FD00B329A7 /* 6_拾遗 */,
+				CE2A9ED626EF497600B329A7 /* 7_weak */,
 				CE43EB3726E89B09003415A2 /* TypeEncoding_类型编码 */,
 			);
 			name = Runtime;
@@ -377,6 +393,7 @@
 				CE2A9EC026EF1E2A00B329A7 /* Protocol_Category.md in Resources */,
 				CE43EB5526E89B80003415A2 /* runtime_struct.itmz in Resources */,
 				CEB6806826E9AC33004D8814 /* 消息的基本框架.png in Resources */,
+				CE2A9EDD26EF49B300B329A7 /* weak底层原理.md in Resources */,
 				CEFCBE20267B41BD0095C0EA /* LaunchScreen.storyboard in Resources */,
 				CE43EC1026E8A9E8003415A2 /* 成员变量与属性.md in Resources */,
 				CE43EB5426E89B80003415A2 /* meta-class继承体系.jpeg in Resources */,
@@ -456,6 +473,7 @@
 				CE43EB4C26E89B09003415A2 /* MyClass.m in Sources */,
 				CE2A9ED426EF318700B329A7 /* TESTSuper.m in Sources */,
 				CE2A9ED026EF2A5200B329A7 /* ShiYiViewController.m in Sources */,
+				CE2A9ED926EF499300B329A7 /* Weak_ViewController.m in Sources */,
 				CE2A9EAC26EEE13500B329A7 /* UIViewController+Tracking.m in Sources */,
 				CE43EB4726E89B09003415A2 /* YYClassInfo.m in Sources */,
 				CEFCBE23267B41BD0095C0EA /* main.m in Sources */,
