@@ -1,9 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/model/base_widget.dart';
 import 'package:flutter_demo/model/layout_demo.dart';
-import 'package:flutter_demo/model/syntax_demo.dart';
-import 'model/car.dart';
+import 'package:flutter_demo/model/listview_demo.dart';
+import 'package:flutter_demo/model/state_msg_demo.dart';
 
 
 /// 笔记
@@ -20,22 +19,29 @@ import 'model/car.dart';
 
 
 /// 小部件入口
-void main() {
-  // 自定义页面
-  runApp(MaterialApp(
-    title: 'Navigation',
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text('Demo'),
+void main() => runApp(MyApp());
+
+/// app导航
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Demo',
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.purple,
+          title: Text('Hello world'),
+        ),
+        body: StatefulManagerDemo(), // 首页
       ),
-      body: LayoutDemo(),
-    ),
-    debugShowCheckedModeBanner: false,
-    theme: ThemeData(
-      primaryColor: Colors.lime,
-    ),
-  ));
+    );
+  }
 }
+
+
 
 
 /// 简单的测试入口
