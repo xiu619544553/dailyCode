@@ -21,7 +21,7 @@ import 'package:flutter/material.dart';
 * start       ：将子轴放置在尽可能靠近主轴的位置。
 * end         ：将子轴尽可能靠近主轴的末端。
 * center      ：让child尽可能靠近主轴的中间位置。
-* spaceBetween：把自由空间均匀地放在孩子们之间。
+* spaceBetween：子部件左右两边间距为0，把剩余空间均匀地放在子部件之间。
 * spaceAround： 在子节点之间均匀地放置空闲空间，并在第一个和最后一个子节点前后分别放置该空间的一半。
 * spaceEvenly： 在子节点之间以及第一个和最后一个子节点之前和之后均匀地放置空闲空间。
 * */
