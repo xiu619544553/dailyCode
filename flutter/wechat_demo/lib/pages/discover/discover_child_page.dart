@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wechat_demo/const.dart';
 
 class DiscoverChildPage extends StatelessWidget {
 
@@ -13,6 +14,7 @@ class DiscoverChildPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title ?? ''),
+        backgroundColor: WeChatThemeColor,
       ),
       body: Center(
         child: Text(title ?? ''),

@@ -33,6 +33,48 @@ APP的icon、启动图配置
 */
 
 
+/*
+页面高度在顶部开始计算（忽略刘海）
+方案：使用 MediaQuery.removePadding 包裹视图，然后设置 removeTop: true，则页面高度在顶部开始计算。反之，在刘海下开始计算。
+
+MediaQuery.removePadding(
+  removeTop: true,
+)
+
+注：详细用法可以参考 `mine_page.dart` 页面
+*/
+
+
+/*
+decoration  装饰器属性使用，它可以添加圆角、阴影等。
+
+# 给当前Widget添加装饰属性
+Container(
+    width: 60,
+    height: 60,
+    decoration: BoxDecoration(
+       color: Colors.blue,
+       borderRadius: BorderRadius.circular(30),
+    ),
+),
+
+# 给 Image 添加装饰属性
+如果要给 Image 添加装饰器属性，需要 BoxDecoration 的 image 属性
+Container(
+    width: 50,
+    height: 50,
+    decoration: BoxDecoration(
+       borderRadius: BorderRadius.circular(30),
+       image: DecorationImage(image: AssetImage('images/wc_avatar.png')),
+    ),
+),
+*/
+
+/*
+计算屏幕的尺寸：MediaQuery.of(context).size
+* */
+
+
 void main() {
   runApp(MyApp());
 }
