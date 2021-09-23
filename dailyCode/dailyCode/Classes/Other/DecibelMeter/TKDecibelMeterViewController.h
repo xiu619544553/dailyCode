@@ -10,6 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/// 分贝检测
 @interface TKDecibelMeterViewController : TKBaseViewController
 
 @end

@@ -144,6 +144,9 @@
 		CE9D686F25493D5B00465E56 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D686E25493D5B00465E56 /* NotificationCenter.framework */; };
 		CE9D687325493D5B00465E56 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D687225493D5B00465E56 /* TodayViewController.m */; };
 		CE9D687A25493D5B00465E56 /* dailyCodeWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CE9D686D25493D5B00465E56 /* dailyCodeWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CE9F82FB26FC6A71002FD1D7 /* TKDecibelMeterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9F82F926FC6A71002FD1D7 /* TKDecibelMeterViewController.m */; };
+		CE9F82FC26FC6A71002FD1D7 /* TKDecibelMeterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE9F82FA26FC6A71002FD1D7 /* TKDecibelMeterViewController.xib */; };
+		CE9F830426FC6A96002FD1D7 /* DecibelMeterHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9F830226FC6A96002FD1D7 /* DecibelMeterHelper.m */; };
 		CEA0940B26AFD7FC00208BF9 /* TKKVCUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0940A26AFD7FC00208BF9 /* TKKVCUsageViewController.m */; };
 		CEA0941026AFD90400208BF9 /* TKKVCPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA0940F26AFD90400208BF9 /* TKKVCPerson.m */; };
 		CEA92F5D2623D4E200343DA6 /* TKPageContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA92F5C2623D4E200343DA6 /* TKPageContentViewController.m */; };
@@ -467,6 +470,11 @@
 		CE9D687225493D5B00465E56 /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
 		CE9D687725493D5B00465E56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE9D68802549695200465E56 /* 小组件大功能.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = "小组件大功能.entitlements"; path = "../../../.Trash/小组件大功能.entitlements"; sourceTree = "<group>"; };
+		CE9F82F826FC6A71002FD1D7 /* TKDecibelMeterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKDecibelMeterViewController.h; sourceTree = "<group>"; };
+		CE9F82F926FC6A71002FD1D7 /* TKDecibelMeterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKDecibelMeterViewController.m; sourceTree = "<group>"; };
+		CE9F82FA26FC6A71002FD1D7 /* TKDecibelMeterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKDecibelMeterViewController.xib; sourceTree = "<group>"; };
+		CE9F830226FC6A96002FD1D7 /* DecibelMeterHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecibelMeterHelper.m; sourceTree = "<group>"; };
+		CE9F830326FC6A96002FD1D7 /* DecibelMeterHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecibelMeterHelper.h; sourceTree = "<group>"; };
 		CEA0940926AFD7FC00208BF9 /* TKKVCUsageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKVCUsageViewController.h; sourceTree = "<group>"; };
 		CEA0940A26AFD7FC00208BF9 /* TKKVCUsageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKKVCUsageViewController.m; sourceTree = "<group>"; };
 		CEA0940E26AFD90400208BF9 /* TKKVCPerson.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKKVCPerson.h; sourceTree = "<group>"; };
@@ -809,6 +817,7 @@
 		CE400BB5253576E9003C5E72 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				CE9F82F726FC6A46002FD1D7 /* DecibelMeter */,
 				CE400BB7253576E9003C5E72 /* TKOtherViewController.h */,
 				CE400BB8253576E9003C5E72 /* TKOtherViewController.m */,
 				CE400C16253576E9003C5E72 /* ResponderChain */,
@@ -1521,6 +1530,26 @@
 			path = dailyCodeWidget;
 			sourceTree = "<group>";
 		};
+		CE9F82F726FC6A46002FD1D7 /* DecibelMeter */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F830126FC6A7C002FD1D7 /* Utils */,
+				CE9F82F826FC6A71002FD1D7 /* TKDecibelMeterViewController.h */,
+				CE9F82F926FC6A71002FD1D7 /* TKDecibelMeterViewController.m */,
+				CE9F82FA26FC6A71002FD1D7 /* TKDecibelMeterViewController.xib */,
+			);
+			path = DecibelMeter;
+			sourceTree = "<group>";
+		};
+		CE9F830126FC6A7C002FD1D7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				CE9F830326FC6A96002FD1D7 /* DecibelMeterHelper.h */,
+				CE9F830226FC6A96002FD1D7 /* DecibelMeterHelper.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		CEA0940626AFD79300208BF9 /* KVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1865,6 +1894,7 @@
 				CE400D68253576EA003C5E72 /* TKFeedbackGeneratorViewController.xib in Resources */,
 				CE242C032563C2390013A36A /* TKGenericsUsageViewController.xib in Resources */,
 				CECA47C52673477F007BC952 /* jsInvokeOcAndOCCallback.html in Resources */,
+				CE9F82FC26FC6A71002FD1D7 /* TKDecibelMeterViewController.xib in Resources */,
 				CE400DB4253576EA003C5E72 /* TKSDWebImageUsageViewController.xib in Resources */,
 				CE400E0E2535836B003C5E72 /* TK_NSOperationQueue_ViewController.xib in Resources */,
 				CE400D51253576EA003C5E72 /* Assets.xcassets in Resources */,
@@ -1956,6 +1986,7 @@
 				CE400D8F253576EA003C5E72 /* AboutScrollViewLayoutViewController.m in Sources */,
 				CE400DA4253576EA003C5E72 /* UIProgressView+AFNetworking.m in Sources */,
 				CE400D76253576EA003C5E72 /* TKCatalogModel.m in Sources */,
+				CE9F830426FC6A96002FD1D7 /* DecibelMeterHelper.m in Sources */,
 				CEA0940B26AFD7FC00208BF9 /* TKKVCUsageViewController.m in Sources */,
 				CE3F06332582FF040035FE71 /* TKTestShadowVC.m in Sources */,
 				CEFBCEDF2679AA6E00C553C9 /* YYClassInfo.m in Sources */,
@@ -1966,6 +1997,7 @@
 				CEA92F5D2623D4E200343DA6 /* TKPageContentViewController.m in Sources */,
 				CE1E1186263A855E00365B51 /* TKGestureRecognizerViewController.m in Sources */,
 				CEC3469226A7EFE200394E71 /* TKCollectionViewUsageController.m in Sources */,
+				CE9F82FB26FC6A71002FD1D7 /* TKDecibelMeterViewController.m in Sources */,
 				CE38912B266E131A008E72B7 /* TK_NSURL_ViewController.m in Sources */,
 				CE400DAB253576EA003C5E72 /* AFAutoPurgingImageCache.m in Sources */,
 				CE400D8E253576EA003C5E72 /* AboutScrollViewPropertyController.m in Sources */,

@@ -7,26 +7,40 @@
 //
 
 #import "TKDecibelMeterViewController.h"
+#import "DecibelMeterHelper.h"
 
 @interface TKDecibelMeterViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *dbLabel;
+@property (nonatomic, strong) DecibelMeterHelper *dbHelper;
 @end
 
 @implementation TKDecibelMeterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.dbHelper = [[DecibelMeterHelper alloc]init];
+    
+    __weak typeof(self) weakSelf = self;
+    self.dbHelper.decibelMeterBlock = ^(double dbSPL){
+        
+        __strong typeof(self) strongSelf = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            strongSelf.dbLabel.text = [NSString stringWithFormat:@"%.2lf",dbSPL];
+        });
+
+    };
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)processStartAction:(UIButton *)sender {
+    [self.dbHelper startMeasuringWithIsSaveVoice:NO];
 }
-*/
+
+- (IBAction)processStopAction:(UIButton *)sender {
+    [self.dbHelper stopMeasuring];
+}
+
+
 
 @end

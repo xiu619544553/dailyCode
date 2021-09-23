@@ -226,6 +226,10 @@ static NSString *homePageCellReuseIdentifier = @"UITableViewCell";
             @{
                 KeyForVC   : @"AsyncDecoderImageViewController",
                 KeyForDesc : @"异步解码图片"
+            },
+            @{
+                KeyForVC : @"TKDecibelMeterViewController",
+                KeyForDesc : @"分贝检测"
             }
         ];
     }
