@@ -5,42 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3eb3eb98-4f1b-46f0-a88c-5836ced17501" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/wc_avatar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/wc_group_chat_friend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/wc_public.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/const.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/friends/friend_cell.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/pages/friends/friend_data.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/.filecache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/App.framework/App" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/app.dill" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/debug_ios_bundle_flutter_assets.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/debug_universal_framework.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/debug_unpack_ios.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/flutter_assets.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/gen_localizations.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/kernel_snapshot.d" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/kernel_snapshot.stamp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/flutter_build/a98ed841a7407e06ccbf1b438b4a5a3c/outputs.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/wc_word_bubble.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/friends/index_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/wc_add_friend.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/wc_add_friend.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/公众号.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/群聊.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.packages" beforeDir="false" afterPath="$PROJECT_DIR$/.packages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/气泡.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/const.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/const.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/discover/discover_child_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/discover/discover_child_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/discover/discover_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/discover/discover_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/friend_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/friends/friend_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/mine_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/mine_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/root_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/root_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/friends/friend_cell.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/friends/friend_cell.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/friends/friend_data.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/friends/friend_data.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/friends/friend_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/friends/friend_page.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[/Users/hello/.android/avd/Nexus_6P_API_30.avd]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -74,7 +57,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -111,5 +94,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

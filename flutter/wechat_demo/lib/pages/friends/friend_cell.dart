@@ -12,25 +12,42 @@ class FriendCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     // 头像
     ImageProvider _getAvatar() {
+
       if (imageUrl != null) {
         return NetworkImage(imageUrl ?? '');
-      } else {
-        return AssetImage(imageAsset ?? '');
       }
+      return AssetImage(imageAsset ?? '');
     }
 
+    // 索引部分的高度
+    double _groupTitleHeight() {
+      if (groupTitle == null) {
+        return 0;
+      }
+      return FriendIndexBarHeight;
+    }
+
+    // 布局
     return Column(
       children: [
+        Container( // 索引部分
+          alignment: Alignment.centerLeft,
+          padding: EdgeInsets.only(left: 10),
+          height: _groupTitleHeight(),
+          color: WeChatThemeColor,
+          child: Text(groupTitle ?? ''),
+        ),
         Container( // 头像+昵称部分
           color: Colors.white,
           child: Row(
             children: [
               Container(
-                margin: EdgeInsets.all(10),
-                width: 34,
-                height: 34,
+                margin: EdgeInsets.all(FriendAvatarMargin),
+                width: FriendAvatarHeight,
+                height: FriendAvatarHeight,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
                   image: DecorationImage(image: _getAvatar()),
@@ -46,9 +63,18 @@ class FriendCell extends StatelessWidget {
           ),
         ),
         Container( // 分割线
-          height: 0.5,
-          color: WeChatThemeColor,
-          margin: EdgeInsets.only(left: 54),
+          child: Row(
+            children: [
+              Container(
+                height: FriendCellLineHeight,
+                width: 54,
+                color: Colors.white,
+              ),
+              Container(
+                height: FriendCellLineHeight,
+              ),
+            ],
+          ),
         ),
       ],
     );

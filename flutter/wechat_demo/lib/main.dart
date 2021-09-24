@@ -19,7 +19,7 @@ APP的icon、启动图配置
   * 启动图
   * icon可以放在 `项目目录/android/app/src/main/res/mipmap-hdpi` 中
   * 配置启动图加载路径：`项目目录/android/app/src/main/res/drawable/launch_background.xml`
-  * --> android:src"@mipmap/launch_image.jpeg"
+  * --> android:src"@mipmap/launch_image"  ⚠️Android配置启动图时，不需要填写图片的格式，错误写法 launch_image.jgp
 */
 
 /*

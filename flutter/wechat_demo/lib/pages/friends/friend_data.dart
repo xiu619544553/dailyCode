@@ -84,4 +84,11 @@ List<Friends> friendDatas = [
       imageUrl: 'https://randomuser.me/api/portraits/women/23.jpg',
       name: 'Lina',
       indexLetter: 'L'),
+  Friends(
+      imageUrl: 'https://randomuser.me/api/portraits/men/36.jpg',
+      name: 'Zoom',
+      indexLetter: 'Z'),
 ];
+
+
+
