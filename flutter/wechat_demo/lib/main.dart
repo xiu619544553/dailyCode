@@ -75,6 +75,32 @@ Container(
 * */
 
 
+/*
+导入第三方或者官方提供的包
+
+1、pubspec.yaml --> dependencies:
+2、点击 Pub get 或者终端执行命令：flutter package get
+*/
+
+/*
+Json 和 Map 互相转化：
+
+    final chat = {
+      'name' : 'Alex',
+      'message'  : 'Success'
+    };
+
+    // Map转Json
+    final chatJson = json.encode(chat);
+
+    // Json转Map
+    final map = json.decode(chatJson);
+
+注意：⚠️ Json 转换为 Map，然后 Map 转换为 Model.
+
+*/
+
+
 void main() {
   runApp(MyApp());
 }

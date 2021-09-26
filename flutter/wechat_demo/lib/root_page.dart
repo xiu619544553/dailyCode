@@ -1,7 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wechat_demo/pages/char_page.dart';
+import 'package:wechat_demo/pages/chat/char_page.dart';
 import 'package:wechat_demo/pages/discover/discover_page.dart';
 import 'package:wechat_demo/pages/friends/friend_page.dart';
 import 'package:wechat_demo/pages/mine_page.dart';
