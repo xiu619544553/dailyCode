@@ -2,7 +2,9 @@
 
 import 'dart:async';
 import 'dart:io';
+import 'dart:isolate';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// 异步不一定是多线程。
@@ -25,6 +27,8 @@ void main() {
   // 3、3、多Future。then 比 Future默认的队列优先级高。通过 then 解决任务互相依赖的问题。
   // testFuture2();
 
+  // print('做其他事情');
+
   // 4、多任务，依赖关系
   // testFuture3();
 
@@ -35,9 +39,13 @@ void main() {
   // testFuture5();
 
   // 7、面试题：事件循环
-  testFuture6();
+  // testFuture6();
 
-  print('做其他事情');
+  // 8、Isolate
+  // testFuture7();
+
+  // 9、Compute
+  testFuture8();
 }
 
 
@@ -46,7 +54,7 @@ void getData() async {
 
   print('开始');
 
-  /// 1、后面的操作必须死是异步的，会可以用 wait
+  /// 1、后面的操作必须是异步的，会可以用 wait
 
   /// 方式一
   // // Future 回调中的函数，会异步执行
@@ -93,8 +101,6 @@ void getData() async {
   }).whenComplete(() {
     print('结束了');
   });
-
-
 }
 
 
@@ -225,4 +231,82 @@ void testFuture6() {
   2、下一个事件循环，先查看是否有微任务，如果有，先执行微任务
   4、最后执行最后加入的 Future
   */
+}
+
+
+/// 8、Isolate，用来处理数据
+/// 参考：https://blog.csdn.net/rd_w_csdn/article/details/103735205
+/// Isolate 与线程不同，Isolate 不共享内存，不需要考虑多线程资源抢夺的问题
+/*
+每个 Isolate 都有自己的事件循环
+每个「Isolate」都拥有自己的「事件循环」及队列（MicroTask 和 Event）。
+这意味着在一个 Isolate 中运行的代码与另外一个 Isolate 不存在任何关联。
+
+多亏了这一点，我们可以获得并行处理的能力。
+* */
+void testFuture7() {
+  print("main isolate start");
+
+  create_isolate();
+
+  print("main isolate end");
+}
+
+
+// 创建一个新的 isolate
+void create_isolate() async {
+  ReceivePort rp = new ReceivePort();
+  SendPort port1 = rp.sendPort;
+
+  Isolate newIsolate = await Isolate.spawn(doWork, port1);
+
+  SendPort? port2;
+  rp.listen((message){
+    print("main isolate message: $message");
+    if (message[0] == 0) {
+      port2 = message[1];
+    } else {
+      port2?.send([1,"这条信息是 main isolate 发送的"]);
+    }
+  });
+}
+
+// 处理耗时任务
+void doWork(SendPort port1){
+  print("new isolate start");
+  ReceivePort rp2 = new ReceivePort();
+  SendPort port2 = rp2.sendPort;
+
+  rp2.listen((message){
+    print("doWork message: $message");
+  });
+
+  // 将新isolate中创建的SendPort发送到主isolate中用于通信
+  port1.send([0, port2]);
+
+  // 模拟耗时5秒
+  sleep(Duration(seconds:5));
+  port1.send([1, "doWork 任务完成"]);
+
+  print("new isolate end");
+}
+
+
+/// 9、Compute
+/// 专门做多线程，Isolate上层封装
+void testFuture8() async {
+  print("外部代码1");
+
+  int result = await compute(testFuture8_1, 10);
+  print('result = $result');
+
+  // 模拟耗时5秒
+  sleep(Duration(seconds:2));
+
+  print("外部代码2");
+}
+
+int testFuture8_1(int count) {
+  print('count = $count');
+  return 666;
 }
