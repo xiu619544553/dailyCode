@@ -1,0 +1,39 @@
+<html>
+    <head>
+        
+        <title>js输入框：prompt，客户端将输入信息回调给H5</title>
+        <meta charset="utf-8">
+            
+            <script type="text/javascript">
+                
+                function disp_prompt() {
+                    var name = prompt("请输入用户信息","")
+                    if (name!=null && name!="") {
+                        document.write("您输入的信息如下：\n" + name + "!")
+                    }
+                }
+                
+                
+                function showAlert() {
+                    // 输入框内的文字，会被oc截获到
+                    alert("被OC截获到了");
+                }
+                
+            </script>
+            
+    </head>
+    <body>
+        
+        <p style="text-align:center">
+        <button id="btn1" type = "button" onclick = "disp_prompt()" style="width:600px; height:400px; background-color:#baiDFF; font-size=100px">
+            js调起输入框prompt客户端回传信息给js
+        </button>
+        </p>
+        
+        <p style="text-align:center"> <button id="btn3" type = "button" onclick = "showAlert()" > oc捕获到html的弹出框  </button> </p
+        
+    </body>
+</html>
+
+
+
