@@ -533,5 +533,5 @@ self.fetchUserNameHandler2(self, 10);
 
 
 参考资料：
-[iOS下的闭包上篇-Block](https://mp.weixin.qq.com/s/LdaQxl3ZI1uXN9GvoH2sXg)
-[Block和函数指针的区别](https://blog.csdn.net/dexin5195/article/details/41083323)
+- [iOS下的闭包上篇-Block](https://mp.weixin.qq.com/s/LdaQxl3ZI1uXN9GvoH2sXg)
+- [Block和函数指针的区别](https://blog.csdn.net/dexin5195/article/details/41083323)
