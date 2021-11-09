@@ -2,21 +2,21 @@
 
 ### 目录
 - 一、概念
-    - 1.Block是什么
-    - 2.Block的几种类型
-    - 3.Block自动截取变量
+    - 1.`Block`是什么
+    - 2.`Block`的几种类型
+    - 3.`Block`自动截取变量
 - 二、语法
 - 三、源码分析
-    - 1.局部变量
-    - 2.__block 修饰局部变量
-    - 3.全局静态变量
-    - 4.全局变量
-    - 5.局部静态变量
-- 四、解决循环引用的方式
+    - 1.`block`捕获局部变量源码分析
+    - 2.`__block` 源码分析
+    - 3.`block` 捕获全局静态变量
+    - 4.`block` 捕获全局变量
+    - 5.`block` 捕获局部静态变量
+- 四、循环引用
     - 1.`__weak`
     - 2.`__unsafe_unretained`
     - 3.`__block`
-    - 4.使用形参
+    - 4.将造成循环引用的对象作为参数传入`block块`中
 - 五、其他
     - 1.`Block`和`函数指针`的区别
 
@@ -86,7 +86,7 @@ TypeName blockName = ^returnType(parameters) {...};
 * cd 到 main.m 所在路径
 * 使用命令 `clang -rewrite-objc main.m` 生成 `main.cpp`文件
 
-#### 1、局部变量
+#### 1、`block`捕获局部变量源码分析
 
 Demo地址：[传送门](https://github.com/xiu619544553/dailyCode/blob/master/block_demo)， Target 选择 `block捕获局部变量`。
 
@@ -217,7 +217,7 @@ result->isa = _NSConcreteMallocBlock;
 _Block_call_copy_helper(result, aBlock);
 return result; 
 ```
-#### 2、__block 修饰局部变量
+#### 2、`__block` 源码分析
 
 Demo地址：[传送门](https://github.com/xiu619544553/dailyCode/blob/master/block_demo)， Target 选择 `__block修饰局部变量`。
 
@@ -364,7 +364,7 @@ static struct IMAGE_INFO { unsigned version; unsigned flag; } _OBJC_IMAGE_INFO =
 * 从输出日志看出：`__block` 修饰的局部变量从栈拷贝到了堆、`block`也在堆中。
 
 
-#### 3、全局静态变量
+#### 3、`block` 全局静态变量
 
 Demo地址：[传送门](https://github.com/xiu619544553/dailyCode/blob/master/block_demo)， Target 选择 `block捕获变量`。
 
@@ -392,7 +392,7 @@ int main() {
 ```
 **结论：**从代码和打印结果看出变量始终在全局数据区，内存地址不变
 
-#### 4、全局变量
+#### 4、`block` 全局变量
 
 ```
 int b = 22;
@@ -416,7 +416,7 @@ int main() {
 ```
 **结论：**从代码和打印结果观察和上述一样，也在全局数据区，内存地址不变
 
-#### 5、局部静态变量
+#### 5、`block` 局部静态变量
 
 ```
 int main() {
@@ -438,11 +438,11 @@ int main() {
 ```
 内存地址不变。
 
-### 四、解决循环引用的方式
+### 四、循环引用
 
-造成循环引用的问题，可以参考源码。
+引起循环引用的原因，可以参考上述分析中的block源码：正式指针引用，产生了了循环引用。
 
-存在循环引用问题代码：
+来看一份存在循环引用问题的代码：
 ```
 @property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSString * (^fetchUserNameHandler)(NSInteger userId);
@@ -482,7 +482,6 @@ __unsafe_unretained与__weak的作用是一样的，但是__unsafe_unretained指
 __unsafe_unretained SecondViewController *unsafeSelf = self;
 self.fetchUserNameHandler = ^NSString *(NSInteger userId) {
     NSString *tmp = [NSString stringWithFormat:@"%@%ld", unsafeSelf.userName, userId];
-    
     NSLog(@"userName = %@", tmp);
     return tmp;
 };
@@ -511,7 +510,7 @@ self.fetchUserNameHandler = ^NSString *(NSInteger userId) {
 self.fetchUserNameHandler(10);
 ```
 
-#### 4、使用形参
+#### 4、将造成循环引用的对象作为参数传入block块中
 
 ```
 self.fetchUserNameHandler2 = ^NSString *(SecondViewController *vc, NSInteger userId) {
