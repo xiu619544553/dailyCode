@@ -29,7 +29,7 @@
 - 4.访问 __weak 修饰的变量，是否已经被注册在了 @autoreleasePool 中？为什么？
 - 5.`ARC` 的 `retainCount` 怎么存储的？
 - 6.简要说一下 `@autoreleasePool` 的数据结构？
-- 7.`__weak` 和 `__unsafe_unretained` 的区别？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/iOS 内存管理/7.__weak 和 __unsafe_unretained 的区别.md)
+- 7.`__weak` 和 `__unsafe_unretained` 的区别？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/7.__weak和__unsafe_unretained的区别.md)
 - 8.为什么已经有了 `ARC` ,但还是需要 `@AutoreleasePool` 的存在？
 - 9.`__weak` 属性修饰的变量，如何实现在变量没有强引用后自动置为 `nil`？
 - 10.`__strong`原理
