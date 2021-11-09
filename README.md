@@ -24,7 +24,7 @@
 
 ## iOS 内存管理
 - 1.讲一下 iOS 内存管理的理解？(三种方案的结合) 
-- 2.使用自动引用计（`ARC`）数应该遵循的原则?
+- 2.使用自动引用计（`ARC`）数应该遵循的原则? [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/2.使用ARC应该遵守的原则.md)
 - 3.`ARC`自动内管管理的原则？
 - 4.访问 __weak 修饰的变量，是否已经被注册在了 @autoreleasePool 中？为什么？
 - 5.`ARC` 的 `retainCount` 怎么存储的？
@@ -33,7 +33,7 @@
 - 8.为什么已经有了 `ARC` ,但还是需要 `@AutoreleasePool` 的存在？
 - 9.`__weak` 属性修饰的变量，如何实现在变量没有强引用后自动置为 `nil`？
 - 10.`__strong`原理
-- 14.野指针和悬垂指针的区别？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/iOS 内存管理/14.野指针和悬垂指针的区别.md)
+- 14.野指针和悬垂指针的区别？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/14.野指针和悬垂指针的区别.md)
 
 
 ## Runtime
