@@ -364,7 +364,7 @@ static struct IMAGE_INFO { unsigned version; unsigned flag; } _OBJC_IMAGE_INFO =
 * 从输出日志看出：`__block` 修饰的局部变量从栈拷贝到了堆、`block`也在堆中。
 
 
-#### 3、`block` 全局静态变量
+#### 3、`block` 捕获全局静态变量
 
 Demo地址：[传送门](https://github.com/xiu619544553/dailyCode/blob/master/block_demo)， Target 选择 `block捕获变量`。
 
@@ -392,7 +392,7 @@ int main() {
 ```
 **结论：**从代码和打印结果看出变量始终在全局数据区，内存地址不变
 
-#### 4、`block` 全局变量
+#### 4、`block` 捕获全局变量
 
 ```
 int b = 22;
@@ -416,7 +416,7 @@ int main() {
 ```
 **结论：**从代码和打印结果观察和上述一样，也在全局数据区，内存地址不变
 
-#### 5、`block` 局部静态变量
+#### 5、`block` 捕获局部静态变量
 
 ```
 int main() {
