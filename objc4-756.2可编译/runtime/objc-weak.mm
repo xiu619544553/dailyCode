@@ -45,9 +45,9 @@ static void bad_weak_table(weak_entry_t *entries)
 }
 
 /** 
- * Unique hash function for object pointers only.
+ * Unique hash function for object pointers only. 唯一的哈希函数仅适用于对象指针。
  * 
- * @param key The object pointer
+ * @param key The object pointer 对象的指针
  * 
  * @return Size unrestricted hash of pointer.
  */
@@ -102,12 +102,12 @@ static void grow_refs_and_insert(weak_entry_t *entry,
 }
 
 /** 
- * Add the given referrer to set of weak pointers in this entry.
+ * Add the given referrer to set of weak pointers in this entry.  将给定的引用添加到此条目中的弱指针集。
  * Does not perform duplicate checking (b/c weak pointers are never
  * added to a set twice). 
  *
- * @param entry The entry holding the set of weak pointers. 
- * @param new_referrer The new weak pointer to be added.
+ * @param entry The entry holding the set of weak pointers. 保存弱指针集合的项。
+ * @param new_referrer The new weak pointer to be added.    要添加的新弱指针。
  */
 static void append_referrer(weak_entry_t *entry, objc_object **new_referrer)
 {
@@ -205,7 +205,7 @@ static void remove_referrer(weak_entry_t *entry, objc_object **old_referrer)
 }
 
 /** 
- * Add new_entry to the object's table of weak references.
+ * Add new_entry to the object's table of weak references. 在对象的弱引用表中添加新的 weak_entry_t。
  * Does not check whether the referent is already in the table.
  */
 static void weak_entry_insert(weak_table_t *weak_table, weak_entry_t *new_entry)
@@ -296,12 +296,12 @@ static void weak_entry_remove(weak_table_t *weak_table, weak_entry_t *entry)
 
 
 /** 
- * Return the weak reference table entry for the given referent. 
+ * Return the weak reference table entry for the given referent.  返回给定引用的弱引用表项。（根据给定的弱引用引用的对象，返回它所在的 weak_entry_t）
  * If there is no entry for referent, return NULL. 
  * Performs a lookup.
  *
- * @param weak_table 
- * @param referent The object. Must not be nil.
+ * @param weak_table 弱引用表
+ * @param referent The object. Must not be nil. 弱引用所指向的对象
  * 
  * @return The table of weak referrers to this object. 
  */
@@ -330,7 +330,7 @@ weak_entry_for_referent(weak_table_t *weak_table, objc_object *referent)
 }
 
 /** 
- * Unregister an already-registered weak reference.
+ * Unregister an already-registered weak reference. 注销已注册的弱引用。
  * This is used when referrer's storage is about to go away, but referent
  * isn't dead yet. (Otherwise, zeroing referrer later would be a
  * bad memory access.)
@@ -341,15 +341,16 @@ weak_entry_for_referent(weak_table_t *weak_table, objc_object *referent)
  * FIXME unregistration should be automatic if referrer is collected
  * 
  * @param weak_table The global weak table.
- * @param referent The object.
- * @param referrer The weak reference.
+ * @param referent The object. 弱引用指向的对象
+ * @param referrer The weak reference. __weak指针
  */
 void
-weak_unregister_no_lock(weak_table_t *weak_table, id referent_id, 
-                        id *referrer_id)
+weak_unregister_no_lock(weak_table_t *weak_table, id referent_id, id *referrer_id)
 {
-    objc_object *referent = (objc_object *)referent_id;
-    objc_object **referrer = (objc_object **)referrer_id;
+    // weak_unregister_no_lock(&oldTable->weak_table, oldObj, location); // 注销已注册的弱引用
+    
+    objc_object *referent = (objc_object *)referent_id;   // 弱引用引用的对象
+    objc_object **referrer = (objc_object **)referrer_id; // __weak指向
 
     weak_entry_t *entry;
 
@@ -383,20 +384,21 @@ weak_unregister_no_lock(weak_table_t *weak_table, id referent_id,
  * Registers a new (object, weak pointer) pair. Creates a new weak
  * object entry if it does not exist.
  * 
- * @param weak_table The global weak table.
- * @param referent The object pointed to by the weak reference.
- * @param referrer The weak pointer address.
+ * @param weak_table The global weak table.（弱引用表）
+ * @param referent_id The object pointed to by the weak reference.（弱引用所指向的对象）
+ * @param referrer_id The weak pointer address.（__weak指针的地址，即指针变量）
  */
 id 
 weak_register_no_lock(weak_table_t *weak_table, id referent_id, 
                       id *referrer_id, bool crashIfDeallocating)
 {
+    // 弱引用所指向的对象
     objc_object *referent = (objc_object *)referent_id;
     objc_object **referrer = (objc_object **)referrer_id;
 
     if (!referent  ||  referent->isTaggedPointer()) return referent_id;
 
-    // ensure that the referenced object is viable
+    // ensure that the referenced object is viable（确保引用的对象是可行的）
     bool deallocating;
     if (!referent->ISA()->hasCustomRR()) {
         deallocating = referent->rootIsDeallocating();
@@ -424,15 +426,15 @@ weak_register_no_lock(weak_table_t *weak_table, id referent_id,
         }
     }
 
-    // now remember it and where it is being stored
+    // now remember it and where it is being stored （现在记住它和它被储存的地方）
     weak_entry_t *entry;
-    if ((entry = weak_entry_for_referent(weak_table, referent))) {
-        append_referrer(entry, referrer);
+    if ((entry = weak_entry_for_referent(weak_table, referent))) { // 如果这个 weak 变量不是第一个的话，表明这个对象此时已经存在于 weak_table_t 哈希表中了，此时只需要把这个指向它的 weak 变量的地址保存进该对象的 weak_entry_t 哈希表中
+        append_referrer(entry, referrer); // 把 __weak指针保存进对象的 weak_entry_t 哈希表中。
     } 
     else {
         weak_entry_t new_entry(referent, referrer);
         weak_grow_maybe(weak_table);
-        weak_entry_insert(weak_table, &new_entry);
+        weak_entry_insert(weak_table, &new_entry); //  弱引用所指向的对象注册进 weak_table_t 哈希表中。在对象的弱引用表中添加新的 weak_entry_t。
     }
 
     // Do not set *referrer. objc_storeWeak() requires that the 

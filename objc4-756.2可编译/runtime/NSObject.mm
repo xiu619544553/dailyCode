@@ -90,14 +90,16 @@ enum HaveOld { DontHaveOld = false, DoHaveOld = true };
 enum HaveNew { DontHaveNew = false, DoHaveNew = true };
 
 struct SideTable {
-    spinlock_t slock;
-    RefcountMap refcnts;
-    weak_table_t weak_table;
+    spinlock_t slock; // 自旋锁，用于上锁/解锁 SideTable
+    RefcountMap refcnts; // 用来存储OC对象的引用计数的 hash表(仅在未开启isa优化或在isa优化情况下isa_t的引用计数溢出时才会用到)
+    weak_table_t weak_table; // 存储对象弱引用指针的hash表。是OC中weak功能实现的核心数据结构。
 
+    // 构造函数
     SideTable() {
         memset(&weak_table, 0, sizeof(weak_table));
     }
 
+    // 析构函数
     ~SideTable() {
         _objc_fatal("Do not delete SideTable.");
     }
@@ -251,7 +253,10 @@ objc_storeStrong(id *location, id obj)
     objc_release(prev);
 }
 
-
+// HaveOld 代表是否有旧的引用，如果为true，则代表有旧的引用需要释放，这个值可能是nil。
+// HaveNew 代表是否有新的引用，如果为true，则代表要存储新的引用，这个值可能是nil。
+// 如果 CrashIfDeallocating 为true，则当newObj正在释放或newObj的类不支持弱引用时，进程将暂停。如果 CrashIfDeallocating 为 false，则存储nil。
+//
 // Update a weak variable.
 // If HaveOld is true, the variable has an existing value 
 //   that needs to be cleaned up. This value might be nil.
@@ -261,12 +266,12 @@ objc_storeStrong(id *location, id obj)
 //   deallocating or newObj's class does not support weak references. 
 //   If CrashIfDeallocating is false, nil is stored instead.
 enum CrashIfDeallocating {
-    DontCrashIfDeallocating = false, DoCrashIfDeallocating = true
+    DontCrashIfDeallocating = false,
+    DoCrashIfDeallocating = true
 };
 template <HaveOld haveOld, HaveNew haveNew,
           CrashIfDeallocating crashIfDeallocating>
-static id 
-storeWeak(id *location, objc_object *newObj)
+static id storeWeak(id *location, objc_object *newObj)   // 添加一对(weak pointer、object）到弱引用表里。其中 newObj可以传nil，表示将 weak指针置为nil
 {
     assert(haveOld  ||  haveNew);
     if (!haveNew) assert(newObj == nil);
@@ -276,36 +281,40 @@ storeWeak(id *location, objc_object *newObj)
     SideTable *oldTable;
     SideTable *newTable;
 
-    // Acquire locks for old and new values.
-    // Order by lock address to prevent lock ordering problems. 
-    // Retry if the old value changes underneath us.
+    // Acquire locks for old and new values. 为旧值和新值获取锁。
+    // Order by lock address to prevent lock ordering problems.  按锁地址订购，防止锁顺序问题。
+    // Retry if the old value changes underneath us. 如果我们下面的旧值发生了变化，请重试。
  retry:
-    if (haveOld) {
+    if (haveOld) { // 如果weak ptr之前弱引用过一个obj，则将这个obj所对应的SideTable取出，赋值给oldTable
         oldObj = *location;
         oldTable = &SideTables()[oldObj];
-    } else {
+    } else { // 如果weak ptr之前没有弱引用过一个obj，则oldTable = nil
         oldTable = nil;
     }
-    if (haveNew) {
+    if (haveNew) { // 如果weak ptr要weak引用一个新的obj，则将该obj对应的SideTable取出，赋值给newTable
         newTable = &SideTables()[newObj];
-    } else {
+    } else { // 如果weak ptr不需要引用一个新obj，则newTable = nil
         newTable = nil;
     }
 
+    // 加锁操作，防止多线程中竞争冲突
     SideTable::lockTwo<haveOld, haveNew>(oldTable, newTable);
 
+    // location 应该与 oldObj 保持一致，如果不同，说明当前的 location 已经处理过 oldObj 可是又被其他线程所修改
     if (haveOld  &&  *location != oldObj) {
         SideTable::unlockTwo<haveOld, haveNew>(oldTable, newTable);
         goto retry;
     }
 
+    // 确保弱引用对象都已经初始化isa，可以防止弱引用机制和初始化机制之间的死锁。
     // Prevent a deadlock between the weak reference machinery
     // and the +initialize machinery by ensuring that no 
     // weakly-referenced object has an un-+initialized isa.
+    // 如果有新值，判断新值所属的类是否已经初始化，如果没有初始化，则先执行初始化，防止+initialize内部调用storeWeak产生死锁
     if (haveNew  &&  newObj) {
         Class cls = newObj->getIsa();
         if (cls != previouslyInitializedClass  &&  
-            !((objc_class *)cls)->isInitialized()) 
+            !((objc_class *)cls)->isInitialized()) // 如果cls还没有初始化，先初始化，再尝试设置weak
         {
             SideTable::unlockTwo<haveOld, haveNew>(oldTable, newTable);
             class_initialize(cls, (id)newObj);
@@ -318,27 +327,33 @@ storeWeak(id *location, objc_object *newObj)
             // Instead set previouslyInitializedClass to recognize it on retry.
             previouslyInitializedClass = cls;
 
+            // 重新获取一遍newObj，这时的newObj应该已经初始化过了
             goto retry;
         }
     }
 
+    // 如果有旧值，则清除掉。
     // Clean up old value, if any.
     if (haveOld) {
-        weak_unregister_no_lock(&oldTable->weak_table, oldObj, location);
+        weak_unregister_no_lock(&oldTable->weak_table, oldObj, location); // 注销已注册的弱引用
     }
 
+    // 如果有新的值，则分配新的值。
     // Assign new value, if any.
     if (haveNew) {
+        // (1) 调用weak_register_no_lock方法，将weak ptr的地址记录到newObj对应的weak_entry_t中
         newObj = (objc_object *)
             weak_register_no_lock(&newTable->weak_table, (id)newObj, location, 
                                   crashIfDeallocating);
         // weak_register_no_lock returns nil if weak store should be rejected
 
+        // (2) 更新newObj的isa的weakly_referenced bit标志位
         // Set is-weakly-referenced bit in refcount table.
         if (newObj  &&  !newObj->isTaggedPointer()) {
             newObj->setWeaklyReferenced_nolock();
         }
 
+        // （3）*location 赋值，也就是将weak ptr直接指向了newObj。可以看到，这里并没有将newObj的引用计数+1
         // Do not set *location anywhere else. That would introduce a race.
         *location = (id)newObj;
     }
@@ -346,6 +361,7 @@ storeWeak(id *location, objc_object *newObj)
         // No new value. The storage is not changed.
     }
     
+    // 解锁，其他线程可以访问oldTable, newTable了
     SideTable::unlockTwo<haveOld, haveNew>(oldTable, newTable);
 
     return (id)newObj;
@@ -388,8 +404,8 @@ objc_storeWeakOrNil(id *location, id newObj)
 
 
 /** 
- * Initialize a fresh weak pointer to some object location. 
- * It would be used for code like: 
+ * Initialize a fresh weak pointer to some object location. （初始化指向某个对象位置的新弱指针。）
+ * It would be used for code like: （它将用于以下代码:）
  *
  * (The nil case) 
  * __weak id weakPtr;
@@ -400,8 +416,8 @@ objc_storeWeakOrNil(id *location, id newObj)
  * This function IS NOT thread-safe with respect to concurrent 
  * modifications to the weak variable. (Concurrent weak clear is safe.)
  *
- * @param location Address of __weak ptr. 
- * @param newObj Object ptr. 
+ * @param location Address of __weak ptr. （__weak指针的地址，存储指针的地址，这样便可以在最后将其指向的对象置为nil。）
+ * @param newObj Object ptr. （所引用的对象。即例子中的对象 o）
  */
 id
 objc_initWeak(id *location, id newObj)
