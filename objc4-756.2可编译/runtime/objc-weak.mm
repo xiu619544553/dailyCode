@@ -219,21 +219,33 @@ static void remove_referrer(weak_entry_t *entry, objc_object **old_referrer)
  */
 static void weak_entry_insert(weak_table_t *weak_table, weak_entry_t *new_entry)
 {
+    // weak_table_t 中哈希数组的入口
     weak_entry_t *weak_entries = weak_table->weak_entries;
     assert(weak_entries != nil);
 
+    // hash_pointer 哈希函数返回值与 mask 做与操作，防止 index 越界
     size_t begin = hash_pointer(new_entry->referent) & (weak_table->mask);
     size_t index = begin;
     size_t hash_displacement = 0;
+    
     while (weak_entries[index].referent != nil) {
+        
+        // 如果发生了哈希冲突，+1 继续往下探测（开放寻址法）
         index = (index+1) & weak_table->mask;
+        
+        // 如果 index 每次加 1 加到值等于 begin 还没有找到 weak_entry_t，则触发 bad_weak_table 致命错误
         if (index == begin) bad_weak_table(weak_entries);
+        
+        // 记录探测偏移了多远
         hash_displacement++;
     }
 
+    // 赋值
     weak_entries[index] = *new_entry;
+    // 自增
     weak_table->num_entries++;
 
+    // 如果探测偏移超过了 weak_table_t 的 max_hash_displacement，说明在 weak_table 中没有 referent 的 weak_entry_t
     if (hash_displacement > weak_table->max_hash_displacement) {
         weak_table->max_hash_displacement = hash_displacement;
     }
@@ -455,8 +467,8 @@ weak_register_no_lock(weak_table_t *weak_table, id referent_id,
     } 
     else {
         weak_entry_t new_entry(referent, referrer);
-        weak_grow_maybe(weak_table);
-        weak_entry_insert(weak_table, &new_entry); //  弱引用所指向的对象注册进 weak_table_t 哈希表中。在对象的弱引用表中添加新的 weak_entry_t。
+        weak_grow_maybe(weak_table); // 扩容
+        weak_entry_insert(weak_table, &new_entry); // 弱引用所指向的对象注册进 weak_table_t 哈希表中。在对象的弱引用表中添加新的 weak_entry_t。
     }
 
     // Do not set *referrer. objc_storeWeak() requires that the 
