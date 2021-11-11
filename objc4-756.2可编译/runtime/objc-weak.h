@@ -116,7 +116,7 @@ struct weak_entry_t {
 };
 
 /**
- * 全局弱引用表。将对象id存储为key，将weak_entry_t结构体存储为它们的value。
+ * 弱引用表。将对象id存储为key，将weak_entry_t结构体存储为它们的value。
  * The global weak references table. Stores object ids as keys,
  * and weak_entry_t structs as their values.
  */

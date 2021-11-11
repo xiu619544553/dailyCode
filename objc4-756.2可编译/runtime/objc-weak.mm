@@ -111,7 +111,7 @@ static void grow_refs_and_insert(weak_entry_t *entry,
  */
 static void append_referrer(weak_entry_t *entry, objc_object **new_referrer)
 {
-    if (! entry->out_of_line()) {
+    if (! entry->out_of_line()) { // 如果weak_entry 尚未使用动态数组，走这里
         // Try to insert inline.
         for (size_t i = 0; i < WEAK_INLINE_COUNT; i++) {
             if (entry->inline_referrers[i] == nil) {
@@ -120,6 +120,7 @@ static void append_referrer(weak_entry_t *entry, objc_object **new_referrer)
             }
         }
 
+        // 如果inline_referrers的位置已经存满了，则要转型为referrers，做动态数组。
         // Couldn't insert inline. Allocate out of line.
         weak_referrer_t *new_referrers = (weak_referrer_t *)
             calloc(WEAK_INLINE_COUNT, sizeof(weak_referrer_t));
@@ -135,22 +136,30 @@ static void append_referrer(weak_entry_t *entry, objc_object **new_referrer)
         entry->max_hash_displacement = 0;
     }
 
+    // 对于动态数组的附加处理：
+    // 断言： 此时一定使用的动态数组
     assert(entry->out_of_line());
 
-    if (entry->num_refs >= TABLE_SIZE(entry) * 3/4) {
-        return grow_refs_and_insert(entry, new_referrer);
+    
+    if (entry->num_refs >= TABLE_SIZE(entry) * 3/4) { // 如果动态数组中元素个数大于或等于数组位置总空间的3/4，则扩展数组空间为当前长度的一倍
+        return grow_refs_and_insert(entry, new_referrer); // 扩容，并插入
     }
-    size_t begin = w_hash_pointer(new_referrer) & (entry->mask);
-    size_t index = begin;
-    size_t hash_displacement = 0;
+    
+    // 如果不需要扩容，直接插入到weak_entry中
+    // 注意，weak_entry是一个哈希表，key：w_hash_pointer(new_referrer) value: new_referrer
+
+    size_t begin = w_hash_pointer(new_referrer) & (entry->mask); // '& (entry->mask)' 确保了 begin的位置只能大于或等于 数组的长度
+    size_t index = begin; // 初始的hash index
+    size_t hash_displacement = 0; // 用于记录hash冲突的次数，也就是hash再位移的次数
     while (entry->referrers[index] != nil) {
         hash_displacement++;
-        index = (index+1) & entry->mask;
-        if (index == begin) bad_weak_table(entry);
+        index = (index+1) & entry->mask;  // index + 1, 移到下一个位置，再试一次能否插入。（这里要考虑到entry->mask取值，一定是：0x111, 0x1111, 0x11111, ... ，因为数组每次都是*2增长，即8， 16， 32，对应动态数组空间长度-1的mask，也就是前面的取值。）
+        if (index == begin) bad_weak_table(entry); // index == begin 意味着数组绕了一圈都没有找到合适位置，这时候一定是出了什么问题。
     }
-    if (hash_displacement > entry->max_hash_displacement) {
+    if (hash_displacement > entry->max_hash_displacement) { // 记录最大的hash冲突次数, max_hash_displacement意味着: 我们尝试至多max_hash_displacement次，肯定能够找到object对应的hash位置
         entry->max_hash_displacement = hash_displacement;
     }
+    // 将ref存入hash数组，同时，更新元素个数num_refs
     weak_referrer_t &ref = entry->referrers[index];
     ref = new_referrer;
     entry->num_refs++;
@@ -296,7 +305,7 @@ static void weak_entry_remove(weak_table_t *weak_table, weak_entry_t *entry)
 
 
 /** 
- * Return the weak reference table entry for the given referent.  返回给定引用的弱引用表项。（根据给定的弱引用引用的对象，返回它所在的 weak_entry_t）
+ * Return the weak reference table entry for the given referent.  返回给定引用的弱引用表项。（根据给定的弱引用引用的对象，返回它所在的 weak_entry_t，如果没有则返回NULL）
  * If there is no entry for referent, return NULL. 
  * Performs a lookup.
  *
@@ -310,22 +319,35 @@ weak_entry_for_referent(weak_table_t *weak_table, objc_object *referent)
 {
     assert(referent);
 
+    // weak_table_t 中哈希数组的入口
     weak_entry_t *weak_entries = weak_table->weak_entries;
 
     if (!weak_entries) return nil;
 
+    // hash_pointer 哈希函数返回值与 mask 做与操作，防止 index 越界，这里的 & mask 操作很巧妙，后面会进行详细讲解。
     size_t begin = hash_pointer(referent) & weak_table->mask;
     size_t index = begin;
     size_t hash_displacement = 0;
+    
+    // 如果未发生哈希冲突的话，这里 weak_table->weak_entries[index] 就是要找的 weak_entry_t 了
     while (weak_table->weak_entries[index].referent != referent) {
+        
+        // 如果发生了哈希冲突，+1 继续往下探测（开放寻址法）
         index = (index+1) & weak_table->mask;
+        
+        // 如果 index 每次加 1 加到值等于 begin 还没有找到 weak_entry_t，则触发 bad_weak_table 致命错误
         if (index == begin) bad_weak_table(weak_table->weak_entries);
+        
+        // 记录探测偏移了多远
         hash_displacement++;
+        
+        // 如果探测偏移超过了 weak_table_t 的 max_hash_displacement，说明在 weak_table 中没有 referent 的 weak_entry_t，则直接返回 nil
         if (hash_displacement > weak_table->max_hash_displacement) {
             return nil;
         }
     }
     
+    // 到这里遍找到了 weak_entry_t，然后取它的地址并返回。
     return &weak_table->weak_entries[index];
 }
 
@@ -381,12 +403,12 @@ weak_unregister_no_lock(weak_table_t *weak_table, id referent_id, id *referrer_i
 }
 
 /** 
- * Registers a new (object, weak pointer) pair. Creates a new weak
+ * Registers a new (object, weak pointer) pair. Creates a new weak 注册一个新的(对象、弱指针)对。如果不存在，则创建一个新的弱对象项。
  * object entry if it does not exist.
  * 
  * @param weak_table The global weak table.（弱引用表）
  * @param referent_id The object pointed to by the weak reference.（弱引用所指向的对象）
- * @param referrer_id The weak pointer address.（__weak指针的地址，即指针变量）
+ * @param referrer_id The weak pointer address.（weak弱引用指针）
  */
 id 
 weak_register_no_lock(weak_table_t *weak_table, id referent_id, 

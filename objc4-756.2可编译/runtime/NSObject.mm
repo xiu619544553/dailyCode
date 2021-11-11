@@ -90,9 +90,11 @@ enum HaveOld { DontHaveOld = false, DoHaveOld = true };
 enum HaveNew { DontHaveNew = false, DoHaveNew = true };
 
 struct SideTable {
-    spinlock_t slock; // 自旋锁，用于上锁/解锁 SideTable
+    spinlock_t slock; // 每张 SideTable 都自带一自旋锁，用于上锁/解锁 SideTable
     RefcountMap refcnts; // 用来存储OC对象的引用计数的 hash表(仅在未开启isa优化或在isa优化情况下isa_t的引用计数溢出时才会用到)
-    weak_table_t weak_table; // 存储对象弱引用指针的hash表。是OC中weak功能实现的核心数据结构。
+    // 存储对象弱引用指针的hash表。是OC中weak功能实现的核心数据结构。
+    // 将对象id存储为key，将weak_entry_t结构体存储为value。如果对象id有弱引用存在，则可从中找到对象的 weak_entry_t
+    weak_table_t weak_table;
 
     // 构造函数
     SideTable() {
@@ -109,9 +111,19 @@ struct SideTable {
     void forceReset() { slock.forceReset(); }
 
     // Address-ordered lock discipline for a pair of side tables.
-
+    
+    // HaveOld 和 HaveNew 分别表示 lock1 和 lock2 是否存在，
+    // 表示 __weak 变量是否指向有旧值和目前要指向的新值。
+    
+    // lock1 代表旧值对象所处的 SideTable
+    // lock2 代表新值对象所处的 SideTable
+    
+    // lockTwo 是根据谁有值就调谁的锁，触发加锁 (C++ 方法重载)，
+    // 如果两个都有值，那么两个都加锁，并且根据谁低，先给谁加锁，然后另一个后加锁
     template<HaveOld, HaveNew>
     static void lockTwo(SideTable *lock1, SideTable *lock2);
+    
+    // 同上，对 slock 解锁
     template<HaveOld, HaveNew>
     static void unlockTwo(SideTable *lock1, SideTable *lock2);
 };
@@ -291,6 +303,7 @@ static id storeWeak(id *location, objc_object *newObj)   // 添加一对(weak po
     } else { // 如果weak ptr之前没有弱引用过一个obj，则oldTable = nil
         oldTable = nil;
     }
+    
     if (haveNew) { // 如果weak ptr要weak引用一个新的obj，则将该obj对应的SideTable取出，赋值给newTable
         newTable = &SideTables()[newObj];
     } else { // 如果weak ptr不需要引用一个新obj，则newTable = nil
@@ -300,7 +313,7 @@ static id storeWeak(id *location, objc_object *newObj)   // 添加一对(weak po
     // 加锁操作，防止多线程中竞争冲突
     SideTable::lockTwo<haveOld, haveNew>(oldTable, newTable);
 
-    // location 应该与 oldObj 保持一致，如果不同，说明当前的 location 已经处理过 oldObj 可是又被其他线程所修改
+    // （弱引用指针引用着一个对象 && 弱引用引用的指针与当前对象不同），说明当前的 location 已经处理过， oldObj 可是又被其他线程所修改
     if (haveOld  &&  *location != oldObj) {
         SideTable::unlockTwo<haveOld, haveNew>(oldTable, newTable);
         goto retry;
@@ -416,8 +429,8 @@ objc_storeWeakOrNil(id *location, id newObj)
  * This function IS NOT thread-safe with respect to concurrent 
  * modifications to the weak variable. (Concurrent weak clear is safe.)
  *
- * @param location Address of __weak ptr. （__weak指针的地址，存储指针的地址，这样便可以在最后将其指向的对象置为nil。）
- * @param newObj Object ptr. （所引用的对象。即例子中的对象 o）
+ * @param location Address of __weak ptr. （弱引用指针（当该指针指向的对象被释放时，该指针会被置为 `nil`））
+ * @param newObj Object ptr. （弱引用指针指向的对象，即示例代码中的对象`o`）
  */
 id
 objc_initWeak(id *location, id newObj)
