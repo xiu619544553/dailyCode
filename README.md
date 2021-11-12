@@ -33,7 +33,20 @@
 - 8.为什么已经有了 `ARC` ,但还是需要 `@AutoreleasePool` 的存在？
 - 9.`__weak` 属性修饰的变量，如何实现在变量没有强引用后自动置为 `nil`？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/9.__weak.md)
 - 10.`__strong`原理
-- 14.野指针和悬垂指针的区别？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/14.野指针和悬垂指针的区别.md)
+- 11.说一下对 `retain`,`copy`,`assign`,`weak`,`_Unsafe_Unretain` 关键字的理解。
+- 12.`ARC` 在编译时做了哪些工作？
+- 13.`ARC` 在运行时做了哪些工作？
+- 14.函数返回一个对象时，会对对象 `autorelease` 么？为什么？
+- 15.野指针和悬垂指针的区别？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/15.野指针和悬垂指针的区别.md)
+- 16.内存管理默认的关键字是什么？
+- 17.内存中的5大区分别是什么？
+- 18.是否了解 `深拷贝` 和 `浅拷贝` 的概念，集合类深拷贝如何实现？
+- 19.`BAD_ACCESS` 在什么情况下出现? [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/19.BAD_ACCESS.md)
+- 20.讲一下 `@dynamic` 关键字？
+- 21.`@autoreleasrPool` 的释放时机？
+- 22.`retain`、`release` 的实现机制？
+- 23.简述 `Dealloc` 的实现机制？
+- 24.在 `Obj-C` 中，如何检测内存泄漏？你知道哪些方式？
 
 
 ## Runtime
