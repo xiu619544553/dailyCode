@@ -571,7 +571,7 @@ self.fetchUserNameHandler(10);
 
 #### 2、`__unsafe_unretained`（用的少）
 
-__unsafe_unretained与__weak的作用是一样的，但是__unsafe_unretained指向的对象被释放后，指针不会依然会指向被释放的内存，当在使用该指针时，会出现野指针问题。__unsafe_unretained的性能优于__weak，因为__weak在对象所在内存被释放时，会主动将__weak修饰的指针置为nil，会去遍历weak表。如果你能清晰的把控 __unsafe_unretained修饰的对象的生命周期，可以使用该修饰词。
+`__unsafe_unretained` 与 `__weak` 的作用是一样的，但是 `__unsafe_unretained` 指向的对象被释放后，指针依然会指向被释放的内存，当在使用该指针时，会出现野指针问题。`__unsafe_unretained` 的性能优于 `__weak` ，因为`__weak` 在对象所在内存被释放时，会主动将 `__weak` 修饰的指针置为 `nil` ，会去遍历 weak表。如果你能清晰的把控 `__unsafe_unretained` 修饰的对象的生命周期，可以使用该修饰词。
 
 代码示例：
 ```
