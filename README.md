@@ -40,7 +40,7 @@
 - 15.野指针和悬垂指针的区别？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/15.野指针和悬垂指针的区别.md)
 - 16.内存管理默认的关键字是什么？
 - 17.内存中的5大区分别是什么？
-- 18.是否了解 `深拷贝` 和 `浅拷贝` 的概念，集合类深拷贝如何实现？
+- 18.是否了解 `深拷贝` 和 `浅拷贝` 的概念，集合类深拷贝如何实现？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/18.深拷贝和浅拷贝.md)
 - 19.`BAD_ACCESS` 在什么情况下出现? [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/19.BAD_ACCESS.md)
 - 20.讲一下 `@dynamic` 关键字？
 - 21.`@autoreleasrPool` 的释放时机？
