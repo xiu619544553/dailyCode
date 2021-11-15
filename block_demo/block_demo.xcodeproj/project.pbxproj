@@ -61,6 +61,10 @@
 		CE1227FC2734DD2A00949A22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE122805273518AB00949A22 /* __block修饰局部变量 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "__block修饰局部变量"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE122807273518AB00949A22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE4E40102741F7810002698D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CE4E40122741F8880002698D /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CE4E401427422AED0002698D /* main2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main2.cpp; sourceTree = "<group>"; };
+		CE4E401527422AED0002698D /* main1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main1.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +124,8 @@
 		CE08DEE82733B486000EF215 /* block_demo */ = {
 			isa = PBXGroup;
 			children = (
+				CE4E401527422AED0002698D /* main1.cpp */,
+				CE4E401427422AED0002698D /* main2.cpp */,
 				CE08DEE92733B486000EF215 /* main.m */,
 			);
 			path = block_demo;
@@ -136,6 +142,7 @@
 		CE1227FB2734DD2A00949A22 /* block捕获局部变量 */ = {
 			isa = PBXGroup;
 			children = (
+				CE4E40102741F7810002698D /* main.cpp */,
 				CE1227FC2734DD2A00949A22 /* main.m */,
 			);
 			path = "block捕获局部变量";
@@ -145,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				CE122807273518AB00949A22 /* main.m */,
+				CE4E40122741F8880002698D /* main.cpp */,
 			);
 			path = "__block修饰局部变量";
 			sourceTree = "<group>";

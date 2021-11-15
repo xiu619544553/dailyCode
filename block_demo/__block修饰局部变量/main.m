@@ -7,29 +7,31 @@
 
 #import <Foundation/Foundation.h>
 
+typedef void (^MyBlock)(void);
+
 int main(int argc, const char * argv[]) {
     
-    __block int x = 2;
+    __block int age = 10;
     
-    NSLog(@"x1---%d---%p", x, &x);
+    NSLog(@"1---%d---%p", age, &age);
     void (^tkBlock)(void) = ^void() {
-        x = 3;
-        NSLog(@"x2---%d---%p", x, &x);
+        age = 20;
+        NSLog(@"2---%d---%p", age, &age);
     };
     
     // 执行block
     tkBlock();
     
     // 打印block返回值
-    NSLog(@"x3---%d---%p", x, &x);
+    NSLog(@"3---%d---%p", age, &age);
     
     /*
      输出日志：
-     2021-11-05 11:59:41.994375+0800 block_demo[10535:130866] x1---2---0x7ffeefbff448
-     2021-11-05 11:59:41.994889+0800 block_demo[10535:130866] x2---3---0x10060e438
-     2021-11-05 11:59:41.995013+0800 block_demo[10535:130866] x3---3---0x10060e438
+     2021-11-15 10:06:31.683336+0800 __block修饰局部变量[14738:85460] 1---10---0x7ffeefbff438
+     2021-11-15 10:06:31.684054+0800 __block修饰局部变量[14738:85460] 2---20---0x10076ca98
+     2021-11-15 10:06:31.684180+0800 __block修饰局部变量[14738:85460] 3---20---0x10076ca98
      
-     结论：__block把变量x，从栈存储位置移动到了堆。
+     结论：变量 age 从栈存储位置移动到了堆。
      */
     
     return 0;

@@ -9,27 +9,16 @@
 
 // MARK: block访问局部变量.cpp
 
+typedef void (^MyBlock)(void);
+
 int main(int argc, const char * argv[]) {
     
-    // 声明一个局部变量用于 block的捕获
-    int x = 2;
-    
-    // 声明一个局部变量NSNumber对象用于block捕获
-    NSNumber *number = @(3);
-    
-    
-    NSLog(@"x1---%d---%p", x, &x);
-    
-    // 声明一个名字为bdBlock，无参数，返回值为浮点型的block
-    float (^bdBlock)(void) = ^float() {
-        return x * number.floatValue;
+    int age = 10;
+    MyBlock block = ^{
+        NSLog(@"age = %d", age);
     };
-    
-    // 执行block
-    float res = bdBlock();
-    
-    // 打印block返回值
-    NSLog(@"res is %.2f", res);
+    age = 18;
+    block();
     
     return 0;
 }
