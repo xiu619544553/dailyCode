@@ -42,7 +42,7 @@
 - 17.内存中的5大区分别是什么？
 - 18.是否了解 `深拷贝` 和 `浅拷贝` 的概念，集合类深拷贝如何实现？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/18.深拷贝和浅拷贝.md)
 - 19.`BAD_ACCESS` 在什么情况下出现? [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/19.BAD_ACCESS.md)
-- 20.讲一下 `@dynamic` 关键字？
+- 20.`@dynamic` 与 `@synthesize` 区别？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/20.@dynamic与@synthesize区别.md)
 - 21.`@autoreleasrPool` 的释放时机？
 - 22.`retain`、`release` 的实现机制？
 - 23.简述 `Dealloc` 的实现机制？
@@ -56,13 +56,19 @@
 ## 网络
 ## 多线程
 - 1.锁
+
 ## 消息传递的方式
+
+#### Block
 - 1.`Block`是什么？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/消息传递的方式/block.md)
 - 2.`Block` 的内存管理。[链接](https://github.com/xiu619544553/dailyCode/blob/master/消息传递的方式/block.md)
 - 3.`Block` 自动截取变量。[链接](https://github.com/xiu619544553/dailyCode/blob/master/消息传递的方式/block.md)
 - 4.`Block` 处理循环引用。[链接](https://github.com/xiu619544553/dailyCode/blob/master/消息传递的方式/block.md)
 - 5.`Block` 有几种类型？分别是什么？[链接](https://github.com/xiu619544553/dailyCode/blob/master/消息传递的方式/block.md)
 - 6.`Block` 和 `函数指针` 的区别? [链接](https://github.com/xiu619544553/dailyCode/blob/master/消息传递的方式/block.md)
+
+#### KVO
+- 1.`KVO`的实现机制。
 
 ## 项目架构
 
