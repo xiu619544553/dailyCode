@@ -52,25 +52,25 @@
 ## Runtime
 
 ## Runloop
-- 1.`Runloop` 和线程的关系？ - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/1.第一题.md)
-- 2.讲一下 `Runloop` 的 `Mode`?(越详细越好)  - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/2.第二题.md)
-- 3.讲一下 `Observer` ？（Mode中的重点） - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/3.第三题.md)
-- 4.讲一下 `Runloop` 的内部实现逻辑？（运行过程） - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/4.第四题.md)
+- 1.`Runloop` 和线程的关系？
+- 2.讲一下 `Runloop` 的 `Mode`?(越详细越好)
+- 3.讲一下 `Observer` ？（Mode中的重点） 
+- 4.讲一下 `Runloop` 的内部实现逻辑？（运行过程） 
 - 5.你所知的哪些三方框架使用了 `Runloop`?（AFNetworking、Texture 等）
-- 6.`autoreleasePool` 在何时被释放？ - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/6.第六题.md)
-- 7.解释一下 `事件响应` 的过程？ - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/7.第七题.md)
-- 8.解释一下 `手势识别` 的过程？ - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/8.第八题.md)
-- 9.解释一下 `GCD` 在 `Runloop` 中的使用？ - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/9.第九题.md)
-- 10.解释一下 `NSTimer`，以及 `NSTimer` 的循环引用。 - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/10.第十题.md)
-- 11.`AFNetworking` 中如何运用 `Runloop`? - [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/11.第十一题.md)
-- 12.`PerformSelector` 的实现原理？- [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/12.第十二题.md)
-- 13.利用 `runloop` 解释一下页面的渲染的过程？- [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/13.第十三题.md)
-- 14.如何使用 `Runloop` 实现一个常驻线程？这种线程一般有什么作用？- [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/14.第十四题.md)
-- 15.为什么 `NSTimer` 有时候不好使？（不同类型的Mode）- [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/15.第十五题.md)
-- 16.`PerformSelector:afterDelay:`这个方法在子线程中是否起作用？为什么？怎么解决？- [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/16.第十六题.md)
-- 17.什么是异步绘制？- [链接](https://github.com/liberalisman/iOS-InterviewQuestion-collection/blob/master/Runloop/17.第十七题.md)
+- 6.`autoreleasePool` 在何时被释放？ 
+- 7.解释一下 `事件响应` 的过程？ 
+- 8.解释一下 `手势识别` 的过程？ 
+- 9.解释一下 `GCD` 在 `Runloop` 中的使用？ 
+- 10.解释一下 `NSTimer`，以及 `NSTimer` 的循环引用。
+- 11.`AFNetworking` 中如何运用 `Runloop`? 
+- 12.`PerformSelector` 的实现原理？
+- 13.利用 `runloop` 解释一下页面的渲染的过程？
+- 14.如何使用 `Runloop` 实现一个常驻线程？这种线程一般有什么作用？
+- 15.为什么 `NSTimer` 有时候不好使？（不同类型的Mode）
+- 16.`PerformSelector:afterDelay:`这个方法在子线程中是否起作用？为什么？怎么解决？
+- 17.什么是异步绘制？
 - 18.如何检测 `App` 运行过程中是否卡顿？
-- 19.NSTimer 和 CADisplayLink 存在的问题？替代方案？ - [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/19.NSTimer 和 CADisplayLink 存在的问题.md)
+- 19.NSTimer 和 CADisplayLink 存在的问题？替代方案？[链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/19.NSTimer 和 CADisplayLink 存在的问题.md)
 
 ## UIKit
 ## Foundation
