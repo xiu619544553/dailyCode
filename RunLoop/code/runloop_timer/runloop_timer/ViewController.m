@@ -21,17 +21,17 @@
  
     [self.view addSubview:self.tableView];
     
-    // UITableView滑动时，定时器会暂停
-//    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-//        NSLog(@"123");
-//    }];
+// UITableView滑动时，定时器会暂停
+[NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    NSLog(@"123");
+}];
+
     
-    
-    // UITableView滑动时，定时器正常计时
-//    NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-//        NSLog(@"123");
-//    }];
-//    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
+// UITableView滑动时，定时器正常计时
+NSTimer *timer = [NSTimer timerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    NSLog(@"123");
+}];
+[[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 - (void)viewDidLayoutSubviews {

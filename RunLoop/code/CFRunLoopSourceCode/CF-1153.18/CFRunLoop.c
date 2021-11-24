@@ -524,13 +524,13 @@ typedef struct __CFRunLoopMode *CFRunLoopModeRef;
 struct __CFRunLoopMode {
     CFRuntimeBase _base;
     pthread_mutex_t _lock;	/* must have the run loop locked before locking this */
-    CFStringRef _name;
+    CFStringRef _name;              // mode 类型，比如：KCFRunLoopDefaultMode
     Boolean _stopped;
     char _padding[3];
-    CFMutableSetRef _sources0;
-    CFMutableSetRef _sources1;
-    CFMutableArrayRef _observers;
-    CFMutableArrayRef _timers;
+    CFMutableSetRef _sources0;      // CFRunLoopSourceRef
+    CFMutableSetRef _sources1;      // CFRunLoopSourceRef
+    CFMutableArrayRef _observers;   // CFRunLoopObserverRef
+    CFMutableArrayRef _timers;      // CFRunLoopTimerRef
     CFMutableDictionaryRef _portToV1SourceMap;
     __CFPortSet _portSet;
     CFIndex _observerMask;
@@ -636,7 +636,7 @@ typedef struct _per_run_data {
 
 struct __CFRunLoop {
     CFRuntimeBase _base;
-    pthread_mutex_t _lock;			/* locked for accessing mode list */
+    pthread_mutex_t _lock;			/* locked for accessing mode list 访问模式集合的锁 */
     __CFPort _wakeUpPort;			// used for CFRunLoopWakeUp
     Boolean _unused;
     volatile _per_run_data *_perRunData; // reset for runs of the run loop  重置 runloop 的运行
@@ -986,9 +986,9 @@ struct __CFRunLoopObserver {
     pthread_mutex_t _lock;
     CFRunLoopRef _runLoop;
     CFIndex _rlCount;
-    CFOptionFlags _activities;		/* immutable */
+    CFOptionFlags _activities;		/* immutable 监听的活动状态 */
     CFIndex _order;			/* immutable */
-    CFRunLoopObserverCallBack _callout;	/* immutable */
+    CFRunLoopObserverCallBack _callout;	/* immutable 回调函数，当 RunLoop状态发生变化时，会回调给该函数 */
     CFRunLoopObserverContext _context;	/* immutable, except invalidation */
 };
 
@@ -2701,7 +2701,7 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
 /// @param rl RunLoop
 /// @param modeName 模式名称
 /// @param seconds loop 超时时间
-/// @param returnAfterSourceHandled true: RunLoop 处理完事件就退出  false:一直运行直到超时或者被手动终止
+/// @param returnAfterSourceHandled true:RunLoop 处理完事件就退出。false:一直运行直到超时或者被手动终止
 SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterval seconds, Boolean returnAfterSourceHandled) {     /* DOES CALLOUT */
     
     CHECK_FOR_FORK();
