@@ -639,13 +639,13 @@ struct __CFRunLoop {
     pthread_mutex_t _lock;			/* locked for accessing mode list */
     __CFPort _wakeUpPort;			// used for CFRunLoopWakeUp
     Boolean _unused;
-    volatile _per_run_data *_perRunData;              // reset for runs of the run loop
+    volatile _per_run_data *_perRunData; // reset for runs of the run loop  重置 runloop 的运行
     pthread_t _pthread;               // RunLoop与线程是一一对应关系
     uint32_t _winthread;
     CFMutableSetRef _commonModes;     // 存储着 NSString 对象的集合（Mode 的名称）
-    CFMutableSetRef _commonModeItems; // 存储着被标记为通用模式的Source0/Source1/Timer/Observer
-    CFRunLoopModeRef _currentMode;    // RunLoop当前的运行模式
-    CFMutableSetRef _modes;           // 存储着RunLoop所有的 Mode（CFRunLoopModeRef）模式
+    CFMutableSetRef _commonModeItems; // 存储着被标记为通用模式的 Source0/Source1/Timer/Observer
+    CFRunLoopModeRef _currentMode;    // runloop当前的运行模式
+    CFMutableSetRef _modes;           // 存储着 runloop 所有的 Mode（CFRunLoopModeRef）模式
     struct _block_item *_blocks_head;
     struct _block_item *_blocks_tail;
     CFAbsoluteTime _runTime;
