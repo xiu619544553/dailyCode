@@ -70,7 +70,9 @@
 - 16.`PerformSelector:afterDelay:`这个方法在子线程中是否起作用？为什么？怎么解决？
 - 17.什么是异步绘制？
 - 18.如何检测 `App` 运行过程中是否卡顿？
-- 19.NSTimer 和 CADisplayLink 存在的问题？替代方案？[链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/19.NSTimer和CADisplayLink存在的问题.md)
+- 19.NSTimer 和 CADisplayLink 存在的问题？替代方案？[链接](https://github.com/xiu619544553/dailyCode/blob/master/runloop/19.NSTimer和CADisplayLink存在的问题.md)
+内存管理/20.@dynamic与@synthesize区别.md
+
 
 ## UIKit
 ## Foundation
