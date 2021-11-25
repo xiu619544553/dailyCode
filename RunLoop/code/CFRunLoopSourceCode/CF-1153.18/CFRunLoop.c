@@ -1355,7 +1355,7 @@ static CFMutableDictionaryRef __CFRunLoops = NULL;
 /// 访问 loopsDic 时的锁
 static CFLock_t loopsLock = CFLockInit;
 
-// should only be called by Foundation
+// should only be called by Foundation 仅仅在 Foundation 中调用
 // t==0 is a synonym for "main thread" that always works
 
 /// 获取线程 t 对应的 CFRunLoopRef 对象
@@ -1369,7 +1369,8 @@ CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
 
     // 加锁
     __CFLock(&loopsLock);
-    if (!__CFRunLoops) { // 如果RunLoop全局字典为空，则去创建RunLoop全局字典。给定的 key是mainThread，value是mainRunLoop。
+    if (!__CFRunLoops) {
+        // 第一次进入时，初始化全局Dic，并先为主线程创建一个 RunLoop。
         __CFUnlock(&loopsLock);
         CFMutableDictionaryRef dict = CFDictionaryCreateMutable(kCFAllocatorSystemDefault, 0, NULL, &kCFTypeDictionaryValueCallBacks);
         CFRunLoopRef mainLoop = __CFRunLoopCreate(pthread_main_thread_np());
@@ -1381,14 +1382,17 @@ CF_EXPORT CFRunLoopRef _CFRunLoopGet0(pthread_t t) {
         __CFLock(&loopsLock);
     }
     
+    // 直接从 Dictionary 里获取。
     CFRunLoopRef loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
     __CFUnlock(&loopsLock);
     
     if (!loop) {
+        // 取不到时，创建一个
         CFRunLoopRef newLoop = __CFRunLoopCreate(t);
         __CFLock(&loopsLock);
         loop = (CFRunLoopRef)CFDictionaryGetValue(__CFRunLoops, pthreadPointer(t));
         if (!loop) {
+            // 注册一个回调，当线程销毁时，顺便也销毁其对应的 RunLoop。
             CFDictionarySetValue(__CFRunLoops, pthreadPointer(t), newLoop);
             loop = newLoop;
         }
@@ -3206,6 +3210,7 @@ void CFRunLoopAddTimer(CFRunLoopRef rl, CFRunLoopTimerRef rlt, CFStringRef modeN
     __CFRunLoopLock(rl);
     if (modeName == kCFRunLoopCommonModes) {      // 如果是 CommonModes
         
+        // 拷贝 commonModes
         CFSetRef set = rl->_commonModes ? CFSetCreateCopy(kCFAllocatorSystemDefault, rl->_commonModes) : NULL;
         if (NULL == rl->_commonModeItems) {       // 懒加载，判断 _commonModeItems 是否为空，是的话创建
             rl->_commonModeItems = CFSetCreateMutable(kCFAllocatorSystemDefault, 0, &kCFTypeSetCallBacks);
