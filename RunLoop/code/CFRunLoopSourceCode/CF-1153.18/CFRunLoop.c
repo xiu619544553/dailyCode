@@ -2429,7 +2429,7 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
         // 通知 Observers：即将处理 Timers
         if (rlm->_observerMask & kCFRunLoopBeforeTimers) __CFRunLoopDoObservers(rl, rlm, kCFRunLoopBeforeTimers);
         
-        // // 通知 Observers：即将处理 Sources
+        // 通知 Observers：即将处理 Sources
         if (rlm->_observerMask & kCFRunLoopBeforeSources) __CFRunLoopDoObservers(rl, rlm, kCFRunLoopBeforeSources);
         
         // 处理 Blocks
@@ -2448,7 +2448,7 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
 #if DEPLOYMENT_TARGET_MACOSX || DEPLOYMENT_TARGET_EMBEDDED || DEPLOYMENT_TARGET_EMBEDDED_MINI
             msg = (mach_msg_header_t *)msg_buffer;
             
-            // 判断有无 Source1
+            // 判断有无 Source1（与端口有关 mach port）
             if (__CFRunLoopServiceMachPort(dispatchPort, &msg, sizeof(msg_buffer), &livePort, 0, &voucherState, NULL)) {
                 // 如果有 Source1，就跳转到 handle_msg
                 goto handle_msg;
@@ -2491,6 +2491,7 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
             msg = (mach_msg_header_t *)msg_buffer;
             
             // ⚠️休眠，等待消息来唤醒线程
+            // __CFRunLoopServiceMachPort 里的 mach_msg 是内核层面的 API，没有消息就让线程休眠，有消息就唤醒线程，这里的休眠是完全不做事情，一行汇编都不会执行
             __CFRunLoopServiceMachPort(waitSet, &msg, sizeof(msg_buffer), &livePort, poll ? 0 : TIMEOUT_INFINITY, &voucherState, &voucherCopy);
             
             if (modeQueuePort != MACH_PORT_NULL && livePort == modeQueuePort) {
@@ -2517,6 +2518,7 @@ static int32_t __CFRunLoopRun(CFRunLoopRef rl, CFRunLoopModeRef rlm, CFTimeInter
         msg = (mach_msg_header_t *)msg_buffer;
         
         // ⚠️休眠，等待消息来唤醒线程
+        // __CFRunLoopServiceMachPort 里的 mach_msg 是内核层面的 API，没有消息就让线程休眠，有消息就唤醒线程，这里的休眠是完全不做事情，一行汇编都不会执行
         __CFRunLoopServiceMachPort(waitSet, &msg, sizeof(msg_buffer), &livePort, poll ? 0 : TIMEOUT_INFINITY, &voucherState, &voucherCopy);
 #endif
         
