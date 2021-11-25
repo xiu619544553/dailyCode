@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1B7CCE274F6F5400F62959 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1B7CCD274F6F5400F62959 /* SecondViewController.m */; };
 		CEE1FF68274B6476002171AB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE1FF67274B6476002171AB /* AppDelegate.m */; };
 		CEE1FF6E274B6476002171AB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE1FF6D274B6476002171AB /* ViewController.m */; };
 		CEE1FF73274B647A002171AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEE1FF72274B647A002171AB /* Assets.xcassets */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1B7CCC274F6F5400F62959 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		CE1B7CCD274F6F5400F62959 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		CEE1FF63274B6476002171AB /* RunLoopTestDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RunLoopTestDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEE1FF66274B6476002171AB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CEE1FF67274B6476002171AB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,6 +63,8 @@
 				CEE1FF67274B6476002171AB /* AppDelegate.m */,
 				CEE1FF6C274B6476002171AB /* ViewController.h */,
 				CEE1FF6D274B6476002171AB /* ViewController.m */,
+				CE1B7CCC274F6F5400F62959 /* SecondViewController.h */,
+				CE1B7CCD274F6F5400F62959 /* SecondViewController.m */,
 				CEE1FF72274B647A002171AB /* Assets.xcassets */,
 				CEE1FF74274B647A002171AB /* LaunchScreen.storyboard */,
 				CEE1FF77274B647A002171AB /* Info.plist */,
@@ -137,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1B7CCE274F6F5400F62959 /* SecondViewController.m in Sources */,
 				CEE1FF6E274B6476002171AB /* ViewController.m in Sources */,
 				CEE1FF68274B6476002171AB /* AppDelegate.m in Sources */,
 				CEE1FF79274B647A002171AB /* main.m in Sources */,
