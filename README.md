@@ -62,7 +62,7 @@
 - 7.解释一下 `手势识别` 的过程？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/7.解释一下手势识别的过程.md)
 - 8.解释一下 `GCD` 在 `Runloop` 中的使用？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/8.解释一下GCD在Runloop中的使用.md) 
 - 9.解释一下 `NSTimer`，以及 `NSTimer` 的循环引用。 [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/9.解释一下NSTimer以及NSTimer的循环引用.md) 
-- 10.`PerformSelector` 的实现原理？
+- 10.`performSelector` 相关方法的实现原理 [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/10.performSelector相关方法的实现原理.md) 
 - 11.利用 `runloop` 解释一下页面的渲染的过程？
 - 12.如何使用 `Runloop` 实现一个常驻线程？这种线程一般有什么作用？
 - 13.为什么 `NSTimer` 有时候不好使？（不同类型的Mode）
