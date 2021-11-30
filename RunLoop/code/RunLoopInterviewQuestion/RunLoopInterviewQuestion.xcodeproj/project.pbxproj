@@ -16,9 +16,9 @@
 		CED7D0852755BD65006D6E88 /* PerformSelectorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D0792755BD64006D6E88 /* PerformSelectorVC.m */; };
 		CED7D0862755BD65006D6E88 /* WrapTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D07C2755BD65006D6E88 /* WrapTimer.m */; };
 		CED7D0872755BD65006D6E88 /* TimerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D07D2755BD65006D6E88 /* TimerViewController.m */; };
-		CED7D0882755BD65006D6E88 /* TKThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D0812755BD65006D6E88 /* TKThread.m */; };
-		CED7D0892755BD65006D6E88 /* ThreadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D0842755BD65006D6E88 /* ThreadViewController.m */; };
-		CED7D08C2755F42C006D6E88 /* HHThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D08B2755F42C006D6E88 /* HHThread.m */; };
+		CED7D08C2755F42C006D6E88 /* TKThread.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D08B2755F42C006D6E88 /* TKThread.m */; };
+		CED7D09027561BE3006D6E88 /* ThreadKeepAliveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED7D08E27561BE3006D6E88 /* ThreadKeepAliveViewController.m */; };
+		CED7D09127561BE3006D6E88 /* ThreadKeepAliveViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CED7D08F27561BE3006D6E88 /* ThreadKeepAliveViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,12 +40,11 @@
 		CED7D07D2755BD65006D6E88 /* TimerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimerViewController.m; sourceTree = "<group>"; };
 		CED7D07E2755BD65006D6E88 /* WrapTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapTimer.h; sourceTree = "<group>"; };
 		CED7D07F2755BD65006D6E88 /* TimerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimerViewController.h; sourceTree = "<group>"; };
-		CED7D0812755BD65006D6E88 /* TKThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKThread.m; sourceTree = "<group>"; };
-		CED7D0822755BD65006D6E88 /* ThreadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreadViewController.h; sourceTree = "<group>"; };
-		CED7D0832755BD65006D6E88 /* TKThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKThread.h; sourceTree = "<group>"; };
-		CED7D0842755BD65006D6E88 /* ThreadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreadViewController.m; sourceTree = "<group>"; };
-		CED7D08A2755F42C006D6E88 /* HHThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHThread.h; sourceTree = "<group>"; };
-		CED7D08B2755F42C006D6E88 /* HHThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHThread.m; sourceTree = "<group>"; };
+		CED7D08A2755F42C006D6E88 /* TKThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKThread.h; sourceTree = "<group>"; };
+		CED7D08B2755F42C006D6E88 /* TKThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKThread.m; sourceTree = "<group>"; };
+		CED7D08D27561BE3006D6E88 /* ThreadKeepAliveViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreadKeepAliveViewController.h; sourceTree = "<group>"; };
+		CED7D08E27561BE3006D6E88 /* ThreadKeepAliveViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreadKeepAliveViewController.m; sourceTree = "<group>"; };
+		CED7D08F27561BE3006D6E88 /* ThreadKeepAliveViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThreadKeepAliveViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +135,11 @@
 		CED7D0802755BD65006D6E88 /* Thread */ = {
 			isa = PBXGroup;
 			children = (
-				CED7D0822755BD65006D6E88 /* ThreadViewController.h */,
-				CED7D0842755BD65006D6E88 /* ThreadViewController.m */,
-				CED7D0832755BD65006D6E88 /* TKThread.h */,
-				CED7D0812755BD65006D6E88 /* TKThread.m */,
-				CED7D08A2755F42C006D6E88 /* HHThread.h */,
-				CED7D08B2755F42C006D6E88 /* HHThread.m */,
+				CED7D08A2755F42C006D6E88 /* TKThread.h */,
+				CED7D08B2755F42C006D6E88 /* TKThread.m */,
+				CED7D08D27561BE3006D6E88 /* ThreadKeepAliveViewController.h */,
+				CED7D08E27561BE3006D6E88 /* ThreadKeepAliveViewController.m */,
+				CED7D08F27561BE3006D6E88 /* ThreadKeepAliveViewController.xib */,
 			);
 			path = Thread;
 			sourceTree = "<group>";
@@ -205,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED7D09127561BE3006D6E88 /* ThreadKeepAliveViewController.xib in Resources */,
 				CED7D06F2755BCE4006D6E88 /* LaunchScreen.storyboard in Resources */,
 				CED7D06C2755BCE4006D6E88 /* Assets.xcassets in Resources */,
 			);
@@ -259,15 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED7D0892755BD65006D6E88 /* ThreadViewController.m in Sources */,
 				CED7D0872755BD65006D6E88 /* TimerViewController.m in Sources */,
 				CED7D0672755BCE0006D6E88 /* ViewController.m in Sources */,
 				CED7D0612755BCE0006D6E88 /* AppDelegate.m in Sources */,
 				CED7D0722755BCE4006D6E88 /* main.m in Sources */,
 				CED7D0852755BD65006D6E88 /* PerformSelectorVC.m in Sources */,
+				CED7D09027561BE3006D6E88 /* ThreadKeepAliveViewController.m in Sources */,
 				CED7D0862755BD65006D6E88 /* WrapTimer.m in Sources */,
-				CED7D0882755BD65006D6E88 /* TKThread.m in Sources */,
-				CED7D08C2755F42C006D6E88 /* HHThread.m in Sources */,
+				CED7D08C2755F42C006D6E88 /* TKThread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

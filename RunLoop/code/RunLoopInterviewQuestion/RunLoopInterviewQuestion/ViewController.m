@@ -6,7 +6,7 @@
 //
 
 #import "ViewController.h"
-#import "ThreadViewController.h"
+#import "ThreadKeepAliveViewController.h"
 
 @interface CellItem : NSObject
 
@@ -48,13 +48,13 @@
     self.title = @"RunLoop相关";
     
     _items = @[
-        [CellItem itemWithTitle:@"线程保活" action:@selector(threadAlive)]
+        [CellItem itemWithTitle:@"线程保活" action:@selector(threadKeepAlive)]
     ];
     
     [self setupUI];
 }
 
-- (void)threadAlive { [self.navigationController pushViewController:[ThreadViewController new] animated:YES]; }
+- (void)threadKeepAlive { [self.navigationController pushViewController:[ThreadKeepAliveViewController new] animated:YES]; }
 
 - (void)setupUI {
     self.view.backgroundColor = UIColor.whiteColor;
