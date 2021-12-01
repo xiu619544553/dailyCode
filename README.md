@@ -62,11 +62,11 @@
 - 7.解释一下 `手势识别` 的过程？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/7.解释一下手势识别的过程.md)
 - 8.解释一下 `GCD` 在 `Runloop` 中的使用？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/8.解释一下GCD在Runloop中的使用.md) 
 - 9.解释一下 `NSTimer`，以及 `NSTimer` 的循环引用。 [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/9.解释一下NSTimer以及NSTimer的循环引用.md) 
-- 10.`performSelector` 相关方法的实现原理 [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/10.performSelector相关方法的实现原理.md) 
+- 10.`performSelector` 相关方法的实现原理  [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/10.performSelector相关方法的实现原理.md) 
 - 11.利用 `runloop` 解释一下页面的渲染的过程？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/11.利用runloop解释一下页面的渲染的过程.md) 
-- 12.如何使用 `Runloop` 实现一个常驻线程？这种线程一般有什么作用？
-- 13.为什么 `NSTimer` 有时候不好使？（不同类型的Mode）
-- 14.`PerformSelector:afterDelay:`这个方法在子线程中是否起作用？为什么？怎么解决？
+- 12.如何使用 `Runloop` 实现一个常驻线程？这种线程一般有什么作用？ [链接-参考线程保活篇](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/0.RunLoop详解.md)
+- 13.为什么 `NSTimer` 有时候不好使？（不同类型的Mode） [链接-参考NSTimer计时不准的问题](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/0.RunLoop详解.md)
+- 14.`PerformSelector:afterDelay:`这个方法在子线程中是否起作用？为什么？怎么解决？  [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/10.performSelector相关方法的实现原理.md) 
 - 15.什么是异步绘制？
 - 16.如何检测 `App` 运行过程中是否卡顿？
 
