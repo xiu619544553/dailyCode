@@ -2723,7 +2723,7 @@ SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterva
         Boolean did = false;
         if (currentMode) __CFRunLoopModeUnlock(currentMode);
         __CFRunLoopUnlock(rl);
-        return did ? kCFRunLoopRunHandledSource : kCFRunLoopRunFinished;
+        return did ? kCFRunLoopRunHandledSource : kCFRunLoopRunFinished; // 退出
     }
     volatile _per_run_data *previousPerRun = __CFRunLoopPushPerRunData(rl);
     CFRunLoopModeRef previousMode = rl->_currentMode;
@@ -2731,12 +2731,14 @@ SInt32 CFRunLoopRunSpecific(CFRunLoopRef rl, CFStringRef modeName, CFTimeInterva
     int32_t result = kCFRunLoopRunFinished;
     
     // 通知 Observers：即将进入 RunLoop
+    // ⚠️注意：此处有Observer会创建AutoreleasePool: _objc_autoreleasePoolPush();
     if (currentMode->_observerMask & kCFRunLoopEntry ) __CFRunLoopDoObservers(rl, currentMode, kCFRunLoopEntry);
     
     // RunLoop 具体要做的事情
     result = __CFRunLoopRun(rl, currentMode, seconds, returnAfterSourceHandled, previousMode);
     
     // 通知 Observers：即将退出 RunLoop
+    // ⚠️注意：此处有Observer释放AutoreleasePool: _objc_autoreleasePoolPop();
     if (currentMode->_observerMask & kCFRunLoopExit ) __CFRunLoopDoObservers(rl, currentMode, kCFRunLoopExit);
     
     __CFRunLoopModeUnlock(currentMode);

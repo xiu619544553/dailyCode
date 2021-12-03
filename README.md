@@ -67,8 +67,8 @@
 - 12.如何使用 `Runloop` 实现一个常驻线程？这种线程一般有什么作用？ [链接-参考线程保活篇](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/0.RunLoop详解.md)
 - 13.为什么 `NSTimer` 有时候不好使？（不同类型的Mode） [链接-参考NSTimer计时不准的问题](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/0.RunLoop详解.md)
 - 14.`PerformSelector:afterDelay:`这个方法在子线程中是否起作用？为什么？怎么解决？  [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/10.performSelector相关方法的实现原理.md) 
-- 15.什么是异步绘制？[链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/15.什么是异步绘制.md)
-- 16.如何检测 `App` 运行过程中是否卡顿？
+- 15.什么是异步绘制？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/15.什么是异步绘制.md)
+- 16.如何检测 `App` 运行过程中是否卡顿？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/16.如何检测App运行过程中是否卡顿.md)
 
 ## UIKit
 ## Foundation
@@ -78,7 +78,9 @@
 - 2.https
 
 ## 多线程
-- 1.锁
+- 1.`NSThread`相关知识
+- 2.`GCD` 相关知识
+- 3.`dispatch_semaphore_t` 详解  [链接](https://github.com/xiu619544553/dailyCode/blob/master/多线程/3.dispatch_semaphore_t.md)
 
 ## 消息传递的方式
 

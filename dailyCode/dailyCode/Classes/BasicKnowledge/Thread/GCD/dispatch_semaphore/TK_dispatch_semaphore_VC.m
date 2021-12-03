@@ -8,7 +8,7 @@
 //  https://mp.weixin.qq.com/s/9s-lXQ36mPChVfWoTGXtlA
 
 /*
- wikipedia中关于信号量的描述
+ 关于信号量的描述
 
  信号量（英语：semaphore）又称为信号标，是一个同步对象，用于保持在0至指定最大值之间的一个计数值。当线程完成一次对该semaphore对象的等待（wait）时，该计数值减一；当线程完成一次对semaphore对象的释放（release）时，计数值加一。当计数值为0，则线程等待该semaphore对象不再能成功直至该semaphore对象变成signaled状态。semaphore对象的计数值大于0，为signaled状态；计数值等于0，为nonsignaled状态.
 
@@ -199,6 +199,7 @@
 #pragma mark - dispatch_semaphore_create(1) - Lock
 
 - (void)semaphore_style_2 {
+    // 资源锁🔐
     static dispatch_semaphore_t semaphore;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -221,6 +222,7 @@
 #pragma mark - dispatch_semaphore_create(0)
 
 - (void)semaphore_style_1 {
+    // 线程同步
     dispatch_semaphore_t sema = dispatch_semaphore_create(0);
     
     [self asynHandler:^(long long result) { // 异步调用，解除阻塞的线程
@@ -235,11 +237,8 @@
 // 异步调用 dispatch_semaphore_signal
 - (void)asynHandler:(void(^)(long long result))handler {
     dispatch_async(dispatch_queue_create("com.tank", 0), ^{
-        long long i = 0;
-        for (i = 0; i < 5000 ; i ++) {
-            NSLog(@"i=%@", @(i));
-        }
-        !handler ?: handler(i);
+        sleep(2);
+        !handler ?: handler(2);
     });
 }
 
