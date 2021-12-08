@@ -3,7 +3,7 @@
 //  寻找两个有序数组的中位数
 //
 //  Created by hello on 2021/12/6.
-//  https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-2/
+//  参考：https://leetcode-cn.com/problems/median-of-two-sorted-arrays/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-2/
 
 #include <stdio.h>
 #include <string.h>
@@ -16,9 +16,9 @@ double find1MedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2S
 // 解法二
 double find2MedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Size);
 
-int Min(int a, int b);
 // 解法三
 double find3MedianSortedArrays(int *nums1, int len1, int *nums2, int len2);
+int Min(int a, int b);
 int getKth(int *nums1, int start1, int end1, int *nums2, int start2, int end2, int k);
 
 
@@ -39,10 +39,9 @@ int main(int argc, const char * argv[]) {
     double result3 = find3MedianSortedArrays(num1, len1, num2, len2);
     printf("result3 = %.1f\n", result3);
     
-    
-    
     return 0;
 }
+
 
 // MARK: - 解法一
 // 解法一：先合并2个数组，然后根据奇数、偶数，返回中位数
