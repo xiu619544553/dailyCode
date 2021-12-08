@@ -6,21 +6,26 @@
 ## 数据结构与算法
 
 #### 数据结构
-1. 数组
-2. 链表
-    * [单向链表](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/线性表_单链表/main.c)
-    * [单向循环链表](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/线性表_单向循环链表/main.c)
-    * [双向链表](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/线性表_双向链表/main.c)
-    * [双向循环链表](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/线性表_双向循环链表/main.c)
-3. [栈](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/栈/main.c)
-4. 队列
-    * [循环队列](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/循环队列/main.c)
-    * [链式循环队列](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/链式循环队列/main.c)
+- 1.数组
+- 2.链表
+    - 单向链表 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/线性表_单链表/main.c)
+    - 单向循环链表 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/线性表_单向循环链表/main.c)
+    - 双向链表 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/线性表_双向链表/main.c)
+    - 双向循环链表 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/线性表_双向循环链表/main.c)
+1. 栈 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/栈/main.c)
+2. 队列
+    - 循环队列 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/循环队列/main.c)
+    - 链式循环队列 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/链式循环队列/main.c)
 5. 哈希表
-    * [哈希表1](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/哈希表/main.c)
-    * [哈希表2](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/哈希表2/main.c)
+    - 哈希表1 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/哈希表/main.c)
+    * 哈希表2 [链接](https://github.com/xiu619544553/dailyCode/blob/master/数据结构与算法/哈希表2/main.c)
 - 7.树
     - 二叉树
+
+#### 算法
+
+- 寻找两个有序数组的中位数 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/寻找两个有序数组的中位数/main.c)
+
 
 ## iOS 内存管理
 - 1.讲一下 iOS 内存管理的理解？(三种方案的结合) 
@@ -71,6 +76,10 @@
 - 16.如何检测 `App` 运行过程中是否卡顿？ [链接](https://github.com/xiu619544553/dailyCode/blob/master/RunLoop/16.如何检测App运行过程中是否卡顿.md)
 
 ## UIKit
+- 1.`UIView` 和 `CALayer` 是什么关系
+# - 2.iOS 中的事件响应   [链接](https://github.com/xiu619544553/dailyCode/blob/master/UIKit/2.iOS中的事件响应.md)
+
+
 ## Foundation
 
 ## 网络
@@ -97,3 +106,7 @@
 
 ## 项目架构
 
+
+## Github
+- [BSBacktraceLogger](https://github.com/bestswifter/BSBacktraceLogger) —— 轻量级调用栈分析器
+- [AppPerformance](https://github.com/SilongLi/AppPerformance) —— App性能监控，包括：CPU占用率、内存占用大小、卡顿、启动闪退、崩溃、耗电量等。 

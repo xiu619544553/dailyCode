@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE97460A275DF7F000356099 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE974609275DF7F000356099 /* main.c */; };
 		CE97B38026A6B6F30096D794 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE97B37F26A6B6F30096D794 /* main.c */; };
 		CE97B38E26A6B70C0096D794 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE97B38D26A6B70C0096D794 /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		CE974605275DF7F000356099 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		CE97B37A26A6B6F30096D794 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -33,6 +43,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE974607275DF7F000356099 /* 寻找两个有序数组的中位数 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "寻找两个有序数组的中位数"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE974609275DF7F000356099 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CE97B37C26A6B6F30096D794 /* 算法题 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "算法题"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE97B37F26A6B6F30096D794 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CE97B38B26A6B70C0096D794 /* 去掉重复字母问题 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "去掉重复字母问题"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +52,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CE974604275DF7F000356099 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE97B37926A6B6F30096D794 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -57,11 +76,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE974608275DF7F000356099 /* 寻找两个有序数组的中位数 */ = {
+			isa = PBXGroup;
+			children = (
+				CE974609275DF7F000356099 /* main.c */,
+			);
+			path = "寻找两个有序数组的中位数";
+			sourceTree = "<group>";
+		};
 		CE97B37326A6B6F30096D794 = {
 			isa = PBXGroup;
 			children = (
 				CE97B37E26A6B6F30096D794 /* 算法题 */,
 				CE97B38C26A6B70C0096D794 /* 去掉重复字母问题 */,
+				CE974608275DF7F000356099 /* 寻找两个有序数组的中位数 */,
 				CE97B37D26A6B6F30096D794 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,6 +99,7 @@
 			children = (
 				CE97B37C26A6B6F30096D794 /* 算法题 */,
 				CE97B38B26A6B70C0096D794 /* 去掉重复字母问题 */,
+				CE974607275DF7F000356099 /* 寻找两个有序数组的中位数 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +123,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CE974606275DF7F000356099 /* 寻找两个有序数组的中位数 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE97460D275DF7F000356099 /* Build configuration list for PBXNativeTarget "寻找两个有序数组的中位数" */;
+			buildPhases = (
+				CE974603275DF7F000356099 /* Sources */,
+				CE974604275DF7F000356099 /* Frameworks */,
+				CE974605275DF7F000356099 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "寻找两个有序数组的中位数";
+			productName = "寻找两个有序数组的中位数";
+			productReference = CE974607275DF7F000356099 /* 寻找两个有序数组的中位数 */;
+			productType = "com.apple.product-type.tool";
+		};
 		CE97B37B26A6B6F30096D794 /* 算法题 */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE97B38326A6B6F30096D794 /* Build configuration list for PBXNativeTarget "算法题" */;
@@ -136,6 +182,9 @@
 			attributes = {
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					CE974606275DF7F000356099 = {
+						CreatedOnToolsVersion = 13.0;
+					};
 					CE97B37B26A6B6F30096D794 = {
 						CreatedOnToolsVersion = 12.4;
 					};
@@ -159,11 +208,20 @@
 			targets = (
 				CE97B37B26A6B6F30096D794 /* 算法题 */,
 				CE97B38A26A6B70C0096D794 /* 去掉重复字母问题 */,
+				CE974606275DF7F000356099 /* 寻找两个有序数组的中位数 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CE974603275DF7F000356099 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE97460A275DF7F000356099 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CE97B37826A6B6F30096D794 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -183,6 +241,26 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		CE97460B275DF7F000356099 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE97460C275DF7F000356099 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		CE97B38126A6B6F30096D794 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +407,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CE97460D275DF7F000356099 /* Build configuration list for PBXNativeTarget "寻找两个有序数组的中位数" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE97460B275DF7F000356099 /* Debug */,
+				CE97460C275DF7F000356099 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CE97B37726A6B6F30096D794 /* Build configuration list for PBXProject "算法题" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
