@@ -118,6 +118,10 @@
             @{
                 KeyForVC   : @"TreeTableViewController",
                 KeyForDesc : @"关于 【多级cell】 的尝试"
+            },
+            @{
+                KeyForVC : @"TKInputViewController",
+                KeyForDesc : @"轻量级评论输入框,支持多种样式,支持占位符设置等等!"
             }
         ];
     }

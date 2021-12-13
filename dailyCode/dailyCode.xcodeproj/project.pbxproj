@@ -138,6 +138,8 @@
 		CE5F8EF2262036640054000E /* TKPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE5F8EF1262036640054000E /* TKPageViewController.m */; };
 		CE80B0EA261BF00A0059DC06 /* NSObject+TKHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = CE80B0E9261BF00A0059DC06 /* NSObject+TKHUD.m */; };
 		CE81C50F25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE81C50E25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m */; };
+		CE8C60C327633ECA0049B0B7 /* TKInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8C60C127633ECA0049B0B7 /* TKInputViewController.m */; };
+		CE8C60C427633ECA0049B0B7 /* TKInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8C60C227633ECA0049B0B7 /* TKInputViewController.xib */; };
 		CE93109F25AEC7C2005F502F /* TKImageChangeColorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE93109E25AEC7C2005F502F /* TKImageChangeColorVC.m */; };
 		CE9D68662549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9D68652549168C00465E56 /* TK_asyn_syn_queue_thread_VC.m */; };
 		CE9D6868254916B500465E56 /* TK_dispatch_barrier_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE6F23C2536C6DA00E3EBF8 /* TK_dispatch_barrier_ViewController.m */; };
@@ -460,6 +462,9 @@
 		CE80B0E9261BF00A0059DC06 /* NSObject+TKHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+TKHUD.m"; sourceTree = "<group>"; };
 		CE81C50D25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_dispatch_semaphore_VC.h; sourceTree = "<group>"; };
 		CE81C50E25903E8E00FEBAD5 /* TK_dispatch_semaphore_VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TK_dispatch_semaphore_VC.m; sourceTree = "<group>"; };
+		CE8C60C027633ECA0049B0B7 /* TKInputViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKInputViewController.h; sourceTree = "<group>"; };
+		CE8C60C127633ECA0049B0B7 /* TKInputViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKInputViewController.m; sourceTree = "<group>"; };
+		CE8C60C227633ECA0049B0B7 /* TKInputViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TKInputViewController.xib; sourceTree = "<group>"; };
 		CE93109D25AEC7C2005F502F /* TKImageChangeColorVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKImageChangeColorVC.h; sourceTree = "<group>"; };
 		CE93109E25AEC7C2005F502F /* TKImageChangeColorVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageChangeColorVC.m; sourceTree = "<group>"; };
 		CE9D68642549168C00465E56 /* TK_asyn_syn_queue_thread_VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TK_asyn_syn_queue_thread_VC.h; sourceTree = "<group>"; };
@@ -842,6 +847,7 @@
 		CE400BC0253576E9003C5E72 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				CE8C60BC27633D0E0049B0B7 /* InputView */,
 				CE0954AF26B155CC0008BDC0 /* SystemShare */,
 				CE400E0425357AC4003C5E72 /* TKUIKitListViewController.h */,
 				CE400E0525357AC4003C5E72 /* TKUIKitListViewController.m */,
@@ -1501,6 +1507,16 @@
 			path = dispatch_semaphore;
 			sourceTree = "<group>";
 		};
+		CE8C60BC27633D0E0049B0B7 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				CE8C60C027633ECA0049B0B7 /* TKInputViewController.h */,
+				CE8C60C127633ECA0049B0B7 /* TKInputViewController.m */,
+				CE8C60C227633ECA0049B0B7 /* TKInputViewController.xib */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
 		CE9D68632549166900465E56 /* asyn_syn_queue_thread */ = {
 			isa = PBXGroup;
 			children = (
@@ -1907,6 +1923,7 @@
 				CE400D7B253576EA003C5E72 /* 1168EAE7-AB02-44AE-9651-5FF80486F0A9.pdf in Resources */,
 				CE400D55253576EA003C5E72 /* json.json in Resources */,
 				CE400D53253576EA003C5E72 /* weakness.json in Resources */,
+				CE8C60C427633ECA0049B0B7 /* TKInputViewController.xib in Resources */,
 				CE400D50253576EA003C5E72 /* tiku.json in Resources */,
 				CE400D5A253576EA003C5E72 /* TKButtonUsageViewController.xib in Resources */,
 				CE400D97253576EA003C5E72 /* TKSortViewController.xib in Resources */,
@@ -1987,6 +2004,7 @@
 				CE400DA4253576EA003C5E72 /* UIProgressView+AFNetworking.m in Sources */,
 				CE400D76253576EA003C5E72 /* TKCatalogModel.m in Sources */,
 				CE9F830426FC6A96002FD1D7 /* DecibelMeterHelper.m in Sources */,
+				CE8C60C327633ECA0049B0B7 /* TKInputViewController.m in Sources */,
 				CEA0940B26AFD7FC00208BF9 /* TKKVCUsageViewController.m in Sources */,
 				CE3F06332582FF040035FE71 /* TKTestShadowVC.m in Sources */,
 				CEFBCEDF2679AA6E00C553C9 /* YYClassInfo.m in Sources */,

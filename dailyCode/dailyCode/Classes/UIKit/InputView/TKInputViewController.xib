@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TKInputViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fK-nU-Swa">
+                    <rect key="frame" x="20" y="144" width="374" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="mNi-oh-yPx"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="点击显示样式一"/>
+                    <connections>
+                        <action selector="showStyle1:" destination="-1" eventType="touchUpInside" id="WpO-2E-vhn"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1h1-FX-dzg">
+                    <rect key="frame" x="20" y="218" width="374" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="3o7-1q-ryF"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="点击显示样式二"/>
+                    <connections>
+                        <action selector="showStyle2:" destination="-1" eventType="touchUpInside" id="CaS-YC-zcW"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="1h1-FX-dzg" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="H1a-Ia-BD7"/>
+                <constraint firstItem="2fK-nU-Swa" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="100" id="IY5-vT-iYU"/>
+                <constraint firstItem="1h1-FX-dzg" firstAttribute="top" secondItem="2fK-nU-Swa" secondAttribute="bottom" constant="30" id="JAA-RM-IRn"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="1h1-FX-dzg" secondAttribute="trailing" constant="20" id="h73-2d-wTN"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="2fK-nU-Swa" secondAttribute="trailing" constant="20" id="pRN-1t-29N"/>
+                <constraint firstItem="2fK-nU-Swa" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="20" id="stm-Hs-5mf"/>
+            </constraints>
+            <point key="canvasLocation" x="-849" y="44"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

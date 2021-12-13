@@ -18,7 +18,7 @@ target 'dailyCode' do
   pod 'SDWebImage', '5.9.0'
   pod 'WMPageController', '2.5.2'
   
-  pod 'TKCategory', :path => '../../TKCategory'
+  pod 'TKiOSUtils', :path => '../../TKiOSUtils'
   pod 'FLEX', '4.1.1', :configurations => ['Debug']
   
   pod 'MBProgressHUD'
