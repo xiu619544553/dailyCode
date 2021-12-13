@@ -93,7 +93,7 @@ void oddPalindrome(char *s, int len, int *sublen, int *start) {
             left --;
             right ++;
         }
-
+out
         // left+1 ~ right-1 则为以i为中心的最大回文子串
         // 计算新的子串的长度。计算式需要注意，while时，left进行了减减操作，right进行了加加操作。所以复原符合条件的left和right：newSublen = (right - 1) (left + 1) + 1;
         int newSublen = right - left - 1;
