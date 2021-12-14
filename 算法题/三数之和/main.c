@@ -8,151 +8,133 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int sum(int *nums, int len, int dest);
+int cmp(const void *a, const void *b);
+int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes);
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
     
     
-//    int dest = 12;
-//    int nums[] = {5, 3, 4, 2, 6};
-//    int result = sum(nums, sizeof(nums) / sizeof(nums[0]), dest);
-//    printf("result = %d\n", result);
+    // 示例
+    int nums[] = {-1, 0, 1, 2, -1, -4};
+    
+    // 二维数组元素个数
+    int returnSize = 0;
+    
+    int columnSize = 0;
+    int *prColumn = &columnSize;
+    
+    // 二维数组
+    int **ans = threeSum(nums, sizeof(nums) / sizeof(nums[0]), &returnSize, &prColumn);
+//    int **ans = threeSum1(nums, sizeof(nums) / sizeof(nums[0]), &returnSize, &prColumn);
+    
+    
+    // 遍历二维数组
+    for (int i = 0; i < returnSize; i ++) {
+
+        int *element = (int *)ans[i];
+
+        for (int j = 0; j < 3; j ++) {
+            if (j < 2) {
+                printf("%d  ", element[j]);
+            } else {
+                printf("%d\n", element[j]);
+            }
+
+        }
+    }
+
+    printf("columnSize = %d\n", columnSize);
+    
+//    int numsSize = sizeof(nums) / sizeof(nums[0]);
+//    qsort(nums, numsSize, sizeof(int), cmp1);
+//
+//    for (int i = 0; i < numsSize; i ++) {
+//        printf("%d\n", nums[i]);
+//    }
     
     return 0;
 }
 
-// 暴力破解
-// 时间复杂度：O(n*n*n)
-int sum(int *nums, int len, int dest) {
-    
-    for (int i = 0; i < len; i ++) {
-        
-        for (int j = i + 1; j < len; j ++) {
-            
-            for (int k = j + 1; k < len; k ++) {
-                
-                if (nums[i] + nums[j] + nums[k] == dest) {
-                    printf("i=%d，j=%d，k=%d\n", i, j, k);
-                    return 1;
-                }
-            }
-        }
-    }
-    
-    
-    return -1;
+
+#pragma mark -------
+
+int cmp(const void *a, const void *b) {
+    // a是 int* 类型的指针变量，* (int *)a 是取值
+    return (* (int *)a - * (int *)b);
 }
 
-
-/**
- * Return an array of arrays of size *returnSize.
- * The sizes of the arrays are returned as *returnColumnSizes array.
- * Note: Both returned array and *columnSizes array must be malloced, assume caller calls free().
- */
-int cmp(const void *a,const void *b){
-    return *(int*)a - *(int*)b;
-}
-
-// 返回一个二维数组，count 是 returnSize
-int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes){
+/// 返回一个二维数组。时间复杂度 O(N^2)
+/// @param nums 外部要处理的数组
+/// @param numsSize nums数组的元素数量
+/// @param returnSize 二维数组元素数量
+/// @param returnColumnSizes 二维数组中的单个元素是一维数组，该字段表示一维数组的元素数量
+int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes) {
     
     *returnSize = 0;
-    if(numsSize < 3)
-        return NULL;
+    if(numsSize < 3) { return NULL; }
     
+    // 快排：给 nums 排序
     qsort(nums, numsSize, sizeof(int), cmp);
     
-    int **ans = (int **)malloc(sizeof(int *) * numsSize * numsSize);
-    *returnColumnSizes = (int *)malloc(sizeof(int) * numsSize * numsSize);
+    // 二维数组：ans是最终的结果
+    int basicSize = 8; // 用来扩容的两个参数
+    int **ans = (int **)malloc(sizeof(int *) * basicSize);
+    (*returnColumnSizes) = (int *)malloc(sizeof(int *) * basicSize);
     
-    int i,j,k,sum;
-    for(k = 0;k < numsSize - 2; k++){
-        if(nums[k] > 0)
+    // target 当前遍历的位置，sum = nums[target] + nums[left] + nums[right];
+    int target = 0, sum = 0;
+    // left、right是左右指针
+    int left = 0, right = 0;
+    
+    for(target = 0; target < numsSize - 1; target ++) {
+        
+        // 起始位置大于0，后续元素肯定是大于0的，直接返回 ans
+        if(nums[target] > 0) {
             return ans;
-        if(k > 0 && nums[k] == nums[k-1])
-            continue;
-        i = k + 1;
-        j = numsSize - 1;
-        while(i < j) {
-            sum = nums[i] + nums[j] + nums[k];
-            if(sum == 0){
-                ans[*returnSize] = (int*)malloc(sizeof(int)*3);
+        }
+        
+        // 去重：对 target 去重处理
+        if(target > 0 && nums[target] == nums[target - 1]) { continue; }
+        
+        // 左指针右移，右指针左移
+        left = target + 1;
+        right = numsSize - 1;
+        
+        while(left < right) {
+            
+            sum = nums[left] + nums[right] + nums[target];
+            if(sum == 0) { // 成立条件 sum=0
+                ans[*returnSize] = (int *)malloc(sizeof(int) * 3); // 二维数组的元素是一维数组，给一维数组分配空间
                 (*returnColumnSizes)[*returnSize] = 3;
-                ans[*returnSize][0] = nums[k];
-                ans[*returnSize][1] = nums[i];
-                ans[*returnSize][2] = nums[j];
-                *returnSize += 1;
+                ans[*returnSize][0] = nums[target];
+                ans[*returnSize][1] = nums[left];
+                ans[*returnSize][2] = nums[right];
                 
-                // 去重
-                while(i < j && nums[i] == nums[i + 1]) {
-                    i ++;
+//                printf("==== %d，%d，%d\n", ans[*returnSize][0], ans[*returnSize][1], ans[*returnSize][2]);
+                
+                // 答案的数组，累加
+                (*returnSize) ++;
+                
+                // 去重：对 left、right 去重处理
+                while(left < right && nums[left] == nums[left + 1]) { left ++; }
+                while(left < right && nums[right] == nums[right - 1]) { right --; }
+                
+                if ((*returnSize) == basicSize) { // 扩容
+                    basicSize *= 2;
+                    ans = (int **)realloc(ans, sizeof(int *) * basicSize);
+                    (*returnColumnSizes) = (int *)realloc((*returnColumnSizes), sizeof(int *) * basicSize);
                 }
                 
-                while(i < j && nums[j] == nums[j - 1]) {
-                    j --;
-                }
+                left ++;
+                right --;
                 
-            } else if(sum > 0) { // 若和大于 0，说明 nums[j] 太大，j 左移
-                j --;
-            } else { // 若和小于 0，说明 nums[i] 太小，i 右移
-                i ++;
+            } else if(sum > 0) { // sum > 0，说明 nums[right] 太大，right 左移
+                right --;
+            } else { // sum > 0，说明 nums[left] 太小，left 右移
+                left ++;
             }
-                
         }
     }
+    
     return ans;
 }
-
-//算法流程：
-//特判，对于数组长度 n，如果数组为 null 或者数组长度小于 3，返回 []。
-//对数组进行排序。
-//遍历排序后数组：
-//    若 nums[i]>0：因为已经排序好，所以后面不可能有三个数加和等于 00，直接返回结果。
-//    对于重复元素：跳过，避免出现重复解
-//    令左指针 L=i+1，右指针 R=n-1，当 L<R 时，执行循环：
-//        当 nums[i]+nums[L]+nums[R]==0nums[i]+nums[L]+nums[R]==0，执行循环，判断左界和右界是否和下一位置重复，去除重复解。并同时将 L,R 移到下一位置，寻找新的解
-//        若和大于 0，说明 nums[R] 太大，R 左移
-//        若和小于 0，说明 nums[L] 太小，L 右移
-//
-//class Solution:
-//    def threeSum(self, nums: List[int]) -> List[List[int]]:
-//
-//        n=len(nums)
-//        res=[]
-//
-//
-//        if(not nums or n<3): // 条件判断
-//            return []
-//
-//        nums.sort() // 对数组排序
-//
-//        res=[]
-//
-//        for i in range(n):
-//            if(nums[i]>0):
-//                return res
-//            if(i>0 and nums[i]==nums[i-1]):
-//                continue
-//            L=i+1
-//            R=n-1
-//            while(L<R):
-//                if(nums[i]+nums[L]+nums[R]==0):
-//                    res.append([nums[i],nums[L],nums[R]])
-//                    while(L<R and nums[L]==nums[L+1]):
-//                        L=L+1
-//                    while(L<R and nums[R]==nums[R-1]):
-//                        R=R-1
-//                    L=L+1
-//                    R=R-1
-//                elif(nums[i]+nums[L]+nums[R]>0):
-//                    R=R-1
-//                else:
-//                    L=L+1
-//        return res
-
-//作者：wu_yan_zu
-//链接：https://leetcode-cn.com/problems/3sum/solution/pai-xu-shuang-zhi-zhen-zhu-xing-jie-shi-python3-by/
-//来源：力扣（LeetCode）
-//著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。

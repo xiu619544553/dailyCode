@@ -26,6 +26,9 @@
 
 - 寻找两个有序数组的中位数 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/寻找两个有序数组的中位数/main.c)
 - 求最长回文子串 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/最长回文子串/main.c)
+- 寻找两个有序数组的中位数 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/寻找两个有序数组的中位数/main.c)
+- 最长回文子串 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/最长回文子串/main.c)
+- 三数之和 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/三数之和/main.c)
 
 ## iOS 内存管理
 - 1.讲一下 iOS 内存管理的理解？(三种方案的结合) 
