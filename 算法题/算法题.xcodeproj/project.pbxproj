@@ -14,6 +14,7 @@
 		CE97B38E26A6B70C0096D794 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CE97B38D26A6B70C0096D794 /* main.c */; };
 		CEB5AE612761DB950040A78F /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CEB5AE602761DB950040A78F /* main.c */; };
 		CEB99ACE2766F8E1004D2C66 /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CEB99ACD2766F8E1004D2C66 /* main.c */; };
+		CEEC7F45276894DC00BD9CAF /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = CEEC7F44276894DC00BD9CAF /* main.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -80,6 +81,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		CEEC7F40276894DC00BD9CAF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +107,8 @@
 		CEB5AE602761DB950040A78F /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CEB99ACB2766F8E1004D2C66 /* 盛最多水的容器 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "盛最多水的容器"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB99ACD2766F8E1004D2C66 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		CEEC7F42276894DC00BD9CAF /* 合并两个有序链表 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "合并两个有序链表"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEEC7F44276894DC00BD9CAF /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +161,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEEC7F3F276894DC00BD9CAF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -186,6 +205,7 @@
 				CEB5AE5F2761DB950040A78F /* 正则表达式匹配 */,
 				CE8C60AB27631EE40049B0B7 /* 三数之和 */,
 				CEB99ACC2766F8E1004D2C66 /* 盛最多水的容器 */,
+				CEEC7F43276894DC00BD9CAF /* 合并两个有序链表 */,
 				CE97B37D26A6B6F30096D794 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -200,6 +220,7 @@
 				CEB5AE5E2761DB950040A78F /* 正则表达式匹配 */,
 				CE8C60AA27631EE40049B0B7 /* 三数之和 */,
 				CEB99ACB2766F8E1004D2C66 /* 盛最多水的容器 */,
+				CEEC7F42276894DC00BD9CAF /* 合并两个有序链表 */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +255,14 @@
 				CEB99ACD2766F8E1004D2C66 /* main.c */,
 			);
 			path = "盛最多水的容器";
+			sourceTree = "<group>";
+		};
+		CEEC7F43276894DC00BD9CAF /* 合并两个有序链表 */ = {
+			isa = PBXGroup;
+			children = (
+				CEEC7F44276894DC00BD9CAF /* main.c */,
+			);
+			path = "合并两个有序链表";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +387,23 @@
 			productReference = CEB99ACB2766F8E1004D2C66 /* 盛最多水的容器 */;
 			productType = "com.apple.product-type.tool";
 		};
+		CEEC7F41276894DC00BD9CAF /* 合并两个有序链表 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEEC7F48276894DC00BD9CAF /* Build configuration list for PBXNativeTarget "合并两个有序链表" */;
+			buildPhases = (
+				CEEC7F3E276894DC00BD9CAF /* Sources */,
+				CEEC7F3F276894DC00BD9CAF /* Frameworks */,
+				CEEC7F40276894DC00BD9CAF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "合并两个有序链表";
+			productName = "合并两个有序链表";
+			productReference = CEEC7F42276894DC00BD9CAF /* 合并两个有序链表 */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -387,6 +433,9 @@
 					CEB99ACA2766F8E1004D2C66 = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					CEEC7F41276894DC00BD9CAF = {
+						CreatedOnToolsVersion = 13.0;
+					};
 				};
 			};
 			buildConfigurationList = CE97B37726A6B6F30096D794 /* Build configuration list for PBXProject "算法题" */;
@@ -409,6 +458,7 @@
 				CEB5AE5D2761DB950040A78F /* 正则表达式匹配 */,
 				CE8C60A927631EE40049B0B7 /* 三数之和 */,
 				CEB99ACA2766F8E1004D2C66 /* 盛最多水的容器 */,
+				CEEC7F41276894DC00BD9CAF /* 合并两个有序链表 */,
 			);
 		};
 /* End PBXProject section */
@@ -467,6 +517,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB99ACE2766F8E1004D2C66 /* main.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEEC7F3E276894DC00BD9CAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEEC7F45276894DC00BD9CAF /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -716,6 +774,26 @@
 			};
 			name = Release;
 		};
+		CEEC7F46276894DC00BD9CAF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CEEC7F47276894DC00BD9CAF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				MACOSX_DEPLOYMENT_TARGET = 11.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -787,6 +865,15 @@
 			buildConfigurations = (
 				CEB99ACF2766F8E1004D2C66 /* Debug */,
 				CEB99AD02766F8E1004D2C66 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEEC7F48276894DC00BD9CAF /* Build configuration list for PBXNativeTarget "合并两个有序链表" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEEC7F46276894DC00BD9CAF /* Debug */,
+				CEEC7F47276894DC00BD9CAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
