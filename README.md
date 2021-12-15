@@ -30,6 +30,8 @@
 - 最长回文子串 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/最长回文子串/main.c)
 - 三数之和 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/三数之和/main.c)
 - 合并两个有序链表 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/合并两个有序链表/main.c)
+- 买卖股票的最佳时机 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/买卖股票的最佳时机/main.c)
+- 买卖股票的最大利润 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/买卖股票的最大利润/main.c)
 
 ## iOS 内存管理
 - 1.讲一下 iOS 内存管理的理解？(三种方案的结合) 
