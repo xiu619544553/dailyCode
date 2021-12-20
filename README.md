@@ -32,6 +32,7 @@
 - 合并两个有序链表 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/合并两个有序链表/main.c)
 - 买卖股票的最佳时机 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/买卖股票的最佳时机/main.c)
 - 买卖股票的最大利润 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/买卖股票的最大利润/main.c)
+- 删除链表的倒数第 N 个结点  [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/删除链表的倒数第 N 个结点/main.c)
 
 ## iOS 内存管理
 - 1.讲一下 iOS 内存管理的理解？(三种方案的结合) 
@@ -108,7 +109,7 @@
 - 6.`Block` 和 `函数指针` 的区别? [链接](https://github.com/xiu619544553/dailyCode/blob/master/消息传递的方式/block.md)
 
 #### KVO
-- 1.`KVO`的实现机制。
+- 1.`KVO` 原理分析 [链接](https://github.com/xiu619544553/dailyCode/blob/master/消息传递的方式/kvo/1.kvo原理分析.md)
 
 ## 项目架构
 
