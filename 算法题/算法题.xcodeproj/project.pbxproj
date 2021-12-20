@@ -337,7 +337,7 @@
 				CE5EB46A2769D2BA0054A8E2 /* 买卖股票的最佳时机2 */,
 				CE5EB4752769D72E0054A8E2 /* 买卖股票的最大利润 */,
 				CE5EB4802769EA7D0054A8E2 /* 电话号码的字母组合 */,
-				CEEEF1A3276ACA4500417D8F /* 删除链表的倒数第 N 个结点 */,
+				CEEEF1A3276ACA4500417D8F /* 删除链表的倒数第N个结点 */,
 				CE97B37D26A6B6F30096D794 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -402,12 +402,12 @@
 			path = "合并两个有序链表";
 			sourceTree = "<group>";
 		};
-		CEEEF1A3276ACA4500417D8F /* 删除链表的倒数第 N 个结点 */ = {
+		CEEEF1A3276ACA4500417D8F /* 删除链表的倒数第N个结点 */ = {
 			isa = PBXGroup;
 			children = (
 				CEEEF1A4276ACA4500417D8F /* main.c */,
 			);
-			path = "删除链表的倒数第 N 个结点";
+			path = "删除链表的倒数第N个结点";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
