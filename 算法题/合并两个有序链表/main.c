@@ -21,10 +21,15 @@ struct ListNode {
     struct ListNode *next;
 };
 
+// 时间复杂度：O(n)
+// 空间复杂度：O(n)
 struct ListNode* mergeTwoLists(struct ListNode* l1, struct ListNode* l2){
     
-    struct ListNode *l3 = (struct ListNode *)malloc(sizeof(struct ListNode)); // 创建新的链表l3
-    struct ListNode *tail = l3; // l3尾结点
+    // 创建新的链表l3，保存合并之后链表的头部，它的val不保存任何值，在整个链表合并完之后，返回 l3->next 即可
+    struct ListNode *l3 = (struct ListNode *)malloc(sizeof(struct ListNode));
+    
+    // 指针 taili 记录下一个插入位置的前一个位置
+    struct ListNode *tail = l3;
     
     // l1和l2同时存在时，需要遍历对比他们数据域的大小。
     while (l1 && l2 ) {
