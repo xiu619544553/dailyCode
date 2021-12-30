@@ -197,6 +197,7 @@
 		CE0A559D27795CF3000048DA /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CE0A55A62779A661000048DA /* 九大经典排序算法 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "九大经典排序算法"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0A55A82779A661000048DA /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		CE3B036C277D970E009FBF27 /* 归并排序.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "归并排序.jpg"; sourceTree = "<group>"; };
 		CE51B3022760ADDD00A60D29 /* 最长回文子串 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "最长回文子串"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE51B3042760ADDE00A60D29 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		CE5EB45E2769B5CA0054A8E2 /* 买卖股票的最佳时机 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "买卖股票的最佳时机"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -373,6 +374,7 @@
 		CE0A55A72779A661000048DA /* 九大经典排序算法 */ = {
 			isa = PBXGroup;
 			children = (
+				CE3B036C277D970E009FBF27 /* 归并排序.jpg */,
 				CE0A55A82779A661000048DA /* main.c */,
 			);
 			path = "九大经典排序算法";

@@ -6,10 +6,11 @@
 //
 
 #include <stdio.h>
+#include <stdlib.h>
 
 void insertion_sort(int arr[], int length); // 插入排序
-
-int shellSort(int arr[], int n);
+int shellSort(int arr[], int n);            // 希尔排序
+void mergeSort(int arr[], int left, int right);    // 归并排序
 
 
 void test1(char *p) {
@@ -36,8 +37,10 @@ int main(int argc, const char * argv[]) {
 //    insertion_sort(arr, len);
     
     // 希尔排序
-    shellSort(arr, len);
+//    shellSort(arr, len);
     
+    // 归并排序
+    mergeSort(arr, 0, len - 1);
     
     
     for (int i = 0; i < len; i ++) {
@@ -70,7 +73,7 @@ void insertion_sort(int arr[], int length) {
 }
 
 
-#pragma mark - 2、插入排序 -- 希尔排序（shell sort）（缩小增量排序）   {49,38,65,97,76,13,27,49,55,04};
+#pragma mark - 2、插入排序 -- 希尔排序（shell sort）（缩小增量排序）
 
 int shellSort(int arr[], int n) {
     
@@ -93,4 +96,57 @@ int shellSort(int arr[], int n) {
         }
     }
     return 0;
+}
+
+
+#pragma mark - 3、归并排序
+// 参考：https://zhuanlan.zhihu.com/p/36075856
+
+
+/// 合并两个有序数组
+/// @param arr 全量数组
+/// @param left array[left]~array[mid] 为第一组
+/// @param mid 中位数
+/// @param right array[mid+1]~array[right] 为第二组
+void merge(int arr[], int left, int mid, int right) {
+    
+    int i = left, j = mid + 1; // // i为左边数组的起点, j为右边数组的起点，mid是左侧数组的终点，right是右侧数组的终点
+    int k = 0; // k用于指向temp数组当前放到哪个位置
+    
+    // 开辟临时数组，存放排序后的元素
+    int tempLen = (right - left + 1);
+    int *temp = (int *)malloc(tempLen * sizeof(int));
+    if (temp == NULL) {
+        printf("malloc error.\n");
+        return;
+    }
+    
+    while (i <= mid && j <= right) { // 将两个有序序列循环比较, 填入数组temp
+        if (arr[i] < arr[j]) {
+            temp[k++] = arr[i++];
+        } else {
+            temp[k++] = arr[j++];
+        }
+    }
+    
+    while (i <= mid) { temp[k++] = arr[i++]; }   // 如果比较完毕, 第一组还有数剩下, 则全部填入temp
+    while (j <= right) { temp[k++] = arr[j++]; } // 如果比较完毕, 第二组还有数剩下, 则全部填入temp
+    
+    for (k = 0, i = left; k < tempLen; k ++, i ++) { // 将排好序的数填回到array数组的对应位置
+        arr[i] = temp[k];
+    }
+    
+    // 释放
+    free(temp);
+}
+
+// 归并排序
+// 时间复杂度：O(nlogn)
+void mergeSort(int arr[], int left, int right) {
+    if (left < right) {
+        int mid = (left + right) / 2;
+        mergeSort(arr, left, mid);      // 递归归并左边元素
+        mergeSort(arr, mid + 1, right); // 递归归并右边元素
+        merge(arr, left, mid, right);   // 再将二个有序数列合并
+    }
 }
