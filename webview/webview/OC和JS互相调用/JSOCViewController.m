@@ -151,7 +151,12 @@ static void * const WebViewKVOContext = (void *)&WebViewKVOContext;
     //changeColor()是JS方法名，completionHandler是异步回调block
     NSString *jsString = [NSString stringWithFormat:@"changeColor('%@')", @"Js颜色参数"];
     [_webView evaluateJavaScript:jsString completionHandler:^(id _Nullable data, NSError * _Nullable error) {
-        NSLog(@"改变HTML的背景色");
+        NSLog(@"改变HTML的背景色 = %@", data);
+    }];
+    
+    // oc调用js，无参数
+    [_webView evaluateJavaScript:@"clickImage()" completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+        
     }];
     
     // 改变字体大小 调用原生JS方法
