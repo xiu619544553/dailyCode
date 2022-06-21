@@ -1,0 +1,560 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE745FA62860692D00BED9E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE745FA52860692D00BED9E2 /* Assets.xcassets */; };
+		CE745FA92860692D00BED9E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE745FA72860692D00BED9E2 /* LaunchScreen.storyboard */; };
+		CE745FAC2860692D00BED9E2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FAB2860692D00BED9E2 /* main.m */; };
+		CE745FD92860699200BED9E2 /* TKPlayerConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FB32860699100BED9E2 /* TKPlayerConfig.m */; };
+		CE745FDA2860699200BED9E2 /* TKVideoSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FB62860699100BED9E2 /* TKVideoSlider.m */; };
+		CE745FDB2860699200BED9E2 /* TKVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FB72860699100BED9E2 /* TKVideoPlayer.m */; };
+		CE745FDC2860699200BED9E2 /* TKPlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FBA2860699100BED9E2 /* TKPlayerControlView.m */; };
+		CE745FDE2860699200BED9E2 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FC22860699100BED9E2 /* VideoViewController.m */; };
+		CE745FDF2860699200BED9E2 /* PresentLandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FC42860699100BED9E2 /* PresentLandscapeViewController.m */; };
+		CE745FE02860699200BED9E2 /* ScreenRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FC52860699100BED9E2 /* ScreenRotationViewController.m */; };
+		CE745FE12860699200BED9E2 /* GravityScreenRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FC62860699100BED9E2 /* GravityScreenRotationViewController.m */; };
+		CE745FE22860699200BED9E2 /* TransformRotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FC72860699100BED9E2 /* TransformRotationViewController.m */; };
+		CE745FE32860699200BED9E2 /* CodeControlsScreenRotationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FC82860699100BED9E2 /* CodeControlsScreenRotationController.m */; };
+		CE745FE42860699200BED9E2 /* StatusBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FCF2860699100BED9E2 /* StatusBarViewController.m */; };
+		CE745FE52860699200BED9E2 /* TKBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FD22860699100BED9E2 /* TKBaseTabBarController.m */; };
+		CE745FE62860699200BED9E2 /* TKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FD42860699100BED9E2 /* TKNavigationController.m */; };
+		CE745FE72860699200BED9E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FD62860699100BED9E2 /* AppDelegate.m */; };
+		CE906A06D0C260D7219514BE /* Pods_ScreenRotationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD0FC252BF0D89293B1905 /* Pods_ScreenRotationDemo.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		538DDA8D32F602281591DF76 /* Pods-ScreenRotationDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRotationDemo.release.xcconfig"; path = "Target Support Files/Pods-ScreenRotationDemo/Pods-ScreenRotationDemo.release.xcconfig"; sourceTree = "<group>"; };
+		7AFD0FC252BF0D89293B1905 /* Pods_ScreenRotationDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ScreenRotationDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE745F962860692A00BED9E2 /* ScreenRotationDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScreenRotationDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE745FA52860692D00BED9E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE745FA82860692D00BED9E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE745FAA2860692D00BED9E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE745FAB2860692D00BED9E2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CE745FB32860699100BED9E2 /* TKPlayerConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPlayerConfig.m; sourceTree = "<group>"; };
+		CE745FB42860699100BED9E2 /* TKVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKVideoPlayer.h; sourceTree = "<group>"; };
+		CE745FB52860699100BED9E2 /* TKPlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPlayerControlView.h; sourceTree = "<group>"; };
+		CE745FB62860699100BED9E2 /* TKVideoSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKVideoSlider.m; sourceTree = "<group>"; };
+		CE745FB72860699100BED9E2 /* TKVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKVideoPlayer.m; sourceTree = "<group>"; };
+		CE745FB82860699100BED9E2 /* TKPlayerConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKPlayerConfig.h; sourceTree = "<group>"; };
+		CE745FB92860699100BED9E2 /* TKVideoPlayerHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKVideoPlayerHeader.h; sourceTree = "<group>"; };
+		CE745FBA2860699100BED9E2 /* TKPlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKPlayerControlView.m; sourceTree = "<group>"; };
+		CE745FBB2860699100BED9E2 /* TKVideoSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKVideoSlider.h; sourceTree = "<group>"; };
+		CE745FC12860699100BED9E2 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		CE745FC22860699100BED9E2 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		CE745FC42860699100BED9E2 /* PresentLandscapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentLandscapeViewController.m; sourceTree = "<group>"; };
+		CE745FC52860699100BED9E2 /* ScreenRotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScreenRotationViewController.m; sourceTree = "<group>"; };
+		CE745FC62860699100BED9E2 /* GravityScreenRotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GravityScreenRotationViewController.m; sourceTree = "<group>"; };
+		CE745FC72860699100BED9E2 /* TransformRotationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransformRotationViewController.m; sourceTree = "<group>"; };
+		CE745FC82860699100BED9E2 /* CodeControlsScreenRotationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeControlsScreenRotationController.m; sourceTree = "<group>"; };
+		CE745FC92860699100BED9E2 /* PresentLandscapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentLandscapeViewController.h; sourceTree = "<group>"; };
+		CE745FCA2860699100BED9E2 /* TransformRotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformRotationViewController.h; sourceTree = "<group>"; };
+		CE745FCB2860699100BED9E2 /* GravityScreenRotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GravityScreenRotationViewController.h; sourceTree = "<group>"; };
+		CE745FCC2860699100BED9E2 /* ScreenRotationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScreenRotationViewController.h; sourceTree = "<group>"; };
+		CE745FCD2860699100BED9E2 /* CodeControlsScreenRotationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeControlsScreenRotationController.h; sourceTree = "<group>"; };
+		CE745FCF2860699100BED9E2 /* StatusBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusBarViewController.m; sourceTree = "<group>"; };
+		CE745FD02860699100BED9E2 /* StatusBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusBarViewController.h; sourceTree = "<group>"; };
+		CE745FD22860699100BED9E2 /* TKBaseTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKBaseTabBarController.m; sourceTree = "<group>"; };
+		CE745FD32860699100BED9E2 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		CE745FD42860699100BED9E2 /* TKNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKNavigationController.m; sourceTree = "<group>"; };
+		CE745FD52860699100BED9E2 /* TKBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseTabBarController.h; sourceTree = "<group>"; };
+		CE745FD62860699100BED9E2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		CE745FD72860699200BED9E2 /* TKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNavigationController.h; sourceTree = "<group>"; };
+		D633DDCD9C39145705D4C916 /* Pods-ScreenRotationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRotationDemo.debug.xcconfig"; path = "Target Support Files/Pods-ScreenRotationDemo/Pods-ScreenRotationDemo.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE745F932860692A00BED9E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE906A06D0C260D7219514BE /* Pods_ScreenRotationDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CE745F8D2860692A00BED9E2 = {
+			isa = PBXGroup;
+			children = (
+				CE745F982860692A00BED9E2 /* ScreenRotationDemo */,
+				CE745F972860692A00BED9E2 /* Products */,
+				E45FE8A16DE846CDFE6FCB51 /* Pods */,
+				D7120720E5C25279AD27DD1E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE745F972860692A00BED9E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE745F962860692A00BED9E2 /* ScreenRotationDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE745F982860692A00BED9E2 /* ScreenRotationDemo */ = {
+			isa = PBXGroup;
+			children = (
+				CEA227852861B6CD001285C0 /* Main */,
+				CE745FB22860699100BED9E2 /* Player */,
+				CE745FBF2860699100BED9E2 /* Classes */,
+				CE745FA52860692D00BED9E2 /* Assets.xcassets */,
+				CE745FA72860692D00BED9E2 /* LaunchScreen.storyboard */,
+				CE745FAA2860692D00BED9E2 /* Info.plist */,
+			);
+			path = ScreenRotationDemo;
+			sourceTree = "<group>";
+		};
+		CE745FB22860699100BED9E2 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FB92860699100BED9E2 /* TKVideoPlayerHeader.h */,
+				CE745FB82860699100BED9E2 /* TKPlayerConfig.h */,
+				CE745FB32860699100BED9E2 /* TKPlayerConfig.m */,
+				CE745FB52860699100BED9E2 /* TKPlayerControlView.h */,
+				CE745FBA2860699100BED9E2 /* TKPlayerControlView.m */,
+				CE745FB42860699100BED9E2 /* TKVideoPlayer.h */,
+				CE745FB72860699100BED9E2 /* TKVideoPlayer.m */,
+				CE745FBB2860699100BED9E2 /* TKVideoSlider.h */,
+				CE745FB62860699100BED9E2 /* TKVideoSlider.m */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		CE745FBF2860699100BED9E2 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FD12860699100BED9E2 /* Base */,
+				CE745FC32860699100BED9E2 /* ScreenRotation（屏幕旋转相关） */,
+				CE745FCE2860699100BED9E2 /* StatusBar（状态栏） */,
+				CE745FC02860699100BED9E2 /* Video */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		CE745FC02860699100BED9E2 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FC12860699100BED9E2 /* VideoViewController.h */,
+				CE745FC22860699100BED9E2 /* VideoViewController.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		CE745FC32860699100BED9E2 /* ScreenRotation（屏幕旋转相关） */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FCC2860699100BED9E2 /* ScreenRotationViewController.h */,
+				CE745FC52860699100BED9E2 /* ScreenRotationViewController.m */,
+				CE745FCD2860699100BED9E2 /* CodeControlsScreenRotationController.h */,
+				CE745FC82860699100BED9E2 /* CodeControlsScreenRotationController.m */,
+				CE745FCB2860699100BED9E2 /* GravityScreenRotationViewController.h */,
+				CE745FC62860699100BED9E2 /* GravityScreenRotationViewController.m */,
+				CE745FC92860699100BED9E2 /* PresentLandscapeViewController.h */,
+				CE745FC42860699100BED9E2 /* PresentLandscapeViewController.m */,
+				CE745FCA2860699100BED9E2 /* TransformRotationViewController.h */,
+				CE745FC72860699100BED9E2 /* TransformRotationViewController.m */,
+			);
+			path = "ScreenRotation（屏幕旋转相关）";
+			sourceTree = "<group>";
+		};
+		CE745FCE2860699100BED9E2 /* StatusBar（状态栏） */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FD02860699100BED9E2 /* StatusBarViewController.h */,
+				CE745FCF2860699100BED9E2 /* StatusBarViewController.m */,
+			);
+			path = "StatusBar（状态栏）";
+			sourceTree = "<group>";
+		};
+		CE745FD12860699100BED9E2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FD52860699100BED9E2 /* TKBaseTabBarController.h */,
+				CE745FD22860699100BED9E2 /* TKBaseTabBarController.m */,
+				CE745FD72860699200BED9E2 /* TKNavigationController.h */,
+				CE745FD42860699100BED9E2 /* TKNavigationController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CEA227852861B6CD001285C0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FAB2860692D00BED9E2 /* main.m */,
+				CE745FD32860699100BED9E2 /* AppDelegate.h */,
+				CE745FD62860699100BED9E2 /* AppDelegate.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		D7120720E5C25279AD27DD1E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7AFD0FC252BF0D89293B1905 /* Pods_ScreenRotationDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E45FE8A16DE846CDFE6FCB51 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D633DDCD9C39145705D4C916 /* Pods-ScreenRotationDemo.debug.xcconfig */,
+				538DDA8D32F602281591DF76 /* Pods-ScreenRotationDemo.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE745F952860692A00BED9E2 /* ScreenRotationDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE745FAF2860692D00BED9E2 /* Build configuration list for PBXNativeTarget "ScreenRotationDemo" */;
+			buildPhases = (
+				280722A37933811B4230C848 /* [CP] Check Pods Manifest.lock */,
+				CE745F922860692A00BED9E2 /* Sources */,
+				CE745F932860692A00BED9E2 /* Frameworks */,
+				CE745F942860692A00BED9E2 /* Resources */,
+				78300D5708D5C22100733298 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ScreenRotationDemo;
+			productName = ScreenRotationDemo;
+			productReference = CE745F962860692A00BED9E2 /* ScreenRotationDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE745F8E2860692A00BED9E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					CE745F952860692A00BED9E2 = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+				};
+			};
+			buildConfigurationList = CE745F912860692A00BED9E2 /* Build configuration list for PBXProject "ScreenRotationDemo" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE745F8D2860692A00BED9E2;
+			productRefGroup = CE745F972860692A00BED9E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE745F952860692A00BED9E2 /* ScreenRotationDemo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE745F942860692A00BED9E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE745FA92860692D00BED9E2 /* LaunchScreen.storyboard in Resources */,
+				CE745FA62860692D00BED9E2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		280722A37933811B4230C848 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ScreenRotationDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		78300D5708D5C22100733298 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScreenRotationDemo/Pods-ScreenRotationDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ScreenRotationDemo/Pods-ScreenRotationDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ScreenRotationDemo/Pods-ScreenRotationDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE745F922860692A00BED9E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE745FE32860699200BED9E2 /* CodeControlsScreenRotationController.m in Sources */,
+				CE745FE22860699200BED9E2 /* TransformRotationViewController.m in Sources */,
+				CE745FE42860699200BED9E2 /* StatusBarViewController.m in Sources */,
+				CE745FAC2860692D00BED9E2 /* main.m in Sources */,
+				CE745FE72860699200BED9E2 /* AppDelegate.m in Sources */,
+				CE745FDB2860699200BED9E2 /* TKVideoPlayer.m in Sources */,
+				CE745FDA2860699200BED9E2 /* TKVideoSlider.m in Sources */,
+				CE745FDC2860699200BED9E2 /* TKPlayerControlView.m in Sources */,
+				CE745FE52860699200BED9E2 /* TKBaseTabBarController.m in Sources */,
+				CE745FE02860699200BED9E2 /* ScreenRotationViewController.m in Sources */,
+				CE745FDF2860699200BED9E2 /* PresentLandscapeViewController.m in Sources */,
+				CE745FDE2860699200BED9E2 /* VideoViewController.m in Sources */,
+				CE745FE12860699200BED9E2 /* GravityScreenRotationViewController.m in Sources */,
+				CE745FE62860699200BED9E2 /* TKNavigationController.m in Sources */,
+				CE745FD92860699200BED9E2 /* TKPlayerConfig.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE745FA72860692D00BED9E2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE745FA82860692D00BED9E2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE745FAD2860692D00BED9E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CE745FAE2860692D00BED9E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE745FB02860692D00BED9E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D633DDCD9C39145705D4C916 /* Pods-ScreenRotationDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LA78A3696S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScreenRotationDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eoffcn.classonline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ClassonlineDev;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE745FB12860692D00BED9E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 538DDA8D32F602281591DF76 /* Pods-ScreenRotationDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LA78A3696S;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ScreenRotationDemo/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eoffcn.classonline;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = ClassonlineDev;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE745F912860692A00BED9E2 /* Build configuration list for PBXProject "ScreenRotationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE745FAD2860692D00BED9E2 /* Debug */,
+				CE745FAE2860692D00BED9E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE745FAF2860692D00BED9E2 /* Build configuration list for PBXNativeTarget "ScreenRotationDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE745FB02860692D00BED9E2 /* Debug */,
+				CE745FB12860692D00BED9E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE745F8E2860692A00BED9E2 /* Project object */;
+}

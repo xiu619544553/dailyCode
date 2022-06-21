@@ -36,6 +36,12 @@
 - 有效的括号 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/有效的括号/main.c)
 - 爬楼梯 [链接](https://github.com/xiu619544553/dailyCode/blob/master/算法题/爬楼梯/main.c)
 
+## iOS 屏幕旋转 & 状态栏
+
+* 参考工程 `ScreenRotationDemo` [链接](https://github.com/xiu619544553/dailyCode/ScreenRotationDemo)
+* 各种屏幕旋转示例 [链接](https://github.com/xiu619544553/dailyCode/ScreenRotationDemo/ScreenRotationDemo/Classes/ScreenRotation（屏幕旋转相关）/ScreenRotationViewController.m)
+* 状态栏示例 [链接](https://github.com/xiu619544553/dailyCode/ScreenRotationDemo/ScreenRotationDemo/Classes/StatusBar（状态栏）/StatusBarViewController.m)
+
 ## iOS 内存管理
 - 1.讲一下 iOS 内存管理的理解？(三种方案的结合) 
 - 2.使用自动引用计（`ARC`）数应该遵循的原则? [链接](https://github.com/xiu619544553/dailyCode/blob/master/内存管理/2.使用ARC应该遵守的原则.md)

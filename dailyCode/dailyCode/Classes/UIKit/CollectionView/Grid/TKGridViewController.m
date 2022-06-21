@@ -19,7 +19,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.edgesForExtendedLayout = UIRectEdgeNone;
+    if (@available(iOS 11.0, *)) {
+        // UIScrollViewContentInsetAdjustmentNever
+        self.collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentAutomatic;
+    } else {
+        // Fallback on earlier versions
+        self.automaticallyAdjustsScrollViewInsets = YES;
+    }
+    
     [self.view addSubview:self.collectionView];
 }
 
