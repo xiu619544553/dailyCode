@@ -38,9 +38,9 @@
 
 ## iOS 屏幕旋转 & 状态栏
 
-* 参考工程 `ScreenRotationDemo` [链接](https://github.com/xiu619544553/dailyCode/ScreenRotationDemo)
-* 各种屏幕旋转示例 [链接](https://github.com/xiu619544553/dailyCode/ScreenRotationDemo/ScreenRotationDemo/Classes/ScreenRotation（屏幕旋转相关）/ScreenRotationViewController.m)
-* 状态栏示例 [链接](https://github.com/xiu619544553/dailyCode/ScreenRotationDemo/ScreenRotationDemo/Classes/StatusBar（状态栏）/StatusBarViewController.m)
+* 参考工程 `ScreenRotationDemo` [链接](https://github.com/xiu619544553/dailyCode/blob/master/ScreenRotationDemo)
+* 各种屏幕旋转示例 [链接](https://github.com/xiu619544553/dailyCode/blob/master/ScreenRotationDemo/ScreenRotationDemo/Classes/ScreenRotation（屏幕旋转相关）/ScreenRotationViewController.m)
+* 状态栏示例 [链接](https://github.com/xiu619544553/dailyCode/blob/master/ScreenRotationDemo/ScreenRotationDemo/Classes/StatusBar（状态栏）/StatusBarViewController.m)
 
 ## iOS 内存管理
 - 1.讲一下 iOS 内存管理的理解？(三种方案的结合) 

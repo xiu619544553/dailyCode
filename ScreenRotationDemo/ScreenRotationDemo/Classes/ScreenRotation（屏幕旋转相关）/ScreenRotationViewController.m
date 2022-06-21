@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"横屏问题";
+    self.navigationItem.title = @"屏幕旋转";
     
     UIButton *presentBtn = [self createBtnWithTitle:@"模态出横屏视图（含导航栏）"
                                              action:@selector(presentBtnAction:)
