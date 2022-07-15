@@ -68,6 +68,10 @@
                 KeyForDesc : @"UIGestureRecognizer"
             },
             @{
+                KeyForVC : @"GestureTableViewController",
+                KeyForDesc: @"解决 UIPanGestureRecognizer 与 UIScrollView滑动冲突"
+            },
+            @{
                 KeyForVC : @"TKPageViewController",
                 KeyForDesc : @"UIPageViewController"
             },

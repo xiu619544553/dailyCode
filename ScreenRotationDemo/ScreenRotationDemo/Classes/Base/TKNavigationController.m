@@ -37,7 +37,7 @@
     return self.topViewController.supportedInterfaceOrientations;
 }
 
-#pragma StatusBar Style
+#pragma mark - StatusBar Style
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
     return self.topViewController.preferredStatusBarStyle;

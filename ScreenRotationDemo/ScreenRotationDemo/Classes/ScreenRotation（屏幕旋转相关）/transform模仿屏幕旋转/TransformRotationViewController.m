@@ -191,6 +191,18 @@ typedef NS_ENUM(NSInteger, TransformRotationViewInterfaceOrientation) {
     self.rotationView.frame = self.originalFrame;
 }
 
+- (CGAffineTransform)getARotation:(UIInterfaceOrientation)orientation {
+    if (orientation == UIInterfaceOrientationLandscapeLeft) {
+        return CGAffineTransformMakeRotation(M_PI * 1.5);
+    } else if (orientation == UIInterfaceOrientationLandscapeRight) {
+        return CGAffineTransformMakeRotation(M_PI_2);
+    } else if (orientation == UIInterfaceOrientationPortraitUpsideDown) {
+        return CGAffineTransformMakeRotation(-M_PI);
+    } else {
+        return CGAffineTransformIdentity;
+    }
+}
+
 #pragma StatusBar Style
 
 - (UIStatusBarStyle)preferredStatusBarStyle {

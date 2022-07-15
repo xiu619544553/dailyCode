@@ -19,4 +19,8 @@
     return self;
 }
 
++ (void)preferLogLevel:(TKLogLevel)logLevel {
+    _logLevel = logLevel;
+}
+
 @end

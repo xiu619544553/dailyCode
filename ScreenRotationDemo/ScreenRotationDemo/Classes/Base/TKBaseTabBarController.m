@@ -12,6 +12,7 @@
 #import "ScreenRotationViewController.h"
 #import "GravityScreenRotationViewController.h"
 #import "VideoViewController.h"
+#import "TestLandscapeViewController.h"
 
 @interface TKBaseTabBarController ()
 
@@ -45,6 +46,13 @@
     videoVc.tabBarItem = videoItem;
     TKNavigationController *videoNav = [[TKNavigationController alloc] initWithRootViewController:videoVc];
     [self addChildViewController:videoNav];
+    
+    
+    UITabBarItem *tlItem = [[UITabBarItem alloc] initWithTitle:@"UIWindow旋转" image:[UIImage new] tag:3];;
+    TestLandscapeViewController *tlVC = [TestLandscapeViewController new];
+    tlVC.tabBarItem = tlItem;
+    TKNavigationController *tlNav = [[TKNavigationController alloc] initWithRootViewController:tlVC];
+    [self addChildViewController:tlNav];
 }
 
 #pragma mark - Orientations Methods

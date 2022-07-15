@@ -5,8 +5,10 @@
 //  Created by hello on 2022/6/16.
 //
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "TKVideoPlayerSupportUtils.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 /// 视频填充方式
 typedef NS_ENUM(NSUInteger, TKVideoGravity){
@@ -22,10 +24,9 @@ typedef NS_ENUM(NSInteger, TKStatusBarHideState) {
     TKStatusBarHideStateAlways,             // 一直显示
 };
 
+static TKLogLevel _logLevel;
 @interface TKPlayerConfig : NSObject
 
-/** 视频数据源 */
-@property (nonatomic, strong) NSURL *sourceUrl;
 /** 是否自动播放 */
 @property (nonatomic, assign) BOOL shouldAutoPlay;
 /** 视频拉伸方式 */
@@ -41,4 +42,14 @@ typedef NS_ENUM(NSInteger, TKStatusBarHideState) {
 /** 全屏状态下状态栏显示方式 */
 @property (nonatomic, assign) TKStatusBarHideState statusBarHideState;
 
+/// 视频请求头
+@property (nonatomic, strong, nullable) NSDictionary<NSString *, id> *requestHeader;
+
+
+/// 设置日志输出级别
+/// @param logLevel 指定日志输出级别
++ (void)preferLogLevel:(TKLogLevel)logLevel;
+
 @end
+
+NS_ASSUME_NONNULL_END

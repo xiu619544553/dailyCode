@@ -25,6 +25,12 @@
 		CE745FE62860699200BED9E2 /* TKNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FD42860699100BED9E2 /* TKNavigationController.m */; };
 		CE745FE72860699200BED9E2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE745FD62860699100BED9E2 /* AppDelegate.m */; };
 		CE906A06D0C260D7219514BE /* Pods_ScreenRotationDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AFD0FC252BF0D89293B1905 /* Pods_ScreenRotationDemo.framework */; };
+		CEA156E228694B1B00E96895 /* TKVideoPlayerSupportUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA156E128694B1B00E96895 /* TKVideoPlayerSupportUtils.m */; };
+		CEA156E528694BCE00E96895 /* TKGCDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = CEA156E428694BCE00E96895 /* TKGCDExtensions.m */; };
+		CEC2892728728CEB00ADBA00 /* TKLandscapeWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC2892628728CEB00ADBA00 /* TKLandscapeWindow.m */; };
+		CEC2892A28728D0300ADBA00 /* TKLandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC2892928728D0300ADBA00 /* TKLandscapeViewController.m */; };
+		CEC2892D28728DF200ADBA00 /* TestLandscapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC2892C28728DF200ADBA00 /* TestLandscapeViewController.m */; };
+		CEC289312872B3BA00ADBA00 /* TKOrientationObserver.m in Sources */ = {isa = PBXBuildFile; fileRef = CEC289302872B3BA00ADBA00 /* TKOrientationObserver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +70,18 @@
 		CE745FD52860699100BED9E2 /* TKBaseTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKBaseTabBarController.h; sourceTree = "<group>"; };
 		CE745FD62860699100BED9E2 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		CE745FD72860699200BED9E2 /* TKNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKNavigationController.h; sourceTree = "<group>"; };
+		CEA156E028694B1B00E96895 /* TKVideoPlayerSupportUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKVideoPlayerSupportUtils.h; sourceTree = "<group>"; };
+		CEA156E128694B1B00E96895 /* TKVideoPlayerSupportUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKVideoPlayerSupportUtils.m; sourceTree = "<group>"; };
+		CEA156E328694BCE00E96895 /* TKGCDExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKGCDExtensions.h; sourceTree = "<group>"; };
+		CEA156E428694BCE00E96895 /* TKGCDExtensions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKGCDExtensions.m; sourceTree = "<group>"; };
+		CEC2892528728CEB00ADBA00 /* TKLandscapeWindow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKLandscapeWindow.h; sourceTree = "<group>"; };
+		CEC2892628728CEB00ADBA00 /* TKLandscapeWindow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKLandscapeWindow.m; sourceTree = "<group>"; };
+		CEC2892828728D0300ADBA00 /* TKLandscapeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKLandscapeViewController.h; sourceTree = "<group>"; };
+		CEC2892928728D0300ADBA00 /* TKLandscapeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKLandscapeViewController.m; sourceTree = "<group>"; };
+		CEC2892B28728DF200ADBA00 /* TestLandscapeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLandscapeViewController.h; sourceTree = "<group>"; };
+		CEC2892C28728DF200ADBA00 /* TestLandscapeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLandscapeViewController.m; sourceTree = "<group>"; };
+		CEC2892F2872B3BA00ADBA00 /* TKOrientationObserver.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKOrientationObserver.h; sourceTree = "<group>"; };
+		CEC289302872B3BA00ADBA00 /* TKOrientationObserver.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKOrientationObserver.m; sourceTree = "<group>"; };
 		D633DDCD9C39145705D4C916 /* Pods-ScreenRotationDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ScreenRotationDemo.debug.xcconfig"; path = "Target Support Files/Pods-ScreenRotationDemo/Pods-ScreenRotationDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +97,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE4700F7287C0D11008E1245 /* 模态出横屏控制器 */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FC92860699100BED9E2 /* PresentLandscapeViewController.h */,
+				CE745FC42860699100BED9E2 /* PresentLandscapeViewController.m */,
+			);
+			path = "模态出横屏控制器";
+			sourceTree = "<group>";
+		};
+		CE4700F8287C0D36008E1245 /* 代码控制横竖屏旋转 */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FCD2860699100BED9E2 /* CodeControlsScreenRotationController.h */,
+				CE745FC82860699100BED9E2 /* CodeControlsScreenRotationController.m */,
+			);
+			path = "代码控制横竖屏旋转";
+			sourceTree = "<group>";
+		};
+		CE4700F9287C0D4E008E1245 /* 设备旋转控制屏幕旋转 */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FCB2860699100BED9E2 /* GravityScreenRotationViewController.h */,
+				CE745FC62860699100BED9E2 /* GravityScreenRotationViewController.m */,
+			);
+			path = "设备旋转控制屏幕旋转";
+			sourceTree = "<group>";
+		};
+		CE4700FA287C0D68008E1245 /* transform模仿屏幕旋转 */ = {
+			isa = PBXGroup;
+			children = (
+				CE745FCA2860699100BED9E2 /* TransformRotationViewController.h */,
+				CE745FC72860699100BED9E2 /* TransformRotationViewController.m */,
+			);
+			path = "transform模仿屏幕旋转";
+			sourceTree = "<group>";
+		};
 		CE745F8D2860692A00BED9E2 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +176,10 @@
 				CE745FB72860699100BED9E2 /* TKVideoPlayer.m */,
 				CE745FBB2860699100BED9E2 /* TKVideoSlider.h */,
 				CE745FB62860699100BED9E2 /* TKVideoSlider.m */,
+				CEA156E028694B1B00E96895 /* TKVideoPlayerSupportUtils.h */,
+				CEA156E128694B1B00E96895 /* TKVideoPlayerSupportUtils.m */,
+				CEA156E328694BCE00E96895 /* TKGCDExtensions.h */,
+				CEA156E428694BCE00E96895 /* TKGCDExtensions.m */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -129,6 +187,7 @@
 		CE745FBF2860699100BED9E2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				CEC2892428728CD400ADBA00 /* LandscapeWindow */,
 				CE745FD12860699100BED9E2 /* Base */,
 				CE745FC32860699100BED9E2 /* ScreenRotation（屏幕旋转相关） */,
 				CE745FCE2860699100BED9E2 /* StatusBar（状态栏） */,
@@ -151,14 +210,10 @@
 			children = (
 				CE745FCC2860699100BED9E2 /* ScreenRotationViewController.h */,
 				CE745FC52860699100BED9E2 /* ScreenRotationViewController.m */,
-				CE745FCD2860699100BED9E2 /* CodeControlsScreenRotationController.h */,
-				CE745FC82860699100BED9E2 /* CodeControlsScreenRotationController.m */,
-				CE745FCB2860699100BED9E2 /* GravityScreenRotationViewController.h */,
-				CE745FC62860699100BED9E2 /* GravityScreenRotationViewController.m */,
-				CE745FC92860699100BED9E2 /* PresentLandscapeViewController.h */,
-				CE745FC42860699100BED9E2 /* PresentLandscapeViewController.m */,
-				CE745FCA2860699100BED9E2 /* TransformRotationViewController.h */,
-				CE745FC72860699100BED9E2 /* TransformRotationViewController.m */,
+				CE4700FA287C0D68008E1245 /* transform模仿屏幕旋转 */,
+				CE4700F9287C0D4E008E1245 /* 设备旋转控制屏幕旋转 */,
+				CE4700F8287C0D36008E1245 /* 代码控制横竖屏旋转 */,
+				CE4700F7287C0D11008E1245 /* 模态出横屏控制器 */,
 			);
 			path = "ScreenRotation（屏幕旋转相关）";
 			sourceTree = "<group>";
@@ -191,6 +246,29 @@
 				CE745FD62860699100BED9E2 /* AppDelegate.m */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		CEC2892428728CD400ADBA00 /* LandscapeWindow */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2892B28728DF200ADBA00 /* TestLandscapeViewController.h */,
+				CEC2892C28728DF200ADBA00 /* TestLandscapeViewController.m */,
+				CEC2892F2872B3BA00ADBA00 /* TKOrientationObserver.h */,
+				CEC289302872B3BA00ADBA00 /* TKOrientationObserver.m */,
+				CEC2892E28728DF700ADBA00 /* Landscape */,
+			);
+			path = LandscapeWindow;
+			sourceTree = "<group>";
+		};
+		CEC2892E28728DF700ADBA00 /* Landscape */ = {
+			isa = PBXGroup;
+			children = (
+				CEC2892828728D0300ADBA00 /* TKLandscapeViewController.h */,
+				CEC2892928728D0300ADBA00 /* TKLandscapeViewController.m */,
+				CEC2892528728CEB00ADBA00 /* TKLandscapeWindow.h */,
+				CEC2892628728CEB00ADBA00 /* TKLandscapeWindow.m */,
+			);
+			path = Landscape;
 			sourceTree = "<group>";
 		};
 		D7120720E5C25279AD27DD1E /* Frameworks */ = {
@@ -323,19 +401,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA156E528694BCE00E96895 /* TKGCDExtensions.m in Sources */,
 				CE745FE32860699200BED9E2 /* CodeControlsScreenRotationController.m in Sources */,
 				CE745FE22860699200BED9E2 /* TransformRotationViewController.m in Sources */,
 				CE745FE42860699200BED9E2 /* StatusBarViewController.m in Sources */,
 				CE745FAC2860692D00BED9E2 /* main.m in Sources */,
 				CE745FE72860699200BED9E2 /* AppDelegate.m in Sources */,
+				CEC2892D28728DF200ADBA00 /* TestLandscapeViewController.m in Sources */,
 				CE745FDB2860699200BED9E2 /* TKVideoPlayer.m in Sources */,
 				CE745FDA2860699200BED9E2 /* TKVideoSlider.m in Sources */,
+				CEC2892728728CEB00ADBA00 /* TKLandscapeWindow.m in Sources */,
+				CEC2892A28728D0300ADBA00 /* TKLandscapeViewController.m in Sources */,
+				CEA156E228694B1B00E96895 /* TKVideoPlayerSupportUtils.m in Sources */,
 				CE745FDC2860699200BED9E2 /* TKPlayerControlView.m in Sources */,
 				CE745FE52860699200BED9E2 /* TKBaseTabBarController.m in Sources */,
 				CE745FE02860699200BED9E2 /* ScreenRotationViewController.m in Sources */,
 				CE745FDF2860699200BED9E2 /* PresentLandscapeViewController.m in Sources */,
 				CE745FDE2860699200BED9E2 /* VideoViewController.m in Sources */,
 				CE745FE12860699200BED9E2 /* GravityScreenRotationViewController.m in Sources */,
+				CEC289312872B3BA00ADBA00 /* TKOrientationObserver.m in Sources */,
 				CE745FE62860699200BED9E2 /* TKNavigationController.m in Sources */,
 				CE745FD92860699200BED9E2 /* TKPlayerConfig.m in Sources */,
 			);

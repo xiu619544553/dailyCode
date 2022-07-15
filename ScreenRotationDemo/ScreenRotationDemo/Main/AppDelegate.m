@@ -28,6 +28,8 @@
     // ☑️ Landscape Left
     // ☑️ Landscape Right
 
+    // 屏蔽 Masonry 警告
+    [[NSUserDefaults standardUserDefaults] setValue:@(NO) forKey:@"_UIConstraintBasedLayoutLogUnsatisfiable"];
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = [TKBaseTabBarController new];

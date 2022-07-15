@@ -164,6 +164,8 @@
 		CECA47C72673477F007BC952 /* TKMasonryOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECA47C22673477F007BC952 /* TKMasonryOtherViewController.m */; };
 		CECD2497255A61E000A0610B /* TKImageAPIUsageListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */; };
 		CECD249E255A631B00A0610B /* TKResizableImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CECD249D255A631B00A0610B /* TKResizableImageViewController.m */; };
+		CED65BBF288146E60008DA1E /* GestureTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CED65BBC288146E60008DA1E /* GestureTableViewController.m */; };
+		CED65BC0288146E60008DA1E /* GestureTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CED65BBD288146E60008DA1E /* GestureTableViewCell.m */; };
 		CEDC4594264E1CD1000064CB /* TKSectionHeaderViewCeilingView.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC4593264E1CD1000064CB /* TKSectionHeaderViewCeilingView.m */; };
 		CEDC465C264E9DA1000064CB /* TKSectionHeaderViewCeilingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEDC458C264E1B94000064CB /* TKSectionHeaderViewCeilingViewController.m */; };
 		CEE1A0EF26350F3A003CB162 /* TKRunLoopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CEE1A0EE26350F3A003CB162 /* TKRunLoopViewController.m */; };
@@ -509,6 +511,10 @@
 		CECD2496255A61E000A0610B /* TKImageAPIUsageListVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKImageAPIUsageListVC.m; sourceTree = "<group>"; };
 		CECD249C255A631B00A0610B /* TKResizableImageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKResizableImageViewController.h; sourceTree = "<group>"; };
 		CECD249D255A631B00A0610B /* TKResizableImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKResizableImageViewController.m; sourceTree = "<group>"; };
+		CED65BBB288146E60008DA1E /* GestureTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureTableViewCell.h; sourceTree = "<group>"; };
+		CED65BBC288146E60008DA1E /* GestureTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureTableViewController.m; sourceTree = "<group>"; };
+		CED65BBD288146E60008DA1E /* GestureTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GestureTableViewCell.m; sourceTree = "<group>"; };
+		CED65BBE288146E60008DA1E /* GestureTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GestureTableViewController.h; sourceTree = "<group>"; };
 		CEDC458B264E1B94000064CB /* TKSectionHeaderViewCeilingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSectionHeaderViewCeilingViewController.h; sourceTree = "<group>"; };
 		CEDC458C264E1B94000064CB /* TKSectionHeaderViewCeilingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TKSectionHeaderViewCeilingViewController.m; sourceTree = "<group>"; };
 		CEDC4592264E1CD1000064CB /* TKSectionHeaderViewCeilingView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TKSectionHeaderViewCeilingView.h; sourceTree = "<group>"; };
@@ -615,8 +621,8 @@
 		CE1E1183263A848000365B51 /* GestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
-				CE1E1184263A855E00365B51 /* TKGestureRecognizerViewController.h */,
-				CE1E1185263A855E00365B51 /* TKGestureRecognizerViewController.m */,
+				CED65BBA288146E60008DA1E /* UIPanGestureRecognizer与UIScrollView滑动冲突 */,
+				CED65BB9288146C50008DA1E /* 简单应用 */,
 			);
 			path = GestureRecognizer;
 			sourceTree = "<group>";
@@ -1681,6 +1687,26 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		CED65BB9288146C50008DA1E /* 简单应用 */ = {
+			isa = PBXGroup;
+			children = (
+				CE1E1184263A855E00365B51 /* TKGestureRecognizerViewController.h */,
+				CE1E1185263A855E00365B51 /* TKGestureRecognizerViewController.m */,
+			);
+			path = "简单应用";
+			sourceTree = "<group>";
+		};
+		CED65BBA288146E60008DA1E /* UIPanGestureRecognizer与UIScrollView滑动冲突 */ = {
+			isa = PBXGroup;
+			children = (
+				CED65BBB288146E60008DA1E /* GestureTableViewCell.h */,
+				CED65BBD288146E60008DA1E /* GestureTableViewCell.m */,
+				CED65BBE288146E60008DA1E /* GestureTableViewController.h */,
+				CED65BBC288146E60008DA1E /* GestureTableViewController.m */,
+			);
+			path = "UIPanGestureRecognizer与UIScrollView滑动冲突";
+			sourceTree = "<group>";
+		};
 		CEDC4583264E1AF1000064CB /* Ceiling */ = {
 			isa = PBXGroup;
 			children = (
@@ -2011,6 +2037,7 @@
 				CEE6F2442536CAFF00E3EBF8 /* TKBasePlainTableViewController.m in Sources */,
 				CE400D94253576EA003C5E72 /* TKScalePropertyViewController.m in Sources */,
 				CE400D6D253576EA003C5E72 /* ShadowVC.m in Sources */,
+				CED65BBF288146E60008DA1E /* GestureTableViewController.m in Sources */,
 				CEDC4594264E1CD1000064CB /* TKSectionHeaderViewCeilingView.m in Sources */,
 				CE400D71253576EA003C5E72 /* TKPageManagerViewController.m in Sources */,
 				CE400D8F253576EA003C5E72 /* AboutScrollViewLayoutViewController.m in Sources */,
@@ -2069,6 +2096,7 @@
 				CEE1F4D22581FB2900A62B74 /* TK_NSAttributed_ViewController.m in Sources */,
 				CE400D89253576EA003C5E72 /* TempNavigationController.m in Sources */,
 				CE49D48D2614162F00B82837 /* TK_Font_TableViewController.m in Sources */,
+				CED65BC0288146E60008DA1E /* GestureTableViewCell.m in Sources */,
 				CE400D9A253576EA003C5E72 /* TKFoundationListViewController.m in Sources */,
 				CE400DA6253576EA003C5E72 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				CE400D72253576EA003C5E72 /* TKTableViewController.m in Sources */,

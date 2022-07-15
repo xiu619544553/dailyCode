@@ -32,6 +32,90 @@ static const CGFloat PlaybackControlsAutoHideTimeInterval = 0.5f;
     return self;
 }
 
+/** 创建UI */
+- (void)setupUI {
+    self.backgroundColor = [UIColor clearColor];
+    [self addSubview:self.playButton];
+    [self addSubview:self.bottomControlsBar];
+    [self addSubview:self.activityIndicatorView];
+    [self addSubview:self.retryButton];
+    
+    [_bottomControlsBar addSubview:self.fullScreenButton];
+    [_bottomControlsBar addSubview:self.playTimeLabel];
+    [_bottomControlsBar addSubview:self.totalTimeLabel];
+    [_bottomControlsBar addSubview:self.progress];
+    [_bottomControlsBar addSubview:self.videoSlider];
+    
+    [self makeConstraints];
+    [self _resetPlaybackControls];
+    [self addGesture];
+}
+
+/** 添加手势 */
+- (void)addGesture {
+    // 单击手势
+    UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
+    [self addGestureRecognizer:singleTapGesture];
+    
+    // 双击手势
+    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
+    doubleTapGesture.numberOfTapsRequired = 2;
+    [self addGestureRecognizer:doubleTapGesture];
+    
+    // 当系统检测不到双击手势时执行再识别单击手势，解决单双击收拾冲突
+    [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
+}
+
+/** 添加约束 */
+- (void)makeConstraints {
+    [_playButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(80, 80));
+    }];
+    
+    [_bottomControlsBar mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.bottom.equalTo(self);
+        make.height.equalTo(@30);
+    }];
+    
+    [_activityIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self);
+    }];
+    
+    [_retryButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self);
+        make.size.mas_equalTo(CGSizeMake(80, 80));
+    }];
+    
+    [_fullScreenButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.bottom.equalTo(_bottomControlsBar);
+        make.size.mas_equalTo(CGSizeMake(30, 30));
+    }];
+    
+    [_playTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_bottomControlsBar).offset(5);
+        make.width.equalTo(@45);
+        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
+    }];
+    
+    [_totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(_fullScreenButton.mas_left).offset(-5);
+        make.width.equalTo(@45);
+        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
+    }];
+    
+    [_progress mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(_playTimeLabel.mas_right).offset(5);
+        make.right.equalTo(_totalTimeLabel.mas_left).offset(-5);
+        make.height.equalTo(@2);
+        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
+    }];
+
+    [_videoSlider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(_progress);
+    }];
+}
+
 
 /** 重置控制面板 */
 - (void)_resetPlaybackControls
@@ -41,14 +125,11 @@ static const CGFloat PlaybackControlsAutoHideTimeInterval = 0.5f;
     [self _activityIndicatorViewShow:YES];
 }
 
-/**
- 设置视频时间显示以及滑杆状态
- @param playTime 当前播放时间
- @param totalTime 视频总时间
- @param sliderValue 滑杆滑动值
- */
-- (void)_setPlaybackControlsWithPlayTime:(NSInteger)playTime totalTime:(NSInteger)totalTime sliderValue:(CGFloat)sliderValue
-{
+/// 设置视频时间显示以及滑杆状态
+/// @param playTime 当前播放时间
+/// @param totalTime 视频总时间
+/// @param sliderValue 滑杆滑动值
+- (void)_setPlaybackControlsWithPlayTime:(NSInteger)playTime totalTime:(NSInteger)totalTime sliderValue:(CGFloat)sliderValue {
     //当前时长进度progress
     NSInteger proMin = playTime / 60;//当前秒
     NSInteger proSec = playTime % 60;//当前分钟
@@ -100,14 +181,12 @@ static const CGFloat PlaybackControlsAutoHideTimeInterval = 0.5f;
 }
 
 /** 控制播放按钮选择状态 */
-- (void)_setPlayButtonSelect:(BOOL)select
-{
+- (void)_setPlayButtonSelect:(BOOL)select {
     self.playButton.selected = select;
 }
 
 /** 显示或隐藏控制面板 */
-- (void)_playerShowOrHidePlaybackControls
-{
+- (void)_playerShowOrHidePlaybackControls {
     if (self.isShowing) {
         [self _playerHidePlaybackControls];
     } else {
@@ -116,8 +195,7 @@ static const CGFloat PlaybackControlsAutoHideTimeInterval = 0.5f;
 }
 
 /** 显示控制面板 */
-- (void)_playerShowPlaybackControls
-{
+- (void)_playerShowPlaybackControls {
     [self _playerCancelAutoHidePlaybackControls];
     [UIView animateWithDuration:PlaybackControlsAutoHideTimeInterval animations:^{
         [self _showPlaybackControls];
@@ -128,8 +206,7 @@ static const CGFloat PlaybackControlsAutoHideTimeInterval = 0.5f;
 }
 
 /** 隐藏控制面板 */
-- (void)_playerHidePlaybackControls
-{
+- (void)_playerHidePlaybackControls {
     [self _playerCancelAutoHidePlaybackControls];
     [UIView animateWithDuration:PlaybackControlsAutoHideTimeInterval animations:^{
         [self _hidePlaybackControls];
@@ -139,8 +216,7 @@ static const CGFloat PlaybackControlsAutoHideTimeInterval = 0.5f;
 }
 
 /** 显示控制面板 */
-- (void)_showPlaybackControls
-{
+- (void)_showPlaybackControls {
     self.isShowing = YES;
     self.bottomControlsBar.alpha = 1;
     if (!self.isActivityShowing && !self.isRetryShowing) {
@@ -199,96 +275,8 @@ static const CGFloat PlaybackControlsAutoHideTimeInterval = 0.5f;
 }
 
 /** 取消延时隐藏playbackControls */
-- (void)_playerCancelAutoHidePlaybackControls
-{
+- (void)_playerCancelAutoHidePlaybackControls {
     [NSObject cancelPreviousPerformRequestsWithTarget:self];
-}
-
-/** 创建UI */
-- (void)setupUI
-{
-    self.backgroundColor = [UIColor clearColor];
-    [self addSubview:self.playButton];
-    [self addSubview:self.bottomControlsBar];
-    [self addSubview:self.activityIndicatorView];
-    [self addSubview:self.retryButton];
-    
-    [_bottomControlsBar addSubview:self.fullScreenButton];
-    [_bottomControlsBar addSubview:self.playTimeLabel];
-    [_bottomControlsBar addSubview:self.totalTimeLabel];
-    [_bottomControlsBar addSubview:self.progress];
-    [_bottomControlsBar addSubview:self.videoSlider];
-    
-    [self makeConstraints];
-    [self _resetPlaybackControls];
-    [self addGesture];
-}
-
-/** 添加手势 */
-- (void)addGesture
-{
-    //单击手势
-    UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tap:)];
-    [self addGestureRecognizer:singleTapGesture];
-    
-    //双击手势
-    UITapGestureRecognizer *doubleTapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTap:)];
-    doubleTapGesture.numberOfTapsRequired = 2;
-    [self addGestureRecognizer:doubleTapGesture];
-    
-    //当系统检测不到双击手势时执行再识别单击手势，解决单双击收拾冲突
-    [singleTapGesture requireGestureRecognizerToFail:doubleTapGesture];
-}
-
-/** 添加约束 */
-- (void)makeConstraints
-{
-    [_playButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(80, 80));
-    }];
-    
-    [_bottomControlsBar mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self);
-        make.height.equalTo(@30);
-    }];
-    
-    [_activityIndicatorView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
-    }];
-    
-    [_retryButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.center.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(80, 80));
-    }];
-    
-    [_fullScreenButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.bottom.equalTo(_bottomControlsBar);
-        make.size.mas_equalTo(CGSizeMake(30, 30));
-    }];
-    
-    [_playTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_bottomControlsBar).offset(5);
-        make.width.equalTo(@45);
-        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
-    }];
-    
-    [_totalTimeLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(_fullScreenButton.mas_left).offset(-5);
-        make.width.equalTo(@45);
-        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
-    }];
-    
-    [_progress mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(_playTimeLabel.mas_right).offset(5);
-        make.right.equalTo(_totalTimeLabel.mas_left).offset(-5);
-        make.height.equalTo(@2);
-        make.centerY.equalTo(_bottomControlsBar.mas_centerY);
-    }];
-
-    [_videoSlider mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(_progress);
-    }];
 }
 
 #pragma mark - getter
