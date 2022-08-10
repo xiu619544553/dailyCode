@@ -45,7 +45,7 @@
     //        NSLog(@"\nobj：%@ - size：%@", obj, NSStringFromCGSize(objSize));
     //    }];
     
-    [self semaphore_style_2];
+//    [self semaphore_style_2];
 }
 
 // 串行队列 + 异步 == 只会开启一个线程，且队列中所有的任务都是在这个线程执行
@@ -53,13 +53,13 @@
     
     // MARK: 模拟器信号量和异步回调组合使用
     NSLog(@"...1...");
-    //    [self simulate_Semaphore_AsyncHandler];
+//    [self simulate_Semaphore_AsyncHandler];
     NSLog(@"...2...");
     
     // MARK: 设置最大并发数
-    //    [self setMaxCount:1];
+    [self setMaxCount:2];
     
-    NSLog(@"%@", self.dataSources);
+//    NSLog(@"%@", self.dataSources);
 }
 
 #pragma mark - Event Methods
@@ -79,6 +79,9 @@
             [self setThreadConcurrentCount];
             break;
             
+        case 3:
+            break;
+            
         default:
             break;
     }
@@ -92,12 +95,13 @@
     
     for (int i = 0; i < 10; i ++) {
         [self asynDuration:1 handler:^{
-            NSLog(@"%@ - %@", @(i), [NSThread currentThread]);
-            dispatch_semaphore_signal(semaphore);
+            NSLog(@"signalResult=%ld，i=%d - %@", dispatch_semaphore_signal(semaphore), i, [NSThread currentThread]);
         }];
     }
     
-    dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    // 成功时返回零，如果超时则返回非零。
+    intptr_t waitResult = dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+    NSLog(@"waitResult=%ld，%@", waitResult, [NSThread currentThread]);
 }
 
 #pragma mark - 控制线程并发数
@@ -142,15 +146,12 @@
 
 - (void)setMaxCount:(NSInteger)max {
     dispatch_queue_t globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    
     dispatch_semaphore_t semaphore = dispatch_semaphore_create(max);
+    
     for (int i = 0; i < 30; i ++) {
-        
-        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-        
+        NSLog(@"waitSignal=%ld", dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER));
         dispatch_async(globalQueue, ^{
-            dispatch_semaphore_signal(semaphore);
-            NSLog(@"i=%d", i);
+            NSLog(@"signalResult=%ld，i=%d, %@", dispatch_semaphore_signal(semaphore), i, [NSThread currentThread]);
         });
     }
 }
@@ -228,7 +229,9 @@
     [self asynHandler:^(long long result) { // 异步调用，解除阻塞的线程
         NSLog(@"result=%@", @(result));
         
-        dispatch_semaphore_signal(sema);
+        // 如果线程被唤醒，则返回非0；否则，返回0
+        intptr_t signalResult = dispatch_semaphore_signal(sema);
+        NSLog(@"signalResult=%ld", signalResult); // signalResult=1
     }];
     
     dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
@@ -243,8 +246,7 @@
 }
 
 // 根据图片url获取图片尺寸
-+ (CGSize)getImageSizeWithURL:(id)imageURL
-{
++ (CGSize)getImageSizeWithURL:(id)imageURL {
     NSURL* URL = nil;
     if([imageURL isKindOfClass:[NSURL class]]){
         URL = imageURL;

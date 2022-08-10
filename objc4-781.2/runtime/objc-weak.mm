@@ -348,6 +348,10 @@ void
 weak_unregister_no_lock(weak_table_t *weak_table, id referent_id, 
                         id *referrer_id)
 {
+    // 旧对象解除注册操作
+    
+    // 在入口方法中，传入了 weak_table 弱引用表，referent_id 旧对象以及 referent_id 旧对象对应的地址
+    // 用指针去访问 oldObj 和 *location
     objc_object *referent = (objc_object *)referent_id;
     objc_object **referrer = (objc_object **)referrer_id;
 

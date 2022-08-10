@@ -83,9 +83,9 @@ struct weak_entry_t {
         struct {
             weak_referrer_t *referrers;
             uintptr_t        out_of_line_ness : 2;
-            uintptr_t        num_refs : PTR_MINUS_2;
-            uintptr_t        mask;
-            uintptr_t        max_hash_displacement;
+            uintptr_t        num_refs : PTR_MINUS_2;  // 引用数值。这里记录弱引用表中引用有效数字，因为弱引用表使用的是静态 hash 结构，所以需要使用变量来记录数目。
+            uintptr_t        mask;                    // 计数辅助量
+            uintptr_t        max_hash_displacement;   // hash 元素上限阀值
         };
         struct {
             // out_of_line_ness field is low bits of inline_referrers[1]
