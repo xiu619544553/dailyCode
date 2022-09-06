@@ -67,7 +67,7 @@
 - 22.`retain`、`release` 的实现机制？
 - 23.简述 `Dealloc` 的实现机制？
 - 24.在 `Obj-C` 中，如何检测内存泄漏？你知道哪些方式？
-- 25.聊聊野指针与僵尸对象定位[链接](https://github.com/xiu619544553/dailyCode/blob/master/BadAccess)
+- 25.聊聊野指针与僵尸对象定位  [链接](https://github.com/xiu619544553/dailyCode/blob/master/BadAccess)
 
 
 ## Runtime
