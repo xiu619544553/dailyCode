@@ -2435,13 +2435,18 @@ static id _object_copyFromZone(id oldObj, size_t extraBytes, void *zone)
 void *objc_destructInstance(id obj) 
 {
     if (obj) {
+        // 1.获取 isa
         Class isa = obj->getIsa();
 
+        // 2.判断当前对象是否有 C++析构器
         if (isa->hasCxxDtor()) {
+            // 调用 C++析构函数
             object_cxxDestruct(obj);
         }
 
+        // 3.通过标记获取此对象是否有关联属性
         if (isa->instancesHaveAssociatedObjects()) {
+            // 移除掉此对象的关联属性
             _object_remove_assocations(obj);
         }
 
@@ -2451,11 +2456,12 @@ void *objc_destructInstance(id obj)
     return obj;
 }
 
-static id 
+static id
 _object_dispose(id anObject) 
 {
     if (anObject==nil) return nil;
-
+    
+    // 进行内存回收前的销毁工作
     objc_destructInstance(anObject);
     
     anObject->initIsa(_objc_getFreedObjectClass ()); 

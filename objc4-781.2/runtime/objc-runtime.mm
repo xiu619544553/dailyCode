@@ -672,6 +672,7 @@ objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationP
 
 void objc_removeAssociatedObjects(id object) 
 {
+    // 对象存在，并且已经标记过关联属性
     if (object && object->hasAssociatedObjects()) {
         _object_remove_assocations(object);
     }

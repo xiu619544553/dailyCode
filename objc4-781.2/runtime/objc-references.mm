@@ -243,18 +243,25 @@ _object_set_associative_reference(id object, const void *key, id value, uintptr_
 void
 _object_remove_assocations(id object)
 {
+    // 1.创建关联对象
     ObjectAssociationMap refs{};
 
     {
+        // 2.获取关联管理器及hash表
         AssociationsManager manager;
         AssociationsHashMap &associations(manager.get());
+        
+        // 3.查找传入对象的关联属性
         AssociationsHashMap::iterator i = associations.find((objc_object *)object);
         if (i != associations.end()) {
+            // 4.查找到后，用空值进行交换
             refs.swap(i->second);
+            // 5.清除数据
             associations.erase(i);
         }
     }
 
+    // 6.对旧值进行release操作
     // release everything (outside of the lock).
     for (auto &i: refs) {
         i.second.releaseHeldValue();

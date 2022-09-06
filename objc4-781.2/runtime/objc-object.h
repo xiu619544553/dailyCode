@@ -433,14 +433,21 @@ objc_object::clearDeallocating()
 inline void
 objc_object::rootDealloc()
 {
+    // 使用了 TaggedPointer 技术，不需要回收内存
     if (isTaggedPointer()) return;  // fixme necessary?
 
+    // nonpointer为1表示不只是地址，isa中包含了其他信息
+    // weakly_referenced表示是否有弱引用
+    // has_assoc 表示是否有关联属性
+    // has_cxx_dtor 是否需要C++或Objc析构
+    // has_sidetable_rc是否有散列表计数引脚
     if (fastpath(isa.nonpointer  &&  
                  !isa.weakly_referenced  &&  
                  !isa.has_assoc  &&  
                  !isa.has_cxx_dtor  &&  
                  !isa.has_sidetable_rc))
     {
+        // 如果都没有 直接回收内存
         assert(!sidetable_present());
         free(this);
     } 
@@ -895,6 +902,7 @@ objc_object::clearDeallocating()
 inline void
 objc_object::rootDealloc()
 {
+    // 使用了 TaggedPointer 技术，不需要回收内存
     if (isTaggedPointer()) return;
     object_dispose((id)this);
 }
