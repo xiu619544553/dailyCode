@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>标题</title>
+  </head>
+  <body>
+    <!-- 1到6号标题与1到6号字体逆序对应，比如1号字体对应6号标题，2号字体对应5号标题。 -->
+    <h1>标题1</h1>
+    <font size="5">你好</font>
+    <h2>标题2</h2>
+    <font size="4">你好</font>
+    <h3>标题3</h3>
+    <h4>标题4</h4>
+    <h5>标题5</h5>
+
+    <!-- 水平线 -->
+    <hr />
+
+    <p>这是一个段落</p>
+
+    <br />
+
+    <!-- 折行/换行 -->
+    <!-- 如果您希望在不产生一个新段落的情况下进行换行（新行），请使用 <br> 标签： -->
+    <p>这个<br />段落<br />演示了分行的效果</p>
+
+    <!-- 古诗排版 -->
+    <!-- 浏览器在显示 HTML 时，会省略源代码中多余的空白字符 -->
+    <h1>春晓</h1>
+
+    <p>春眠不觉晓， 处处闻啼鸟。 夜来风雨声， 花落知多少。</p>
+
+    <!-- 文本格式化 -->
+    <b>加粗文本</b>
+    <br />
+    <strong>加粗文本</strong>
+    <br />
+    <big>放大文本</big>
+    <br />
+    <i>斜体文本</i>
+    <br />
+    <em>斜体文本</em>
+    <br />
+    <small>缩小文本</small>
+    <br />
+    这个文本包含<sub>下标</sub>
+    <br />
+    这个文本包含上标<sup>上标</sup>
+    <br />
+
+    <!-- 预格式化 -->
+    <!-- <pre> 标签可定义预格式化的文本。被包围在 <pre> 标签 元素中的文本通常会保留空格和换行符。而文本也会呈现为等宽字体。 -->
+    <pre>
+        此例演示如何使用 pre 标签
+        对空行和    空格
+        进行控制
+    </pre>
+
+    <!-- 地址  -->
+    <address>
+      Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br />
+      Visit us at:<br />
+      Example.com<br />
+      Box 564, Disneyland<br />
+      USA
+    </address>
+
+    <!-- 文字方向 -->
+    <p>文字从左到右显示</p>
+    <p><bdo dir="rtl">文字从右到左显示</bdo></p>
+
+    <!-- 块引用 -->
+    <p>
+      WWF's goal is to:
+      <q>Build a future where people live in harmony with nature.</q>
+      We hope they succeed.
+    </p>
+
+    <!-- 删除字效果和插入字效果 -->
+    <p>My favorite color is <del>blue</del> <ins>red</ins>!</p>
+
+    <!-- 链接 -->
+    <a href="https://www.baidu.com">在当前窗口打开的链接</a>
+    <br />
+
+    <!-- 创建图片链接 -->
+    <p>
+      创建图片链接 - 有边框
+      <a href="https://wwww.baidu.com">
+        <img
+          src="imgs/wallpaper1.jpg"
+          border="10"
+          alt="加载失败"
+          width="320"
+          height="200"
+        />
+      </a>
+    </p>
+
+    <p>
+      创建图片链接 - 无边框
+      <a href="https://www.baidu.com">
+        <img
+          src="imgs/wallpaper2.jpg"
+          border="0"
+          alt="加载失败"
+          width="200"
+          height="120"
+        />
+      </a>
+    </p>
+
+    <!-- target属性 -->
+    <a href="https://www.baidu.com" target="_blank">新窗口打开的链接</a>
+    <br />
+
+    <!-- id 属性 -->
+    <!-- 1、点击`点我`，会跳转到`提示`所在的位置 -->
+    <a id="tips">提示</a>
+    <a href="#tips">点我</a>
+
+    <!-- 2、或者从另一个页面创建一个链接到`提示`所在的位置 -->
+    <a href="file:///Users/hello/github/html/test.html#tips"
+      >访问有用的提示部分</a
+    >
+
+    <!-- alt属性：如果无法显示图像，浏览器将显示替代文本 -->
+    <img src="imgs/wallpaper3.jpg" alt="加载失败" width="200" height="120" />
+
+    <!-- 基本注意事项 -->
+    <!-- 
+        注释： 请始终将正斜杠添加到子文件夹。
+        假如这样书写链接：href="https://www.runoob.com/html"，就会向服务器产生两次 HTTP 请求。
+        这是因为服务器会添加正斜杠到这个地址，然后创建一个新的请求，就像这样：href="https://www.runoob.com/html/"。
+     -->
+  </body>
+</html>

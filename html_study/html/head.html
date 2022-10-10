@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>head标签</title>
+
+    <!-- 
+            HTML <base> 元素：<base> 标签描述了基本的链接地址/链接目标，该标签作为HTML文档中所有的链接标签的默认链接:
+         -->
+
+    <!-- 
+            HTML <link> 元素
+                <link> 标签定义了文档与外部资源之间的关系。
+                <link> 标签通常用于链接到样式表:
+          -->
+
+    <!-- 
+            HTML <style> 元素
+                <style> 标签定义了HTML文档的样式文件引用地址.
+                在<style> 元素中你也可以直接添加样式来渲染 HTML 文档:
+           -->
+    <!-- 1、css 内部样式表 -->
+    <style type="text/css">
+      body {
+        background-color: yellowgreen;
+      }
+      p {
+        color: blue;
+      }
+      h1 {
+        color: red;
+      }
+    </style>
+
+    <!-- 
+            css添加到html中的方式
+            1、内联样式，在HTML元素中使用用 style 属性
+            2、内部样式表，在HTML文档头部 <head> 区域使用 <style> 元素来包含 css
+            3、外部引用，使用外部css文件
+            -->
+
+    <!-- 2、css 外部样式表 -->
+    <!-- 
+                <link rel="stylesheet" type="text/css" href="mystyle.css">
+             -->
+  </head>
+
+  <body>
+    <h1>这是一个标题</h1>
+    <p>这是一个段落</p>
+
+    <a href="https://www.baidu.com/" style="text-decoration: none"
+      >访问浏览器</a
+    >
+
+    <!-- 3、css 内联样式 -->
+    <p style="color: rgb(226, 134, 43); margin-left: 20px">css的内联样式</p>
+    <h2 style="background-color: red; color: black">这是标题2</h2>
+    <p style="font-family: verdana; color: rgb(55, 0, 255); font-size: 17px">
+      这是一个段落
+    </p>
+  </body>
+</html>
