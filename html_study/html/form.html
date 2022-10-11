@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>HTML 表单和输入</title>
+    </head>
+    <body>
+        
+        <h4>1、创建表单，包含两个输入框</h4>
+        <form action="">
+            First name: <input type="text" name="firstname"><br/>
+            Last name: <input type="text" name="lastname">
+        </form>
+
+        <h4>2、创建表单，包含一个普通输入框和一个密码输入框</h4>
+        <form action="">
+            Username: <input type="text" name="username"><br/>
+            Password: <input type="password" name="password">
+        </form>
+
+        <h4>3、输入标签 &lt;input&gt;，输入类型是由 type 属性定义。接下来介绍几种常用的输入类型</h4>
+        <h5>3.1 文本域（Text Fields）、密码字段</h5>
+        <form action="">
+            Username: <input type="text" name="name" placeholder="请输入姓名"><br/>
+            Password: <input type="password" name="password2" placeholder="请输入密码">
+            <!-- 注意:表单本身并不可见。同时，在大多数浏览器中，文本域的默认宽度是 20 个字符。 -->
+        </form>
+
+        <h5>3.2 单选按钮（radio）</h5>
+        <form action="">
+            <input type="radio" name="sex" value="male">男<br/>
+            <input type="radio" name="sex" value="female">女
+        </form>
+
+        <h5>3.3 复选框（checkbox）</h5>
+        <form action="">
+            <input type="checkbox">我喜欢自行车<br/>
+            <input type="checkbox">我喜欢小汽车
+        </form>
+
+        <h5>3.4 提交按钮（submit）</h5>
+        <form name="input" action="html_form_action.php" method="get">
+            Account: <input type="text" name="username" placeholder="请输入账号">
+            <input type="submit" value="提交">
+        </form>
+
+        <h5>3.5 实例</h5>
+        <!-- 以下表单使用 GET 请求发送数据到当前的 URL，method 默认位 GET。 -->
+        <form>
+            <label>Name:
+              <input name="submitted-name" autocomplete="off">
+            </label>
+            <button>Save</button>
+          </form>
+          
+          <!-- 以下表单使用 POST 请求发送数据到当前的 URL。 -->
+          <form method="post">
+            <label>Name:
+              <input name="submitted-name" autocomplete="on">
+            </label>
+            <button>Save</button>
+          </form>
+          
+          <!-- 表单使用 fieldset, legend, 和 label 标签 -->
+          <form method="post">
+            <fieldset>
+              <legend>Title</legend>
+              <label><input type="radio" name="radio"> Select me</label>
+            </fieldset>
+          </form>
+    </body>
+</html>

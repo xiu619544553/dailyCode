@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML 布局</title>
+  </head>
+  <body>
+    <!-- 
+        margin-bottom 下边距
+     -->
+    <h4>使用&lt;div&gt;创建表格</h4>
+    <div id="container" style="width: 500px">
+      <div id="header" style="background-color: #ffa500">
+        <h1 style="margin-bottom: 0">主要的网页标题</h1>
+      </div>
+
+      <div
+        id="menu"
+        style="
+          background-color: #ff4000;
+          height: 200px;
+          width: 100px;
+          float: left;
+        "
+      >
+        <b>菜单</b><br />
+        HTML<br />
+        CSS<br />
+        JavaScript
+      </div>
+
+      <div
+        id="content"
+        style="
+          background-color: #eeeeee;
+          height: 200px;
+          width: 400px;
+          float: left;
+        "
+      >
+        内容在这里
+      </div>
+
+      <div
+        id="footer"
+        style="background-color: #00ff22; clear: both; text-align: center"
+      >
+        版权 © runoob.com
+      </div>
+    </div>
+
+    <h4>HTML 布局 - 使用表格</h4>
+    <table width="500" border="0">
+      <tr>
+        <td colspan="2" style="background-color: #ffa500">
+          <h1>主要的网页标题</h1>
+        </td>
+      </tr>
+
+      <tr>
+        <td style="background-color: #ffd700; width: 100px">
+          <b>菜单</b><br />
+          HTML<br />
+          CSS<br />
+          JavaScript
+        </td>
+        <td style="background-color: #eeeeee; height: 200px; width: 400px">
+          内容在这里
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan="2" style="background-color: #ffa500; text-align: center">
+          版权 © runoob.com
+        </td>
+      </tr>
+    </table>
+
+    <h4>自己实现</h4>
+    <div id="maxname" style="width: 500px">
+      <div style="background-color: #ffd700; width: 500px; margin-bottom: 0;">
+        <h1 style="text-align: center">Div布局实例</h1>
+      </div>
+      <div
+        id="secondfirst"
+        style="background-color: white; width: 100px; height: 200px; float: left"
+      >
+        菜单<br />
+        num1<br />
+        num2<br />
+        num3
+      </div>
+      <div
+        id="secondsecond"
+        style="background-color: yellow; width: 300px; height: 200px; float: left"
+      >
+        中间内容
+      </div>
+      <div
+        id="secondthrid"
+        style="background-color: black; color: white; width: 100px; height:200px; float: right"
+      >
+        信息部分
+      </div>
+      <div
+        id="bool"
+        style="background-color: #5c51a5; clear: both; text-align: center"
+      >
+        作者：Cty
+      </div>
+    </div>
+  </body>
+</html>
