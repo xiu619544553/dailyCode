@@ -5,6 +5,55 @@
     <title>table标签</title>
   </head>
   <body>
+
+    <h4>0、HTML表格标签</h4>
+    <table border="1" cellpadding="10" cellspacing="0">
+      <tr>
+        <th>标签</th>
+        <th>描述</th>
+      </tr>
+      <tr>
+        <td>&lt;table&gt;</td>
+        <td>定义表格</td>
+      </tr>
+      <tr>
+        <td>&lt;th&gt;</td>
+        <td>定义表格的表头</td>
+      </tr>
+      <tr>
+        <td>&lt;tr&gt;</td>
+        <td>定义表格的行</td>
+      </tr>
+      <tr>
+        <td>&lt;td&gt;</td>
+        <td>定义表格单元格</td>
+      </tr>
+      <tr>
+        <td>&lt;caption&gt;</td>
+        <td>定义表格的标题</td>
+      </tr>
+      <tr>
+        <td>&lt;colgroup&gt;</td>
+        <td>定义表格列的组</td>
+      </tr>
+      <tr>
+        <td>&lt;col&gt;</td>
+        <td>定义用于表格列的属性</td>
+      </tr>
+      <tr>
+        <td>&lt;thead&gt;</td>
+        <td>定义表格的页眉</td>
+      </tr>
+      <tr>
+        <td>&lt;tbody&gt;</td>
+        <td>定义表格的主体</td>
+      </tr>
+      <tr>
+        <td>&lt;tfoot&gt;</td>
+        <td>定义表格的页脚</td>
+      </tr>
+    </table>
+
     <h4>1、水平标题:</h4>
     <table border="1">
       <tr>
@@ -75,6 +124,124 @@
       </tr>
       <tr>
         <td>555 77 855</td>
+      </tr>
+    </table>
+
+    <h4>6、表格内的标签</h4>
+    <table border="1">
+      <tr>
+        <td>
+          <p>第一个段落</p>
+          <p>第二个段落</p>
+        </td>
+        <td>
+          <p>这个单元格包含一个表格：</p>
+          <table border="4">
+            <tr>
+              <td>A</td>
+              <td>B</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>D</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>这个单元格包含一个无序列表：</p>
+          <ul>
+            <li>apple</li>
+            <li>banana</li>
+          </ul>
+        </td>
+        <td>hello world</td>
+      </tr>
+    </table>
+
+    <h4>7、单元格边距(Cell padding)</h4>
+    <table border="1">
+      <caption>没有边距的表格</caption>
+      <tr>
+        <td>AAAAAAA</td>
+        <td>BBBBBBB</td>
+      </tr>
+      <tr>
+        <td>CCCCCCC</td>
+        <td>DDDDDDD</td>
+      </tr>
+    </table>
+
+    <table border="1" cellpadding="10">
+      <caption>有边距的表格</caption>
+      <tr>
+        <td>AAAAAAA</td>
+        <td>BBBBBBB</td>
+      </tr>
+      <tr>
+        <td>CCCCCCC</td>
+        <td>DDDDDDD</td>
+      </tr>
+    </table>
+
+    <h4>8、单元格间距(Cell spacing)</h4>
+    <table border="1">
+      <caption>没有单元格间距</caption>
+      <tr>
+        <td>AAAAAAA</td>
+        <td>BBBBBBB</td>
+      </tr>
+      <tr>
+        <td>CCCCCCC</td>
+        <td>DDDDDDD</td>
+      </tr>
+    </table>
+
+    <table border="1" cellspacing="0">
+      <caption>单元格间距=`0`</caption>
+      <tr>
+        <td>AAAAAAA</td>
+        <td>BBBBBBB</td>
+      </tr>
+      <tr>
+        <td>CCCCCCC</td>
+        <td>DDDDDDD</td>
+      </tr>
+    </table>
+
+    <table border="1" cellspacing="5">
+      <caption>单元格间距=`5`</caption>
+      <tr>
+        <td>AAAAAAA</td>
+        <td>BBBBBBB</td>
+      </tr>
+      <tr>
+        <td>CCCCCCC</td>
+        <td>DDDDDDD</td>
+      </tr>
+    </table>
+
+    <h4>9、表格列的组（colgroup）</h4>
+    <table border="1">
+      <colgroup>
+        <col span="2" style="background-color:red">
+        <col style="background-color:yellow">
+      </colgroup>
+      <tr>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>3476896</td>
+        <td>My first HTML</td>
+        <td>$53</td>
+      </tr>
+      <tr>
+        <td>5869207</td>
+        <td>My first CSS</td>
+        <td>$49</td>
       </tr>
     </table>
   </body>
