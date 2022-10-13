@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>id和class选择器</title>
+        <style>
+            /* 设置 id 选择器样式 */
+            #para1 {
+                text-align: center;
+            }
+
+            /* 设置 class 选择器样式 */
+            .center {
+                text-align: center;
+            }
+            /* 指定特定元素使用 class */
+            h2.right {
+                text-align: right;
+            }
+            .color {
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- id选择器 -->
+        <p id="para1">Hello world!</p>
+        <p>这个段落不受id选择器样式的影响</p>
+
+        <!-- class选择器 -->
+        <!-- 
+            class 选择器用于描述一组元素的样式，class 选择器有别于id选择器，class可以在多个元素中使用。
+            class 选择器在 HTML 中以 class 属性表示, 在 CSS 中，类选择器以一个点 . 号显示：
+         -->
+        <h1 class="center">标题居中</h1>
+        <p class="center">段落居中</p>
+
+        <!-- 指定特定元素使用 class -->
+        <h2 class="right">标题靠右</h2>
+
+        <!-- 多个选择器，用空格分割 -->
+        <h3 class="center color">标题居中，颜色为红色</h3>
+
+        <p style="color: red">注意事项： 类名的第一个字符不能使用数字！</p>
+    </body>
+</html>
