@@ -9,3 +9,9 @@ p {
 body {
     background-image: url(../imgs/gif1.gif);
 }
+
+h3 {
+    color: red;
+    text-align: left;
+    font-size: 8pt;
+}

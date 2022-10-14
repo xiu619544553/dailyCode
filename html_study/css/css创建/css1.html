@@ -3,10 +3,31 @@
     <head>
         <meta charset="utf-8">
         <title>css创建</title>
+
+        <!-- 
+            注意：
+                如果外部样式表放在内部样式表的后面，则外部样式将覆盖内部样式表
+         -->
         <!-- 外部样式表 -->
         <link rel="stylesheet" type="text/css" href="css1.css">
+        <!-- 内部样式表 -->
+        <style>
+            h3 {
+                text-align: right;
+                font-size: 20pt;
+            }
+        </style>
+
     </head>
     <body>
         <h1 style="text-align: center;">CSS 创建</h1>
+
+        <!-- 外部样式表与内部样式表都设置了 h3元素的样式 -->
+        <h3>
+            外部样式表与内部样式表都设置了 h3元素的样式
+        </h3>
+
+        <!-- 多重样式优先级 -->
+        <!-- （内联样式）Inline style > （内部样式）Internal style sheet >（外部样式）External style sheet > 浏览器默认样式 -->
     </body>
 </html>

@@ -1,0 +1,63 @@
+
+/* 1、背景颜色 */
+/* body {
+    background-color: red;
+} */
+
+/* 2、背景图像 */
+/* body {
+    background-image: url(../imgs/smiley.png);
+} */
+
+/* 2.1 背景图像 - 水平或垂直平铺 */
+/* body {
+    background-image: url(../imgs/smiley.png);
+    background-repeat: repeat-x;
+} */
+
+/* 
+2.2 背景图像- 设置定位与不平铺
+- 让背景图像不影响文本的排版
+*/
+/* body {
+    background-image: url(../imgs/smiley.png);
+    background-repeat: no-repeat;
+} */
+
+/* 
+以上实例中，背景图像与文本显示在同一个位置，为了让页面排版更加合理，不影响文本的阅读，我们可以改变图像的位置。
+可以利用 background-position 属性改变图像在背景中的位置:
+
+2.3 
+*/
+/* body {
+    background-image: url(../imgs/smiley.png);
+    background-repeat: no-repeat;
+    background-position: right top;
+} */
+
+/* 
+3、简写属性 
+background-color
+background-image
+background-repeat
+background-attachment
+background-position
+*/
+/* body {
+    background: cyan url(../imgs/smiley.png) no-repeat;
+} */
+
+
+/* 
+4、设置固定的背景图像 
+要求：图像不会随着页面的其他部分滚动。
+*/
+body {
+    background-image: url(../imgs/wallpaper1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+p {
+    color: white;
+}
