@@ -1,0 +1,27 @@
+ul.a {list-style-type:circle;}
+ul.b {list-style-type:square;}
+ol.c {list-style-type:upper-roman;}
+ol.d {list-style-type:lower-alpha;}
+
+/* 作为列表项标记的图像 */
+ul.e {list-style-image: url(../imgs/dot.png);}
+
+/* 浏览器兼容性解决方案 */
+ul.f
+{
+	list-style-type:none;
+	padding:10px;
+	margin:10px;
+}
+li.g, li.h, li.i
+{
+	background-image:url(../imgs/dot.png);
+	background-repeat:no-repeat;
+	background-position:0px 5px; 
+	padding-left:14px;
+}
+
+ul.j 
+{
+    list-style: square url(../imgs/dot.png);
+}

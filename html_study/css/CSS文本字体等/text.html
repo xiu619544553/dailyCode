@@ -5,7 +5,7 @@
     <title>css文本、字体</title>
     <link rel="stylesheet" type="text/css" href="text.css" />
   </head>
-  <body>
+  <body style="font-size: 100%">
     <h1>标题①</h1>
     <h2>标题②</h2>
     <h3>标题③</h3>
@@ -42,13 +42,95 @@
       这是一些文本。这是一些文本。这是一些文本。这是一些文本。这是一些文本。
     </p>
 
-    <p>一个<img src="../imgs/gif1.gif" alt="w3cschool" width="270" height="50" />默认对齐的图像。</p> 
-    <p>一个<img class="top" src="../imgs/gif1.gif" alt="w3cschool" width="270" height="50" />  text-top 对齐的图像。</p> 
-    <p>一个<img class="bottom" src="../imgs/gif1.gif" alt="w3cschool" width="270" height="50" /> text-bottom 对齐的图像。</p>
+    <p>
+      一个<img
+        src="../imgs/gif1.gif"
+        alt="w3cschool"
+        width="270"
+        height="50"
+      />默认对齐的图像。
+    </p>
+    <p>
+      一个<img
+        class="top"
+        src="../imgs/gif1.gif"
+        alt="w3cschool"
+        width="270"
+        height="50"
+      />
+      text-top 对齐的图像。
+    </p>
+    <p>
+      一个<img
+        class="bottom"
+        src="../imgs/gif1.gif"
+        alt="w3cschool"
+        width="270"
+        height="50"
+      />
+      text-bottom 对齐的图像。
+    </p>
 
     <h1 class="textshadow">Text-shadow 效果</h1>
-    <p><b>注意：</b> Internet Explorer 9 以及更早的浏览器不支持 text-shadow 属性。</p>
+    <p>
+      <b>注意：</b> Internet Explorer 9 以及更早的浏览器不支持 text-shadow
+      属性。
+    </p>
 
-</body>
+    <h1 style="font-size: 3em">用em设置字体大小</h1>
+    <p>
+      em的尺寸单位由W3C建议。1em和当前字体大小相等。<br />在浏览器中默认的文字大小是16px。<br />因此，1em的默认大小是16px。可以通过下面这个公式将像素转换为em：px/16=em
+    </p>
+    <p>
+      在上面的例子，em的文字大小是与前面的例子中像素一样。不过，如果使用 em
+      单位，则可以在所有浏览器中调整文本大小。
+    </p>
+    <p style="color: red">
+      ❌不幸的是，仍然是IE浏览器的问题。调整文本的大小时，会比正常的尺寸更大或更小。
+    </p>
+    <p style="color: green">
+      ✅在所有浏览器中的解决方案，设置
+      &lt;body&gt;元素的默认字体大小事百分比。<br />
+      body {font-size:100%;} <br />
+      h1 {font-size:2.5em;} <br />
+      h2 {font-size:1.875em;} <br />
+      p{font-size:0.875em;}
+    </p>
+
+    <h1>设置字体加粗</h1>
+    <p class="normal">This is a paragraph.</p>
+    <p class="light">This is a paragraph.</p>
+    <p class="thick">This is a paragraph.</p>
+    <p class="thicker">This is a paragraph.</p>
+
+    <h1>设置字体的转变</h1>
+    <p class="normal1">My name is Hege Refsnes.</p>
+    <p class="small1">My name is Hege Refsnes.</p>
+
+    <h1>在一个声明中的所有字体属性</h1>
+    <p class="ex2">
+      This is a paragraph. This is a paragraph. This is a paragraph. This is a
+      paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
+      This is a paragraph.
+    </p>
+    <p class="ex3">
+      This is a paragraph. This is a paragraph. This is a paragraph. This is a
+      paragraph. This is a paragraph. This is a paragraph. This is a paragraph.
+      This is a paragraph.
+    </p>
+
+    <h1>链接的样式</h1>
+    <a href="https://www.baidu.com" target="_blank" style="font-size: 2em"
+      >百度一下</a
+    >
+    <p><b>注意:</b> hover必须在:link和 a:visited之后定义才有效.</p>
+    <p><b>注意:</b>active必须在hover之后定义是有效的.</p>
+    <p>
+      <b>链接样式的顺序记忆：</b><br>
+      L(link)OV(visited)E  and  H(hover)A(active)TE
+    </p>
+
+    <!-- 创建链接框 -->
+    <a href="https://www.baidu.com" target="_blank">百度一下更方便</a>
   </body>
 </html>

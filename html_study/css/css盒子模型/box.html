@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS 盒子模型</title>
+    <style>
+      /* 
+        300px (宽)
+        + 50px (左 + 右填充)
+        + 50px (左 + 右边框)
+        + 50px (左 + 右边距)
+        = 450px
+        */
+      div.a {
+        width: 300px;
+        border: 25px solid green;
+        padding: 25px;
+        margin: 25px;
+      }
+      /* 
+      220px（宽）
+      + 20px（左 + 右填充）
+      + 10px（左 + 右边框）
+      + 0px（左 + 右边距）
+      = 250px
+      */
+      div.b {
+        width: 220px;
+        border: 5px solid gray;
+        padding: 10px;
+        margin: 0px;
+      }
+    </style>
+
+    <a href="https://www.runoob.com/css/css-boxmodel.html" target="_blank"
+      >浏览器的兼容性问题</a
+    >
+  </head>
+  <body>
+    <div class="a"></div>
+    <div class="b"></div>
+  </body>
+</html>

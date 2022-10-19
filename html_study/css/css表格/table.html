@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>CSS Table - 表格</title>
+
+        <style>
+            /* 1、请注意，该样式的表格有双边框。这是因为表和th/ td元素有独立的边界。 */
+            table, th, tr, td {
+                border: 1px solid blue;
+            }
+
+            /* 2、使用属性 border-collapse 设置表格的边框是否被这些成一个单一的边框或隔开 */
+            table {
+                border-collapse: collapse;
+            }
+
+            /* 3、表格宽度和高度 */
+            table {
+                width: 100%;
+            }
+            th {
+                height: 60px;
+            }
+
+            /* 4、表格文字对齐 */
+            /* td {
+                text-align: center;
+            } */
+
+            /* 5、垂直对齐属性 */
+            /* td {
+                height: 70px;
+                vertical-align: bottom;
+            } */
+
+            /* 6、表格填充 */
+            /* 如需控制边框和表格内容之间的间距，应使用td和th元素的填充属性： */
+            td {
+                padding: 15px;
+            }
+
+            /* 7、表格颜色 */
+            table, td, th {
+                border: 1px solid green;
+            }
+            th {
+                background-color: green;
+                color: white;
+            }
+
+        </style>
+    </head>
+
+    <body style="font-size: 100%;">
+    
+        <table>
+            <tr>
+                <th>FistName</th>
+                <th>LastName</th>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+            </tr>
+        </table>
+
+    </body>
+</html>
