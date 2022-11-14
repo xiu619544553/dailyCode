@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS 组合选择符</title>
+  </head>
+  <style>
+    /* 后代选择器 */
+    div p {
+      background-color: yellow;
+    }
+  </style>
+  <body>
+    <div>
+      <p>段落 1。 在 div 中。</p>
+      <p>段落 2。 在 div 中。</p>
+    </div>
+
+    <p>段落 3。不在 div 中。</p>
+    <p>段落 4。不在 div 中。</p>
+  </body>
+</html>

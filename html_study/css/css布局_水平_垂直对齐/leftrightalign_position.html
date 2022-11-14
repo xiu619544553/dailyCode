@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>左右对齐 - 使用定位方式</title>
+    <style>
+      /* 
+        当使用 position 来对齐元素时, 通常 <body> 元素会设置 margin 和 padding 。 这样可以避免在不同的浏览器中出现可见的差异。
+        当使用 position 属性时，IE8 以及更早的版本存在一个问题。
+        如果容器元素（在我们的案例中是 <div class="container">）设置了指定的宽度，
+        并且省略了 !DOCTYPE 声明，那么 IE8 以及更早的版本会在右侧增加 17px 的外边距。
+        这似乎是为滚动条预留的空间。当使用 position 属性时，请始终设置 !DOCTYPE 声明：
+        */
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        position: relative;
+        width: 100%;
+      }
+
+      .right {
+        position: absolute;
+        right: 0px;
+        width: 200px;
+        background-color: #b0e0e6;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="right">
+        <p>
+          <b>注意: </b>当使用浮动属性对齐,总是包括 !DOCTYPE
+          声明!如果丢失,它将会在 IE 浏览器产生奇怪的结果。
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
